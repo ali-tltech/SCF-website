@@ -32,6 +32,8 @@ export default function Navbar() {
     gsap.fromTo('nav', { opacity: 0 }, { opacity: 1, duration: 0.2 });
   }, [pathname]);
 
+  
+
   const NavLink = ({ href, children, dropdown }) => (
     <div className="relative group">
       <Link 
@@ -42,7 +44,7 @@ export default function Navbar() {
         {dropdown && <FaChevronDown className="ml-1" />}
       </Link>
       {dropdown && (
-        <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg border border-blue-600 bg-white  ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+        <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg border border-blue-700 bg-white  ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {dropdown}
           </div>
