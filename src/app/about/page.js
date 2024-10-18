@@ -42,7 +42,7 @@ export default function About() {
 
         {/* Expertise Section */}
         <div className="mt-16 bg-white text-black py-16 px-4 md:px-8 rounded-lg shadow-xl">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center mb-8">
               <FaTrophy className="text-4xl text-yellow-400 mr-4" />
               <h2 className="text-3xl md:text-4xl font-bold">Our Expertise</h2>
