@@ -5,6 +5,8 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
+import ChatbotPreview from '@/components/chat/ChatBot';
+import Footer from '@/components/Footer';
 
 export default function RootLayout({ children }) {
   const pageRef = useRef();
@@ -40,11 +42,13 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="bg-gray-100 ">
+      <body className="bg-gray-100 relative ">
         <Navbar />
+        {/* <ChatbotPreview /> */}
         <main ref={pageRef} className="transition-opacity ease-in-out">
           {children}
         </main>
+        <Footer/>
       </body>
     </html>
   );

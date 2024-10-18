@@ -2,23 +2,22 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { HiMenu, HiX } from 'react-icons/hi'; // Import icons for hamburger menu and close
-import { usePathname } from 'next/navigation'; // Import usePathname instead of useRouter
+import { HiMenu, HiX } from 'react-icons/hi';
+import { FaChevronDown } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
-import { BsCalendar2Date } from "react-icons/bs";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false); // For toggling navbar on small screens
-  const pathname = usePathname(); // Get the current pathname
-
-  // Determine if the current route is the Contact page
+  const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [exploreOpen, setExploreOpen] = useState(false);
+  const pathname = usePathname();
   const isHome = pathname.endsWith('/');
 
   useEffect(() => {
-    // Function to handle scroll effects
     const handleScroll = () => {
       if (window.scrollY >= 100) {
-        gsap.to('nav', { color: `${!isHome ? 'white' : 'white'}`, duration: 0.2, backgroundColor: 'white' });
+        gsap.to('nav', { color: 'white', duration: 0.2, backgroundColor: 'white' });
         gsap.to('.nav-link', { color: 'black', duration: 0.2 });
       } else {
         gsap.to('nav', { backgroundColor: 'transparent', duration: 0.2 });
@@ -26,70 +25,79 @@ export default function Navbar() {
       }
     };
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-
-    // Remove event listener on cleanup
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [isOpen, isHome]);
 
-  // Track location change using pathname
   useEffect(() => {
     console.log('Location changed to:', pathname);
-
-    // You can perform additional logic here when the route changes
-    // Example: Animate elements or update state
-
-    // Optional: Add any gsap animations or other effects you want to run on location change
     gsap.fromTo('nav', { opacity: 0 }, { opacity: 1, duration: 0.2 });
+  }, [pathname]);
 
-  }, [pathname]); // This useEffect runs whenever `pathname` changes
+  const NavLink = ({ href, children, dropdown, setDropdownOpen }) => (
+    <div className="relative group">
+      <Link 
+        className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'} flex items-center`} 
+        href={href}
+        onClick={() => dropdown && setDropdownOpen(prev => !prev)}
+      >
+        {children}
+        {dropdown && <FaChevronDown className="ml-1" />}
+      </Link>
+      {dropdown}
+    </div>
+  );
+
+  const Dropdown = ({ isOpen, children }) => (
+    <div className={`absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${isOpen ? 'block' : 'hidden'}`}>
+      <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+        {children}
+      </div>
+    </div>
+  );
 
   return (
     <nav className="fixed top-0 w-full z-20 md:px-20 py-5 flex items-center justify-between bg-transparent transition-all duration-300">
       <div className="logo">
         <Link href="/">
-          <Image
-            src="/images/logo.png" // Logo in the public/images folder
-            alt="Company Logo"
-            width={60}
-            height={30}
-            className="cursor-pointer"
-          />
+          <Image src="/images/logo.png" alt="Company Logo" width={60} height={30} className="cursor-pointer" />
         </Link>
       </div>
       
-      {/* Hamburger icon */}
-      <div className="md:hidden  z-20" onClick={() => setIsOpen(!isOpen)}>
+      <div className="md:hidden z-20" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <HiX size={30} className="text-black cursor-pointer" /> : <HiMenu size={30} className="text-white cursor-pointer" />}
       </div>
 
-      {/* Navbar Links */}
-      <div
-        className={`flex space-x-4 md:space-x-1 items-center sm:hidden transition-transform duration-300 ease-in-out md:flex-row flex-col  absolute md:static right-0 top-0 md:top-auto md:transform-none transform ${
-          isOpen ? 'translate-y-0 font-thin text-black' : '-translate-y-full'
-        } md:translate-x-0 bg-stone-100 text-center flex flex-col items-center md:bg-transparent w-full md:w-auto md:flex gap-2 p-3 md:p-0`}
-      >
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/">
-          Home
-        </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/about">
-          About Us
-        </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/enablement">
-          Solutions & Enablement
-        </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/resources">
-          Our Clients
-        </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/blog">
-          Blog
-        </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/contact">
-          Contact
-        </Link>
+      <div className={`flex space-x-4 md:space-x-1 items-center sm:hidden transition-transform duration-300 ease-in-out md:flex-row flex-col absolute md:static right-0 top-0 md:top-auto md:transform-none transform ${
+        isOpen ? 'translate-y-0 font-thin text-black' : '-translate-y-full'
+      } md:translate-x-0 bg-stone-100 text-center flex flex-col items-center md:bg-transparent w-full md:w-auto md:flex gap-2 p-3 md:p-0`}>
+        <NavLink href="/">Home</NavLink>
+        <NavLink 
+          href="#" 
+          dropdown={
+            <Dropdown isOpen={servicesOpen}>
+              <Link href="/consulting" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Consulting</Link>
+              <Link href="/advisory" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Advisory</Link>
+            </Dropdown>
+          }
+          setDropdownOpen={setServicesOpen}
+        >
+          Services
+        </NavLink>
+        <NavLink href="/about">About Us</NavLink>
+        <NavLink 
+          href="#" 
+          dropdown={
+            <Dropdown isOpen={exploreOpen}>
+              <Link href="/explore-1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Explore 1</Link>
+              <Link href="/explore-2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Explore 2</Link>
+            </Dropdown>
+          }
+          setDropdownOpen={setExploreOpen}
+        >
+          Explore
+        </NavLink>
+        <NavLink href="/contact">Contact</NavLink>
       </div>
     </nav>
   );

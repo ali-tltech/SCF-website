@@ -42,7 +42,7 @@ const FreeTrialSection = () => {
 <div className="flex w-full h-fit">
   {/* Left Image Section */}
   <div className="w-1/2">
-    <img
+    <Image
            src="/images/LandingPage/newsletter.jpg"  // Replace this with your image URL
       alt="Woman with laptop"
       className="object-cover h-full w-full"
