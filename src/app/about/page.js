@@ -2,6 +2,7 @@ import React from 'react';
 import TeamCarousel from '@/components/TeamCarousal';
 import Image from 'next/image';
 import { FaKey, FaHandshake, FaTrophy, FaCheck, FaLaptopCode, FaArrowRight } from 'react-icons/fa';
+import InfoCard from '@/components/About/InfoCard';
 
 export default function About() {
   return (
@@ -23,14 +24,14 @@ export default function About() {
           </div>
           <div className="w-full text-base md:w-1/2 md:pl-8">
             <div className="flex items-center mb-4">
-              <FaKey className="text-3xl text-yellow-500 mr-3" />
+              {/* <FaKey className="text-3xl text-yellow-500 mr-3" /> */}
               <h2 className="text-3xl md:text-4xl text-gray-900 font-bold">Unlocking the Full Potential of Supply Chain Finance</h2>
             </div>
             <p className="text-gray-600 mb-4">
               At SCF Strategies, we're dedicated to transforming your Supply Chain Finance (SCF) programs into powerful engines of growth. Our mission is to bridge the gap between innovative technology and practical implementation, unlocking new opportunities and maximizing efficiency for your business.
             </p>
             <div className="flex items-center mb-4">
-              <FaHandshake className="text-2xl text-blue-500 mr-3" />
+              {/* <FaHandshake className="text-2xl text-blue-500 mr-3" /> */}
               <h3 className="text-xl font-semibold text-gray-800">Core Values</h3>
             </div>
             <p className="text-gray-600 mb-4">
@@ -40,7 +41,7 @@ export default function About() {
         </div>
 
         {/* Expertise Section */}
-        <div className="mt-16 bg-teal-100 text-black py-16 px-4 md:px-8 rounded-lg shadow-xl">
+        <div className="mt-16 bg-white text-black py-16 px-4 md:px-8 rounded-lg shadow-xl">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-center mb-8">
               <FaTrophy className="text-4xl text-yellow-400 mr-4" />
@@ -50,52 +51,10 @@ export default function About() {
               With over 100 globally recognized SCF and Reverse Factoring programs, SCF Strategies is your trusted partner for unparalleled expertise and results. Our team's in-depth knowledge and innovative approach set us apart as leaders in the field.
             </p>
             <h3 className="text-2xl font-bold mb-8 text-center">Why Choose SCF Strategies?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Independent Expertise Card */}
-              <div className="group relative cursor-pointer overflow-hidden bg-gray-800 px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-3xl sm:px-10">
-                <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-yellow-500 transition-all duration-1000  group-hover:scale-[10]"></span>
-                <div className="relative z-10 mx-auto max-w-md">
-                  <span className="grid h-20 w-20 place-items-center rounded-full bg-yellow-500 transition-all duration-300 group-hover:bg-yellow-400">
-                    <FaCheck className="h-10 w-10 text-white" />
-                  </span>
-                  <div className="space-y-6 pt-5 text-base leading-7 text-white transition-all duration-300 group-hover:text-white/90">
-                    <h4 className="text-xl font-semibold">Independent Expertise</h4>
-                    <p>Benefit from our unbiased, industry-leading insights that focus solely on optimizing your SCF programs.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Proven Track Record Card */}
-              <div className="group relative cursor-pointer overflow-hidden bg-gray-800 px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-3xl  sm:px-10">
-                <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-green-500 transition-all duration-1000   group-hover:scale-[10]"></span>
-                <div className="relative z-10 mx-auto max-w-md">
-                  <span className="grid h-20 w-20 place-items-center rounded-full bg-green-500 transition-all duration-300 group-hover:bg-green-400">
-                    <FaTrophy className="h-10 w-10 text-white" />
-                  </span>
-                  <div className="space-y-6 pt-5 text-base leading-7 text-white transition-all duration-300 group-hover:text-white/90">
-                    <h4 className="text-xl font-semibold">Proven Track Record</h4>
-                    <p>Our successful implementation of over 100 programs highlights our ability to deliver transformative results for businesses worldwide.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Advanced Technology Card */}
-              <div className="group relative cursor-pointer overflow-hidden bg-gray-800 px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-3xl  sm:px-10">
-                <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-blue-500 transition-all duration-1000  group-hover:scale-[10]"></span>
-                <div className="relative z-10 mx-auto max-w-md">
-                  <span className="grid h-20 w-20 place-items-center rounded-full bg-blue-500 transition-all duration-300 group-hover:bg-blue-400">
-                    <FaLaptopCode className="h-10 w-10 text-white" />
-                  </span>
-                  <div className="space-y-6 pt-5 text-base leading-7 text-white transition-all duration-300 group-hover:text-white/90">
-                    <h4 className="text-xl font-semibold">Advanced Technology</h4>
-                    <p>Leverage cutting-edge analytics and benchmarking tools to drive efficiency and effectiveness in your SCF initiatives.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <InfoCard />
 
             <div className="mt-12 text-center">
-              <button className="bg-indigo-600 text-white font-semibold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-indigo-700 hover:shadow-lg">
+              <button className="bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-800 hover:shadow-lg">
                 Learn More About Our Journey
                 <FaArrowRight className="ml-2" />
               </button>
