@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { HiMenu, HiX } from 'react-icons/hi'; // Import icons for hamburger menu and close
 import { usePathname } from 'next/navigation'; // Import usePathname instead of useRouter
 import gsap from 'gsap';
+import { BsCalendar2Date } from "react-icons/bs";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false); // For toggling navbar on small screens
@@ -17,11 +18,11 @@ export default function Navbar() {
     // Function to handle scroll effects
     const handleScroll = () => {
       if (window.scrollY >= 100) {
-        gsap.to('nav', { color: `${!isHome ? 'white' : 'blue'}`, duration: 0.2, backgroundColor: 'white' });
+        gsap.to('nav', { color: `${!isHome ? 'white' : 'white'}`, duration: 0.2, backgroundColor: 'white' });
         gsap.to('.nav-link', { color: 'black', duration: 0.2 });
       } else {
         gsap.to('nav', { backgroundColor: 'transparent', duration: 0.2 });
-        gsap.to('.nav-link', { color: `${isOpen ? 'black' : !isHome ? 'blue' : 'white'}`, duration: 0.2 });
+        gsap.to('.nav-link', { color: `${isOpen ? 'white' : !isHome ? 'white' : 'white'}`, duration: 0.2 });
       }
     };
 
@@ -67,27 +68,27 @@ export default function Navbar() {
 
       {/* Navbar Links */}
       <div
-        className={`flex space-x-4 md:space-x-6 items-center sm:hidden transition-transform duration-300 ease-in-out md:flex-row flex-col  absolute md:static right-0 top-0 md:top-auto md:transform-none transform ${
+        className={`flex space-x-4 md:space-x-1 items-center sm:hidden transition-transform duration-300 ease-in-out md:flex-row flex-col  absolute md:static right-0 top-0 md:top-auto md:transform-none transform ${
           isOpen ? 'translate-y-0 font-thin text-black' : '-translate-y-full'
         } md:translate-x-0 bg-stone-100 text-center flex flex-col items-center md:bg-transparent w-full md:w-auto md:flex gap-2 p-3 md:p-0`}
       >
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-black' : ''}`} href="/">
+        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/">
           Home
         </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-black' : ''}`} href="/about">
+        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/about">
           About Us
         </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-black' : ''}`} href="/enablement">
+        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/enablement">
           Solutions & Enablement
         </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-black' : ''}`} href="/resources">
+        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/resources">
           Our Clients
         </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-black' : ''}`} href="/blog">
+        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/blog">
           Blog
         </Link>
-        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-black' : ''}`} href="/explore-more">
-          Resource Center
+        <Link className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'}`} href="/contact">
+          Contact
         </Link>
       </div>
     </nav>

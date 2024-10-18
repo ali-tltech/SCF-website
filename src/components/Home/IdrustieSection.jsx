@@ -15,7 +15,7 @@ const industries = [
 
 const IndustriesSection = () => {
   return (
-    <section className="bg-green-400 py-16 relative p-20">
+    <section className="bg-green-400 py-16 relative p-5 md:p-20">
       <div className="container mx-auto text-center">
         {/* Section Heading */}
         <h2 className="text-4xl font-bold text-white mb-4">Industries We Serve</h2>
@@ -32,7 +32,7 @@ const IndustriesSection = () => {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4 transform transition duration-300 hover:-translate-y-2"
+              className="bg-white p-6 py-4 rounded-lg shadow-lg flex items-center space-x-4 transform transition duration-300 hover:-translate-y-2"
             >
               <div className="text-4xl text-gray-500">{industry.icon}</div>
               <h3 className="text-lg font-semibold text-gray-800">{industry.title}</h3>

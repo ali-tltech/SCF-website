@@ -3,11 +3,13 @@ import Image from 'next/image'
 
 export default function About() {
   return (
+    <>
+    <div className='h-[50vh] w-full relative flex justify-center items-center text-white bg-white' style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')"} }>
+    <h1 className='font-bold text-[40px] top-10'>About Us</h1>
+     </div>
     <div className=" bg-white mx-auto py-12">
       {/* Section with image and text */}
-      <div className="p-20 text-black w-full text-center font-bold text-5xl ">
-        <h1>About</h1>
-      </div>
+      
       <div className="flex flex-col md:flex-row items-center justify-start space-y-8 md:space-y-0">
         
         {/* Left: Image section */}
@@ -47,5 +49,6 @@ export default function About() {
       </div>
       <TeamCarousel/>
     </div>
+    </>
   )
 }

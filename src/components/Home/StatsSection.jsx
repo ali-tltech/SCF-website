@@ -19,20 +19,20 @@ const StatsSection = () => {
         </p>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-          <div className="bg-black min-w-[300px] bg-opacity-50 p-6 rounded-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="bg-black min-w-[250px] bg-opacity-50 p-6 rounded-lg">
             <h3 className="text-4xl font-bold text-green-400">180K</h3>
             <p className="mt-2">Downloaded</p>
           </div>
-          <div className="bg-black min-w-[300px] bg-opacity-50 p-6 rounded-lg">
+          <div className="bg-black min-w-[250px] bg-opacity-50 p-6 rounded-lg">
             <h3 className="text-4xl font-bold text-green-400">20K</h3>
             <p className="mt-2">Feedback</p>
           </div>
-          <div className="bg-black min-w-[300px] bg-opacity-50 p-6 rounded-lg">
+          <div className="bg-black min-w-[250px] bg-opacity-50 p-6 rounded-lg">
             <h3 className="text-4xl font-bold text-green-400">500+</h3>
             <p className="mt-2">Workers</p>
           </div>
-          <div className="bg-black min-w-[300px] bg-opacity-50 p-6 rounded-lg">
+          <div className="bg-black min-w-[250px] bg-opacity-50 p-6 rounded-lg">
             <h3 className="text-4xl font-bold text-green-400">70+</h3>
             <p className="mt-2">Contributors</p>
           </div>

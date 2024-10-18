@@ -128,21 +128,26 @@ const Blog = () => {
   const tags = ['Space', 'Gamma', 'Travel', 'Smart', 'Marketing'];
 
   return (
-    <div className="container mx-auto text-stone-800 py-8 pt-40 px-20">
+    <>
+      <div className='h-[50vh] w-full relative flex justify-center items-center text-white bg-white' style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')"} }>
+        <h1 className='font-bold text-[40px]'>Blogs</h1>
+         </div>
+    <div className="  text-stone-800  py-10  px-20">
+    
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Blog Posts Section */}
         <div className="lg:col-span-2">
          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {blogPosts.map((post, index) => (
-              <div key={index} className="bg-white shadow-md overflow-hidden">
+              <div key={index} className="bg-white shadow-md overflow-hidden relative">
                 <img src={post.image} alt={post.title} className="w-full h-64 object-cover" />
                 <div className="p-4">
-                  <div className="flex items-center mb-2">
-                    <span className="text-sm text-green-500">{post.date}</span>
+                  <div className="flex items-center mb-1">
+                    <span className="text-sm bg-[#096bd8] p-2 rounded-full text-white  m-4 absolute top-0 right-0">{post.date}</span>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
-                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                  <h3 className="text-lg font-thin mb-1">{post.title}</h3>
+                  <p className="text-gray-600 text-base mb-1">{post.excerpt}</p>
                   <a href="#" className="text-blue-500 hover:underline">Read More</a>
                 </div>
               </div>
@@ -153,14 +158,14 @@ const Blog = () => {
         {/* Sidebar Section */}
         <div className="space-y-8">
           {/* Search */}
-          <div className="border border-green-500 items-center bg-green-500 flex ">
+          <div className="border border-[#096bd8] items-center bg-[#096bd8] flex ">
            
             <input
               type="text"
               placeholder="Search..."
               className="w-full p-2    focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <div className="h-full w-fit flex justify-center items-center px-5 text-white bg-green-500 "><FaSearch/></div>
+            <div className="h-full w-fit flex justify-center items-center px-5 text-white bg-[#096bd8] "><FaSearch/></div>
           </div>
 
           {/* Popular Posts */}
@@ -182,7 +187,7 @@ const Blog = () => {
             <ul>
               {categories.map((category, index) => (
                 <li key={index} className="mb-2 gap-2 justify-center items-center w-fit  flex">
-                 <div className="p-1 bg-green-500 h-fit"></div> <a href="#" className="text-stone-700 hover:underline">{category}</a>
+                 <div className="p-1 bg-[#096bd8] h-fit"></div> <a href="#" className="text-stone-700 hover:underline">{category}</a>
                 </li>
               ))}
             </ul>
@@ -202,6 +207,7 @@ const Blog = () => {
         </div>
       </div>
     </div>
+            </>
   );
 };
 

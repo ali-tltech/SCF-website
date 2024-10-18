@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { BsCalendar2Date } from 'react-icons/bs';
 
 const RecentStories = () => {
   const articles = [
@@ -29,8 +30,8 @@ const RecentStories = () => {
   ];
 
   return (
-    <section className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 bg-stone-100 leading-tight">
+      <div className="max-w-7xl flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900">Our Recent Story</h2>
           <p className="mt-4 text-gray-500">
@@ -40,8 +41,8 @@ const RecentStories = () => {
         </div>
         <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
-            <div key={article.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <div className="relative h-48 w-full">
+            <div key={article.id} className="bg-white relative shadow-sm rounded-2xl border overflow-hidden">
+              <div className="relative h-72 w-full">
                 <Image
                   src={article.image}
                   alt={article.title}
@@ -50,22 +51,26 @@ const RecentStories = () => {
                   className="w-full h-full"
                 />
               </div>
-              <div className="p-6">
-                <p className="text-gray-500">Admin / {article.date}</p>
-                <h3 className="mt-4 text-lg font-semibold text-gray-900">
+              <div className="p-3 ">
+              
+                <p className="text-gray-500 flex gap-2 text-xs"> 
+               <BsCalendar2Date className='text-blue-700'/> Admin / {article.date}</p>
+                <h3 className="mt-1 text-lg font-semibold text-blue-600">
                   {article.title}
                 </h3>
-                <p className="mt-2 text-gray-600">{article.description}</p>
-                <a
+                <p className="mt-1 text-gray-600">{article.description}</p>
+                <button
                   href="#"
-                  className="mt-4 inline-block text-indigo-500 hover:underline"
+                  className="mt-1 inline-block  bg-white absolute p-3 top-3 right-3 z-10 text-indigo-500 hover:underline"
                 >
-                  Read Story +
-                </a>
+                   +
+                </button>
               </div>
             </div>
           ))}
         </div>
+        <button className="mt-10  bg-blue-700 p-3 w-fit  rounded-full text-2xl">Explore more blogs</button>
+
       </div>
     </section>
   );
