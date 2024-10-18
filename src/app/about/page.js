@@ -7,7 +7,7 @@ import InfoCard from '@/components/About/InfoCard';
 export default function About() {
   return (
     <>
-      <div className='h-[50vh] w-full relative flex justify-center items-center text-white backdrop-blur-lg bg-white' style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')" }}>
+      <div className='h-[50vh] w-full relative flex   justify-center items-center text-white backdrop-blur-lg bg-white' style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')" }}>
         <h1 className='font-bold text-[40px] top-10'>About Us</h1>
       </div>
       <div className="bg-white mx-auto py-12">

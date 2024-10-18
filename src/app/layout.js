@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         pageRef.current,
-        { opacity: 0, y: 20 },
+        { opacity: 1, y: 20 },
         { opacity: 1, y: 0, duration: 0.8, ease: 'power4.out' }
       );
     });
