@@ -101,7 +101,7 @@ const ConsultingServiceContent = () => {
                 {/* CTA Section */}
                 <div className="text-center bg-blue-600 text-white rounded-lg p-12">
                     <h4 className="text-2xl md:text-3xl font-bold mb-4">Ready to elevate your SCF strategy?</h4>
-                    <p className="text-lg md:text-xl mb-8">Let's connect and explore how our Advisory Services can help you achieve your goals.</p>
+                    <p className="text-lg md:text-xl mb-8">Let's connect and explore how our Consultory Services can help you achieve your goals.</p>
                     <button className="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full transition-colors duration-200 text-lg">
                         Contact Us Today
                     </button>
