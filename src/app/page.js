@@ -44,7 +44,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <div
-        className="relative md:h-screen h-[60vh]  bg-fill bg-end overflow-hidden"
+        className="relative md:h-screen h-[60vh]  bg-cover bg-end overflow-hidden"
         style={{
           backgroundImage: "url('/images/LandingPage/hero.jpg')",
         }}
