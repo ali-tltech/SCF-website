@@ -9,8 +9,6 @@ import gsap from 'gsap';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [exploreOpen, setExploreOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname.endsWith('/');
 
@@ -34,25 +32,24 @@ export default function Navbar() {
     gsap.fromTo('nav', { opacity: 0 }, { opacity: 1, duration: 0.2 });
   }, [pathname]);
 
-  const NavLink = ({ href, children, dropdown, setDropdownOpen }) => (
+  
+
+  const NavLink = ({ href, children, dropdown }) => (
     <div className="relative group">
       <Link 
         className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'} flex items-center`} 
         href={href}
-        onClick={() => dropdown && setDropdownOpen(prev => !prev)}
       >
         {children}
         {dropdown && <FaChevronDown className="ml-1" />}
       </Link>
-      {dropdown}
-    </div>
-  );
-
-  const Dropdown = ({ isOpen, children }) => (
-    <div className={`absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${isOpen ? 'block' : 'hidden'}`}>
-      <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-        {children}
-      </div>
+      {dropdown && (
+        <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg border border-blue-700 bg-white  ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+          <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+            {dropdown}
+          </div>
+        </div>
+      )}
     </div>
   );
 
@@ -75,12 +72,11 @@ export default function Navbar() {
         <NavLink 
           href="#" 
           dropdown={
-            <Dropdown isOpen={servicesOpen}>
-              <Link href="/consulting" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Consulting</Link>
-              <Link href="/advisory" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Advisory</Link>
-            </Dropdown>
+            <>
+              <Link href="/consulting-service" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Consulting</Link>
+              <Link href="/advisory-service" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Advisory</Link>
+            </>
           }
-          setDropdownOpen={setServicesOpen}
         >
           Services
         </NavLink>
@@ -88,12 +84,11 @@ export default function Navbar() {
         <NavLink 
           href="#" 
           dropdown={
-            <Dropdown isOpen={exploreOpen}>
+            <>
               <Link href="/explore-1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Explore 1</Link>
               <Link href="/explore-2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Explore 2</Link>
-            </Dropdown>
+            </>
           }
-          setDropdownOpen={setExploreOpen}
         >
           Explore
         </NavLink>
