@@ -8,9 +8,11 @@ const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+
     <div className="border-b border-gray-200 py-4 w-full max-w-4xl mx-auto">
       <button
         className="flex w-full items-center text-left"
+
         onClick={() => setIsOpen(!isOpen)}
       >
         <HelpCircle size={24} className="text-blue-500 mr-3 flex-shrink-0" />
