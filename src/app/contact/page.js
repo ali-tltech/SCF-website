@@ -1,12 +1,36 @@
-"use client";
-import React from "react";
-import Head from "next/head";
+'use client';
+import React from 'react';
+import Head from 'next/head';
+import { useForm } from 'react-hook-form';
+import * as Yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
 
-export default function ContactPage() {
+const ContactPage = () => {
+  // Validation schema using Yup
+  const validationSchema = Yup.object().shape({
+    firstName: Yup.string().required('First name is required'),
+    lastName: Yup.string().required('Last name is required'),
+    email: Yup.string().email('Email is invalid').required('Email is required'),
+    phoneNumber: Yup.string().required('Phone number is required'),
+    message: Yup.string().required('Message is required'),
+  });
+
+  // Initialize react-hook-form with Yup
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
+  // Submit handler
+  const onSubmit = (data) => {
+    console.log(data);
+    // Handle form data (e.g., send to API)
+  };
+
   return (
     <>
+      {/* Meta tags for SEO */}
       <Head>
-        {/* Meta and SEO tags */}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -19,7 +43,6 @@ export default function ContactPage() {
         />
         <meta name="author" content="SCF Strategies" />
         <title>Expert Supply Chain Finance Consulting Services | SCF Strategies</title>
-        {/* Open Graph Meta Tags */}
         <meta
           property="og:title"
           content="Expert Supply Chain Finance Consulting Services | SCF Strategies"
@@ -36,109 +59,156 @@ export default function ContactPage() {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SCF Strategies" />
       </Head>
-      <div className='h-[50vh] w-full relative flex justify-center items-center text-white bg-white' style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')"} }>
-        <h1 className='font-bold text-[40px]'>Blogs</h1>
-         </div>
-      {/* Contact Page Content */}
-      <div className="min-h-screen bg-stone-100 pt-20 flex items-center flex-col relative overflow-hidden md:px-20 px-2 justify-center py-10">
-        <h1 className="absolute bottom-0 left-0 text-black text-opacity-5 z-0 px-10 text-[400px] font-extrabold">
-          SCF
-        </h1>
 
-        <h1 className="text-5xl mt-10 font-bold mb-4 text-stone-800 text-center">Contact Us</h1>
-        <div className="flex flex-wrap gap-8 z-10 w-full mt-6 justify-between text-center">
-  {/* Mail Here */}
-  <div className="flex-1 bg-white min-w-[300px] shadow-2xl p-6">
-    <div className="text-green-600 text-3xl mb-4">📧</div>
-    <h3 className="text-xl text-black font-semibold mb-2">Mail Here</h3>
-    <p className="text-stone-600">admin@startp.com</p>
-    <p className="text-stone-600">info@startp.com</p>
-  </div>
+      {/* Hero Section */}
+      <div
+        className="h-[60vh] w-full flex justify-center items-center text-white relative"
+        style={{
+          backgroundImage: "url('/images/LandingPage/bg-14.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <h1 className="font-bold text-5xl md:text-6xl relative z-10 tracking-wide">Contact Us</h1>
+      </div>
 
-  {/* Visit Here */}
-  <div className="flex-1 bg-white min-w-[300px] shadow-2xl p-6">
-    <div className="text-green-600 text-3xl mb-4">📍</div>
-    <h3 className="text-xl text-black font-semibold mb-2">Visit Here</h3>
-    <p className="text-stone-600">27 Division St, New York, NY 10002</p>
-    <p className="text-stone-600">United States of America</p>
-  </div>
+      {/* Contact Form Section */}
+      <div className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="absolute top-0 left-0 text-gray-200 text-opacity-20 z-0 text-[20vw] font-extrabold leading-none">
+            SCF
+          </h1>
 
-  {/* Call Here */}
-  <div className="flex-1 bg-white min-w-[300px] shadow-2xl p-6">
-    <div className="text-green-600 text-3xl mb-4">📞</div>
-    <h3 className="text-xl text-black font-semibold mb-2">Call Here</h3>
-    <p className="text-stone-600">+123 456 7890</p>
-    <p className="text-stone-600">+241 452 4526</p>
-  </div>
-</div>
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 text-center">Get in Touch</h2>
+            <p className="text-xl text-center text-gray-600 mb-12">
+              We're here to help. Reach out anytime.
+            </p>
 
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {/* Contact Info Cards */}
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <MdEmail className="text-blue-500 text-4xl mb-4 mx-auto" />
+                <h3 className="text-xl text-gray-800 font-semibold mb-2">Mail Us</h3>
+                <p className="text-gray-600">contact@scfstrategies.com</p>
+              </div>
 
-        {/* Rest of the Contact Form and Map Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full  mt-10">
-          <div className="bg-white relative rounded-lg shadow-lg p-8 bg-cover bg-center z-20">
-            <div className="relative z-10">
-              <h2 className="text-5xl font-bold mb-1 text-stone-950">Get in Touch</h2>
-              <p className="text-lg mb-6 text-stone-700">You can reach us anytime</p>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="First name"
-                    className="w-full px-4 py-2 border border-stone-300 bg-stone-50 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last name"
-                    className="w-full px-4 py-2 border border-stone-300 bg-stone-50 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="w-full px-4 py-2 border border-stone-300 bg-stone-50 rounded-lg focus:ring-2 focus:ring-blue-500"
-                />
-                <div className="flex items-center">
-                  <select className="w-20 px-2 py-2 border border-stone-300 bg-stone-50 rounded-lg focus:ring-2 focus:ring-blue-500">
-                    <option value="+62">+62</option>
-                    <option value="+91">+91</option>
-                    <option value="+1">+1</option>
-                  </select>
-                  <input
-                    type="text"
-                    placeholder="Phone number"
-                    className="w-full ml-2 px-4 py-2 border border-stone-300 bg-stone-50 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-                <textarea
-                  placeholder="How can we help?"
-                  rows="4"
-                  className="w-full px-4 py-2 border border-stone-300 bg-stone-50 rounded-lg focus:ring-2 focus:ring-blue-500"
-                ></textarea>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
-                >
-                  Submit
-                </button>
-              </form>
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <MdLocationOn className="text-blue-500 text-4xl mb-4 mx-auto" />
+                <h3 className="text-xl text-gray-800 font-semibold mb-2">Visit Us</h3>
+                <p className="text-gray-600">27 Division St, New York, NY 10002</p>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <MdPhone className="text-blue-500 text-4xl mb-4 mx-auto" />
+                <h3 className="text-xl text-gray-800 font-semibold mb-2">Call Us</h3>
+                <p className="text-gray-600">+123 456 7890</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Contact Form */}
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <h2 className="text-3xl font-bold mb-6 text-gray-800">Send Us a Message</h2>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="First name"
+                        {...register('firstName')}
+                        className={`w-full px-4 py-3 border ${
+                          errors.firstName ? 'border-red-500' : 'border-gray-300'
+                        } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors`}
+                      />
+                      {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>}
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Last name"
+                        {...register('lastName')}
+                        className={`w-full px-4 py-3 border ${
+                          errors.lastName ? 'border-red-500' : 'border-gray-300'
+                        } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors`}
+                      />
+                      {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>}
+                    </div>
+                  </div>
+
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your email"
+                      {...register('email')}
+                      className={`w-full px-4 py-3 border ${
+                        errors.email ? 'border-red-500' : 'border-gray-300'
+                      } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors`}
+                    />
+                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+                  </div>
+
+                  <div className="flex items-center">
+                    <select
+                      className={`w-24 px-3 py-3 border ${
+                        errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
+                      } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors`}
+                    >
+                      <option value="+1">+1</option>
+                      <option value="+44">+44</option>
+                      <option value="+91">+91</option>
+                    </select>
+                    <input
+                      type="text"
+                      placeholder="Phone number"
+                      {...register('phoneNumber')}
+                      className={`w-full ml-2 px-4 py-3 border ${
+                        errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
+                      } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors`}
+                    />
+                    {errors.phoneNumber && (
+                      <p className="text-red-500 text-sm mt-1">{errors.phoneNumber.message}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <textarea
+                      placeholder="How can we help?"
+                      rows={4}
+                      {...register('message')}
+                      className={`w-full px-4 py-3 border ${
+                        errors.message ? 'border-red-500' : 'border-gray-300'
+                      } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors`}
+                    ></textarea>
+                    {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
+                  >
+                    Contact Us Today
+                    <span className="ml-2">➡️</span>
+                  </button>
+                </form>
+              </div>
+
+              <div className="rounded-lg shadow-lg overflow-hidden h-[500px] lg:h-auto">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086667506151!2d-122.40143128468307!3d37.78799487975695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815c24c2b9b7%3A0x37814ab64c93525c!2sSnappy%20Inc.!5e0!3m2!1sen!2sus!4v1635680350562!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  allowFullScreen=""
+                  loading="lazy"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
             </div>
           </div>
-
-          {/* Location Information */}
-          <div className="rounded-lg shadow-sm overflow-hidden p-2 bg-black bg-opacity-10">
-           
-          </div>
-
         </div>
-        <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086667506151!2d-122.40143128468307!3d37.78799487975695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815c24c2b9b7%3A0x37814ab64c93525c!2sSnappy%20Inc.!5e0!3m2!1sen!2sus!4v1635680350562!5m2!1sen!2sus"
-              width="100%"
-              height="600"
-              allowFullScreen=""
-              loading="lazy"
-              className="w-full h-full m-10 rounded-lg"
-            ></iframe>
       </div>
     </>
   );
-}
+};
+
+export default ContactPage;
