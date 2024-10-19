@@ -7,9 +7,9 @@ const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 py-4">
+    <div className="border-b  border-gray-200 py-4">
       <button
-        className="flex w-full justify-between items-center text-left"
+        className="flex w-full p-1 justify-between items-center text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="text-lg font-medium">{question}</span>
