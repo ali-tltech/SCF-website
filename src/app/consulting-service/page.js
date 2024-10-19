@@ -1,9 +1,8 @@
 import ConsultingServiceContent from '@/components/services/ConsultingServicesContent';
-import Image from 'next/image';
 
 const ConsultingServices = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-gray-100">
       {/* Hero Section */}
       <div className="h-[60vh] w-full relative flex justify-center items-center text-white bg-cover bg-center" 
            style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')" }}>
