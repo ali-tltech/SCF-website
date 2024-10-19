@@ -1,84 +1,59 @@
+'use client';
+
 import React from 'react';
-import { Send, HelpCircle, MessageSquare } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { HelpCircle } from 'lucide-react';
 import FAQItem from '../../components/faq/FAQItem';
 
 const FAQPage = () => {
   const faqData = [
     {
       question: "How do permissions work in Google Play Instant?",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      answer: "Google Play Instant apps have limited permissions compared to full apps. They can only access a subset of device features and require explicit user consent for sensitive permissions. This ensures a balance between functionality and user privacy."
     },
     {
       question: "Is Smart Lock required for instant apps?",
-      answer: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      answer: "No, Smart Lock is not required for instant apps. However, it can enhance the user experience by allowing seamless sign-ins across devices. Instant apps can choose to implement Smart Lock to provide a more convenient authentication process."
     },
     {
       question: "Can I have multiple activities in a single feature?",
-      answer: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      answer: "Yes, you can have multiple activities within a single feature of an instant app. This allows for more complex user flows and richer functionality. However, it's important to keep the feature size within the allowed limits to ensure quick loading times."
     },
     {
       question: "Can I share resources between features?",
-      answer: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      answer: "Yes, you can share resources between features in an instant app. This is done through the base feature module, which contains common resources, code, and assets that can be accessed by all feature modules. This helps in reducing redundancy and keeping the app size optimized."
     },
   ];
 
   return (
-    <div className="text-gray-800">
+    <div className="text-gray-800 min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="h-[40vh] w-full relative flex flex-col justify-center items-center bg-cover bg-center" 
            style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')" }}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="z-10 text-center text-white">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="z-10 text-center text-white"
+        >
           <div className="flex items-center justify-center">
             <HelpCircle size={48} className="mr-4 text-blue-500" />
-            <h1 className="text-4xl font-bold">FAQs</h1>
+            <h1 className="text-5xl font-bold">FAQs</h1>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-16">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="bg-white shadow-xl rounded-lg p-8"
+        >
           {faqData.map((item, index) => (
             <FAQItem key={index} question={item.question} answer={item.answer} />
           ))}
-        </div>
-
-        <div className="bg-gray-100 p-8 rounded-lg">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <MessageSquare size={28} className="mr-2 text-green-500" />
-            Ask Your Question
-          </h2>
-          <form className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full p-3 border border-gray-300 rounded text-gray-800"
-              />
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full p-3 border border-gray-300 rounded text-gray-800"
-              />
-            </div>
-            <input
-              type="text"
-              placeholder="Your Subject"
-              className="w-full p-3 border border-gray-300 rounded text-gray-800"
-            />
-            <textarea
-              placeholder="Write your message..."
-              rows={4}
-              className="w-full p-3 border border-gray-300 rounded text-gray-800"
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-green-500 text-white px-6 py-3 rounded flex items-center hover:bg-green-600 transition-colors"
-            >
-              <Send size={18} className="mr-2" />
-              SEND MESSAGE
-            </button>
-          </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

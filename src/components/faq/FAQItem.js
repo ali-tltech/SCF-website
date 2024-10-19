@@ -1,21 +1,46 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronUp, ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 py-4">
+    <div className="border-b border-gray-200 py-4 w-full max-w-4xl mx-auto">
       <button
-        className="flex w-full justify-between items-center text-left"
+        className="flex w-full items-center text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-lg font-medium">{question}</span>
-        {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+        <HelpCircle size={24} className="text-blue-500 mr-3 flex-shrink-0" />
+        <span className="text-xl font-medium text-gray-800 flex-grow">{question}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {isOpen ? (
+            <ChevronUp size={24} className="text-blue-500 flex-shrink-0" />
+          ) : (
+            <ChevronDown size={24} className="text-blue-500 flex-shrink-0" />
+          )}
+        </motion.div>
       </button>
-      {isOpen && <p className="mt-2 text-gray-600">{answer}</p>}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="mt-4 flex items-start pl-9">
+              <MessageCircle size={24} className="text-green-500 mr-3 flex-shrink-0 mt-1" />
+              <p className="text-gray-600">{answer}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
