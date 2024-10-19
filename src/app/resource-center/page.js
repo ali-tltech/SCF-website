@@ -1,14 +1,11 @@
+import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import React from 'react';
 
 const ResourceCenter = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className='h-[50vh] w-full relative flex flex-col justify-center items-center bg-zinc-800 text-white px-4 text-center'>
-        <h1 className='font-bold text-4xl md:text-5xl mb-4'>
-        Resource Center
-        </h1>
-      </div>
+      <AuroraBackgroundDemo  title={'Resource Center'} description={' Find the best resources for your SCF programs'} link={'Learn More'}/>
 
       {/* Main Resource Section */}
       <div className='py-16 bg-gray-100'>

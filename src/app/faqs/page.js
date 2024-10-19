@@ -1,6 +1,7 @@
 import React from 'react';
 import { Send, HelpCircle, MessageSquare } from 'lucide-react';
 import FAQItem from '../../components/faq/FAQItem';
+import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 
 const FAQPage = () => {
   const faqData = [
@@ -24,17 +25,7 @@ const FAQPage = () => {
 
   return (
     <div className="text-gray-800">
-      <div className="h-[40vh] w-full relative flex flex-col justify-center items-center bg-cover bg-center" 
-           style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')" }}>
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="z-10 text-center text-white">
-          <div className="flex items-center justify-center">
-            <HelpCircle size={48} className="mr-4 text-blue-500" />
-            <h1 className="text-4xl font-bold">FAQs</h1>
-          </div>
-        </div>
-      </div>
-
+      <AuroraBackgroundDemo  title={'FAQs'} description={'Any questions? We have answers.'} link={'Learn More'}/>
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-16">
           {faqData.map((item, index) => (

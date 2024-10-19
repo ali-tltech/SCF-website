@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
+import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 
 const ContactPage = () => {
   // Validation schema using Yup
@@ -61,24 +62,12 @@ const ContactPage = () => {
       </Head>
 
       {/* Hero Section */}
-      <div
-        className="h-[60vh] w-full flex justify-center items-center text-white relative"
-        style={{
-          backgroundImage: "url('/images/LandingPage/bg-14.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <h1 className="font-bold text-5xl md:text-6xl relative z-10 tracking-wide">Contact Us</h1>
-      </div>
+      
+      <AuroraBackgroundDemo  title={'Contact Us'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'}/>
 
       {/* Contact Form Section */}
       <div className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="absolute top-0 left-0 text-gray-200 text-opacity-20 z-0 text-[20vw] font-extrabold leading-none">
-            SCF
-          </h1>
 
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 text-center">Get in Touch</h2>

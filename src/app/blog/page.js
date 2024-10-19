@@ -129,9 +129,7 @@ const Blog = () => {
 
   return (
     <>
-      <div className='h-[50vh] w-full relative flex justify-center items-center text-white bg-white' style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')"} }>
-        <h1 className='font-bold text-[40px]'>Blogs</h1>
-         </div>
+         <AuroraBackgroundDemo  title={'Blogs'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'}/>
     <div className="  text-stone-800  py-10  px-20">
     
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
