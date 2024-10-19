@@ -3,13 +3,12 @@ import TeamCarousel from '@/components/TeamCarousal';
 import Image from 'next/image';
 import { FaKey, FaHandshake, FaTrophy, FaCheck, FaLaptopCode, FaArrowRight } from 'react-icons/fa';
 import InfoCard from '@/components/About/InfoCard';
+import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 
 export default function About() {
   return (
     <>
-      <div className='h-[50vh] w-full relative flex   justify-center items-center text-white backdrop-blur-lg bg-white' style={{ backgroundImage: "url('/images/LandingPage/bg-14.jpg')" }}>
-        <h1 className='font-bold text-[40px] top-10'>About Us</h1>
-      </div>
+      <AuroraBackgroundDemo  title={'About Us'} description={'Know more about our mission, values, and team.'} link={'Learn More'}/>
       <div className="bg-white mx-auto py-12">
         <div className="flex flex-col md:flex-row items-center justify-start space-y-8 md:space-y-0 max-w-6xl mx-auto px-4">
           <div className="relative w-full md:w-1/2 h-[70vh]">

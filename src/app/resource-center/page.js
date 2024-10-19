@@ -1,14 +1,11 @@
+import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import React from 'react';
 
 const ResourceCenter = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className='h-[50vh] w-full relative flex flex-col justify-center items-center bg-zinc-800 text-white px-4 text-center'>
-        <h1 className='font-bold text-4xl md:text-5xl mb-4'>
-        Resource Center
-        </h1>
-      </div>
+      <AuroraBackgroundDemo  title={'Resource Center'} description={' Find the best resources for your SCF programs'} link={'Learn More'}/>
 
       {/* Main Resource Section */}
       <div className='py-16 bg-gray-100'>
@@ -31,7 +28,7 @@ const ResourceCenter = () => {
               <h3 className='text-2xl font-bold mb-4 text-zinc-800'>
                 📄 Whitepapers & Reports
               </h3>
-              <p className='text-gray-600 text-base leading-relaxed'>
+              <p className='text-gray-600 font-semibold text-base leading-relaxed'>
                 In-Depth Analysis and Industry Reports
               </p>
               <p className='mt-4 text-gray-600 text-base leading-relaxed'>
@@ -44,7 +41,7 @@ const ResourceCenter = () => {
               <h3 className='text-2xl font-bold mb-4 text-zinc-800'>
                 📝 Blog & Articles
               </h3>
-              <p className='text-gray-600 text-base leading-relaxed'>
+              <p className='text-gray-600  font-semibold  text-base leading-relaxed'>
                 Expert Opinions and Practical Advice
               </p>
               <p className='mt-4 text-gray-600 text-base leading-relaxed'>
@@ -57,10 +54,10 @@ const ResourceCenter = () => {
               <h3 className='text-2xl font-bold mb-4 text-zinc-800'>
                 📊 Case Studies
               </h3>
-              <p className='text-gray-600 text-base leading-relaxed'>
+              <p className='text-gray-600  font-semibold  text-base leading-relaxed'>
                 Real-World Success Stories
               </p>
-              <p className='mt-4 text-gray-600 text-base leading-relaxed'>
+              <p className='mt-4 text-gray-600  text-base leading-relaxed'>
                 Learn from real-world examples of successful SCF implementations. Our case studies showcase how leading companies have transformed their supply chain finance strategies, offering valuable lessons and inspiration for your own initiatives.
               </p>
             </div>

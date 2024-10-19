@@ -7,6 +7,14 @@ import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
 import ChatbotPreview from '@/components/chat/ChatBot';
 import Footer from '@/components/Footer';
+import { Inter , Montserrat, Poppins } from '@next/font/google';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'], // You can specify the weights you need
+  display: 'swap', // Font display property
+});
+
 
 export default function RootLayout({ children }) {
   const pageRef = useRef();
@@ -41,10 +49,10 @@ export default function RootLayout({ children }) {
   }, [pathname]); // Re-run effect on route change
 
   return (
-    <html lang="en">
-      <body className="bg-gray-100 relative ">
+    <html lang="en" className={`${montserrat.className}`}>
+      <body className="bg-gray-100 relative  ">
         <Navbar />
-        {/* <ChatbotPreview /> */}
+        <ChatbotPreview />
         <main ref={pageRef} className="transition-opacity ease-in-out">
           {children}
         </main>
