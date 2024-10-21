@@ -1,99 +1,171 @@
-'use client';
-import { useState, useEffect } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { HiMenu, HiX } from 'react-icons/hi';
-import { FaChevronDown } from 'react-icons/fa';
-import { usePathname } from 'next/navigation';
-import gsap from 'gsap';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 
-export default function Navbar() {
+const NavLink = ({ href, children, dropdown, isMobile }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-  const isHome = pathname.endsWith('/');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= 100) {
-        gsap.to('nav', { color: 'white', duration: 0.2, backgroundColor: 'white' });
-        gsap.to('.nav-link', { color: 'black', duration: 0.2 });
-      } else {
-        gsap.to('nav', { backgroundColor: 'transparent', duration: 0.2 });
-        gsap.to('.nav-link', { color: `${isOpen ? 'white' : !isHome ? 'white' : 'white'}`, duration: 0.2 });
-      }
-    };
+  const toggleDropdown = (e) => {
+    if (isMobile) {
+      e.preventDefault();
+      setIsOpen(!isOpen);
+    }
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isOpen, isHome]);
-
-  useEffect(() => {
-    console.log('Location changed to:', pathname);
-    gsap.fromTo('nav', { opacity: 0 }, { opacity: 1, duration: 0.2 });
-  }, [pathname]);
-
-  
-
-  const NavLink = ({ href, children, dropdown }) => (
-    <div className="relative group">
-      <Link 
-        className={`nav-link p-1 border-b-2 text-sm font-light border-transparent hover:border-blue-500 transition-all duration-300 ${!isHome ? 'text-white' : 'text-white'} flex items-center`} 
+  return (
+    <div className={`relative group ${isMobile ? 'w-full' : ''}`}>
+      <Link
+        className={`nav-link p-2 text-sm font-semibold transition-colors duration-300 flex items-center justify-between ${isMobile ? 'w-full py-0 my-0 text-gray-900 hover:text-blue-500' : 'hover:text-blue-500'
+          }`}
         href={href}
+        onClick={toggleDropdown}
       >
         {children}
-        {dropdown && <FaChevronDown className="ml-1" />}
+        {dropdown && (isMobile ? (isOpen ? <ChevronUp className="ml-1 w-4 h-4" /> : <ChevronDown className="ml-1 w-4 h-4" />) : <ChevronDown className="ml-1 w-4 h-4" />)}
       </Link>
       {dropdown && (
-        <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg border border-blue-700 bg-white  ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-          <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+        <div className={`${isMobile
+          ? 'mt-2 w-full bg-white transition-all duration-300'
+          : 'md:absolute md:left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-300'
+          } ${isMobile
+            ? (isOpen ? 'block' : 'hidden')
+            : 'md:opacity-0 md:invisible group-hover:md:opacity-100 group-hover:md:visible w-56'
+          }`}>
+          <div className={isMobile ? '' : 'py-1'} role="menu">
             {dropdown}
           </div>
         </div>
       )}
     </div>
   );
+};
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 w-full z-20 md:px-20 py-5 flex items-center justify-between bg-transparent transition-all duration-300">
-      <div className="logo">
-        <Link href="/">
-          <Image src="/images/logo.png" alt="Company Logo" width={60} height={30} className="cursor-pointer" />
-        </Link>
-      </div>
-      
-      <div className="md:hidden z-20" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <HiX size={30} className="text-black cursor-pointer" /> : <HiMenu size={30} className="text-white cursor-pointer" />}
-      </div>
+    <>
+      <nav className={`fixed top-0 w-full py-3 z-20 transition-all duration-300 ${isScrolled ? 'bg-white text-black shadow-md' : 'bg-transparent text-white'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex-shrink-0">
+              <Link href="/" className="flex items-center">
+                <Image src="/images/logo.png" alt="Company Logo" width={60} height={30} className="cursor-pointer" />
+              </Link>
+            </div>
+            <div className="hidden md:flex md:items-center md:justify-end md:flex-1">
+              <div className="flex items-baseline space-x-4">
+                <NavLink href="/">Home</NavLink>
+                <NavLink
+                  href="#"
+                  dropdown={
+                    <>
 
-      <div className={`flex space-x-4 md:space-x-1 items-center sm:hidden transition-transform duration-300 ease-in-out md:flex-row flex-col absolute md:static right-0 top-0 md:top-auto md:transform-none transform ${
-        isOpen ? 'translate-y-0 font-thin text-black' : '-translate-y-full'
-      } md:translate-x-0 bg-stone-100 text-center flex flex-col items-center md:bg-transparent w-full md:w-auto md:flex gap-2 p-3 md:p-0`}>
-        <NavLink href="/">Home</NavLink>
-        <NavLink 
-          href="#" 
-          dropdown={
-            <>
-              <Link href="/consulting-service" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Consulting</Link>
-              <Link href="/advisory-service" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Advisory</Link>
-            </>
-          }
-        >
-          Services
-        </NavLink>
-        <NavLink href="/about">About Us</NavLink>
-        <NavLink 
-          href="#" 
-          dropdown={
-            <>
-              <Link href="/explore-1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Explore 1</Link>
-              <Link href="/explore-2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Explore 2</Link>
-            </>
-          }
-        >
-          Explore
-        </NavLink>
-        <NavLink href="/contact">Contact</NavLink>
+                      <Link href="/advisory-service" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Advisory Service</Link>
+                      <Link href="/consulting-service" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Consulting Service</Link>
+                    </>
+                  }
+                >
+                  Services
+                </NavLink>
+                <NavLink href="/about">About Us</NavLink>
+                <NavLink
+                  href="#"
+                  dropdown={
+                    <>
+                      <Link href="/blogs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
+                      <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Resource Center</Link>
+                      <Link href="/solutions-enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
+                    </>
+                  }
+                >
+                  Explore
+                </NavLink>
+                <NavLink href="/contact">Contact</NavLink>
+              </div>
+            </div>
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              >
+                {isOpen ? (
+                  <X className="block h-6 w-6" aria-hidden="true" />
+                ) : (
+                  <Menu className="block h-6 w-6" aria-hidden="true" />
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile drawer */}
+      <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-30 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className={`fixed inset-x-0 top-0 bg-white transition-transform duration-300 ease-in-out transform ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+          <div className="px-4 pt-5 pb-6 space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <Image src="/images/logo.png" alt="Company Logo" width={60} height={30} />
+              </div>
+              <div className="-mr-2">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                >
+                  <span className="sr-only">Close menu</span>
+                  <X className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+            <div className="mt-6">
+              <nav className="grid gap-y-5">
+                <NavLink href="/" isMobile>Home</NavLink>
+                <NavLink
+                  href="#"
+                  dropdown={
+                    <>
+                      <Link href="/advisory-service" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Advisory Service</Link>
+                      <Link href="/consulting-service" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Consulting Service</Link>
+                    </>
+                  }
+                  isMobile
+                >
+                  Services
+                </NavLink>
+                <NavLink href="/about" isMobile>About Us</NavLink>
+                <NavLink
+                  href="#"
+                  dropdown={
+                    <>
+                      <Link href="/blogs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
+                      <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Resource Center</Link>
+                      <Link href="/solutions-enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
+                    </>
+                  }
+                  isMobile
+                >
+                  Explore
+                </NavLink>
+                <NavLink href="/contact" isMobile>Contact</NavLink>
+              </nav>
+            </div>
+          </div>
+        </div>
       </div>
-    </nav>
+    </>
   );
-}
+};
+
+export default Navbar;

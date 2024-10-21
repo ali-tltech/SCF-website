@@ -8,18 +8,16 @@ import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 export default function About() {
   return (
     <>
-      <AuroraBackgroundDemo  title={'About Us'} description={'Know more about our mission, values, and team.'} link={'Learn More'}/>
+      <AuroraBackgroundDemo title={'About Us'} description={'Know more about our mission, values, and team.'} link={'Learn More'} />
       <div className="bg-white mx-auto py-12">
         <div className="flex flex-col md:flex-row items-center justify-start space-y-8 md:space-y-0 max-w-6xl mx-auto px-4">
           <div className="relative w-full md:w-1/2 h-[70vh]">
             <Image
-              src="/images/agency-about-img.0d3d0b65.jpg"
+              src="/images/team-image.jpeg"
               alt="SCF Strategies team working"
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg"
+              layout='fill'
+              className="rounded-lg object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/10 to-transparent"></div>
           </div>
           <div className="w-full text-base md:w-1/2 md:pl-8">
             <div className="flex items-center mb-4">
