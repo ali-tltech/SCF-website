@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import ContactForm from '@/components/contact/ContactForm';
+import { submitContact } from '../action';
 
 const ContactPage = () => {
   return (

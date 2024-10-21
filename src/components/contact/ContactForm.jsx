@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, set } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import { submitContact } from '@/app/action';
 
 const validationSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
@@ -16,11 +17,21 @@ const ContactForm = () => {
     const { control, register, handleSubmit, formState: { errors }, reset } = useForm({
         resolver: yupResolver(validationSchema),
     });
+    const [loading, setLoading] = useState(false);
 
     const onSubmit = async (data) => {
-        
-    };
+        try {
+            setLoading(true);
+            await submitContact(data);
+            console.log('Form submitted successfully');
+            setLoading(false);
 
+            reset();
+        } catch (error) {
+            console.error('An error occurred', error);
+            setLoading(false);
+        }
+    };
     const inputStyle = `w-full px-4 py-3 border rounded-lg transition-colors  text-black outline-none font-outfit text-sm`;
 
     return (
@@ -92,7 +103,7 @@ const ContactForm = () => {
                 type="submit"
                 className="w-full bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center font-outfit text-sm"
             >
-                Contact Us Today
+                {loading ? 'Submitting...' : 'Contact Us Today'}
                 <span className="ml-2">➡️</span>
             </button>
 
