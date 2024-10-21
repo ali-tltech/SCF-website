@@ -1,3 +1,4 @@
+import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 

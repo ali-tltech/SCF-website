@@ -8,6 +8,7 @@ import Lenis from 'lenis';
 import ChatbotPreview from '@/components/chat/ChatBot';
 import Footer from '@/components/Footer';
 import { Inter , Montserrat, Poppins } from '@next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -52,10 +53,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${montserrat.className}`}>
       <body className="bg-gray-100 relative  ">
         <Navbar />
-        <ChatbotPreview />
+        {/* <ChatbotPreview /> */}
         <main ref={pageRef} className="transition-opacity ease-in-out">
           {children}
         </main>
+        <Toaster position="bottom-center"duration={500} />
         <Footer/>
       </body>
     </html>

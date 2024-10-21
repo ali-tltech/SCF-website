@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { submitContact } from '@/app/action';
+import toast, { Toaster } from 'react-hot-toast';
 
 const validationSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
@@ -24,11 +25,13 @@ const ContactForm = () => {
             setLoading(true);
             await submitContact(data);
             console.log('Form submitted successfully');
+            toast.success('Message sent successfully!');
             setLoading(false);
 
             reset();
         } catch (error) {
             console.error('An error occurred', error);
+            toast.error('Failed to sent message!');
             setLoading(false);
         }
     };
@@ -58,7 +61,7 @@ const ContactForm = () => {
                                 country={'in'}
                                 value={value || ''}
                                 onChange={onChange}
-                                countryCodeEditable={false}
+                                countryCodeEditable={true}
                                 inputProps={{
                                     name: 'phone',
                                     required: true,
@@ -113,6 +116,7 @@ const ContactForm = () => {
             {submitStatus === 'error' && (
                 <div className="text-red-600 font-semibold">An error occurred. Please try again.</div>
             )} */}
+            
         </form>
     );
 };

@@ -6,7 +6,6 @@ const prisma = new PrismaClient();
 
 export async function submitContact(data) {
     try {
-        console.log('Submitting contact form from actions:', data);
         const contact = await prisma.contact.create({
             data: {
                 name: data.name,
