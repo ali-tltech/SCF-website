@@ -1,120 +1,112 @@
 'use client';
 import React from 'react';
-import { FaCogs, FaUserCheck, FaChartLine, FaWallet } from 'react-icons/fa'; // Import appropriate icons from react-icons
+import Image from 'next/image';
+import { FaGlobe, FaSearch, FaHandshake, FaMoneyBillWave, FaArrowRight, FaChartLine } from 'react-icons/fa';
 
-const services = [
-  {
-    id: 1,
-    icon: <FaCogs size={40} />,
-    title: 'Program Design',
-    description:
-      'Transform your SCF programs with meticulously crafted designs that aim for optimal results. We tailor our approach to address your specific needs, creating robust programs that enhance efficiency, scalability, and impact. Our goal is to design programs that drive sustainable success and growth.',
-  },
-  {
-    id: 2,
-    icon: <FaUserCheck size={40} />,
-    title: 'Supplier Onboarding',
-    description:
-      'Streamline and simplify your supplier onboarding process through multiple channels. Our comprehensive management solutions ensure that new suppliers are seamlessly integrated into your SCF programs, reducing onboarding time and enhancing overall program efficiency.',
-  },
-  {
-    id: 3,
-    icon: <FaChartLine size={40} />,
-    title: 'Sales & Operations Enablement',
-    description:
-      'Equip your teams with the tools and strategies needed to excel in a competitive landscape. Our enablement services focus on boosting team performance and operational efficiency, helping you stay ahead in the fast-paced SCF market.',
-  },
-  {
-    id: 4,
-    icon: <FaWallet size={40} />,
-    title: 'Working Capital Analytics',
-    description:
-      'Leverage advanced data and analytics to optimize your working capital. Our working capital analytics services provide actionable insights and benchmark comparisons, allowing you to make informed decisions and enhance financial performance.',
-  },
-];
+const ServiceItem = ({ icon: Icon, title, description, isEven }) => (
+  <div className={`flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''} py-12 `}>
+    <div className={`w-full md:w-1/3 flex justify-center ${isEven ? 'md:justify-start' : 'md:justify-end'} mb-6 md:mb-0`}>
+      <div className="w-20 h-20 rounded-full bg-cyan-100 flex items-center justify-center">
+        <Icon className="text-3xl text-cyan-600" />
+      </div>
+    </div>
+    <div className="w-full md:w-2/3 md:px-8">
+      <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <button className="mt-4 text-cyan-600 font-semibold inline-flex items-center group">
+        Learn More
+        <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+      </button>
+    </div>
+  </div>
+);
 
 const EnablementPage = () => {
+  const services = [
+    {
+      icon: FaGlobe,
+      title: "Go-to-Market Strategy for Supply Chain Finance",
+      description: "Break into the SCF market with confidence. Our go-to-market strategies are tailored to position you effectively, leveraging data-driven insights and industry best practices."
+    },
+    {
+      icon: FaSearch,
+      title: "Supply Chain Finance Solution Audit",
+      description: "Ensure your SCF platform and services are performing at their peak. Our comprehensive solution audit delves into every aspect of your current SCF setup, identifying gaps, inefficiencies, and opportunities."
+    },
+    {
+      icon: FaHandshake,
+      title: "SCF Platform & Partner Selection",
+      description: "Selecting the right SCF platform and partners is crucial for a successful strategy. We guide you through the complexities of choosing the most suitable technology and strategic partners."
+    },
+    {
+      icon: FaMoneyBillWave,
+      title: "SCF Accounting Treatment",
+      description: "Navigate the financial intricacies of supply chain finance with our expert support. We offer comprehensive guidance on accounting treatments, ensuring compliance with the latest regulations."
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-stone-200 text-black md:p-20 md:pt-40 p-2 ">
-      <div>
-        <h1 className="text-6xl text-black font-bold mb-5">
-          Empowering Your SCF Programs for Success
-        </h1>
-        <h2 className="text-2xl text-black font-thin">
-          Bridging the Gap Between Technology and Practical Implementation
-        </h2>
-      </div>
-      <div
-        className="h-[68vh] mt-5 bg-center bg-cover relative flex items-end rounded-xl p-1"
-        style={{ backgroundImage: "url('/images/LandingPage/hero.jpg')" }}
-      >
-        <svg
-          viewBox="0 0 100 100"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-5 right-5 opacity-65 z-20 p-3 h-40"
-          style={{
-            backgroundColor: 'transparent',
-            animation: 'smooth-spin 10s linear infinite', // Add smooth rotation
-          }}
-        >
-          <path
-            id="circlePath"
-            d="
-      M 10, 50
-      a 40,40 0 1,1 80,0
-      40,40 0 1,1 -80,0
-    "
-            fill="none" /* Ensure no fill for the path */
-            stroke="transparent" /* Hide the circle path */
-          />
-          <text fill="white" fontSize="10">
-            <textPath href="#circlePath">
-              SCF STRATEGIES ⭐ EMPOWER YOUR BUSINESS
-            </textPath>
-          </text>
-        </svg>
-
-
-
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-10 rounded-xl"></div>
-        <p className="max-w-5xl text-2xl p-5 text-white z-50 relative">
-          <span className="text-6xl  font-bold strokeme">@ SCF Strategies,</span> <br />
-          <span className="text-3xl">we empower your SCF programs to reach new heights. </span>
-          <br />
-          <span className="text-4xl text-white text-opacity-50 leading-8">Our solutions and enablement services are designed to enhance every aspect of your supply chain finance strategy, from program design to operational excellence.</span>
-          <br /> We focus on delivering innovative and practical solutions that drive real results, ensuring that your SCF programs not only meet but exceed expectations.
-        </p>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <div className='h-[50vh] w-full relative flex flex-col justify-center items-center bg-zinc-800 text-white px-4 text-center'>
+        <h1 className='font-bold text-4xl md:text-5xl mb-4'>Expert Supply Chain Finance Consulting Services</h1>
+        <p className='text-xl md:text-2xl'>for Optimal SCF Strategies</p>
       </div>
 
-      <div className="grid md:grid-cols-2 grid-cols-1 mt-10 gap-4">
-        <div className="flex flex-col items-center justify-center  bg-opacity-20 p-8 rounded-lg">
-          <h1 className="text-5xl font-medium">Services We Offered</h1>
-        </div>
-        {services.map((service, index) => (
-          <div
-            key={service.id}
-            className={`group relative flex flex-col items-start p-8 rounded-lg shadow-lg ${(index + 1) >= 3 ? 'bg-purple-500 bg-opacity-10' : 'bg-stone-500 bg-opacity-10'
-              } hover:cursor-pointer`} // Using group to enable group-hover for child elements
-          >
-            {/* Blurred custom white div */}
-            <div className="absolute top-8 right-8  font-bold text-3xl z-20 text-opacity-35 text-black h-10 flex justify-center items-center w-10 rounded-full border border-dashed border-black">{index + 1}</div>
-            <div className="absolute inset-0 bg-white bg-opacity-80 blur-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg z-10"></div>
-
-            {/* Service Icon and Content */}
-            <div className="mb-4 text-blue-600 z-20">{service.icon}</div>
-            <h3 className="text-3xl font-bold mb-2 z-20 ">{service.title}</h3>
-            <p className="text-lg text-start font-light z-20 p-4 bg-white">{service.description}</p>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Introduction */}
+        <div className="flex flex-col md:flex-row items-center justify-between mb-16">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Unlock the Full Potential of Your Supply Chain Finance Programs
+            </h2>
+            <p className="text-gray-600 mb-6">
+              At SCF Strategies, our supply chain finance consulting services go beyond standard advisory. We provide insightful and innovative solutions that address the unique challenges of your SCF programs.
+            </p>
+            <button className="bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-700">
+              Learn More
+              <FaArrowRight className="ml-2" />
+            </button>
           </div>
-        ))}
-
-
-
-        <div className="flex flex-col items-center justify-center gap-3  bg-opacity-20 p-8 rounded-lg">
-          <p className="text-3xl text-center font-semibold">Ready to elevate your SCF programs?</p>
-          <p className="text-center"> Explore our enablement solutions and see how we can help you achieve exceptional results. Contact us today to start your journey toward enhanced supply chain finance success.</p>
-          <button className="text-xl font-medium text-blue-500 p-2 rounded-full bg-stone-100 hover:border-blue-500 border">Discover Our Enablement Solutions</button>
+          <div className="w-full md:w-1/2 md:pl-8">
+            <div className="relative h-64 md:h-96">
+              <Image
+                src="/images/LandingPage/bg-14.jpg"
+                alt="Consulting Services"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
         </div>
 
+        {/* Services Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Services</h2>
+          <div className="rounded-lg">
+            {services.map((service, index) => (
+              <ServiceItem key={index} {...service} isEven={index % 2 !== 0} />
+            ))}
+          </div>
+        </div>
+
+        {/* Benefits Section */}
+        <div className="bg-gray-50 rounded-lg p-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+            Transformative Supply Chain Finance Strategies for Sustainable Success
+          </h2>
+          <p className="text-center text-gray-600 mb-8">
+            Our consulting services provide a roadmap to tangible results. By optimizing your SCF programs, we help you enhance cash flow, improve working capital, and strengthen supplier relationships.
+          </p>
+          <div className="flex justify-center">
+            <button className="bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-700">
+              Contact Us
+              <FaArrowRight className="ml-2" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
