@@ -9,7 +9,7 @@ const FAQItem = ({ question, answer }) => {
 
   return (
 
-    <div className="border-b border-gray-200 py-4 w-full max-w-4xl mx-auto">
+    <div className="border-b border-gray-200 py-6 w-full max-w-4xl mx-auto">
       <button
         className="flex w-full items-center text-left"
 
@@ -36,7 +36,7 @@ const FAQItem = ({ question, answer }) => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="mt-4 flex items-start pl-9">
+            <div className="mt-6 flex items-start pl-9">
               <MessageCircle size={24} className="text-green-500 mr-3 flex-shrink-0 mt-1" />
               <p className="text-gray-600">{answer}</p>
             </div>
