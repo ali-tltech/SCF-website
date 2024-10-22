@@ -6,7 +6,7 @@ const AdvisoryServices = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <AuroraBackgroundDemo  title={'Advisory Services'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'}/>
+      <AuroraBackgroundDemo  title={'Advisory Services'} link={'Learn More'}/>
 
       {/* Main Content */}
       <AdvisoryServicesContent />

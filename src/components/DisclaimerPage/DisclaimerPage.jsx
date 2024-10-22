@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { AlertTriangle, Info, Shield, Phone, Mail, MapPin } from 'lucide-react';
+import { AlertTriangle, Info, Shield, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
 
 const DisclaimerPage = () => {
   const [activeSection, setActiveSection] = useState(0);
+  const [mobileOpenSection, setMobileOpenSection] = useState(0);
 
   const sections = [
     { title: "General Information", icon: <Info className="w-5 h-5" /> },
@@ -16,62 +17,128 @@ const DisclaimerPage = () => {
     { title: "Unenforceable Provisions", icon: <AlertTriangle className="w-5 h-5" /> },
   ];
 
+  const handleMobileAccordionClick = (index) => {
+    setMobileOpenSection(mobileOpenSection === index ? null : index);
+  };
+
   useEffect(() => {
     setActiveSection(0);
   }, []);
 
   return (
-    <div className="min-h-screen bg-white pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto bg-gray-100 shadow-xl rounded-lg overflow-hidden">
-        <div className="px-8 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="md:col-span-1 bg-gray-100 p-4 rounded-lg">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Main Content Card */}
+        <div className="bg-white rounded-lg shadow-xl p-8 mb-8">
+          {/* Desktop View */}
+          <div className="hidden md:grid md:grid-cols-4 gap-8">
+            {/* Sidebar */}
+            <div className="col-span-1">
               <div className="space-y-2 sticky top-24">
                 {sections.map((section, index) => (
                   <button
                     key={index}
-                    className={`flex items-center w-full text-left px-4 py-2 rounded transition-colors ${
+                    className={`flex items-center w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
                       activeSection === index 
-                        ? 'bg-indigo-100 text-indigo-700 font-medium' 
-                        : 'text-gray-600 hover:bg-gray-200'
+                        ? 'bg-indigo-600 text-white shadow-lg transform scale-105' 
+                        : 'text-gray-600 hover:bg-gray-100'
                     }`}
                     onClick={() => setActiveSection(index)}
                   >
-                    {section.icon}
-                    <span className="ml-2">{section.title}</span>
+                    <span className={`${activeSection === index ? 'text-white' : 'text-indigo-600'}`}>
+                      {section.icon}
+                    </span>
+                    <span className="ml-3 font-medium">{section.title}</span>
                   </button>
                 ))}
               </div>
             </div>
             
-            <div className="md:col-span-3">
+            {/* Desktop Content */}
+            <div className="col-span-3">
               <div className="prose max-w-none">
                 <div>
-                  <h1 className="text-3xl font-bold text-indigo-700 mb-6 flex items-center">
+                  <h1 className="text-3xl font-bold text-indigo-600 mb-6 flex items-center">
                     {sections[activeSection].icon}
-                    <span className="ml-2">{sections[activeSection].title}</span>
+                    <span className="ml-3">{sections[activeSection].title}</span>
                   </h1>
                   <DisclaimerContent section={activeSection} />
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Mobile Accordion View */}
+          <div className="md:hidden space-y-4">
+            {sections.map((section, index) => (
+              <div key={index} className="border rounded-lg overflow-hidden">
+                <button
+                  className={`w-full px-4 py-3 flex items-center justify-between ${
+                    mobileOpenSection === index ? 'bg-indigo-600 text-white' : 'bg-white text-gray-800'
+                  }`}
+                  onClick={() => handleMobileAccordionClick(index)}
+                >
+                  <div className="flex items-center">
+                    <span className={`${mobileOpenSection === index ? 'text-white' : 'text-indigo-600'}`}>
+                      {section.icon}
+                    </span>
+                    <span className="ml-3 font-medium">{section.title}</span>
+                  </div>
+                  <ChevronDown 
+                    className={`w-5 h-5 transform transition-transform duration-200 ${
+                      mobileOpenSection === index ? 'rotate-180 text-white' : 'text-gray-400'
+                    }`} 
+                  />
+                </button>
+                <div
+                  className={`transition-all duration-200 ease-in-out ${
+                    mobileOpenSection === index ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                  } overflow-hidden`}
+                >
+                  <div className="p-4 bg-white">
+                    <DisclaimerContent section={index} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        
-        <div className="bg-gray-100 px-8 py-6">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Contact Us</h2>
-          <div className="flex flex-wrap items-center text-gray-600">
-            <div className="flex items-center mr-8 mb-2">
-              <Mail className="w-5 h-5 mr-2" />
-              <span>info@scfstrategies.com</span>
+
+        {/* Contact Section */}
+        <div className="space-y-6">
+          <h2 className="text-2xl font-bold text-gray-800 text-center mb-8">Contact Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Email Card */}
+            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-3 bg-indigo-100 rounded-full">
+                  <Mail className="w-6 h-6 text-indigo-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800">Email Us</h3>
+                <p className="text-gray-600">info@scfstrategies.com</p>
+              </div>
             </div>
-            <div className="flex items-center mr-8 mb-2">
-              <Phone className="w-5 h-5 mr-2" />
-              <span>[Insert Phone Number]</span>
+
+            {/* Phone Card */}
+            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-3 bg-indigo-100 rounded-full">
+                  <Phone className="w-6 h-6 text-indigo-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800">Call Us</h3>
+                <p className="text-gray-600">+1 (203) 470-9377</p>
+              </div>
             </div>
-            <div className="flex items-center mb-2">
-              <MapPin className="w-5 h-5 mr-2" />
-              <span>[Insert Address]</span>
+
+            {/* Location Card */}
+            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-3 bg-indigo-100 rounded-full">
+                  <MapPin className="w-6 h-6 text-indigo-600" />
+                </div>
+                <h3 className="font-semibold text-gray-800">Visit Us</h3>
+                <p className="text-gray-600">Bonita Springs, FL</p>
+              </div>
             </div>
           </div>
         </div>
@@ -81,6 +148,7 @@ const DisclaimerPage = () => {
 };
 
 const DisclaimerContent = ({ section }) => {
+  // Content remains the same as in your original code
   const content = {
     0: (
       <p className="text-gray-700">
@@ -95,7 +163,7 @@ const DisclaimerContent = ({ section }) => {
         <p className="mt-4 text-gray-700">
           SCF Strategies does not warrant that:
         </p>
-        <ul className="list-disc list-inside mt-2 text-gray-700">
+        <ul className="list-disc list-inside mt-2 text-gray-700 space-y-2">
           <li>This website will be continuously available, or available at all; or</li>
           <li>The information on this website is complete, true, accurate, or non-misleading.</li>
         </ul>
@@ -109,7 +177,7 @@ const DisclaimerContent = ({ section }) => {
         <p className="text-gray-700">
           SCF Strategies will not be liable to you for any indirect, special, or consequential loss arising from the contents of, or use of, or otherwise in connection with this website, including but not limited to:
         </p>
-        <ul className="list-disc list-inside mt-2 text-gray-700">
+        <ul className="list-disc list-inside mt-2 text-gray-700 space-y-2">
           <li>Loss of revenue, income, profits, anticipated savings, contracts, business relationships, reputation, goodwill, or data.</li>
         </ul>
         <p className="mt-4 text-gray-700">
@@ -122,7 +190,7 @@ const DisclaimerContent = ({ section }) => {
         <p className="text-gray-700">
           Nothing in this disclaimer excludes or limits any warranty implied by law where it would be unlawful to do so; nor does it exclude or limit SCF Strategies' liability for:
         </p>
-        <ul className="list-disc list-inside mt-2 text-gray-700">
+        <ul className="list-disc list-inside mt-2 text-gray-700 space-y-2">
           <li>Death or personal injury caused by SCF Strategies' negligence;</li>
           <li>Fraud or fraudulent misrepresentation on the part of SCF Strategies; or</li>
           <li>Any matter that it would be illegal or unlawful for SCF Strategies to exclude or limit, or to attempt to exclude or limit, liability.</li>
