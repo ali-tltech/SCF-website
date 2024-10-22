@@ -9,6 +9,7 @@ import ChatbotPreview from '@/components/chat/ChatBot';
 import Footer from '@/components/Footer';
 import { Inter , Montserrat, Poppins } from '@next/font/google';
 import { Toaster } from 'react-hot-toast';
+import CookieConsent from '@/components/CookieConsent';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -58,6 +59,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Toaster position="bottom-center"duration={500} />
+        <CookieConsent />
         <Footer/>
       </body>
     </html>
