@@ -1,91 +1,90 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import { LockKeyhole } from 'lucide-react';
+import Link from 'next/link';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
+import PrivacyPolicySection from '@/components/privacy-policy/PrivacyPolicySection';
+
+
 
 const PrivacyPolicyPage = () => {
-  const privacyContent = [
+  const policyData = [
     {
-      title: "Information We Collect",
-      description: `We collect both personal and non-personal information to provide better services and improve our offerings.
-        Personal Information:
-        - Name, email address, phone number, and business details provided through contact forms, registration, or email communication.
-        - Payment information if engaging in any of our services.
-        
-        Non-Personal Information:
-        - Data on your interactions with our website, including IP address, browser type, referring website, and pages viewed.`
+      title: "1. Information We Collect",
+      content: ["Personal Information: Name, email address, phone number, and business details provided through contact forms, registration, or email communication.", "Payment information if engaging in any of our services.", "Non-Personal Information: Data on your interactions with our website, including IP address, browser type, referring website, and pages viewed."]
     },
     {
-      title: "How We Use Your Information",
-      description: `We use your information for the following purposes:
-        - Service Delivery: To communicate with you, provide the services requested, and respond to inquiries.
-        - Improvement of Services: To improve our website, services, and offerings based on feedback and user behavior.
-        - Marketing: With your consent, we may send you marketing communications or updates on our services. You can opt out at any time.
-        - Legal Compliance: To comply with legal obligations, enforce our policies, and protect our business interests.`
+      title: "2. How We Use Your Information",
+      content: ["Service Delivery: To communicate with you, provide the services requested, and respond to inquiries.", "Improvement of Services: To improve our website, services, and offerings based on feedback and user behavior.", "Marketing: With your consent, we may send you marketing communications or updates on our services. You can opt out at any time.", "Legal Compliance: To comply with legal obligations, enforce our policies, and protect our business interests."]
     },
     {
-      title: "Sharing Your Information",
-      description: `We do not sell, trade, or otherwise transfer your personal information to third parties except:
-        - Service Providers: Trusted partners who assist us in operating our website, conducting our business, or servicing clients, as long as they agree to keep this information confidential.
-        - Legal Obligations: In cases where disclosure is required by law, legal processes, or to protect our rights.`
+      title: "3. Sharing Your Information",
+      content: ["Service Providers: Trusted partners who assist us in operating our website, conducting our business, or servicing clients, as long as they agree to keep this information confidential.", "Legal Obligations: In cases where disclosure is required by law, legal processes, or to protect our rights."]
     },
     {
-      title: "Data Security",
-      description: `We take appropriate security measures to protect your personal data from unauthorized access, disclosure, or destruction. These measures include encryption, secure servers, and access control protocols. However, no data transmission over the internet can be guaranteed as 100% secure.`
+      title: "4. Data Security",
+      content: "We take appropriate security measures to protect your personal data from unauthorized access, disclosure, or destruction. These measures include encryption, secure servers, and access control protocols. However, please be aware that no data transmission over the internet can be guaranteed as 100% secure."
     },
     {
-      title: "Data Retention",
-      description: `We retain your personal data for as long as necessary to fulfill the purposes outlined in this Privacy Policy or as required by law. If you wish to request deletion of your data, you can contact us, and we will remove your data unless legally obligated to retain it.`
+      title: "5. Data Retention",
+      content: "We retain your personal data for as long as necessary to fulfill the purposes outlined in this Privacy Policy or as required by law. If you wish to request deletion of your data, you can contact us, and we will remove your data unless we are legally obligated to retain it."
     },
     {
-      title: "Your Rights",
-      description: `You have the right to:
-        - Access: Request access to the personal information we hold about you.
-        - Rectification: Request correction of inaccurate or incomplete data.
-        - Deletion: Request deletion of your personal data under certain circumstances.
-        - Objection: Object to the processing of your data for direct marketing purposes.`
+      title: "6. Your Rights",
+      content: ["Access: Request access to the personal information we hold about you.", "Rectification: Request correction of inaccurate or incomplete data.", "Deletion: Request deletion of your personal data under certain circumstances.", "Objection: Object to the processing of your data for direct marketing purposes."]
     },
     {
-      title: "Cookies Policy",
-      description: `Our website uses cookies to enhance the user experience and gather information about user activity. Cookies are small files placed on your device. You can disable cookies through your browser settings, though some features may not function properly.`
+      title: "7. Cookies Policy",
+      content: "Our website uses cookies to enhance the user experience and gather information about user activity. Cookies are small files that are placed on your device. You can choose to disable cookies through your browser settings, though some features of the website may not function properly."
     },
     {
-      title: "Third-Party Links",
-      description: `Our website may contain links to third-party websites. These sites have their own privacy policies, and we are not responsible for their practices.`
+      title: "8. Third-Party Links",
+      content: "Our website may contain links to third-party websites. These sites have their own privacy policies, and we are not responsible for their practices. We encourage you to review the privacy policies of those sites before sharing any personal information."
     },
     {
-      title: "Updates to This Policy",
-      description: `We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws.`
-    },
-    {
-      title: "Contact Us",
-      description: `If you have any questions regarding this Privacy Policy or how we handle your data, please contact us at:
-        SCF Strategies
-        📧 Email: contact@scfstrategies.com
-        📞 Phone: +1 (203) 470-9377
-        📍 Bonita Springs, FL`
+      title: "9. Updates to This Policy",
+      content: "We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. Any updates will be posted on this page, and the date of the latest revision will be indicated at the top."
     }
   ];
 
   return (
-    <div className="text-gray-800">
-      <AuroraBackgroundDemo title={'Privacy Policy'} description={'Learn more about how we handle your data'} link={'Learn More'}/>
+    <div className="min-h-screen bg-gray-50">
+      <AuroraBackgroundDemo
+        title="Privacy Policy"
+        description="Know how we handle your data"
+        link={'Learn More'}
+      />
 
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-lg p-8"
-        >
-          {privacyContent.map((section, index) => (
-            <div key={index} className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">{section.title}</h2>
-              <p className="text-gray-700 whitespace-pre-line">{section.description}</p>
-            </div>
-          ))}
-        </motion.div>
+        <div className="mb-12 text-center">
+          <div className="flex justify-center items-center  mb-12">
+            <LockKeyhole className="w-8 h-8 text-blue-600 mr-3" />
+            <h1 className="text-3xl font-bold text-gray-900">Privacy Policy - <span className="text-lg text-gray-500">November 1st, 2024</span></h1>
+          </div>
+          <p className="text-gray-700 text-lg ">
+            At SCF Strategies, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you interact with our website, services, and communications.
+          </p>
+        </div>
+
+        {policyData.map((section, index) => (
+          <PrivacyPolicySection
+            key={index}
+            title={section.title}
+            content={section.content}
+          />
+        ))}
+
+        <div className="mt-12 pt-8 flex flex-col items-center">
+          <p className="text-gray-600 mb-4 text-center">
+            If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us at:
+          </p>
+          <Link
+            href="/contact"
+            className="bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          >
+            Contact Us
+          </Link>
+        </div>
       </div>
     </div>
   );

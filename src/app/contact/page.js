@@ -65,13 +65,13 @@ const ContactPage = () => {
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <MdLocationOn className="text-blue-500 text-4xl mb-4 mx-auto" />
                 <h3 className="text-xl text-gray-800 font-semibold mb-2">Visit Us</h3>
-                <p className="text-gray-600">27 Division St, New York, NY 10002</p>
+                <p className="text-gray-600">Bonita Springs, FL</p>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <MdPhone className="text-blue-500 text-4xl mb-4 mx-auto" />
                 <h3 className="text-xl text-gray-800 font-semibold mb-2">Call Us</h3>
-                <p className="text-gray-600">+123 456 7890</p>
+                <p className="text-gray-600">+1 (203) 470-9377</p>
               </div>
             </div>
 

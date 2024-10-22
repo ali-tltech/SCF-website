@@ -58,7 +58,7 @@ const ContactForm = () => {
                         control={control}
                         render={({ field: { onChange, value } }) => (
                             <PhoneInput
-                                country={'in'}
+                                country={'us'}
                                 value={value || ''}
                                 onChange={onChange}
                                 countryCodeEditable={true}
