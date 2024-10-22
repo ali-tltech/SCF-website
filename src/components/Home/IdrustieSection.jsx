@@ -15,11 +15,11 @@ const industries = [
 
 const IndustriesSection = () => {
   return (
-    <section className="bg-green-400 py-16 relative p-5 md:p-20">
+    <section className="bg-gray-100 text-black py-16 relative p-5 md:p-20">
       <div className="container mx-auto text-center">
         {/* Section Heading */}
-        <h2 className="text-4xl font-bold text-white mb-4">Industries We Serve</h2>
-        <p className="text-white mb-8 max-w-md mx-auto">
+        <h2 className="text-4xl font-bold text-black mb-4">Industries We Serve</h2>
+        <p className="text-black mb-8 max-w-md mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
@@ -34,7 +34,7 @@ const IndustriesSection = () => {
               key={index}
               className="bg-white p-6 py-4 rounded-lg shadow-lg flex items-center space-x-4 transform transition duration-300 hover:-translate-y-2"
             >
-              <div className="text-4xl text-gray-500">{industry.icon}</div>
+              <div className="text-4xl text-blue-500 ">{industry.icon}</div>
               <h3 className="text-lg font-semibold text-gray-800">{industry.title}</h3>
             </div>
           ))}

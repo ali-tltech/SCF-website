@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { FaGlobe, FaSearch, FaHandshake, FaMoneyBillWave, FaArrowRight, FaChartLine } from 'react-icons/fa';
+import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 
 const ServiceItem = ({ icon: Icon, title, description, isEven }) => (
   <div className={`flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''} py-12 `}>
@@ -46,15 +47,12 @@ const EnablementPage = () => {
   ];
 
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <div className='h-[50vh] w-full relative flex flex-col justify-center items-center bg-zinc-800 text-white px-4 text-center'>
-        <h1 className='font-bold text-4xl md:text-5xl mb-4'>Expert Supply Chain Finance Consulting Services</h1>
-        <p className='text-xl md:text-2xl'>for Optimal SCF Strategies</p>
-      </div>
+    <div className="bg-gray-100">
+    
+      <AuroraBackgroundDemo  title={'Solutions & Enablement'} description={'Expert Supply Chain Finance Consulting Services'} link={'Learn More'}/>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className=" mx-auto px-4 max-w-7xl sm:px-6 lg:px-8 py-16">
         {/* Introduction */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
@@ -72,7 +70,7 @@ const EnablementPage = () => {
           <div className="w-full md:w-1/2 md:pl-8">
             <div className="relative h-64 md:h-96">
               <Image
-                src="/images/LandingPage/bg-14.jpg"
+                src="/images/solution.jpg"
                 alt="Consulting Services"
                 layout="fill"
                 objectFit="cover"

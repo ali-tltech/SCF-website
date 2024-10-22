@@ -84,9 +84,9 @@ const Navbar = () => {
                   href="#"
                   dropdown={
                     <>
-                      <Link href="/blogs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
+                      <Link href="/blog" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
                       <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Resource Center</Link>
-                      <Link href="/solutions-enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
+                      <Link href="/enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
                     </>
                   }
                 >
@@ -149,9 +149,9 @@ const Navbar = () => {
                   href="#"
                   dropdown={
                     <>
-                      <Link href="/blogs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
+                      <Link href="/blog" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
                       <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Resource Center</Link>
-                      <Link href="/solutions-enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
+                      <Link href="/enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
                     </>
                   }
                   isMobile
