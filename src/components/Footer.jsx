@@ -1,10 +1,11 @@
 import React from 'react';
-import { 
-  Facebook, 
-  Linkedin, 
-  Twitter, 
-  Youtube, 
-  FileText, 
+import Link from 'next/link'; // Import Link from next/link
+import {
+  Facebook,
+  Linkedin,
+  Twitter,
+  Youtube,
+  FileText,
   Link as LinkIcon,
   Globe,
   ChevronUp
@@ -14,34 +15,35 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
+    { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Investors', href: '/investors' },
-    { name: 'Newsroom', href: '/news' },
-    { name: 'Contact Us', href: '/contact' }
-  ];
-
-  const industries = [
-    { name: 'Banking & Finance', href: '/industries/banking' },
-    { name: 'Healthcare', href: '/industries/healthcare' },
-    { name: 'Technology', href: '/industries/technology' },
-    { name: 'Manufacturing', href: '/industries/manufacturing' },
-    { name: 'Retail', href: '/industries/retail' }
+    { name: 'Contact', href: '/contact' },
+    { name: 'Blogs', href: '/blog' },
   ];
 
   const services = [
-    { name: 'Digital Transformation', href: '/services/digital' },
-    { name: 'Cloud Services', href: '/services/cloud' },
-    { name: 'Cybersecurity', href: '/services/security' },
-    { name: 'AI & Analytics', href: '/services/ai-analytics' },
-    { name: 'Consulting', href: '/services/consulting' }
+    { name: 'Advisory Service', href: '/advisory-service' },
+    { name: 'Consulting Service', href: '/consulting-service' }
+  ];
+
+  const resources = [
+    { name: 'Blogs', href: '/blog' },
+    { name: 'Resource Center', href: '/resource-center' },
+    { name: 'Solutions & Enablement', href: '/enablement' },
+    { name: 'Frequently Asked Questions', href: '/faqs' }
+  ];
+
+  const legalLinks = [
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms of Use', href: '/terms-and-conditions' },
+    { name: 'Disclaimer', href: '/disclaimer' }
   ];
 
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Quick Links Section */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-4 flex items-center">
@@ -51,23 +53,9 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="hover:text-white transition-colors">
+                  <Link href={link.href} className="hover:text-blue-400 transition-colors">
                     {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Industries Section */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Industries</h3>
-            <ul className="space-y-2">
-              {industries.map((industry) => (
-                <li key={industry.name}>
-                  <a href={industry.href} className="hover:text-white transition-colors">
-                    {industry.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -79,9 +67,26 @@ const Footer = () => {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.name}>
-                  <a href={service.href} className="hover:text-white transition-colors">
+                  <Link href={service.href} className="hover:text-blue-400 transition-colors">
                     {service.name}
-                  </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources Section */}
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4 flex items-center">
+              <FileText className="w-4 h-4 mr-2" />
+              Resources
+            </h3>
+            <ul className="space-y-2">
+              {resources.map((resource) => (
+                <li key={resource.name}>
+                  <Link href={resource.href} className="hover:text-blue-400 transition-colors">
+                    {resource.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -89,29 +94,38 @@ const Footer = () => {
 
           {/* Connect With Us Section */}
           <div>
+            {/* Newsletter Signup Section */}
+            <h3 className="text-white text-lg font-semibold mb-4">Subscribe to Our Newsletter</h3>
+            <form className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 mb-6">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-transparent border border-gray-600 rounded px-4 py-2 w-full text-gray-300 focus:outline-none focus:ring focus:ring-blue-500"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded transition-colors w-full sm:w-auto"
+              >
+                Subscribe
+              </button>
+            </form>
+
+            {/* Social Links Section */}
             <h3 className="text-white text-lg font-semibold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4 mb-6">
-              <a href="#" className="hover:text-white transition-colors">
+            <div className="flex space-x-4">
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Facebook className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
+              </Link>
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Linkedin className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
+              </Link>
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Twitter className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
+              </Link>
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Youtube className="w-6 h-6" />
-              </a>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Globe className="w-5 h-5" />
-              <select className="bg-transparent border border-gray-600 rounded px-2 py-1">
-                <option value="global">Global</option>
-                <option value="asia">Asia Pacific</option>
-                <option value="europe">Europe</option>
-                <option value="americas">Americas</option>
-              </select>
+              </Link>
             </div>
           </div>
         </div>
@@ -121,29 +135,23 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm">
-              © {currentYear} Your Company Name. All rights reserved.
+            <div className="text-sm text-gray-400">
+              © {currentYear} SCF Strategies. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="/privacy" className="hover:text-white transition-colors flex items-center">
-                <FileText className="w-4 h-4 mr-1" />
-                Privacy Policy
-              </a>
-              <a href="/terms" className="hover:text-white transition-colors flex items-center">
-                <FileText className="w-4 h-4 mr-1" />
-                Terms of Use
-              </a>
-              <a href="/disclaimer" className="hover:text-white transition-colors flex items-center">
-                <FileText className="w-4 h-4 mr-1" />
-                Disclaimer
-              </a>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              {legalLinks.map((link) => (
+                <Link key={link.name} href={link.href} className="text-gray-400 hover:text-blue-400 transition-colors flex items-center">
+                  <FileText className="w-4 h-4 mr-1" />
+                  {link.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll to Top Button */}
-      <button 
+      <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-8 right-8 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full shadow-lg transition-colors"
       >
