@@ -9,34 +9,125 @@ import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 const FAQPage = () => {
   const faqData = [
     {
-      question: "How do permissions work in Google Play Instant?",
-      answer: "Google Play Instant apps have limited permissions compared to full apps. They can only access a subset of device features and require explicit user consent for sensitive permissions. This ensures a balance between functionality and user privacy."
+      question: "What is Supply Chain Finance (SCF)?",
+      answer: "Supply Chain Finance (SCF) is a set of financial solutions designed to improve cash flow efficiency by allowing businesses to extend payment terms while enabling suppliers to receive early payments, usually facilitated by a third-party financier."
     },
     {
-      question: "Is Smart Lock required for instant apps?",
-      answer: "No, Smart Lock is not required for instant apps. However, it can enhance the user experience by allowing seamless sign-ins across devices. Instant apps can choose to implement Smart Lock to provide a more convenient authentication process."
+      question: "How can SCF Strategies help my business?",
+      answer: "We help businesses design, implement, and manage successful SCF programs. Our services include working capital analysis, supplier onboarding, go-to-market strategies, platform selection, and more."
     },
     {
-      question: "Can I have multiple activities in a single feature?",
-      answer: "Yes, you can have multiple activities within a single feature of an instant app. This allows for more complex user flows and richer functionality. However, it's important to keep the feature size within the allowed limits to ensure quick loading times."
+      question: "What industries does SCF Strategies serve?",
+      answer: "We serve a wide range of industries including manufacturing, retail, financial institutions, fintechs, and corporates. SCF Strategies provides solutions tailored to the unique needs of each industry."
     },
     {
-      question: "Can I share resources between features?",
-      answer: "Yes, you can share resources between features in an instant app. This is done through the base feature module, which contains common resources, code, and assets that can be accessed by all feature modules. This helps in reducing redundancy and keeping the app size optimized."
+      question: "What services does SCF Strategies offer?",
+      answer: `Our services include:
+        - Working Capital Analytics
+        - Program Design
+        - Supplier Onboarding
+        - Sales & Operations Enablement
+        - Platform & Partner Selection
+        - Accounting Treatment Guidance`
     },
-  ];
+    {
+      question: "How can SCF help my business’s working capital?",
+      answer: "SCF can help improve your working capital by optimizing payment terms, unlocking cash tied up in the supply chain, and ensuring suppliers are paid early, resulting in greater financial efficiency for both buyers and suppliers."
+    },
+    {
+      question: "What is Working Capital Analytics?",
+      answer: "Working Capital Analytics involves analyzing supplier data, payment terms, and other financial factors to identify opportunities for improving working capital and generating revenue. SCF Strategies offers a unique Working Capital Benchmark Analytics Application."
+    },
+    {
+      question: "How do you help with supplier onboarding?",
+      answer: "We offer comprehensive supplier onboarding services through telephone, email, and mail outreach. We manage the process from outreach to onboarding, ensuring a smooth experience for both suppliers and buyers."
+    },
+    {
+      question: "What is reverse factoring in SCF?",
+      answer: "Reverse factoring allows suppliers to receive early payments at favorable rates based on the buyer’s credit risk, improving the supplier’s cash flow while allowing the buyer to extend payment terms."
+    },
+    {
+      question: "What does SCF Strategies’ Go-to-Market Strategy include?",
+      answer: "Our Go-to-Market Strategy includes market assessment, sales planning, and developing a client-focused approach to help businesses successfully enter the SCF market or enhance their existing offerings."
+    },
+    {
+      question: "Can SCF Strategies help with platform selection?",
+      answer: "Yes, we assist in selecting the right platform and technology partners for your SCF program. Our rigorous evaluation criteria ensure you choose the most suitable solution for your needs."
+    },
+    {
+      question: "How do you assist with accounting treatment in SCF?",
+      answer: "We help navigate complex accounting issues related to SCF programs, such as reclassifying commercial accounts payable into financial debt, while ensuring compliance with best practices and industry standards."
+    },
+    {
+      question: "How do I know if SCF is right for my business?",
+      answer: "SCF is beneficial for businesses looking to optimize cash flow and improve relationships with suppliers. We provide a detailed assessment to determine if SCF aligns with your business goals."
+    },
+    {
+      question: "How can SCF Strategies help with sales enablement?",
+      answer: "We provide training and enablement for sales and operations teams, ensuring they are equipped to compete effectively and implement SCF programs successfully."
+    },
+    {
+      question: "What are the key benefits of SCF?",
+      answer: "The key benefits of SCF include improved cash flow, reduced working capital requirements, stronger supplier relationships, and reduced financial risk."
+    },
+    {
+      question: "Can SCF Strategies help financial institutions?",
+      answer: "Yes, we work with banks and financial institutions to enhance their SCF offerings by providing market assessment, technology platform selection, and sales and operations enablement."
+    },
+    {
+      question: "How can SCF Strategies help fintech companies?",
+      answer: "We assist fintech companies with market analysis, technology audits, platform selection, and support for implementing and managing SCF programs."
+    },
+    {
+      question: "What is involved in an SCF solution audit?",
+      answer: "Our solution audit involves a detailed review of your current SCF platform’s functionality, features, strengths, and limitations, along with actionable recommendations for improvement."
+    },
+    {
+      question: "How long does it take to implement an SCF program?",
+      answer: "The timeline for implementation varies depending on the complexity of the program, but typically, a full SCF program can take 3 to 6 months to fully implement."
+    },
+    {
+      question: "How does SCF improve supplier relationships?",
+      answer: "SCF improves supplier relationships by providing early payments at lower financing costs, ensuring they receive timely cash flow, which builds trust and reliability."
+    },
+    {
+      question: "Can SCF Strategies help design custom SCF programs?",
+      answer: "Yes, we design custom SCF programs tailored to your business goals and supplier profiles, ensuring optimal results for both buyers and suppliers."
+    },
+    {
+      question: "How do you evaluate partners for SCF programs?",
+      answer: "We use objective selection criteria, detailed scoring methodologies, and rigorous evaluation processes to help you choose the best partners for your SCF program, whether it's for technology or financing."
+    },
+    {
+      question: "Do you provide training for SCF programs?",
+      answer: "Yes, we offer customized training programs for sales, operations, and procurement teams to ensure successful implementation and management of SCF programs."
+    },
+    {
+      question: "What is SCF Strategies’ approach to program design?",
+      answer: "We take a phased approach to program design, targeting suppliers with the highest propensity to join SCF programs and ensuring alignment with client objectives for optimal results."
+    },
+    {
+      question: "What is your Working Capital Benchmark Analytics Application?",
+      answer: "Our Working Capital Benchmark Analytics Application identifies opportunities to optimize working capital by assessing supplier data, payment terms, and working capital objectives."
+    },
+    {
+      question: "How do I get in touch with SCF Strategies?",
+      answer: "You can contact us via email at contact@scfstrategies.com or call us at +1 203 470 9377. We are here to assist with all your SCF needs."
+    }
+];
+
 
   return (
 
     <div className="text-gray-800">
       <AuroraBackgroundDemo  title={'FAQs'} description={'Any questions? We have answers.'} link={'Learn More'}/>
 
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white shadow-xl rounded-lg p-8"
+          className="rounded-lg p-8"
         >
           {faqData.map((item, index) => (
             <FAQItem key={index} question={item.question} answer={item.answer} />
