@@ -111,15 +111,15 @@ const OurStory = () => {
         <div className={`mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 ${
           inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         } transition-all duration-1000 delay-700`}>
-          <div className="text-center p-6 bg-blue-50 rounded-lg">
+          <div className="text-center p-6 bg-white rounded-lg">
             <div className="text-4xl font-bold text-blue-500 mb-2">100+</div>
             <div className="text-gray-600">SCF Programs Implemented</div>
           </div>
-          <div className="text-center p-6 bg-blue-50 rounded-lg">
+          <div className="text-center p-6 bg-white rounded-lg">
             <div className="text-4xl font-bold text-blue-500 mb-2">$150B+</div>
             <div className="text-gray-600">Trading Volume</div>
           </div>
-          <div className="text-center p-6 bg-blue-50 rounded-lg">
+          <div className="text-center p-6 bg-white rounded-lg">
             <div className="text-4xl font-bold text-blue-500 mb-2">$2B+</div>
             <div className="text-gray-600">Outstanding Results</div>
           </div>

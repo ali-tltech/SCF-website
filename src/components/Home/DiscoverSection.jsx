@@ -21,7 +21,7 @@ const DiscoverSection = () => {
       {/* <div className="absolute inset-0 bg-black opacity-20"></div> */}
 
       {/* Images Section */}
-      <div className="relative flex justify-center items-center h-[500px]">
+      <div className="relative flex justify-end  items-center h-full">
         {/* Decorative SVG Elements */}
         <svg className="absolute top-0 left-0 w-32 h-32 text-black opacity-20" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" 
@@ -37,7 +37,7 @@ const DiscoverSection = () => {
             <img
               src="/images/LandingPage/discover.jpg"
               alt="Discovery Image 2"
-              className="h-60 w-auto object-cover rounded-lg shadow-lg"
+              className="h-60 w-auto object-cover  shadow-lg"
             />
           </div>
         </div>
@@ -49,14 +49,14 @@ const DiscoverSection = () => {
             <img
               src="/images/LandingPage/discover-2.png"
               alt="Discovery Image 1"
-              className="h-60 w-auto object-cover rounded-lg shadow-lg"
+              className="h-60 w-auto object-cover  shadow-lg"
             />
           </div>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="relative flex flex-col justify-center items-start text-black p-6 z-10"
+      <div className="relative flex flex-col justify-center  items-start text-black p-6 z-10"
            onMouseEnter={() => setIsHovered(true)}
            onMouseLeave={() => setIsHovered(false)}>
         {/* Decorative SVG */}

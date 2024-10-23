@@ -48,7 +48,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <div
-        className="relative md:h-screen h-[60vh]  bg-cover bg-end overflow-hidden"
+        className="relative md:h-screen h-[80vh]  bg-cover bg-end overflow-hidden"
         style={{
           backgroundImage: "url('/images/LandingPage/hero.jpg')",
         }}
@@ -57,19 +57,19 @@ export default function Home() {
 
 
              
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative z-10 flex md:items-start  md:px-20 p-5 md:justify-start items-end  justify-start h-full  ">
-          <div className="text-white w-full h-full text-start flex flex-col gap-6 items-start justify-end  md:mb-10 mb-20">
+        <div className="absolute inset-0 max-w-7xl bg-black opacity-10"></div>
+        <div className="relative z-10  flex md:items-center  md:px-20 p-5 md:justify-start items-end  justify-end h-full  ">
+          <div className="text-white  w-full h-fit  text-start flex flex-col gap-6 items-start justify-center   mt-40 md:mt-20">
    
-            <h1 className="md:text-5xl text-3xl font-bold mb-2">
+            <h1 className="md:text-4xl text-2xl font-bold mb-2">
             Leading Big Data <br /><span className="text-blue-100"> Analytics Company </span>
             </h1>
-            <p className="text-xl md:text-3xl font-light mb-4">
-            Bridging the Gap Between Technology and Practical Implementation
+            <p className="text-lg md:text-2xl font-light mb-4">
+            Bridging the Gap Between <br/> Technology and Practical Implementation
             </p>
             <button
              
-              className="px-3 py-2 rounded-full h-fit border w-fit  bg-blue-700"
+              className="px-3 py-2 rounded-full h-fit  w-fit  bg-blue-700"
             >
               Learn more
             </button>
