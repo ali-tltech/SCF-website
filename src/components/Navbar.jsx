@@ -46,6 +46,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -53,6 +55,10 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -132,35 +138,35 @@ const Navbar = () => {
             </div>
             <div className="mt-6">
               <nav className="grid gap-y-5">
-                <NavLink href="/" isMobile>Home</NavLink>
+                <Link href="/" className="block px-2  text-sm font-semibold text-gray-700 hover:text-blue-500 " onClick={handleLinkClick}>Home</Link>
                 <NavLink
                   href="#"
                   dropdown={
                     <>
-                      <Link href="/advisory-service" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Advisory Service</Link>
-                      <Link href="/consulting-service" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Consulting Service</Link>
+                      <Link href="/advisory-service" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100" onClick={handleLinkClick}>Advisory Service</Link>
+                      <Link href="/consulting-service" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100" onClick={handleLinkClick}>Consulting Service</Link>
                     </>
                   }
                   isMobile
                 >
                   Services
                 </NavLink>
-                <NavLink href="/about-us" isMobile>About Us</NavLink>
+                <Link href="/about-us" className="block px-2  text-sm font-semibold text-gray-700 hover:text-blue-500 "onClick={handleLinkClick} >About Us</Link>
                 <NavLink
                   href="#"
                   dropdown={
                     <>
-                      <Link href="/blog" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
-                      <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Resource Center</Link>
-                      <Link href="/enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
-                      <Link href="/faqs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">FAQs</Link>
+                      <Link href="/blog" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100" onClick={handleLinkClick}>Blogs</Link>
+                      <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100"onClick={handleLinkClick}>Resource Center</Link>
+                      <Link href="/enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100"onClick={handleLinkClick}>Solutions & Enablement</Link>
+                      <Link href="/faqs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100"onClick={handleLinkClick}>FAQs</Link>
                     </>
                   }
                   isMobile
                 >
                   Explore
                 </NavLink>
-                <NavLink href="/contact-us" isMobile>Contact</NavLink>
+                <Link href="/contact-us" className="block px-2  text-sm font-semibold text-gray-700 hover:text-blue-500 "onClick={handleLinkClick}>Contact</Link>
               </nav>
             </div>
           </div>
