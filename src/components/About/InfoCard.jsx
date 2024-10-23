@@ -5,7 +5,7 @@ const InfoCard = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Independent Expertise Card */}
-      <div className="group relative cursor-pointer overflow-hidden bg-gray-200 px-6 pt-10 pb-8 transition-all duration-300 hover:-translate-y-2 rounded-xl sm:px-10">
+      <div className="group relative cursor-pointer overflow-hidden border border-gray-200  bg-white shadow-lg hover:shadow-xl  px-6 pt-10 pb-8 transition-all duration-300 hover:-translate-y-2 rounded-xl sm:px-10">
         <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-yellow-500 transition-all duration-1000 group-hover:scale-[10]"></span>
         <div className="relative z-10 mx-auto max-w-md">
           <span className="grid h-20 w-20 place-items-center rounded-full bg-yellow-500 transition-all duration-300 group-hover:bg-yellow-400">
@@ -19,7 +19,7 @@ const InfoCard = () => {
       </div>
 
       {/* Proven Track Record Card */}
-      <div className="group relative cursor-pointer overflow-hidden bg-gray-200 px-6 pt-10 pb-8 transition-all duration-300 hover:-translate-y-2 rounded-xl sm:px-10">
+      <div className="group relative cursor-pointer overflow-hidden border border-gray-200  bg-white shadow-lg hover:shadow-xl  px-6 pt-10 pb-8 transition-all duration-300 hover:-translate-y-2 rounded-xl sm:px-10">
         <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-green-500 transition-all duration-1000 group-hover:scale-[10]"></span>
         <div className="relative z-10 mx-auto max-w-md">
           <span className="grid h-20 w-20 place-items-center rounded-full bg-green-500 transition-all duration-300 group-hover:bg-green-400">
@@ -33,7 +33,7 @@ const InfoCard = () => {
       </div>
 
       {/* Advanced Technology Card */}
-      <div className="group relative cursor-pointer overflow-hidden bg-gray-200 px-6 pt-10 pb-8 transition-all duration-300 hover:-translate-y-2 rounded-xl sm:px-10">
+      <div className="group relative cursor-pointer overflow-hidden border border-gray-200  bg-white shadow-lg hover:shadow-xl px-6 pt-10 pb-8 transition-all duration-300 hover:-translate-y-2 rounded-xl sm:px-10">
         <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-blue-500 transition-all duration-1000 group-hover:scale-[10]"></span>
         <div className="relative z-10 mx-auto max-w-md">
           <span className="grid h-20 w-20 place-items-center rounded-full bg-blue-500 transition-all duration-300 group-hover:bg-blue-400">

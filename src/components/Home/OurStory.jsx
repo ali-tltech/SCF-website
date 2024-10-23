@@ -32,7 +32,7 @@ const OurStory = () => {
   const [ref, inView] = useInView();
 
   return (
-    <section className="min-h-screen bg-white py-20 relative overflow-hidden">
+    <section className="min-h-screen bg-gray-100 py-20 relative overflow-hidden">
       {/* Background SVG Patterns */}
       <div className="absolute top-0 right-0 opacity-10">
         <svg width="400" height="400" viewBox="0 0 100 100" className="text-blue-500">

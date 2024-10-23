@@ -20,7 +20,7 @@ const ResourceCard = ({ icon: Icon, title, description, iconColor, buttonText, l
 
 const ResourceCenter = () => {
   return (
-    <div className="bg-gray-50 ">
+    <div className="bg-gradient-to-b from-white to-gray-50 ">
       <AuroraBackgroundDemo
         title="Resource Center"
         description="Find the best resources for your SCF programs"
@@ -28,10 +28,10 @@ const ResourceCenter = () => {
       />
 
       <div className="py-20 max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
           Your Hub for Supply Chain Finance Insights
         </h2>
-        <p className="text-xl md:text-2xl mb-16 text-center text-gray-600 max-w-4xl mx-auto">
+        <p className="text-xl md:text-xl mb-16 text-center text-gray-600 max-w-4xl mx-auto">
           Dive into a wealth of knowledge and expertise. Our Resource Center provides valuable information, cutting-edge research, and practical tools to enhance your understanding of Supply Chain Finance strategies.
         </p>
 
