@@ -46,23 +46,23 @@ const ConsultingServicesContent = () => {
     ];
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
+        <div className="max-w-7xl mx-auto px-4  lg:px-8 py-16 ">
             <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Expert Supply Chain Finance Consulting Services for Optimal SCF Strategies</h2>
-                <p className="text-xl text-gray-700 max-w-5xl mx-auto">
+                <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-6">Expert Supply Chain Finance Consulting Services for Optimal SCF Strategies</h2>
+                <p className="text-lg md:text-xl text-gray-700 text-start md:text-center ">
                     💡 Unlock the Full Potential of Your Supply Chain Finance (SCF) Programs with Expert Advisory Services. At SCF Strategies, our supply chain finance consulting services go beyond standard advisory. We provide <strong>insightful and innovative solutions</strong> that address the unique challenges of your SCF programs. By focusing on strategic optimization and practical implementation, we transform your supply chain finance into a powerful driver of growth, <strong>improving cash flow</strong>, and <strong>enhancing working capital efficiency</strong>.
                 </p>
             </div>
 
-            <div className="rounded-lg p-8 mb-16">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Consulting Services</h3>
+            <div className="rounded-lg py-8 px-2 mb-16">
+                <h3 className=" text-xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Our Consulting Services</h3>
 
                 {/* Accordion */}
                 <div className="space-y-6">
                     {accordionData.map((item, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                             <button
-                                className="flex justify-between items-center w-full p-6 text-left transition-colors duration-200"
+                                className="flex justify-between items-center w-full  p-6 text-left transition-colors duration-200"
                                 onClick={() => toggleAccordion(index)}
                             >
                                 <div className="flex items-center">
@@ -87,12 +87,12 @@ const ConsultingServicesContent = () => {
             </div>
 
             <div className="mb-16">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+                <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
                     Transformative Supply Chain Finance Strategies for Sustainable Success
                 </h3>
-                <div className="bg-cyan-50 rounded-lg p-8">
+                <div className="bg-cyan-50 rounded-lg px-4 py-8">
                     <TrendingUp className="w-16 h-16 text-blue-600 mx-auto mb-6" />
-                    <p className="text-lg text-gray-700 text-center">
+                    <p className="text-lg text-gray-700 text-start pb-6">
                         Our consulting services provide a <strong>roadmap to tangible results</strong>. By optimizing your SCF programs, we help you enhance cash flow, improve working capital, and strengthen supplier relationships. Our <strong>data-driven strategies</strong> and expert insights enable you to make informed decisions, fostering long-term success and <strong>competitive advantage</strong> in the supply chain finance marketplace.
                     </p>
                 </div>
