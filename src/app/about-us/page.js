@@ -66,7 +66,7 @@ export default function About() {
               className="rounded-lg object-cover"
             />
           </div>
-          <div className="w-full text-base md:w-1/2 md:pl-8">
+          <div className="w-full text-base md:w-1/2 md:pl-8 " >
             <div className="flex items-center mb-4">
               <h2 className="text-2xl md:text-4xl text-gray-900 font-bold">Unlocking the Full Potential of Supply Chain Finance</h2>
             </div>

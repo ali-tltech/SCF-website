@@ -91,6 +91,7 @@ const Navbar = () => {
                   dropdown={
                     <>
                       <Link href="/blog" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
+                      <Link href="/clients" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Clients</Link>
                       <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Resource Center</Link>
                       <Link href="/enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
                       <Link href="/faqs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">FAQs</Link>
@@ -157,6 +158,7 @@ const Navbar = () => {
                   dropdown={
                     <>
                       <Link href="/blog" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100" onClick={handleLinkClick}>Blogs</Link>
+                      <Link href="/clients" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100" onClick={handleLinkClick}>Clients</Link>
                       <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100"onClick={handleLinkClick}>Resource Center</Link>
                       <Link href="/enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100"onClick={handleLinkClick}>Solutions & Enablement</Link>
                       <Link href="/faqs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-500 hover:bg-gray-100"onClick={handleLinkClick}>FAQs</Link>
