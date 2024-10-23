@@ -68,7 +68,7 @@ export default function About() {
           </div>
           <div className="w-full text-base md:w-1/2 md:pl-8">
             <div className="flex items-center mb-4">
-              <h2 className="text-3xl md:text-4xl text-gray-900 font-bold">Unlocking the Full Potential of Supply Chain Finance</h2>
+              <h2 className="text-2xl md:text-4xl text-gray-900 font-bold">Unlocking the Full Potential of Supply Chain Finance</h2>
             </div>
             <p className="text-gray-600 mb-4">
               At SCF Strategies, we're dedicated to transforming your Supply Chain Finance (SCF) programs into powerful engines of growth. Our mission is to bridge the gap between innovative technology and practical implementation, unlocking new opportunities and maximizing efficiency for your business.
@@ -89,12 +89,12 @@ export default function About() {
         <div className="mt-8 bg-gradient-to-b from-white to-gray-50 text-black py-8 px-4 md:px-8 rounded-lg ">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold">Our Expertise</h2>
+              <h2 className="text-2xl md:text-4xl font-bold">Our Expertise</h2>
             </div>
             <p className="text-center mb-12">
               With over 100 globally recognized SCF and Reverse Factoring programs, SCF Strategies is your trusted partner for unparalleled expertise and results. Our team's in-depth knowledge and innovative approach set us apart as leaders in the field.
             </p>
-            <h3 className="text-2xl font-bold mb-8 text-center">Why Choose SCF Strategies?</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-8 text-center">Why Choose SCF Strategies?</h3>
             <InfoCard />
 
             <div className="mt-12 text-center">

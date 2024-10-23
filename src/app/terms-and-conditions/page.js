@@ -1,5 +1,5 @@
 import React from 'react';
-import { LockKeyhole } from 'lucide-react';
+import { LockKeyhole, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import TermsConditionSection from '@/components/termsandconditions/TermsConditonSection';
@@ -153,11 +153,42 @@ const TermsAndConditionsPage = () => {
                     </p>
                     <h3 className='text-xl  text-gray-800 my-4'> For further questions or clarifications, please contact us at:
                     </h3>
-                    <div className="text-gray-700 text-lg">
-                        <p>Contact Us:</p>
-                        <p>Email: <a href="mailto:nsimek@scfstrategies.com" className="text-blue-600">nsimek@scfstrategies.com</a></p>
-                        <p>Phone: <a href="tel:+12034709377" className="text-blue-600">+1 (203) 470-9377</a></p>
-                        <p>Website: <a href="[Insert Website URL]" className="text-blue-600">[Insert Website URL]</a></p>
+                    {/* Contact Section */}
+                    <div className="space-y-6 mt-4 py-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3  gap-6">
+                            {/* Email Card */}
+                            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+                                <div className="flex flex-col items-center text-center space-y-4">
+                                    <div className="p-3 bg-indigo-100 rounded-full">
+                                        <Mail className="w-6 h-6 text-indigo-600" />
+                                    </div>
+                                    <h3 className="font-semibold text-gray-800">Email Us</h3>
+                                    <p className="text-gray-600">nsimek@scfstrategies.com</p>
+                                </div>
+                            </div>
+
+                            {/* Phone Card */}
+                            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+                                <div className="flex flex-col items-center text-center space-y-4">
+                                    <div className="p-3 bg-indigo-100 rounded-full">
+                                        <Phone className="w-6 h-6 text-indigo-600" />
+                                    </div>
+                                    <h3 className="font-semibold text-gray-800">Call Us</h3>
+                                    <p className="text-gray-600">+1 (203) 470-9377</p>
+                                </div>
+                            </div>
+
+                            {/* Location Card */}
+                            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+                                <div className="flex flex-col items-center text-center space-y-4">
+                                    <div className="p-3 bg-indigo-100 rounded-full">
+                                        <MapPin className="w-6 h-6 text-indigo-600" />
+                                    </div>
+                                    <h3 className="font-semibold text-gray-800">Visit Us</h3>
+                                    <p className="text-gray-600">Bonita Springs, FL</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
