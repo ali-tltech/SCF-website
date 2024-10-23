@@ -67,7 +67,7 @@ export default function Page() {
         />
       </Head>
 
-      <div className="bg-white">
+      <div className="bg-gradient-to-b from-white to-gray-50">
         {/* Hero Section */}
         <AuroraBackgroundDemo 
           title={'Disclaimer'} 

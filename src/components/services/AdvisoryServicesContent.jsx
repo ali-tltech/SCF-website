@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Target, Search, Users, BookOpen } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const AdvisoryServicesContent = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -59,7 +60,7 @@ const AdvisoryServicesContent = () => {
         </p>
       </div>
 
-      <div className="bg-gray-100 rounded-lg p-8 mb-16">
+      <div className="rounded-lg mb-16">
         <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why Choose Our Advisory Services?</h3>
 
         {/* Accordion */}
@@ -74,18 +75,38 @@ const AdvisoryServicesContent = () => {
                   <div className="mr-4">{item.icon}</div>
                   <span className="text-xl font-semibold text-gray-800">{item.title}</span>
                 </div>
-                {activeAccordion === index ? 
-                  <ChevronUp className="w-6 h-6 text-gray-500" /> : 
+                <motion.div
+                  animate={{ rotate: activeAccordion === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <ChevronDown className="w-6 h-6 text-gray-500" />
-                }
+                </motion.div>
               </button>
-              {activeAccordion === index && (
-                <div className="p-6 bg-gray-50 border-t border-gray-200">
-                  {item.content.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-gray-700 mb-4 last:mb-0">{paragraph}</p>
-                  ))}
-                </div>
-              )}
+              <AnimatePresence>
+                {activeAccordion === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="p-6 bg-gray-50 border-t border-gray-200">
+                      {item.content.map((paragraph, pIndex) => (
+                        <motion.p
+                          key={pIndex}
+                          initial={{ y: 20, opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          transition={{ delay: pIndex * 0.1, duration: 0.3 }}
+                          className="text-gray-700 mb-4 last:mb-0"
+                        >
+                          {paragraph}
+                        </motion.p>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>

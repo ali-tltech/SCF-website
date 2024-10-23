@@ -119,15 +119,15 @@ const FAQPage = () => {
 
   return (
 
-    <div className="text-gray-800">
+    <div className="text-gray-800 bg-gradient-to-b from-white to-gray-50">
       <AuroraBackgroundDemo  title={'FAQs'} description={'Any questions? We have answers.'} link={'Learn More'}/>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12 ">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-lg p-8"
+          className="rounded-lg p-1"
         >
           {faqData.map((item, index) => (
             <FAQItem key={index} question={item.question} answer={item.answer} />
