@@ -4,7 +4,7 @@ const PrivacyPolicySection = ({title,content}) => {
   return (
     <div className="mb-8 last:mb-0 w-full max-w-5xl mx-auto">
     <div>
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4 pb-2">
+        <h2 className=" text-lg md:text-2xl font-semibold text-gray-900 mb-4 pb-2">
             {title}
         </h2>
         <div className="text-gray-700 space-y-3 pl-1">

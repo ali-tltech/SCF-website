@@ -3,7 +3,7 @@ import ConsultingServiceContent from '@/components/services/ConsultingServicesCo
 
 const ConsultingServices = () => {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
       <AuroraBackgroundDemo  title={'Consulting Services'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'}/>
 

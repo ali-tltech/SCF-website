@@ -109,7 +109,7 @@ const TermsAndConditionsPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
             <AuroraBackgroundDemo
                 title="Terms and Conditions"
                 description="Understand the terms of our services"
@@ -120,11 +120,11 @@ const TermsAndConditionsPage = () => {
                 <div className="mb-12 text-center">
                     <div className="flex justify-center items-center mb-12">
                         <LockKeyhole className="w-8 h-8 text-blue-600 mr-3" />
-                        <h1 className="text-3xl font-bold text-gray-900">
+                        <h1 className="text-xl md:text-3xl font-bold text-gray-900">
                             Terms and Conditions
                         </h1>
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-800 mb-4">
+                    <h2 className=" text-lg md:text-2xl font-semibold text-gray-800 mb-4">
                         Supply Chain Finance (SCF) Advisory Services - November 1st, 2024
                     </h2>
                     <p className="text-gray-700 text-lg">
