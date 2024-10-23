@@ -9,6 +9,9 @@ import RecentStories from "@/components/Home/StorySection";
 import FreeTrialSection from "@/components/Home/FreeTrailSection";
 import WhyChoose from "@/components/Home/WhyChoose";
 import SolutionsSec from "@/components/SolutionsSec";
+import WhatWeDo from "@/components/Home/WhatWeDo";
+import TestimonialCarousel from "@/components/Home/Testimonials";
+import OurStory from "@/components/Home/OurStory";
 
 
   // <======================================== NOTES START ==============================================>
@@ -110,69 +113,7 @@ export default function Home() {
       </div>
 
       {/* New Section (What We Do) */}
-      <div className="second-screen bg-white md:px-20 text-stone-700 py-16">
-        <div className="max-w-8xl mx-auto text-center">
-          <h2 className="text-5xl font-extrabold mb-6 text-stone-950">What We Do</h2>
-          <p className="text-lg mb-12">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-10">
-            <div className="flex flex-col items-center border border-stone-300 rounded-lg h-full p-5 shadow-sm shadow-black">
-              <div className="bg-green-500 p-4 rounded-full ">
-                <FaLaptop size={40} color="white" /> {/* Research Icon */}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Research</h3>
-              <p className="text-gray-600 ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-              </p>
-              <ul className="text-blue-500 space-y-2">
-                <li>Market Research</li>
-                <li>Investment Research</li>
-              </ul>
-              <a href="#" className="text-blue-500 mt-4 flex items-center">
-                Read More &rarr;
-              </a>
-            </div>
-
-            <div className="flex flex-col items-center border border-stone-300 mb-10 rounded-lg h-full p-5 shadow-sm shadow-black">
-              <div className="bg-green-500 p-4 rounded-full ">
-                <FaChartBar size={40} color="white" /> {/* Analytics Icon */}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Analytics</h3>
-              <p className="text-gray-600 ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-              </p>
-              <ul className="text-blue-500 space-y-2">
-                <li>Data Analytics</li>
-                <li>Business Intelligence</li>
-              </ul>
-              <a href="#" className="text-blue-500 mt-4 flex items-center">
-                Read More &rarr;
-              </a>
-            </div>
-
-            <div className="flex flex-col items-center border border-stone-300 rounded-lg h-full p-5 shadow-sm shadow-black">
-              <div className="bg-green-500 p-4 rounded-full ">
-                <FaCogs size={40} color="white" /> {/* Technology Icon */}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Technology</h3>
-              <p className="text-gray-600 ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-              </p>
-              <ul className="text-blue-500 space-y-2">
-                <li>Intelligence Automation</li>
-                <li>Quality Engineering</li>
-              </ul>
-              <a href="#" className="text-blue-500 mt-4 flex items-center">
-                Read More &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Images Section */}
-      </div>
+     <WhatWeDo/>
         <div className="images-section relative md:px-20  grid grid-cols-1 md:grid-cols-2 gap-4 min-  p-8" style={{backgroundImage:"linear-gradient(to right top, #6ba6f2, #36b8f9, #00c9f7, #00d7eb, #34e3da, #45e9cf, #5ceec2, #75f3b4, #6df5aa, #66f7a0, #62f994, #5ffb87)"}}>
         <div className="absolute inset-0 bg-black opacity-20"></div>
           <div className="relative flex justify-center items-center h-[500px]">
@@ -213,6 +154,8 @@ export default function Home() {
         {/* <FreeTrialSection/> */}
         <WhyChoose/>
         <SolutionsSec/>
+        <OurStory/>
+        <TestimonialCarousel/>
     </>
   );
 }
