@@ -56,7 +56,7 @@ export default function About() {
     
 
       <AuroraBackgroundDemo title={'About Us'} description={'Know more about our mission, values, and team.'} link={'Learn More'} />
-      <div className="bg-gray-50 mx-auto py-12">
+      <div className="bg-gradient-to-b from-white to-gray-50 mx-auto py-12">
         <div className="flex flex-col md:flex-row items-center justify-start space-y-8 md:space-y-0 max-w-6xl mx-auto px-4">
           <div className="relative w-full md:w-1/2 h-[70vh]">
             <Image
@@ -86,7 +86,7 @@ export default function About() {
       <OurStory/>
 
         {/* Expertise Section */}
-        <div className="mt-8 bg-gray-50 text-black py-8 px-4 md:px-8 rounded-lg shadow-xl">
+        <div className="mt-8 bg-gradient-to-b from-white to-gray-50 text-black py-8 px-4 md:px-8 rounded-lg ">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold">Our Expertise</h2>

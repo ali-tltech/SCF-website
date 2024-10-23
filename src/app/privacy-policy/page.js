@@ -48,7 +48,7 @@ const PrivacyPolicyPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <AuroraBackgroundDemo
         title="Privacy Policy"
         description="Know how we handle your data"
@@ -59,7 +59,7 @@ const PrivacyPolicyPage = () => {
         <div className="mb-12 text-center">
           <div className="flex justify-center items-center  mb-12">
             <LockKeyhole className="w-8 h-8 text-blue-600 mr-3" />
-            <h1 className="text-3xl font-bold text-gray-900">Privacy Policy - <span className="text-lg text-gray-500">November 1st, 2024</span></h1>
+            <h1 className="text-xl md:text-3xl font-bold text-gray-900">Privacy Policy - <span className="text-lg  text-gray-500">November 1st, 2024</span></h1>
           </div>
           <p className="text-gray-700 text-lg ">
             At SCF Strategies, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you interact with our website, services, and communications.

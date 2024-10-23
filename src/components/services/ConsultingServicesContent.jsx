@@ -46,7 +46,7 @@ const ConsultingServicesContent = () => {
     ];
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
             <div className="text-center mb-16">
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">Expert Supply Chain Finance Consulting Services for Optimal SCF Strategies</h2>
                 <p className="text-xl text-gray-700 max-w-5xl mx-auto">
@@ -54,7 +54,7 @@ const ConsultingServicesContent = () => {
                 </p>
             </div>
 
-            <div className="bg-gray-100 rounded-lg p-8 mb-16">
+            <div className="rounded-lg p-8 mb-16">
                 <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Consulting Services</h3>
 
                 {/* Accordion */}

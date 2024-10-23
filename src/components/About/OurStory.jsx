@@ -50,7 +50,7 @@ const OurStory = () => {
   const WaveComponent = WavePatterns.SmoothCurves; // Try changing this to other options!
 
   return (
-    <div className="mt-16 bg-gray-50 text-black py-16 px-4 md:px-8 relative overflow-hidden">
+    <div className="mt-16  text-black py-16 px-4 md:px-8 relative overflow-hidden">
       {/* Decorative SVG Background */}
       {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg 
@@ -62,7 +62,7 @@ const OurStory = () => {
         </svg>
       </div> */}
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className=" max-w-7xl mx-auto relative">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Our Story</h2>
         <p className="text-center text-gray-600 mb-12">
           Founded in 2015, SCF Strategies emerged from the recognition that traditional Supply Chain Finance providers typically offer either funding or technology, but rarely both in an integrated manner. With over 15 years of experience in originating, implementing, and managing Supplier Finance programs that exceed $150 billion in trading volume and yield more than $2 billion in outstanding results, we understand that success demands more than just funding and technology.

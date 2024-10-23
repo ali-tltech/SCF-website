@@ -20,7 +20,7 @@ const ResourceCard = ({ icon: Icon, title, description, iconColor, buttonText, l
 
 const ResourceCenter = () => {
   return (
-    <div className="bg-gray-50 ">
+    <div className="bg-gradient-to-b from-white to-gray-50 ">
       <AuroraBackgroundDemo
         title="Resource Center"
         description="Find the best resources for your SCF programs"
