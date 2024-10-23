@@ -56,7 +56,7 @@ const AdvisoryServices = () => {
         />
       </Head>
 
-      <div className="bg-white">
+      <div className="bg-gradient-to-b from-white to-gray-50">
         {/* Hero Section */}
         <AuroraBackgroundDemo title={'Advisory Services'} link={'Learn More'} />
 
