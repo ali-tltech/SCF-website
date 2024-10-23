@@ -1,15 +1,12 @@
 import React from 'react';
-import Link from 'next/link'; // Import Link from next/link
+import Link from 'next/link';
 import {
-  Facebook,
-  Linkedin,
-  Twitter,
-  Youtube,
   FileText,
   Link as LinkIcon,
   Globe,
   ChevronUp
 } from 'lucide-react';
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -113,18 +110,18 @@ const Footer = () => {
 
             {/* Social Links Section */}
             <h3 className="text-white text-lg font-semibold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Facebook className="w-6 h-6" />
+            <div className="flex  space-x-4">
+              <Link href="https://www.facebook.com/SCFStrategies" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <FaFacebookF className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Linkedin className="w-6 h-6" />
+              <Link href="https://www.linkedin.com/company/scfstrategies" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <FaLinkedinIn className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Twitter className="w-6 h-6" />
+              <Link href="https://twitter.com/SCFStrategies" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <FaTwitter className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Youtube className="w-6 h-6" />
+              <Link href="https://www.youtube.com/user/SCFStrategies" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <FaYoutube className="w-6 h-6" />
               </Link>
             </div>
           </div>
@@ -135,10 +132,10 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">
+            <div className="text-sm pt-5 text-gray-400 order-2 md:order-1">
               © {currentYear} SCF Strategies. All rights reserved.
             </div>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex flex-wrap justify-center gap-6 text-sm order-1 md:order-2" >
               {legalLinks.map((link) => (
                 <Link key={link.name} href={link.href} className="text-gray-400 hover:text-blue-400 transition-colors flex items-center">
                   <FileText className="w-4 h-4 mr-1" />
