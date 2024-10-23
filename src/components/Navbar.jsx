@@ -28,10 +28,10 @@ const NavLink = ({ href, children, dropdown, isMobile }) => {
       {dropdown && (
         <div className={`${isMobile
           ? 'mt-2 w-full bg-white transition-all duration-300'
-          : 'md:absolute md:left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-300'
+          : 'lg:absolute lg:left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-300'
           } ${isMobile
             ? (isOpen ? 'block' : 'hidden')
-            : 'md:opacity-0 md:invisible group-hover:md:opacity-100 group-hover:md:visible w-56'
+            : 'lg:opacity-0 lg:invisible group-hover:lg:opacity-100 group-hover:lg:visible w-56'
           }`}>
           <div className={isMobile ? '' : 'py-1'} role="menu">
             {dropdown}
@@ -70,7 +70,7 @@ const Navbar = () => {
                 <Image src="/images/logo.png" alt="Company Logo" width={60} height={30} className="cursor-pointer" />
               </Link>
             </div>
-            <div className="hidden md:flex md:items-center md:justify-end md:flex-1">
+            <div className="hidden lg:flex lg:items-center lg:justify-end lg:flex-1">
               <div className="flex items-baseline space-x-4">
                 <NavLink href="/">Home</NavLink>
                 <NavLink
@@ -102,7 +102,7 @@ const Navbar = () => {
                 <NavLink href="/contact-us">Contact</NavLink>
               </div>
             </div>
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-md hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"

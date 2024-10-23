@@ -16,10 +16,10 @@ const AuroraBackgroundDemo = ({title, description, link}) => {
         }}
         className="relative  flex flex-col gap-4 items-center justify-center px-4"
       >
-        <div className="text-3xl md:text-5xl font-bold dark:text-white text-center">
+        <div className="text-2xl md:text-5xl font-bold dark:text-white text-center">
           {title}
         </div>
-        <div className="font-extralight text-base md:text-3xl dark:text-neutral-200 py-4">
+        <div className="font-extralight text-center text-base md:text-3xl dark:text-neutral-200 py-4">
           {description}
         </div>
         <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">

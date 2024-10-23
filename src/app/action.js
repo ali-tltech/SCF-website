@@ -22,3 +22,20 @@ export async function submitContact(data) {
         await prisma.$disconnect();
     }
 }
+
+
+export async function subscribeToNewsletter(email) {
+    try {
+        const subscriber = await prisma.newsletterSubscriber.create({
+            data: {
+                email,
+            },
+        });
+        return { success: true, subscriber };
+    } catch (error) {
+        console.error('Error subscribing to newsletter:', error);
+        throw new Error('Failed to subscribe to newsletter');
+    } finally {
+        await prisma.$disconnect();
+    }
+}

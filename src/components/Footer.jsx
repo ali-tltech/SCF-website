@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   FileText,
@@ -7,9 +7,26 @@ import {
   ChevronUp
 } from 'lucide-react';
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { subscribeToNewsletter } from '@/app/action';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      console.log(email);
+      await subscribeToNewsletter(email);
+      setEmail('');
+    } catch (error) {
+      console.error('Subscription error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const quickLinks = [
     { name: 'Home', href: '/' },
@@ -93,18 +110,24 @@ const Footer = () => {
           <div>
             {/* Newsletter Signup Section */}
             <h3 className="text-white text-lg font-semibold mb-4">Subscribe to Our Newsletter</h3>
-            <form className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 mb-6">
+            <form
+              className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 mb-6"
+              onSubmit={handleSubmit}
+            >
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="bg-transparent border border-gray-600 rounded px-4 py-2 w-full text-gray-300 focus:outline-none focus:ring focus:ring-blue-500"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded transition-colors w-full sm:w-auto"
+                className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded transition-colors w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isLoading}
               >
-                Subscribe
+                {isLoading ? 'Subscribing...' : 'Subscribe'}
               </button>
             </form>
 
