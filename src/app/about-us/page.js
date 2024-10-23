@@ -21,13 +21,13 @@ export default function About() {
             {/* Open Graph Meta Tags */}
             <meta property="og:title" content="About Us | SCF Strategies" />
             <meta property="og:description" content="Discover how SCF Strategies unlocks the full potential of Supply Chain Finance with expert consulting and advanced solutions. Learn about our expertise and core values." />
-            <meta property="og:image" content="https://www.scfstrategies.com/images/images/team-image.jpeg" />
+            <meta property="og:image" content="https://www.scfstrategies.com/images/team-image.jpeg" />
             <meta property="og:url" content="https://www.scfstrategies.com/about-us" />
             <meta property="og:type" content="website" />
             {/* Twitter Card Meta Tags */}
             <meta name="twitter:title" content="About Us | SCF Strategies" />
             <meta name="twitter:description" content="Unlock the potential of your Supply Chain Finance programs with SCF Strategies. Learn about our expertise, core values, and why industry leaders choose us." />
-            <meta name="twitter:image" content="https://www.scfstrategies.com/images/images/team-image.jpeg" />
+            <meta name="twitter:image" content="https://www.scfstrategies.com/images/team-image.jpeg" />
             <meta name="twitter:card" content="summary_large_image" />
             {/* Social Media Links */}
             <meta property="social:facebook" content="https://www.facebook.com/SCFStrategies" />
