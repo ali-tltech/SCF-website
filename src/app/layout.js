@@ -1,115 +1,85 @@
-'use client';
+import { Inter } from 'next/font/google';
 import '../styles/globals.css';
-import Navbar from '../components/Navbar';
-import { useRef, useEffect, useState } from 'react';
-import { gsap } from 'gsap';
-import { usePathname } from 'next/navigation';
-import Lenis from 'lenis';
-import ChatbotPreview from '@/components/chat/ChatBot';
-import Footer from '@/components/Footer';
-import { Inter, Montserrat, Poppins } from '@next/font/google';
-import { Toaster } from 'react-hot-toast';
-import CookieConsent from '@/components/CookieConsent';
-import Loading from '@/components/Loading';
+import ClientLayout from './ClientLayout';
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const inter = Inter({
+  subsets: ['latin', 'cyrillic', 'greek'],
   display: 'swap',
+  weight: '300'
 });
 
-// Constants
-const LOADING_DURATION = 1500; // 1.5 seconds in milliseconds
+// Separate viewport configuration
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5, // Allows more zoom flexibility
+};
+
+// Metadata configuration
+export const metadata = {
+  title: {
+    default: 'SCF Strategies',
+    template: '%s | SCF Strategies'
+  },
+  description: 'SCF Strategies - Expert Financial Solutions and Strategic Consulting',
+  keywords: ['SCF', 'Strategies', 'Finance', 'Consulting', 'Business Strategy'],
+  authors: [{ name: 'SCF Strategies' }],
+  creator: 'SCF Strategies',
+  publisher: 'SCF Strategies',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple.ico',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.scfstrategies.com/',
+    siteName: 'SCF Strategies',
+    title: 'SCF Strategies',
+    description: 'Expert Financial Solutions and Strategic Consulting',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'SCF Strategies',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SCF Strategies',
+    description: 'Expert Financial Solutions and Strategic Consulting',
+    images: ['/twitter-image.jpg'],
+    creator: '@scfstrategies',
+  },
+};
 
 export default function RootLayout({ children }) {
-  const pageRef = useRef();
-  const pathname = usePathname();
-  const [loading, setLoading] = useState(true);
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
-
-  // Handle initial page load
-  useEffect(() => {
-    if (isFirstLoad) {
-      const timer = setTimeout(() => {
-        setLoading(false);
-        setIsFirstLoad(false);
-      }, LOADING_DURATION);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isFirstLoad]);
-
-  // Handle route changes and animations
-  useEffect(() => {
-    if (!isFirstLoad) {
-      setLoading(true);
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, LOADING_DURATION);
-
-      return () => clearTimeout(timer);
-    }
-  }, [pathname, isFirstLoad]);
-
-  // Setup Lenis smooth scroll
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
-  // Handle page transitions
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (!loading) {
-        gsap.fromTo(
-          pageRef.current,
-          { 
-           
-            y: 10 
-          },
-          { 
-           
-            y: 0, 
-            duration: 0.8, 
-            ease: 'power4.out',
-            delay: 0.1 // Small delay after loading screen fades out
-          }
-        );
-      }
-    });
-
-    return () => ctx.revert();
-  }, [loading]);
-
   return (
-    <html lang="en" className={`${montserrat.className}`}>
-      <body className="bg-gray-100 relative">
-        {/* Loading Screen */}
-        {loading && <Loading />}
-        
-        {/* Main Content */}
-        <div className={`transition-opacity duration-300 ${loading ? 'opacity-0' : 'opacity-100'}`}>
-          <Navbar />
-          <ChatbotPreview />
-          <main ref={pageRef} className="transition-opacity ease-in-out">
-            {children}
-          </main>
-          <Toaster position="bottom-center" duration={500} />
-          <CookieConsent />
-          <Footer />
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`bg-gray-100 relative ${inter.className}`} suppressHydrationWarning>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );

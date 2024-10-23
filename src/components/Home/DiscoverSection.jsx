@@ -1,10 +1,10 @@
+import Image from 'next/image';
 import React, { useState } from 'react';
-
 const DiscoverSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative min-h-screen grid grid-cols-1 md:grid-cols-2 gap-4 p-8 md:px-20 overflow-hidden bg-gray-50">
+    <div className="relative min-h-fit grid grid-cols-1 md:grid-cols-2 gap-4 p-8 md:px-20 overflow-hidden bg-gray-50">
       {/* Animated SVG Background Pattern */}
       <div className="absolute inset-0 pointer-events-none">
         <svg className="w-full h-full opacity-10" viewBox="0 0 100 100">
@@ -17,12 +17,9 @@ const DiscoverSection = () => {
         </svg>
       </div>
 
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-black opacity-20"></div> */}
-
-      {/* Images Section */}
+    
       <div className="relative flex justify-end  items-center h-full">
-        {/* Decorative SVG Elements */}
+       
         <svg className="absolute top-0 left-0 w-32 h-32 text-black opacity-20" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" 
                   className={`transform transition-transform duration-500 ${isHovered ? 'scale-110' : 'scale-100'}`} />
@@ -30,29 +27,23 @@ const DiscoverSection = () => {
                   className={`transform transition-transform duration-500 delay-100 ${isHovered ? 'scale-90' : 'scale-100'}`} />
         </svg>
 
-        {/* Top Image Container */}
-        <div className="absolute top-0 left-0 transform translate-x-4 translate-y-4 transition-transform duration-500 hover:translate-y-6 hover:translate-x-6">
+      
+        <div className=" transform  transition-transform duration-500 ">
           <div className="relative group">
             <div className="absolute inset-0  opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            <img
-              src="/images/LandingPage/discover.jpg"
-              alt="Discovery Image 2"
-              className="h-60 w-auto object-cover  shadow-lg"
-            />
+            <Image
+      src={"/images/Landingpage/discover.jpg"}
+      alt="Picture of the author"
+      width={500} 
+      height={500} 
+      blurDataURL="data:..." 
+      placeholder="blur"
+    />
           </div>
         </div>
 
-        {/* Bottom Image Container */}
-        <div className="absolute bottom-0 right-0 transform -translate-x-4 -translate-y-4 transition-transform duration-500 hover:-translate-y-6 hover:-translate-x-6">
-          <div className="relative group">
-            <div className="absolute inset-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            <img
-              src="/images/LandingPage/discover-2.png"
-              alt="Discovery Image 1"
-              className="h-60 w-auto object-cover  shadow-lg"
-            />
-          </div>
-        </div>
+        
+     
       </div>
 
       {/* Content Section */}

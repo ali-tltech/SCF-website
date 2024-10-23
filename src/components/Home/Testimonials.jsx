@@ -58,7 +58,7 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-white to-blue-50 py-20 overflow-hidden">
+    <section className="relative bg-gray-50 py-20 overflow-hidden">
       {/* Background SVG Patterns */}
       <div className="absolute inset-0 pointer-events-none">
         
@@ -94,8 +94,8 @@ const TestimonialSection = () => {
               </p>
               
               {/* Author */}
-              <p className="text-gray-900 font-semibold">
-                — {testimonials[currentIndex].author}
+              <p className="text-blue-700 font-bold text-2xl">
+                 {testimonials[currentIndex].author}
               </p>
             </div>
           </div>
