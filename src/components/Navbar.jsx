@@ -79,7 +79,7 @@ const Navbar = () => {
                 >
                   Services
                 </NavLink>
-                <NavLink href="/about">About Us</NavLink>
+                <NavLink href="/about-us">About Us</NavLink>
                 <NavLink
                   href="#"
                   dropdown={
@@ -87,12 +87,13 @@ const Navbar = () => {
                       <Link href="/blog" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
                       <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Resource Center</Link>
                       <Link href="/enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
+                      <Link href="/faqs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">FAQs</Link>
                     </>
                   }
                 >
                   Explore
                 </NavLink>
-                <NavLink href="/contact">Contact</NavLink>
+                <NavLink href="/contact-us">Contact</NavLink>
               </div>
             </div>
             <div className="md:hidden">
@@ -144,7 +145,7 @@ const Navbar = () => {
                 >
                   Services
                 </NavLink>
-                <NavLink href="/about" isMobile>About Us</NavLink>
+                <NavLink href="/about-us" isMobile>About Us</NavLink>
                 <NavLink
                   href="#"
                   dropdown={
@@ -152,13 +153,14 @@ const Navbar = () => {
                       <Link href="/blog" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Blogs</Link>
                       <Link href="/resource-center" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Resource Center</Link>
                       <Link href="/enablement" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">Solutions & Enablement</Link>
+                      <Link href="/faqs" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100">FAQs</Link>
                     </>
                   }
                   isMobile
                 >
                   Explore
                 </NavLink>
-                <NavLink href="/contact" isMobile>Contact</NavLink>
+                <NavLink href="/contact-us" isMobile>Contact</NavLink>
               </nav>
             </div>
           </div>
