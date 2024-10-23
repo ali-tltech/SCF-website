@@ -56,7 +56,7 @@ const WhatWeDo = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b from-white to-gray-50 py-20 overflow-hidden">
+    <section className="relative  bg-gray-50 py-20 overflow-hidden">
       {/* Enhanced Background SVG Patterns */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Original circles */}
@@ -112,7 +112,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Offerings Grid with stagger animation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-8">
           {offerings.map(({ Icon, title, description }, index) => (
             <div 
               key={index}

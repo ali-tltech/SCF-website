@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${montserrat.className}`}>
       <body className="bg-gray-100 relative  ">
         <Navbar />
-        {/* <ChatbotPreview /> */}
+        <ChatbotPreview />
         <main ref={pageRef} className="transition-opacity ease-in-out">
           {children}
         </main>
