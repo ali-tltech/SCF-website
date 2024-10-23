@@ -79,7 +79,7 @@ const PrivacyPolicyPage = () => {
             If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us at:
           </p>
           <Link
-            href="/contact"
+            href="/contact-us"
             className="bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Contact Us
