@@ -95,10 +95,10 @@ export default function About() {
             <p className="text-center mb-12">
               With over 100 globally recognized SCF and Reverse Factoring programs, SCF Strategies is your trusted partner for unparalleled expertise and results. Our team&apos;s in-depth knowledge and innovative approach set us apart as leaders in the field.
             </p>
-            <h3 className="text-xl md:text-2xl font-bold mb-8 text-center">Why Choose SCF Strategies?</h3>
+            <h3 className="text-xl md:text-3xl font-bold mb-8 text-center">Why Choose SCF Strategies?</h3>
             <InfoCard />
 
-            <div className="mt-12 text-center">
+            <div className="mt-12 text-center relative z-10">
               <button className="bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-800 hover:shadow-lg">
                 Learn More About Our Journey
                 <FaArrowRight className="ml-2" />
