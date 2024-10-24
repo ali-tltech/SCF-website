@@ -38,6 +38,7 @@ const DiscoverSection = () => {
       height={500} 
       blurDataURL="data:..." 
       placeholder="blur"
+      className='rounded-2xl'
     />
           </div>
         </div>

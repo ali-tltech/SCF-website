@@ -85,7 +85,7 @@ const ClientsPage = () => {
   ];
   return (
     <div className="min-h-screen bg-gray-50 relative overflow-hidden">
-      <AuroraBackgroundDemo  title={"Clients"} link={"Home"}/>
+      <AuroraBackgroundDemo  title={"Clients"} link={"Home"} description={"Empowering businesses worldwide with innovative supply chain finance solutions"}/>
       
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative">
@@ -165,29 +165,46 @@ const ClientsPage = () => {
         </div>
 
         {/* Approach Section */}
-        <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg border border-gray-200 p-4 md:p-6 mb-8 md:mb-16 relative z-10">
-      <div className="mb-4">
-        <h3 className="text-xl md:text-2xl font-semibold text-gray-900">Our Approach</h3>
-        <p className="text-sm md:text-base text-gray-600 mt-1">
-          We&apos;re committed to being part of your team throughout your SCF journey
-        </p>
-      </div>
-      <div className="grid gap-3 md:gap-4">
-        {items.map((item, index) => (
-          <div 
-            key={index} 
-            className="flex items-center space-x-3"
-            style={{ marginLeft: `${index * 2}rem` }}
-          >
-            <HiCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-            <span className="text-gray-600 text-sm md:text-base">{item}</span>
-          </div>
-        ))}
+        <div className="relative">
+      {/* Background Gradient Blob */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl blur-3xl opacity-60" />
+      
+      {/* Main Content Container */}
+      <div className="relative bg-white bg-opacity-90 backdrop-blur-xl rounded-xl border border-gray-100 shadow-lg p-6 md:p-8">
+        {/* Header Section */}
+        <div className="mb-6 md:mb-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            Our Approach
+          </h3>
+          <p className="text-base md:text-lg text-gray-600 mt-2 font-medium">
+            We&apos;re committed to being part of your team throughout your SCF journey
+          </p>
+        </div>
+
+        {/* Items Grid */}
+        <div className="grid gap-4 md:gap-6">
+          {items.map((item, index) => (
+            <div 
+              key={index}
+              className="group flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-300"
+            >
+              <div className="flex-shrink-0 p-1 rounded-full bg-green-100 group-hover:bg-green-200 transition-colors duration-300">
+                <HiCheckCircle className="w-6 h-6 text-green-600" />
+              </div>
+              <span className="text-gray-700 text-base md:text-lg font-medium group-hover:text-gray-900 transition-colors duration-300">
+                {item}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Decorative Corner Elements */}
+        <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-blue-200 rounded-tr-xl" />
+        <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-purple-200 rounded-bl-xl" />
       </div>
     </div>
-
         {/* Contact CTA */}
-        <div className="text-center px-4 relative z-10">
+        <div className="text-center px-4 py-10 relative z-10">
           <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">
             Ready to Transform Your SCF Strategy?
           </h2>

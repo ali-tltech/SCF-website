@@ -98,14 +98,15 @@ const WhatWeDo = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header Section with animation */}
         <div className="text-center mb-20 fade-up opacity-0 translate-y-4 transition-all duration-1000">
+         
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            What We Do at SCF Strategies
+          </h2>
           <div className="inline-block mb-6">
             <svg className="w-16 h-2 mb-2" viewBox="0 0 60 8">
               <rect width="60" height="8" fill="#2563eb" rx="4" />
             </svg>
           </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            What We Do at SCF Strategies
-          </h2>
           <p className="max-w-3xl mx-auto text-lg text-gray-600">
             We specialize in closing the services gap required for the success of Supply Chain Finance (SCF) programs. Our approach encompasses the entire SCF ecosystem, including origination, design, implementation, and management.
           </p>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import TermsConditionSection from '@/components/termsandconditions/TermsConditonSection';
 import WaveComponent from '@/components/ui/WaveComponent';
+import { CgFileDocument } from "react-icons/cg";
 
 const TermsAndConditionsPage = () => {
     const termsData = [
@@ -120,7 +121,7 @@ const TermsAndConditionsPage = () => {
             <div className="max-w-7xl mx-auto px-4 py-12">
                 <div className="mb-12 text-center">
                     <div className="flex justify-center items-center mb-12">
-                        <LockKeyhole className="w-8 h-8 text-blue-600 mr-3" />
+                        <CgFileDocument className="w-8 h-8 text-blue-600 mr-3" />
                         <h1 className="text-xl md:text-3xl font-bold text-gray-900">
                             Terms and Conditions
                         </h1>
