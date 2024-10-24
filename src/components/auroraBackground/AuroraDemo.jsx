@@ -50,14 +50,16 @@ const AuroraBackgroundDemo = ({title, description}) => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
+        className="absolute  flex max-w-7xl mx-auto inset-0   flex-col gap-4 items-start justify-end p-4"
       >
+        <div className="font-extralight text-center text-base md:text-3xl text-stone-300 dark:text-neutral-200 py-4">
+          {description}
+        </div>
+        <div className="flex justify-between w-full">
         <div className="text-2xl md:text-5xl font-extrabold dark:text-white text-center">
           {title}
         </div>
-        <div className="font-extralight text-center text-base md:text-3xl dark:text-neutral-200 py-4">
-          {description}
-        </div>
+
         
         
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
@@ -77,6 +79,7 @@ const AuroraBackgroundDemo = ({title, description}) => {
             ))}
           </div>
         
+        </div>
       </motion.div>
     </AuroraBackground>
   );
