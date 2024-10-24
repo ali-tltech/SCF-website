@@ -80,7 +80,7 @@ const Blog = () => {
               <ul>
                 {popularPosts.map((post, index) => (
                   <li key={index} className="mb-2 gap-2 justify-center items-center w-fit flex">
-                    <img src={'/images/LandingPage/discover.jpg'} alt="Popular Post" className="h-20 w-20 object-cover" />
+                    <Image src={'/images/LandingPage/discover.jpg'} alt="Popular Post" width={200} height={200} className="h-20 w-20 object-cover" />
                     <a href="#" className="text-blue-500 hover:underline">{post}</a>
                   </li>
                 ))}

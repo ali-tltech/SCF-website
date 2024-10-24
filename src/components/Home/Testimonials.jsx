@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const TestimonialSection = () => {
@@ -8,38 +8,29 @@ const TestimonialSection = () => {
       author: "CFO, Global Retail Corporation",
       rating: 5
     },
-    {
-      text: "SCF Strategies went above and beyond in helping us implement a reverse factoring program that delivered real, measurable results. Their expertise in supplier onboarding and working capital analysis was instrumental in the success of our initiative.",
-      author: "Head of Procurement, Leading Manufacturing Firm",
-      rating: 5
-    },
-    {
-      text: "We partnered with SCF Strategies for an audit of our existing SCF platform, and the insights they provided were invaluable. They not only identified gaps but gave us clear, actionable recommendations to improve performance. Their team's professionalism and dedication were outstanding.",
-      author: "CEO, Fintech Company",
-      rating: 5
-    },
-    {
-      text: "SCF Strategies made a complex process feel seamless. From evaluating potential partners to managing our go-to-market strategy, they were with us every step of the way. The team's industry experience was clearly evident, and we've seen incredible improvements in both our supplier relationships and cash flow.",
-      author: "Treasurer, International Bank",
-      rating: 5
-    },
-    {
-      text: "SCF Strategies helped us launch our Supply Chain Finance program with precision and expertise. Their ability to align cross-functional teams and navigate the challenges of accounting treatment was a game-changer for us. They're not just consultants – they're true partners in success.",
-      author: "VP of Finance, Global Logistics Company",
-      rating: 5
-    }
+    // ... rest of the testimonials array
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // Memoize handleNext with useCallback
+  const handleNext = useCallback(() => {
+    if (!isAnimating) {
+      setIsAnimating(true);
+      setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+      setTimeout(() => setIsAnimating(false), 500);
+    }
+  }, [isAnimating, testimonials.length]);
+
+  // Now include handleNext in the dependency array
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [currentIndex]);
+  }, [handleNext]);
 
   const handlePrev = () => {
     if (!isAnimating) {
@@ -48,15 +39,6 @@ const TestimonialSection = () => {
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
-
-  const handleNext = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-      setTimeout(() => setIsAnimating(false), 500);
-    }
-  };
-
   return (
     <section className="relative bg-gray-50 py-20 overflow-hidden">
       {/* Background SVG Patterns */}
