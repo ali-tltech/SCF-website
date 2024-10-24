@@ -169,7 +169,7 @@ const ClientsPage = () => {
       <div className="mb-4">
         <h3 className="text-xl md:text-2xl font-semibold text-gray-900">Our Approach</h3>
         <p className="text-sm md:text-base text-gray-600 mt-1">
-          We're committed to being part of your team throughout your SCF journey
+          We&apos;re committed to being part of your team throughout your SCF journey
         </p>
       </div>
       <div className="grid gap-3 md:gap-4">
