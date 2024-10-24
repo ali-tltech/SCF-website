@@ -3,6 +3,7 @@ import { LockKeyhole, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import TermsConditionSection from '@/components/termsandconditions/TermsConditonSection';
+import WaveComponent from '@/components/ui/WaveComponent';
 
 const TermsAndConditionsPage = () => {
     const termsData = [
@@ -193,6 +194,7 @@ const TermsAndConditionsPage = () => {
                 </div>
 
             </div>
+            <WaveComponent />
         </div>
     );
 };

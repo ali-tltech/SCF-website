@@ -2,6 +2,7 @@ import React from 'react';
 import { FileText, BookOpen, PieChart,} from 'lucide-react';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import Link from 'next/link';
+import WaveComponent from '@/components/ui/WaveComponent';
 
 const ResourceCard = ({ icon: Icon, title, description, iconColor, buttonText, linkPath }) => (
   <div className="bg-white shadow-lg rounded-lg p-8 text-left hover:shadow-xl transition-shadow flex flex-col h-full min-h-[300px]">
@@ -58,7 +59,7 @@ const ResourceCenter = () => {
           />
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center relative z-10">
           <a
             href="#"
             className="inline-block bg-blue-600 text-white px-10 py-4 rounded-md font-semibold text-xl hover:bg-blue-700 transition-colors"
@@ -67,6 +68,7 @@ const ResourceCenter = () => {
           </a>
         </div>
       </div>
+      <WaveComponent />
     </div>
   );
 };

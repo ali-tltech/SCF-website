@@ -6,6 +6,7 @@ import InfoCard from '@/components/About/InfoCard';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import OurStory from '@/components/About/OurStory';
 import Head from 'next/head';
+import WaveComponent from '@/components/ui/WaveComponent';
 
 
 export default function About() {
@@ -105,6 +106,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        <WaveComponent />
       </div>
     </>
   );

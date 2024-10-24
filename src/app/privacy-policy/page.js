@@ -4,6 +4,7 @@ import { LockKeyhole } from 'lucide-react';
 import Link from 'next/link';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import PrivacyPolicySection from '@/components/privacy-policy/PrivacyPolicySection';
+import WaveComponent from '@/components/ui/WaveComponent';
 
 
 
@@ -57,11 +58,16 @@ const PrivacyPolicyPage = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="mb-12 text-center">
-          <div className="flex justify-center items-center  mb-12">
+          <div className="flex flex-row justify-center items-center">
             <LockKeyhole className="w-8 h-8 text-blue-600 mr-3" />
-            <h1 className="text-xl md:text-3xl font-bold text-gray-900">Privacy Policy - <span className="text-lg  text-gray-500">November 1st, 2024</span></h1>
+            <h1 className="text-xl md:text-3xl font-bold text-gray-900">Privacy Policy</h1>
           </div>
-          <p className="text-gray-700 text-lg ">
+
+          <h2 className="text-sm md:text-lg text-gray-500 mt-2 mb-8">
+            November 1st, 2024
+          </h2>
+
+          <p className="text-gray-700 text-lg">
             At SCF Strategies, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you interact with our website, services, and communications.
           </p>
         </div>
@@ -74,18 +80,21 @@ const PrivacyPolicyPage = () => {
           />
         ))}
 
-        <div className="mt-12 pt-8 flex flex-col items-center">
+        <div className="mt-12 pt-8 flex flex-col items-center relative z-10">
           <p className="text-gray-600 mb-4 text-center">
             If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us at:
           </p>
           <Link
             href="/contact-us"
-            className="bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            className="w-full sm:w-auto bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Us
           </Link>
+
         </div>
       </div>
+      <WaveComponent />
+
     </div>
   );
 };
