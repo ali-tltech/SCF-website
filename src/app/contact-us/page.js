@@ -5,6 +5,8 @@ import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import ContactForm from '@/components/contact/ContactForm';
 import { submitContact } from '../action';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import WaveComponent from '@/components/ui/WaveComponent';
 
 const ContactPage = () => {
   return (
@@ -41,8 +43,8 @@ const ContactPage = () => {
       </Head>
 
       {/* Hero Section */}
-      
-      <AuroraBackgroundDemo  title={'Contact Us'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'}/>
+
+      <AuroraBackgroundDemo title={'Contact Us'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
 
       {/* Contact Form Section */}
       <div className="bg-gradient-to-b from-white to-gray-50 py-16 px-4 sm:px-6 lg:px-8">
@@ -51,29 +53,45 @@ const ContactPage = () => {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 text-center">Get in Touch</h2>
             <p className="text-xl text-center text-gray-600 mb-12">
-              We're here to help. Reach out anytime.
+              We&apos;re here to help. Reach out anytime.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {/* Contact Info Cards */}
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <MdEmail className="text-blue-500 text-4xl mb-4 mx-auto" />
-                <h3 className="text-xl text-gray-800 font-semibold mb-2">Mail Us</h3>
-                <p className="text-gray-600">contact@scfstrategies.com</p>
-              </div>
+            <div className="space-y-6 mt-4 py-8">
+                        <div className="grid grid-cols-1 md:grid-cols-3  gap-6">
+                            {/* Email Card */}
+                            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+                                <div className="flex flex-col items-center text-center space-y-4">
+                                    <div className="p-3 bg-blue-100 rounded-full">
+                                        <Mail className="w-6 h-6 text-blue-600" />
+                                    </div>
+                                    <h3 className="font-semibold text-gray-800">Email Us</h3>
+                                    <p className="text-gray-600">contact@scfstrategies.com</p>
+                                </div>
+                            </div>
 
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <MdLocationOn className="text-blue-500 text-4xl mb-4 mx-auto" />
-                <h3 className="text-xl text-gray-800 font-semibold mb-2">Visit Us</h3>
-                <p className="text-gray-600">Bonita Springs, FL</p>
-              </div>
+                            {/* Phone Card */}
+                            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+                                <div className="flex flex-col items-center text-center space-y-4">
+                                    <div className="p-3 bg-blue-100 rounded-full">
+                                        <Phone className="w-6 h-6 text-blue-600" />
+                                    </div>
+                                    <h3 className="font-semibold text-gray-800">Call Us</h3>
+                                    <p className="text-gray-600">+1 (203) 470-9377</p>
+                                </div>
+                            </div>
 
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <MdPhone className="text-blue-500 text-4xl mb-4 mx-auto" />
-                <h3 className="text-xl text-gray-800 font-semibold mb-2">Call Us</h3>
-                <p className="text-gray-600">+1 (203) 470-9377</p>
-              </div>
-            </div>
+                            {/* Location Card */}
+                            <div className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+                                <div className="flex flex-col items-center text-center space-y-4">
+                                    <div className="p-3 bg-blue-100 rounded-full">
+                                        <MapPin className="w-6 h-6 text-blue-600" />
+                                    </div>
+                                    <h3 className="font-semibold text-gray-800">Visit Us</h3>
+                                    <p className="text-gray-600">Bonita Springs, FL</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
@@ -95,6 +113,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
+        <WaveComponent />
       </div>
     </>
   );
