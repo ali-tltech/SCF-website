@@ -39,7 +39,7 @@ const TestimonialSection = () => {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [currentIndex, handleNext]);
+  }, [currentIndex]);
 
   const handlePrev = () => {
     if (!isAnimating) {
