@@ -41,8 +41,8 @@ const ContactPage = () => {
       </Head>
 
       {/* Hero Section */}
-      
-      <AuroraBackgroundDemo  title={'Contact Us'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'}/>
+
+      <AuroraBackgroundDemo title={'Contact Us'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
 
       {/* Contact Form Section */}
       <div className="bg-gradient-to-b from-white to-gray-50 py-16 px-4 sm:px-6 lg:px-8">
@@ -51,7 +51,7 @@ const ContactPage = () => {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 text-center">Get in Touch</h2>
             <p className="text-xl text-center text-gray-600 mb-12">
-              We're here to help. Reach out anytime.
+              We&apos;re here to help. Reach out anytime.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
