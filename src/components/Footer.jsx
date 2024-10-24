@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { subscribeToNewsletter } from '@/app/action';
+import XIcon from './ui/XIcon';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -135,21 +136,26 @@ const Footer = () => {
             {/* Social Links Section */}
             <h3 className="text-white text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="flex  space-x-4">
-              <Link href="https://www.facebook.com/profile.php?id=100063586296486" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=100063586296486" target="_blank"
+  rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaFacebookF className="w-6 h-6" />
-              </Link>
-              <Link href="https://www.facebook.com/profile.php?id=100063586296486" className="text-gray-400 hover:text-blue-400 transition-colors">
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100063586296486"  target="_blank"
+  rel="noopener noreferrer"className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaInstagram className="w-6 h-6" />
-              </Link>
-              <Link href="https://www.linkedin.com/company/scfstrategies/?viewAsMember=true" className="text-gray-400 hover:text-blue-400 transition-colors">
+              </a>
+              <a href="https://www.linkedin.com/company/scfstrategies/?viewAsMember=true" target="_blank"
+  rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaLinkedinIn className="w-6 h-6" />
-              </Link>
-              <Link href="https://twitter.com/SCFStrategies" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaTwitter className="w-6 h-6" />
-              </Link>
-              <Link href="https://www.youtube.com/user/SCFStrategies" className="text-gray-400 hover:text-blue-400 transition-colors">
+              </a>
+              <a href="https://twitter.com/SCFStrategies" target="_blank"
+  rel="noopener noreferrer"  className="text-gray-400 hover:text-blue-400 transition-colors">
+                <XIcon className="w-6 h-6" />
+              </a>
+              <a href="https://www.youtube.com/user/SCFStrategies" target="_blank"
+  rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaYoutube className="w-6 h-6" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
