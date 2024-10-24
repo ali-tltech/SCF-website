@@ -56,7 +56,7 @@ export default function About() {
       </Head>
 
 
-      <AuroraBackgroundDemo title={'About Us'} description={'Know more about our mission, values, and team.'} link={'Learn More'} />
+      <AuroraBackgroundDemo title={'About Us'} description={'Know more about our mission, values and team.'} link={'Learn More'} />
       <div className="bg-gradient-to-b from-white to-gray-50 mx-auto py-12">
         <div className="flex flex-col md:flex-row items-center justify-start space-y-8 md:space-y-0 max-w-6xl mx-auto px-4">
           <div className="relative w-full md:w-1/2 h-[70vh]">
