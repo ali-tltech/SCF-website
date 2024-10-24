@@ -158,7 +158,7 @@ const DisclaimerContent = ({ section }) => {
     1: (
       <>
         <p className="text-gray-700">
-          This website is provided "as is" without any representations or warranties, express or implied. SCF Strategies makes no representations or warranties regarding this website or the information and materials provided on it.
+          This website is provided &quot;as is&quot; without any representations or warranties, express or implied. SCF Strategies makes no representations or warranties regarding this website or the information and materials provided on it.
         </p>
         <p className="mt-4 text-gray-700">
           SCF Strategies does not warrant that:
@@ -188,10 +188,10 @@ const DisclaimerContent = ({ section }) => {
     3: (
       <>
         <p className="text-gray-700">
-          Nothing in this disclaimer excludes or limits any warranty implied by law where it would be unlawful to do so; nor does it exclude or limit SCF Strategies' liability for:
+          Nothing in this disclaimer excludes or limits any warranty implied by law where it would be unlawful to do so; nor does it exclude or limit SCF Strategies liability for:
         </p>
         <ul className="list-disc list-inside mt-2 text-gray-700 space-y-2">
-          <li>Death or personal injury caused by SCF Strategies' negligence;</li>
+          <li>Death or personal injury caused by SCF Strategies negligence;</li>
           <li>Fraud or fraudulent misrepresentation on the part of SCF Strategies; or</li>
           <li>Any matter that it would be illegal or unlawful for SCF Strategies to exclude or limit, or to attempt to exclude or limit, liability.</li>
         </ul>
@@ -204,7 +204,7 @@ const DisclaimerContent = ({ section }) => {
     ),
     5: (
       <p className="text-gray-700">
-        You acknowledge that SCF Strategies, as a limited liability entity, has an interest in limiting the personal liability of its officers and employees. Therefore, you agree not to bring any claim personally against SCF Strategies' officers or employees concerning any losses suffered in connection with the website. The limitations of warranties and liability set out in this disclaimer will protect SCF Strategies' officers, employees, agents, subsidiaries, successors, assigns, and subcontractors as well as SCF Strategies.
+        You acknowledge that SCF Strategies, as a limited liability entity, has an interest in limiting the personal liability of its officers and employees. Therefore, you agree not to bring any claim personally against SCF Strategies officers or employees concerning any losses suffered in connection with the website. The limitations of warranties and liability set out in this disclaimer will protect SCF Strategies officers, employees, agents, subsidiaries, successors, assigns, and subcontractors as well as SCF Strategies.
       </p>
     ),
     6: (
