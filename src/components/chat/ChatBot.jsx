@@ -1,31 +1,119 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { Bot } from 'lucide-react';
 
 const ChatbotButton = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const controls = useAnimation();
+  const [isAtBottom, setIsAtBottom] = useState(false);
+  const [screenSize, setScreenSize] = useState('desktop');
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
 
-   // Prevent background scroll when modal is open
-   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
+  // Function to get button position based on screen size
+  const getButtonPosition = (width, isBottom) => {
+    // Base positions for different screen sizes
+    const positions = {
+      '1440': { base: 32, bottom: 98 },
+      '1024': { base: 28, bottom: 64 },
+      '768': { base: 24, bottom: 99 },
+      '425': { base: 74, bottom: 80 },
+      '375': { base: 20, bottom: 142 }
     };
-  }, [isOpen]);
+
+    let position;
+    if (width > 1024) {
+      position = positions['1440'];
+    } else if (width > 768) {
+      position = positions['1024'];
+    } else if (width > 425) {
+      position = positions['768'];
+    } else if (width > 375) {
+      position = positions['425'];
+    } else {
+      position = positions['375'];
+    }
+
+    return isBottom ? position.bottom : position.base;
+  };
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      let newSize;
+      
+      if (width > 1024) newSize = '1440';
+      else if (width > 768) newSize = '1024';
+      else if (width > 425) newSize = '768';
+      else if (width > 375) newSize = '425';
+      else newSize = '375';
+
+      if (newSize !== screenSize) {
+        setScreenSize(newSize);
+        updateButtonPosition(width, isAtBottom);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    // Initial check
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [screenSize, isAtBottom]);
+
+  // Function to calculate and update button position
+  const updateButtonPosition = (width, isBottom) => {
+    const bottomPosition = getButtonPosition(width, isBottom);
+    
+    controls.start({
+      bottom: `${bottomPosition}px`,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 25
+      }
+    });
+  };
+
+  // Handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      
+      // Check if we're at the bottom (with a small threshold)
+      const isBottom = scrollTop + windowHeight >= documentHeight - 10;
+      
+      if (isBottom !== isAtBottom) {
+        setIsAtBottom(isBottom);
+        updateButtonPosition(window.innerWidth, isBottom);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isAtBottom, controls]);
+
+  // Get initial position based on screen width
+  const getInitialPosition = () => {
+    const width = window.innerWidth;
+    return getButtonPosition(width, false);
+  };
 
   return (
     <>
       {/* Floating Robot Button */}
       <motion.button
-        className="fixed bottom-6 right-6 p-4 z-50 bg-blue-500 rounded-full shadow-lg text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+        className="fixed right-6 z-50 bg-blue-500 rounded-full shadow-lg text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 p-4"
+        animate={controls}
+        initial={{ bottom: `${getInitialPosition()}px` }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={toggleChat}
@@ -46,8 +134,8 @@ const ChatbotButton = () => {
         )}
       </AnimatePresence>
 
-        {/* Chatbot Modal */}
-        <AnimatePresence>
+      {/* Chatbot Modal */}
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 100, scale: 0.9 }}
@@ -93,8 +181,8 @@ const ChatbotContent = ({ isOpen }) => {
   const messagesContainerRef = useRef(null);
   const lastMessageRef = useRef(null);
 
-   // Handle scroll wheel inside chat content
-   const handleScroll = (e) => {
+  // Handle scroll wheel inside chat content
+  const handleScroll = (e) => {
     if (messagesContainerRef.current) {
       const { scrollTop, scrollHeight, clientHeight } = messagesContainerRef.current;
       const isScrollable = scrollHeight > clientHeight;
@@ -108,8 +196,8 @@ const ChatbotContent = ({ isOpen }) => {
     }
   };
 
-   // Scroll to bottom when new messages are added
-   useEffect(() => {
+  // Scroll to bottom when new messages are added
+  useEffect(() => {
     if (lastMessageRef.current) {
       lastMessageRef.current.scrollIntoView({ 
         behavior: 'smooth', 
@@ -152,21 +240,19 @@ const ChatbotContent = ({ isOpen }) => {
   ];
 
   const handleMenuClick = (option) => {
-    // Add user selection with highlight effect
     setMessages(prev => [...prev, { 
       type: 'user', 
       content: option,
-      highlight: true // Add highlight property
+      highlight: true
     }]);
     setIsTyping(true);
 
-    // Simulate response with delay
     setTimeout(() => {
       const botResponse = simulateAIResponse(option);
       setMessages(prev => [...prev, { 
         type: 'bot', 
         content: botResponse,
-        highlight: true // Add highlight property
+        highlight: true
       }]);
       setIsTyping(false);
     }, 800);
@@ -196,18 +282,18 @@ const ChatbotContent = ({ isOpen }) => {
     return message.content;
   };
 
- return (
-  <div className="flex flex-col h-[calc(100vh-56px)] md:h-[500px] bg-gray-50">
-  {/* Messages Area */}
-  <div 
-    ref={messagesContainerRef}
-    className="flex-grow overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4"
-    style={{ 
-      overflowY: 'auto',
-      WebkitOverflowScrolling: 'touch',
-    }}
-    onWheel={handleScroll}
-  >
+  return (
+    <div className="flex flex-col h-[calc(100vh-56px)] md:h-[500px] bg-gray-50">
+      {/* Messages Area */}
+      <div 
+        ref={messagesContainerRef}
+        className="flex-grow overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4"
+        style={{ 
+          overflowY: 'auto',
+          WebkitOverflowScrolling: 'touch',
+        }}
+        onWheel={handleScroll}
+      >
         {messages.map((message, index) => (
           <motion.div
             key={index}
@@ -249,8 +335,8 @@ const ChatbotContent = ({ isOpen }) => {
         )}
       </div>
 
-       {/* Input Area */}
-       <div className="border-t bg-white p-3 md:p-4">
+      {/* Input Area */}
+      <div className="border-t bg-white p-3 md:p-4">
         <div className="flex space-x-2">
           <input
             type="text"
@@ -273,8 +359,7 @@ const ChatbotContent = ({ isOpen }) => {
   );
 };
 
-
-// FAQ Database
+// FAQ Database and simulateAIResponse function
 const faqDatabase = [
   {
     question: "What is Supply Chain Finance (SCF)?",
@@ -391,8 +476,8 @@ const simulateAIResponse = (message) => {
   
   if (faqMatch) return faqMatch.answer;
 
-  // Comprehensive keyword-based responses covering all FAQ topics
-  if (lowercaseMessage.includes("working capital") || lowercaseMessage.includes("analytics") || lowercaseMessage.includes("benchmark")) {
+  // Comprehensive keyword-based responses
+  if (lowercaseMessage.includes("working capital") || lowercaseMessage.includes("analytics")) {
     return "Our Working Capital Analytics involves analyzing supplier data, payment terms, and other financial factors. We offer a unique Working Capital Benchmark Analytics Application that identifies opportunities to optimize working capital. Would you like to learn more about our analytics capabilities?";
   } 
   else if (lowercaseMessage.includes("supplier") || lowercaseMessage.includes("onboarding")) {

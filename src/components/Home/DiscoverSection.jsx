@@ -63,7 +63,7 @@ const DiscoverSection = () => {
         <p className="mb-6 relative">
           <span className="absolute -left-4 top-0 w-1 h-full bg-white opacity-50 transform origin-top transition-transform duration-500"></span>
           There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, 
-          by injected humour, or randomised words which don't look even slightly believable.
+          by injected humour, or randomised words which don&apos;t look even slightly believable.
           If you are going to use a passage.
         </p>
 

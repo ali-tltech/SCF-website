@@ -175,12 +175,12 @@ const Footer = () => {
       </div>
 
       {/* Scroll to Top Button */}
-      <button
+      {/* <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-8 right-8 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full shadow-lg transition-colors"
       >
         <ChevronUp className="w-6 h-6" />
-      </button>
+      </button> */}
     </footer>
   );
 };
