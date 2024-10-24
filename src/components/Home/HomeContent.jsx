@@ -20,7 +20,7 @@ export default function HomeContent() {
     <>
       {/* Hero Section */}
       <div
-        className="relative md:h-screen h-[80vh] bg-cover bg-end overflow-hidden"
+        className="relative md:h-screen h-[80vh] bg-cover bg-center  overflow-hidden"
         style={{
           backgroundImage: "url('/images/LandingPage/hero.jpg')",
         }}
