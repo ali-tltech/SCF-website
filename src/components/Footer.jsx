@@ -6,7 +6,7 @@ import {
   Globe,
   ChevronUp
 } from 'lucide-react';
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { subscribeToNewsletter } from '@/app/action';
 
 const Footer = () => {
@@ -135,10 +135,13 @@ const Footer = () => {
             {/* Social Links Section */}
             <h3 className="text-white text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="flex  space-x-4">
-              <Link href="https://www.facebook.com/SCFStrategies" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link href="https://www.facebook.com/profile.php?id=100063586296486" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaFacebookF className="w-6 h-6" />
               </Link>
-              <Link href="https://www.linkedin.com/company/scfstrategies" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link href="https://www.facebook.com/profile.php?id=100063586296486" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <FaInstagram className="w-6 h-6" />
+              </Link>
+              <Link href="https://www.linkedin.com/company/scfstrategies/?viewAsMember=true" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaLinkedinIn className="w-6 h-6" />
               </Link>
               <Link href="https://twitter.com/SCFStrategies" className="text-gray-400 hover:text-blue-400 transition-colors">

@@ -71,7 +71,7 @@ const OurStory = () => {
           True value comes from integrating best practice processes with technology and funding capacity. We know that no amount of funding or sophisticated technology can compensate for poor practices, missed steps, or overlooked success factors.
         </p>
         <p className="text-start md:text-center text-gray-600 mb-12">
-          Today, SCF Strategies is recognized as an industry leader in SCF consulting. Corporates, financial institutions, and Fintechs rely on our advisory and enablement services, built on actual in-depth program-level expertise. With over 100 SCF programs implemented globally, we've learned from the challenges and mistakes to ensure you don't have to.
+          Today, SCF Strategies is recognized as an industry leader in SCF consulting. Corporates, financial institutions, and Fintechs rely on our advisory and enablement services, built on actual in-depth program-level expertise. With over 100 SCF programs implemented globally, we&apos;ve learned from the challenges and mistakes to ensure you don&apos;t have to.
         </p>
         <p className="text-start md:text-center text-gray-600">
           Our proven approach and methodology have successfully assessed markets and implemented programs, unlocking billions in working capital and free cash flow for leading companies worldwide.

@@ -1,5 +1,6 @@
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import ConsultingServiceContent from '@/components/services/ConsultingServicesContent';
+import WaveComponent from '@/components/ui/WaveComponent';
 import Head from 'next/head';
 
 const ConsultingServices = () => {
@@ -66,6 +67,7 @@ const ConsultingServices = () => {
       <div className="bg-gradient-to-b from-white to-gray-50">
         <AuroraBackgroundDemo title={'Consulting Services'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
         <ConsultingServiceContent />
+        <WaveComponent />
       </div>
     </>
   );

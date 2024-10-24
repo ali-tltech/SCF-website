@@ -100,7 +100,7 @@ const OurStory = () => {
               <div>
                 <h3 className="text-2xl font-semibold mb-2 text-gray-900">Today</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  SCF Strategies is recognized as an industry leader in SCF consulting. With over 100 SCF programs implemented globally, we've learned from the challenges and mistakes to ensure you don't have to.
+                  SCF Strategies is recognized as an industry leader in SCF consulting. With over 100 SCF programs implemented globally, we&apos;ve learned from the challenges and mistakes to ensure you don&apos;t have to.
                 </p>
               </div>
             </div>

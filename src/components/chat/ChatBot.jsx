@@ -46,22 +46,22 @@ const ChatbotButton = () => {
         )}
       </AnimatePresence>
 
-      {/* Chatbot Modal */}
-      <AnimatePresence>
+        {/* Chatbot Modal */}
+        <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 100, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.9 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-24 right-6 z-50 w-full max-w-md"
+            className="fixed z-50 w-full h-full md:h-auto md:max-h-[600px] md:w-[440px] md:bottom-24 md:right-6"
           >
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+            <div className="bg-white h-full md:h-auto md:rounded-lg shadow-xl overflow-hidden">
               {/* Header */}
-              <div className="bg-blue-500 p-4 flex justify-between items-center">
+              <div className="bg-blue-500 p-3 md:p-4 flex justify-between items-center">
                 <div className="flex items-center space-x-2">
                   <Bot className="text-white" size={24} />
-                  <h2 className="text-xl font-semibold text-white">Financial Assistant</h2>
+                  <h2 className="text-lg md:text-xl font-semibold text-white">Financial Assistant</h2>
                 </div>
                 <button 
                   onClick={toggleChat}
@@ -197,17 +197,17 @@ const ChatbotContent = ({ isOpen }) => {
   };
 
  return (
-    <div className="flex flex-col h-[500px] bg-gray-50">
-      {/* Messages Area */}
-      <div 
-        ref={messagesContainerRef}
-        className="flex-grow overflow-y-auto p-4 space-y-4"
-        style={{ 
-          overflowY: 'auto',
-          WebkitOverflowScrolling: 'touch',
-        }}
-        onWheel={handleScroll}
-      >
+  <div className="flex flex-col h-[calc(100vh-56px)] md:h-[500px] bg-gray-50">
+  {/* Messages Area */}
+  <div 
+    ref={messagesContainerRef}
+    className="flex-grow overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4"
+    style={{ 
+      overflowY: 'auto',
+      WebkitOverflowScrolling: 'touch',
+    }}
+    onWheel={handleScroll}
+  >
         {messages.map((message, index) => (
           <motion.div
             key={index}
@@ -249,8 +249,8 @@ const ChatbotContent = ({ isOpen }) => {
         )}
       </div>
 
-      {/* Input Area */}
-      <div className="border-t bg-white p-4">
+       {/* Input Area */}
+       <div className="border-t bg-white p-3 md:p-4">
         <div className="flex space-x-2">
           <input
             type="text"
@@ -258,12 +258,12 @@ const ChatbotContent = ({ isOpen }) => {
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSend()}
             placeholder="Type your message..."
-            className="flex-grow p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50"
+            className="flex-grow p-2 md:p-3 text-sm md:text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-600"
           />
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={handleSend}
-            className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
+            className="bg-blue-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium text-sm md:text-base"
           >
             Send
           </motion.button>

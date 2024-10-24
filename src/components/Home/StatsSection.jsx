@@ -49,7 +49,7 @@ const StatsSection = () => {
           <div className="bg-opacity-10 border border-dashed border-gray-400 p-4 md:p-6 rounded-lg flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 max-w-2xl mx-auto">
             <div className="text-center md:text-left">
               <h3 className="text-lg md:text-xl mb-1">Have any question about us?</h3>
-              <p className="text-sm md:text-base text-gray-300">Don't hesitate to contact us</p>
+              <p className="text-sm md:text-base text-gray-300">Don&apos;t hesitate to contact us</p>
             </div>
             <button className="bg-purple-500 hover:bg-purple-600 text-white py-2 px-6 rounded transition-colors duration-300 w-full md:w-auto">
               Contact Us
