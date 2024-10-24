@@ -148,7 +148,7 @@ const DisclaimerPage = () => {
 };
 
 const DisclaimerContent = ({ section }) => {
-  // Content remains the same as in your original code
+ 
   const content = {
     0: (
       <p className="text-gray-700">
