@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { FaArrowRight } from 'react-icons/fa';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
+import CustomeButton from '@/components/ui/CustomeButton';
 
 // Custom SVG Icons as Components
 const ProgramDesignIcon = () => (
@@ -37,7 +38,7 @@ const ServiceItem = ({ icon: Icon, title, description, isEven }) => (
       </div>
     </div>
     <div className="w-full md:w-2/3 md:px-8">
-      <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+      <h3 className="text-3xl font-bold text-gray-900 mb-3">{title}</h3>
       <p className="text-gray-600 leading-relaxed">{description}</p>
       <button className="mt-4 text-cyan-600 font-semibold inline-flex items-center group">
         Learn More
@@ -84,10 +85,7 @@ const EnablementPage = () => {
             <p className="text-gray-600 mb-6">
               At SCF Strategies, we focus on delivering innovative and practical solutions that drive real results, ensuring that your SCF programs not only meet but exceed expectations.
             </p>
-            <button className="bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-700">
-              Learn More
-              <FaArrowRight className="ml-2" />
-            </button>
+        <CustomeButton title={"Learn more"}/>
           </div>
           <div className="w-full md:w-1/2 md:pl-8">
             <div className="relative h-64 md:h-96">
@@ -103,7 +101,7 @@ const EnablementPage = () => {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Services</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Our Services</h2>
           <div className="rounded-lg">
             {services.map((service, index) => (
               <ServiceItem key={index} {...service} isEven={index % 2 !== 0} />
