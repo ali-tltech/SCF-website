@@ -58,20 +58,21 @@ export default function About() {
 
 
       <AuroraBackgroundDemo title={'About Us'} description={'Know more about our mission, values and team.'} link={'Learn More'} />
-      <div className="bg-gradient-to-b from-white to-gray-50 mx-auto py-12">
+      <div className="bg-primary mx-auto py-12">
         <IntroSection />
 
         {/* Our Story Section */}
         <OurStory />
 
         {/* Expertise Section */}
-        <div className="mt-8 bg-primary text-black py-8 px-4 md:px-8 rounded-lg ">
+        <div className="mt-8  text-black py-8 px-4 md:px-8 rounded-lg ">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-center mb-8">
               <h2 className="text-2xl md:text-4xl font-bold">Our Expertise</h2>
             </div>
-            <p className="text-center mb-12">
-              With over 100 globally recognized SCF and Reverse Factoring programs, SCF Strategies is your trusted partner for unparalleled expertise and results. Our team&apos;s in-depth knowledge and innovative approach set us apart as leaders in the field.
+            <p className="text-center text-lg mb-12">
+              With over 100 globally recognized SCF and Reverse Factoring programs, SCF Strategies is your trusted partner for unparalleled expertise and results.<br/>
+              Our team&apos;s in-depth knowledge and innovative approach set us apart as leaders in the field.
             </p>
             <InfoCard />
 

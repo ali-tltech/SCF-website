@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, Globe, Search, Handshake, DollarSign, TrendingUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Globe, Search, Handshake, DollarSign, TrendingUp, ArrowUpCircle, Wallet, HandshakeIcon } from 'lucide-react';
 
 const ConsultingServicesContent = () => {
     const [activeAccordion, setActiveAccordion] = useState(null);
@@ -90,10 +90,35 @@ const ConsultingServicesContent = () => {
                 <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
                     Transformative Supply Chain Finance Strategies for Sustainable Success
                 </h3>
-                <div className="bg-cyan-50 rounded-lg px-4 py-8">
-                    <TrendingUp className="w-16 h-16 text-blue-600 mx-auto mb-6" />
-                    <p className="text-lg text-gray-700 text-start pb-6">
-                        Our consulting services provide a <strong>roadmap to tangible results</strong>. By optimizing your SCF programs, we help you enhance cash flow, improve working capital, and strengthen supplier relationships. Our <strong>data-driven strategies</strong> and expert insights enable you to make informed decisions, fostering long-term success and <strong>competitive advantage</strong> in the supply chain finance marketplace.
+
+                <div className="bg-indigo-200 rounded-lg px-4 py-8">
+                    <p className="text-2xl font-semibold text-gray-700 text-center">
+                        Our consulting services provide a roadmap to tangible results.
+                    </p>
+                    <p className="text-lg text-gray-700 text-center mb-8">
+                        By optimizing your SCF programs, we help you
+                    </p>
+
+                    <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
+                        <div className="flex items-center bg-white px-6 py-4 rounded-lg shadow-sm  w-full md:w-[350px]">
+                            <ArrowUpCircle className="w-12 h-12 text-blue-600 mr-4" />
+                            <h4 className="font-semibold md:text-lg text-gray-900">Enhance Cash Flow</h4>
+                        </div>
+
+                        <div className="flex items-center bg-white px-6 py-4 rounded-lg shadow-sm  w-full md:w-[350px]">
+                            <Wallet className="w-12 h-12 text-blue-600 mr-4" />
+                            <h4 className="font-semibold md:text-lg text-gray-900">Improve Working Capital</h4>
+                        </div>
+
+                        <div className="flex items-center bg-white px-6 py-4 rounded-lg shadow-sm   w-full md:w-[350px]">
+                            <HandshakeIcon className="w-12 h-12 text-blue-600 mr-4" />
+                            <h4 className="font-semibold md:text-lg text-gray-900">Strengthen Relationships</h4>
+                        </div>
+                    </div>
+
+                    <p className="text-lg text-gray-700 text-center">
+                        Our data-driven strategies and expert insights enable you to make informed decisions,
+                        fostering long-term success and competitive advantage in the supply chain finance marketplace.
                     </p>
                 </div>
             </div>
