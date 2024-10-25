@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Globe, Search, Handshake, DollarSign, TrendingUp, ArrowUpCircle, Wallet, HandshakeIcon } from 'lucide-react';
+import { AnimatePresence ,motion} from 'framer-motion';
 
 const ConsultingServicesContent = () => {
     const [activeAccordion, setActiveAccordion] = useState(null);
@@ -74,13 +75,31 @@ const ConsultingServicesContent = () => {
                                     <ChevronDown className="w-6 h-6 text-gray-500" />
                                 }
                             </button>
+                            <AnimatePresence>
                             {activeAccordion === index && (
-                                <div className="p-6 bg-gray-50 border-t border-gray-200">
-                                    {item.content.map((paragraph, pIndex) => (
-                                        <p key={pIndex} className="text-gray-700 mb-4 last:mb-0">{paragraph}</p>
-                                    ))}
-                                </div>
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    className="overflow-hidden"
+                                >
+                                    <div className="p-6 bg-gray-50 border-t border-gray-200">
+                                        {item.content.map((paragraph, pIndex) => (
+                                            <motion.p
+                                                key={pIndex}
+                                                initial={{ y: 20, opacity: 0 }}
+                                                animate={{ y: 0, opacity: 1 }}
+                                                transition={{ delay: pIndex * 0.1, duration: 0.3 }}
+                                                className="text-gray-700 text-lg mb-4 last:mb-0"
+                                            >
+                                                {paragraph}
+                                            </motion.p>
+                                        ))}
+                                    </div>
+                                </motion.div>
                             )}
+                            </AnimatePresence>
                         </div>
                     ))}
                 </div>
