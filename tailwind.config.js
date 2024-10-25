@@ -10,9 +10,9 @@ module.exports = {
     extend: {
       colors: {
         indigo: {
-          100: '#e0e7ff',
+          100: '#e0e7ff', // Add `indigo-100` with the value `e0e7ff`
         },
-        primary: '#ede8f5', 
+        primary: '#e0e7ff', // Add primary color as `e0e7ff` (indigo-100)
       },
       animation: {
         aurora: "aurora 60s linear infinite",

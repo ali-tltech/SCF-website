@@ -55,7 +55,7 @@ const Blog = () => {
   return (
     <>
       <AuroraBackgroundDemo title={'Blogs'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
-      <div className="text-stone-800 py-10 flex justify-center bg-indigo-100 max-w-7xl mx-auto px-4">
+      <div className="text-stone-800 py-10 flex justify-center bg-primary max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1  lg:grid-cols-3  gap-8">
           {/* Blog Posts Section */}
           <div className="lg:col-span-2">
