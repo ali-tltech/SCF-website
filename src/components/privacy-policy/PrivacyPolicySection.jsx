@@ -17,7 +17,7 @@ const PrivacyPolicySection = ({title,content}) => {
             ) : (
                 <p className="leading-relaxed">{content}</p>
             )}
-            <div className='border-b pt-2 border-gray-200'></div>
+            <div className='border-b pt-2 border-gray-400'></div>
         </div>
     </div>
 </div>

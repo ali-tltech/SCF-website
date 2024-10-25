@@ -13,7 +13,7 @@ const InfoCard = () => {
           </span>
           <div className="space-y-6 pt-5 text-base leading-7 text-dark transition-all duration-300 group-hover:text-white/90">
             <h4 className="text-xl font-semibold">Independent Expertise</h4>
-            <p>Benefit from our unbiased, industry-leading insights that focus solely on optimizing your SCF programs.</p>
+            <p className='text-lg text-gray-700 '>Benefit from our unbiased, industry-leading insights that focus solely on optimizing your SCF programs.</p>
           </div>
         </div>
       </div>
@@ -26,8 +26,8 @@ const InfoCard = () => {
             <FaTrophy className="h-10 w-10 text-white" />
           </span>
           <div className="space-y-6 pt-5 text-base leading-7 text-dark transition-all duration-300 group-hover:text-white/90">
-            <h4 className="text-xl font-semibold">Proven Track Record</h4>
-            <p>Our successful implementation of over 100 programs highlights our ability to deliver transformative results for businesses worldwide.</p>
+            <h4 className="text-xl  font-semibold">Proven Track Record</h4>
+            <p className='text-lg text-gray-700 '>Our successful implementation of over 100 programs highlights our ability to deliver transformative results for businesses worldwide.</p>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ const InfoCard = () => {
           </span>
           <div className="space-y-6 pt-5 text-base leading-7 text-dark transition-all duration-300 group-hover:text-white/90">
             <h4 className="text-xl font-semibold">Advanced Technology</h4>
-            <p>Leverage cutting-edge analytics and benchmarking tools to drive efficiency and effectiveness in your SCF initiatives.</p>
+            <p className='text-lg text-gray-700 '>Leverage cutting-edge analytics and benchmarking tools to drive efficiency and effectiveness in your SCF initiatives.</p>
           </div>
         </div>
       </div>

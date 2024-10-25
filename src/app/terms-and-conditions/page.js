@@ -111,7 +111,7 @@ const TermsAndConditionsPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <div className="min-h-screen bg-primary">
             <AuroraBackgroundDemo
                 title="Terms and Conditions"
                 description="Understand the terms of our services"

@@ -12,7 +12,7 @@ module.exports = {
         indigo: {
           100: '#e0e7ff',
         },
-        primary: '#EEEEEE', 
+        primary: '#ede8f5', 
       },
       animation: {
         aurora: "aurora 60s linear infinite",

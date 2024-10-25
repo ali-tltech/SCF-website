@@ -34,7 +34,7 @@ const Footer = () => {
     { name: 'About Us', href: '/about-us' },
     { name: 'Contact', href: '/contact-us' },
     { name: 'Blogs', href: '/blog' },
-    {name : 'Clients', href : '/clients' }
+    { name: 'Clients', href: '/clients' }
   ];
 
   const services = [
@@ -137,23 +137,23 @@ const Footer = () => {
             <h3 className="text-white text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="flex  space-x-4">
               <a href="https://www.facebook.com/profile.php?id=100063586296486" target="_blank"
-  rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaFacebookF className="w-6 h-6" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=100063586296486"  target="_blank"
-  rel="noopener noreferrer"className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=100063586296486" target="_blank"
+                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaInstagram className="w-6 h-6" />
               </a>
               <a href="https://www.linkedin.com/company/scfstrategies/?viewAsMember=true" target="_blank"
-  rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaLinkedinIn className="w-6 h-6" />
               </a>
               <a href="https://twitter.com/SCFStrategies" target="_blank"
-  rel="noopener noreferrer"  className="text-gray-400 hover:text-blue-400 transition-colors">
+                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <XIcon className="w-6 h-6" />
               </a>
               <a href="https://www.youtube.com/user/SCFStrategies" target="_blank"
-  rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaYoutube className="w-6 h-6" />
               </a>
             </div>
@@ -164,13 +164,23 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm pt-5 text-gray-400 order-2 md:order-1">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div className="text-sm text-gray-400  py-4  order-3 md:order-1 flex items-center space-x-2">
+              <img src="/path/to/logo.svg" alt="TL Technologies Logo" className="h-5 w-5" />
+              <span>Designed and Developed by TL Technologies</span>
+            </div>
+
+            <div className="text-sm text-gray-400 order-2 md:order-2">
               © {currentYear} SCF Strategies. All rights reserved.
             </div>
-            <div className="flex flex-wrap justify-center gap-6 text-sm order-1 md:order-2" >
+
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm order-1 md:order-3">
               {legalLinks.map((link) => (
-                <Link key={link.name} href={link.href} className="text-gray-400 hover:text-blue-400 transition-colors flex items-center">
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-400 hover:text-blue-400 transition-colors flex items-center"
+                >
                   <FileText className="w-4 h-4 mr-1" />
                   {link.name}
                 </Link>
