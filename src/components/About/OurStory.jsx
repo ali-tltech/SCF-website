@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const OurStory = () => {
   return (
-    <div className="mt-16 text-black py-16 px-4 md:px-8 relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <div className="mt-16 text-black py-16 px-4 md:px-8 relative overflow-hidden ">
       <div className="max-w-6xl mx-auto relative">
         <h2 className="text-2xl md:text-4xl font-bold text-center mb-16">Our Story</h2>
         
@@ -20,7 +20,7 @@ const OurStory = () => {
             </p>
             
             <p className="text-gray-600 leading-relaxed">
-              Our proven approach and methodology have successfully assessed markets and implemented programs, unlocking billions in working capital and free cash flow for leading companies worldwide. With over 100 SCF programs implemented globally, we've learned from the challenges and mistakes to ensure you don't have to.
+              Our proven approach and methodology have successfully assessed markets and implemented programs, unlocking billions in working capital and free cash flow for leading companies worldwide. With over 100 SCF programs implemented globally, we&apos;ve learned from the challenges and mistakes to ensure you don&apos;t have to.
             </p>
           </div>
           
