@@ -119,7 +119,7 @@ const FAQPage = () => {
 
   return (
 
-    <div className="text-gray-800 bg-gradient-to-b from-white to-gray-50">
+    <div className="text-gray-800 bg-primary">
       <AuroraBackgroundDemo  title={'FAQs'} description={'Any questions? We have answers.'} link={'Learn More'}/>
 
       <div className="max-w-7xl mx-auto px-4 py-12 ">

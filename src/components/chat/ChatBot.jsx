@@ -362,6 +362,18 @@ const ChatbotContent = ({ isOpen }) => {
 // FAQ Database and simulateAIResponse function
 const faqDatabase = [
   {
+    question: "hi",
+    answer: "Hello! Welcome to SCF Strategies. How can I assist you today with your Supply Chain Finance needs?"
+  },
+  {
+    question: "hello",
+    answer: "Hi there! Welcome to SCF Strategies. How may I help you with your Supply Chain Finance requirements?"
+  },
+  {
+    question: "hey",
+    answer: "Hey! Thanks for reaching out to SCF Strategies. How can I assist you with Supply Chain Finance today?"
+  },
+  {
     question: "What is Supply Chain Finance (SCF)?",
     answer: "Supply Chain Finance (SCF) is a set of financial solutions designed to improve cash flow efficiency by allowing businesses to extend payment terms while enabling suppliers to receive early payments, usually facilitated by a third-party financier."
   },
@@ -514,20 +526,24 @@ const simulateAIResponse = (message) => {
     return "We serve a wide range of industries including manufacturing, retail, financial institutions, fintechs, and corporates. Each industry has unique needs, and we provide tailored solutions. Which industry would you like to learn more about?";
   }
   else {
-    return `I understand you're interested in Supply Chain Finance. To better assist you, could you please specify if you'd like to learn about:
-
-1. Working Capital Analytics and Benchmarking
-2. Supplier Onboarding and Relationship Management
-3. Platform Selection and Technology Solutions
-4. Program Design and Implementation
-5. Training and Sales Enablement
-6. Financial Institution Services
-7. Go-to-Market Strategy
-8. Partner Evaluation
-9. Industry-Specific Solutions
-
-Alternatively, you can contact us directly at contact@scfstrategies.com or call +1 203 470 9377 for immediate assistance.`;
+    return ( <>
+      I understand you're interested in Supply Chain Finance. To better assist you, could you please specify if you'd like to learn about:<br />
+  <br />
+  • Working Capital Analytics and Benchmarking<br />
+  • Supplier Onboarding and Relationship Management<br />
+  • Platform Selection and Technology Solutions<br />
+  • Program Design and Implementation<br />
+  • Training and Sales Enablement<br />
+  • Financial Institution Services<br />
+  • Go-to-Market Strategy<br />
+  • Partner Evaluation<br />
+  • Industry-Specific Solutions<br />
+  <br />
+  Alternatively, you can contact us directly at contact@scfstrategies.com or call +1 203 470 9377 for immediate assistance.`
+    </>
+    );
   }
+  
 };
 
 

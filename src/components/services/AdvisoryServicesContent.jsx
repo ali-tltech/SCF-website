@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Target, Search, Users, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 const AdvisoryServicesContent = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -16,37 +17,90 @@ const AdvisoryServicesContent = () => {
       title: "Strategic Go-to-Market Planning",
       icon: <Target className="w-8 h-8 text-blue-500" />,
       content: [
-        "Looking to enter the booming SCF market or enhance your current offerings? We'll help you craft a winning strategy:",
-        "Market Assessment: Get a comprehensive analysis of market feasibility, competition, key players, and target sectors. We'll pinpoint your product's strengths and areas for improvement.",
-        "Sales Plan: Develop a robust sales strategy, including market approach, client profiles, partnership opportunities, and key performance metrics. Our plan ensures a streamlined sales process and maximizes your success."
+        <span>Looking to enter the booming{' '}
+          <span >SCF</span> market or enhance your current offerings? We'll help you craft a winning strategy:
+        </span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Market Assessment:</span> Get a comprehensive analysis of{' '}
+          <span className="bg-blue-100 px-1 rounded">market feasibility</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">competition</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">key players</span>, and{' '}
+          <span className="bg-blue-100 px-1 rounded">target sectors</span>. We'll pinpoint your product's strengths and areas for improvement.
+        </span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Sales Plan:</span> Develop a robust{' '}
+          <span className="bg-blue-100 px-1 rounded">sales strategy</span>, including{' '}
+          <span className="bg-blue-100 px-1 rounded">market approach</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">client profiles</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">partnership opportunities</span>, and{' '}
+          <span className="bg-blue-100 px-1 rounded">key performance metrics</span>. Our plan ensures a streamlined sales process and maximizes your success.
+        </span>
       ]
     },
     {
       title: "In-Depth Solution Audit",
       icon: <Search className="w-8 h-8 text-green-500" />,
       content: [
-        "Is your SCF platform performing at its best? Our solution audit provides clarity:",
-        "Platform Review: Determine if your solution is a Minimum Viable Product (MVP) or a leading-edge offering.",
-        "Feature Analysis: Identify key strengths, differentiators, and limitations impacting your platform's effectiveness.",
-        "Actionable Recommendations: Receive detailed insights and strategic recommendations to enhance your solution."
+        <span>Is your{' '}
+          <span >SCF</span> platform performing at its best? Our solution audit provides clarity:
+        </span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Platform Review:</span> Determine if your solution is a{' '}
+          <span className="bg-blue-100 px-1 rounded">Minimum Viable Product (MVP)</span> or a{' '}
+          <span className="bg-blue-100 px-1 rounded">leading-edge offering</span>.
+        </span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Feature Analysis:</span> Identify{' '}
+          <span className="bg-blue-100 px-1 rounded">key strengths</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">differentiators</span>, and{' '}
+          <span className="bg-blue-100 px-1 rounded">limitations</span> impacting your platform's effectiveness.
+        </span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Actionable Recommendations:</span> Receive{' '}
+          <span className="bg-blue-100 px-1 rounded">detailed insights</span> and{' '}
+          <span className="bg-blue-100 px-1 rounded">strategic recommendations</span> to enhance your solution.
+        </span>
       ]
     },
     {
       title: "Expert Platform & Partner Selection",
       icon: <Users className="w-8 h-8 text-purple-500" />,
       content: [
-        "Choosing the right partners and technology is crucial for SCF success. We offer:",
-        "Evaluation Process: Benefit from our rigorous evaluation criteria and scoring methodology to select the best origination, technology, and funding partners.",
-        "Support Services: We assist with RFP preparation, response analysis, system demonstrations, reference checks, and contract negotiations to help you make informed decisions."
+        <span>Choosing the right partners and technology is crucial for{' '}
+          <span>SCF</span> success. We offer:
+        </span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Evaluation Process:</span> Benefit from our{' '}
+          <span className="bg-blue-100 px-1 rounded">rigorous evaluation criteria</span> and{' '}
+          <span className="bg-blue-100 px-1 rounded">scoring methodology</span> to select the best{' '}
+          <span className="bg-blue-100 px-1 rounded">origination</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">technology</span>, and{' '}
+          <span className="bg-blue-100 px-1 rounded">funding partners</span>.
+        </span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Support Services:</span> We assist with{' '}
+          <span className="bg-blue-100 px-1 rounded">RFP preparation</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">response analysis</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">system demonstrations</span>,{' '}
+          <span className="bg-blue-100 px-1 rounded">reference checks</span>, and{' '}
+          <span className="bg-blue-100 px-1 rounded">contract negotiations</span> to help you make informed decisions.
+        </span>
       ]
     },
     {
       title: "Navigating Accounting Challenges",
       icon: <BookOpen className="w-8 h-8 text-red-500" />,
       content: [
-        "Implementing a Supply Chain Finance program can bring complex accounting issues. Our expertise helps you:",
-        "Accounting Best Practices: Navigate the intricacies of accounting treatment with our expert guidance.",
-        "Communication Templates: Utilize our templates for effective communication with auditors, ensuring a favorable opinion on your program."
+        <span>Implementing a Supply Chain Finance program can bring complex accounting issues. Our expertise helps you:</span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Accounting Best Practices:</span> Navigate the{' '}
+          <span className="bg-blue-100 px-1 rounded">intricacies of accounting treatment</span> with our expert guidance.
+        </span>,
+        <span>
+          <span className="text-gray-600 font-bold text-lg">Communication Templates:</span> Utilize our templates for{' '}
+          <span className="bg-blue-100 px-1 rounded">effective communication</span> with{' '}
+          <span className="bg-blue-100 px-1 rounded">auditors</span>, ensuring a favorable opinion on your program.
+        </span>
       ]
     }
   ];
@@ -63,7 +117,6 @@ const AdvisoryServicesContent = () => {
       <div className="rounded-lg mb-16">
         <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why Choose Our Advisory Services?</h3>
 
-        {/* Accordion */}
         <div className="space-y-6">
           {accordionData.map((item, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -98,7 +151,7 @@ const AdvisoryServicesContent = () => {
                           initial={{ y: 20, opacity: 0 }}
                           animate={{ y: 0, opacity: 1 }}
                           transition={{ delay: pIndex * 0.1, duration: 0.3 }}
-                          className="text-gray-700 mb-4 last:mb-0"
+                          className="text-gray-700 text-lg mb-4 last:mb-0"
                         >
                           {paragraph}
                         </motion.p>
@@ -112,13 +165,12 @@ const AdvisoryServicesContent = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
       <div className="text-center bg-blue-600 text-white rounded-lg p-12">
         <h4 className="text-3xl font-bold mb-4">Ready to elevate your SCF strategy?</h4>
         <p className="text-xl mb-8">Let&apos;s connect and explore how our Advisory Services can help you achieve your goals.</p>
-        <button className="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full transition-colors duration-200 text-lg">
+        <Link href={"/contact-us"} className="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full transition-colors duration-200 text-lg">
           Contact Us Today
-        </button>
+        </Link>
       </div>
     </div>
   );

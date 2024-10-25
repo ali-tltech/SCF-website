@@ -13,38 +13,92 @@ const ConsultingServicesContent = () => {
 
     const accordionData = [
         {
-            title: "Go-to-Market Strategy for Supply Chain Finance",
-            icon: <Globe className="w-8 h-8 text-blue-500" />,
-            content: [
-                "Break into the SCF market with confidence. Our go-to-market strategies are tailored to position you effectively, leveraging data-driven insights and industry best practices.",
-                "Identify your target audience, refine your value proposition, and create a plan for competitive differentiation and market success."
-            ]
+          title: "Go-to-Market Strategy for Supply Chain Finance",
+          icon: <Globe className="w-8 h-8 text-blue-500" />,
+          content: [
+            <span>Break into the booming{' '}
+              <span>SCF</span> market with confidence:
+            </span>,
+            <span>
+              <span className="text-gray-600 font-bold text-lg">Strategic Positioning:</span> Leverage{' '}
+              <span className="bg-blue-100 px-1 rounded">data-driven insights</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">industry best practices</span>, and{' '}
+              <span className="bg-blue-100 px-1 rounded">market analytics</span> to position your offering effectively.
+            </span>,
+            <span>
+              <span className="text-gray-600 font-bold text-lg">Market Entry Plan:</span> Define your{' '}
+              <span className="bg-blue-100 px-1 rounded">target audience</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">value proposition</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">competitive advantages</span>, and{' '}
+              <span className="bg-blue-100 px-1 rounded">market differentiation strategy</span> for maximum impact.
+            </span>
+          ]
         },
         {
-            title: "Supply Chain Finance Solution Audit",
-            icon: <Search className="w-8 h-8 text-green-500" />,
-            content: [
-                "Ensure your SCF platform and services are performing at their peak. Our comprehensive solution audit delves into every aspect of your current SCF setup, identifying gaps, inefficiencies, and untapped opportunities.",
-                "We provide actionable recommendations to enhance performance, scalability, and supplier relationships."
-            ]
+          title: "Supply Chain Finance Solution Audit",
+          icon: <Search className="w-8 h-8 text-green-500" />,
+          content: [
+            <span>Ensure your{' '}
+              <span>SCF</span> platform delivers peak performance:
+            </span>,
+            <span>
+              <span className="text-gray-600 font-bold text-lg">Comprehensive Analysis:</span> Evaluate{' '}
+              <span className="bg-blue-100 px-1 rounded">platform capabilities</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">operational efficiency</span>, and{' '}
+              <span className="bg-blue-100 px-1 rounded">system performance</span> to identify opportunities.
+            </span>,
+            <span>
+              <span className="text-gray-600 font-bold text-lg">Enhancement Strategy:</span> Receive{' '}
+              <span className="bg-blue-100 px-1 rounded">actionable recommendations</span> for{' '}
+              <span className="bg-blue-100 px-1 rounded">performance optimization</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">scalability improvements</span>, and{' '}
+              <span className="bg-blue-100 px-1 rounded">supplier relationship management</span>.
+            </span>
+          ]
         },
         {
-            title: "SCF Platform & Partner Selection",
-            icon: <Handshake className="w-8 h-8 text-purple-500" />,
-            content: [
-                "Selecting the right SCF platform and partners is crucial for a successful strategy. We offer an objective evaluation process to guide you through the complexities of choosing the most suitable technology and strategic partners.",
-                "This ensures seamless integration with your business goals, driving sustainable growth and maximizing your supply chain finance."
-            ]
+          title: "SCF Platform & Partner Selection",
+          icon: <Handshake className="w-8 h-8 text-purple-500" />,
+          content: [
+            <span>Make informed decisions for your{' '}
+              <span >SCF</span> ecosystem:
+            </span>,
+            <span>
+              <span className="text-gray-600 font-bold text-lg">Evaluation Framework:</span> Access our{' '}
+              <span className="bg-blue-100 px-1 rounded">objective assessment criteria</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">technology evaluation</span>, and{' '}
+              <span className="bg-blue-100 px-1 rounded">partner vetting process</span>.
+            </span>,
+            <span>
+              <span className="text-gray-600 font-bold text-lg">Integration Planning:</span> Ensure{' '}
+              <span className="bg-blue-100 px-1 rounded">seamless implementation</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">business alignment</span>, and{' '}
+              <span className="bg-blue-100 px-1 rounded">sustainable growth</span> through strategic partnerships.
+            </span>
+          ]
         },
         {
-            title: "SCF Accounting Treatment",
-            icon: <DollarSign className="w-8 h-8 text-red-500" />,
-            content: [
-                "Navigate the financial intricacies of supply chain finance with our expert support. We offer comprehensive guidance on accounting treatments, ensuring compliance with the latest regulations and industry standards.",
-                "Manage financial risk, improve reporting accuracy, and maintain transparency in your financial operations with our specialized SCF accounting services."
-            ]
+          title: "SCF Accounting Treatment",
+          icon: <DollarSign className="w-8 h-8 text-red-500" />,
+          content: [
+            <span>Master the financial complexities of{' '}
+              <span >SCF</span> with expert guidance:
+            </span>,
+            <span>
+              <span className="text-gray-600 font-bold text-lg">Compliance & Reporting:</span> Navigate{' '}
+              <span className="bg-blue-100 px-1 rounded">regulatory requirements</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">accounting standards</span>, and{' '}
+              <span className="bg-blue-100 px-1 rounded">reporting practices</span>.
+            </span>,
+            <span>
+              <span className="text-gray-600 font-bold text-lg">Risk Management:</span> Implement{' '}
+              <span className="bg-blue-100 px-1 rounded">financial controls</span>,{' '}
+              <span className="bg-blue-100 px-1 rounded">transparency measures</span>, and{' '}
+              <span className="bg-blue-100 px-1 rounded">risk mitigation strategies</span> for your SCF operations.
+            </span>
+          ]
         }
-    ];
+      ];
 
     return (
         <div className="max-w-7xl mx-auto px-4  lg:px-8 py-16 ">
