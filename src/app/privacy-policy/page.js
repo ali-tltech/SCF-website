@@ -5,6 +5,7 @@ import Link from 'next/link';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import PrivacyPolicySection from '@/components/privacy-policy/PrivacyPolicySection';
 import WaveComponent from '@/components/ui/WaveComponent';
+import CustomeButton from '@/components/ui/CustomeButton';
 
 
 
@@ -49,7 +50,7 @@ const PrivacyPolicyPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-primary">
       <AuroraBackgroundDemo
         title="Privacy Policy"
         description="Know how we handle your data"
@@ -80,16 +81,11 @@ const PrivacyPolicyPage = () => {
           />
         ))}
 
-        <div className="mt-12 pt-8 flex flex-col items-center relative z-10">
+        <div className="mt-12 py-8 flex flex-col bg-white  shadow-xl rounded-xl items-center relative z-10">
           <p className="text-gray-600 mb-4 text-center">
             If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us at:
           </p>
-          <Link
-            href="/contact-us"
-            className="w-full sm:w-auto bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
-          >
-            Contact Us
-          </Link>
+          <CustomeButton title={'Contact Us'} link={'/contact-us'} />
 
         </div>
       </div>

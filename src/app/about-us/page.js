@@ -8,6 +8,7 @@ import OurStory from '@/components/About/OurStory';
 import Head from 'next/head';
 import WaveComponent from '@/components/ui/WaveComponent';
 import { IntroSection } from '@/components/About/IntroSection';
+import CustomeButton from '@/components/ui/CustomeButton';
 
 
 export default function About() {
@@ -77,10 +78,7 @@ export default function About() {
             <InfoCard />
 
             <div className="mt-12 text-center relative z-10">
-              <button className="bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-800 hover:shadow-lg">
-                Learn More About Our Journey
-                <FaArrowRight className="ml-2" />
-              </button>
+              <CustomeButton title={'Learn More About Our Journey'} link={'/contact-us'} />
             </div>
           </div>
         </div>

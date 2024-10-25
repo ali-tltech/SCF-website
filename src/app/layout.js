@@ -5,7 +5,6 @@ import ClientLayout from './ClientLayout';
 const inter = Inter({
   subsets: ['latin', 'cyrillic', 'greek'],
   display: 'swap',
-  weight: '300'
 });
 
 // Separate viewport configuration

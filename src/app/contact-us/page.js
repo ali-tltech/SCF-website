@@ -47,7 +47,7 @@ const ContactPage = () => {
       <AuroraBackgroundDemo title={'Contact Us'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
 
       {/* Contact Form Section */}
-      <div className="bg-gradient-to-b from-white to-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-primary py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
 
           <div className="relative z-10">
