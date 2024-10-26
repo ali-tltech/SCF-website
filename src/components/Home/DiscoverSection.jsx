@@ -50,7 +50,7 @@ const DiscoverSection = () => {
         
         <p className="mb-6 relative">
   <span className="absolute -left-4 text-lg top-0 w-1 h-full bg-white opacity-50 transform origin-top transition-transform duration-500"></span>
-  Unlock working capital and optimize your supply chain with our innovative financing solutions. <br /> We bridge the gap between suppliers and buyers, enabling faster payments, stronger supplier relationships, and improved cash flow management. <br /> Our platform empowers businesses of all sizes to thrive in today's dynamic market.
+  Unlock working capital and optimize your supply chain with our innovative financing solutions. <br /> We bridge the gap between suppliers and buyers, enabling faster payments, stronger supplier relationships, and improved cash flow management. <br /> Our platform empowers businesses of all sizes to thrive in today&apos;s dynamic market.
 </p>
 
        <CustomeButton title={"Discover more"}/>

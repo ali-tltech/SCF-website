@@ -35,7 +35,7 @@ const RecentStories = () => {
       <div className="text-start w-full  ">
   <h2 className="text-4xl font-bold text-title">Our Latest News</h2>
   <p className="mt-4 text-gray-500">
-    Stay updated with our most recent developments, industry insights, and company announcements. <br /> Discover what's new and noteworthy in our world.
+    Stay updated with our most recent developments, industry insights, and company announcements. <br /> Discover what&apos;s new and noteworthy in our world.
   </p>
 </div>
         <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
