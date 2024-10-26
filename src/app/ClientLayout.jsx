@@ -92,14 +92,7 @@ export default function ClientLayout({ children }) {
       {loading && <Loading />}
       
       <div className={`transition-opacity duration-300 relative ${loading ? 'opacity-0' : 'opacity-100'}`}>
-      <div className="absolute inset-0 w-full h-full overflow-hidden opacity-10">
-    <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <pattern id="dotPattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-        <circle cx="5" cy="5" r="2.5" fill="#4A90E2" />
-      </pattern>
-      <rect width="100%" height="100%" fill="url(#dotPattern)" />
-    </svg>
-  </div>
+      
         <Navbar />
         <ChatbotPreview />
         <main ref={pageRef} className="transition-opacity ease-in-out">
