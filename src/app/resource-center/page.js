@@ -33,15 +33,15 @@ const ResourceCenter = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
           Your Hub for Supply Chain Finance Insights
         </h2>
-        <p className="text-xl md:text-xl mb-16 text-center text-gray-600 max-w-4xl mx-auto">
-          Dive into a wealth of knowledge and expertise. Our Resource Center provides valuable information, cutting-edge research, and practical tools to enhance your understanding of Supply Chain Finance strategies.
+        <p className="text-xl md:text-xl mb-16 text-start md:text-center text-gray-600 max-w-4xl mx-auto">
+        Dive into a wealth of knowledge and expertise at SCF Strategies. <br/> Our Resource Center is designed to provide you with valuable information, cutting-edge research, and practical tools to enhance your understanding and execution of Supply Chain Finance (SCF) strategies. From comprehensive whitepapers to insightful case studies, we equip you with the resources you need to stay ahead in the dynamic world of SCF.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
           <ResourceCard
             icon={FileText}
             title="Whitepapers & Reports"
-            description="Access comprehensive analyses and industry reports on the latest Supply Chain Finance trends and developments. Our whitepapers offer deep insights to help you make informed decisions and stay ahead in the field."
+            description="Access our collection of detailed whitepapers and industry reports. These documents offer thorough analyses and strategic insights into the latest trends and developments in Supply Chain Finance, helping you make informed decisions and stay ahead of the curve."
             iconColor="bg-blue-500"
             buttonText="Explore"
             linkPath='/contact-us'
@@ -49,7 +49,7 @@ const ResourceCenter = () => {
           <ResourceCard
             icon={BookOpen}
             title="Blog & Articles"
-            description="Explore expert opinions, practical advice, and thought leadership pieces on optimizing your SCF programs and strategies. Stay updated with the latest industry news and best practices through our regularly updated blog."
+            description="Explore our blog for regular updates, expert opinions, and practical advice on SCF. Our articles cover a wide range of topics, from emerging trends and best practices to practical tips for optimizing your SCF programs."
             iconColor="bg-green-500"
             buttonText="Explore"
             linkPath='/blog'
@@ -57,7 +57,7 @@ const ResourceCenter = () => {
           <ResourceCard
             icon={PieChart}
             title="Case Studies"
-            description="Learn from real-world examples of successful SCF implementations and transformations. Our case studies showcase how leading companies have leveraged SCF to improve their financial performance and supply chain relationships."
+            description="Learn from real-world examples of successful SCF implementations. Our case studies showcase how leading companies have transformed their supply chain finance strategies, offering valuable lessons and inspiration for your own initiatives."
             iconColor="bg-purple-500"
             buttonText="Explore"
             linkPath='/contact-us'
@@ -65,7 +65,7 @@ const ResourceCenter = () => {
         </div>
 
         <div className="mt-16 text-center relative z-10">
-          <CustomeButton title="Explore All Resources" link="/catalogues" />
+          <CustomeButton title="Explore Our Resources" link="/catalogues" />
         </div>
       </div>
       <WaveComponent />
