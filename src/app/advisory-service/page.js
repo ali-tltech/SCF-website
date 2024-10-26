@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import AdvisoryServicesContent from '../../components/services/AdvisoryServicesContent';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
+import WaveComponent from '@/components/ui/WaveComponent';
 
 const AdvisoryServices = () => {
   const schema = {
@@ -56,12 +57,13 @@ const AdvisoryServices = () => {
         />
       </Head>
 
-      <div className="bg-gradient-to-b from-white to-gray-50">
+      <div className="bg-primary">
         {/* Hero Section */}
-        <AuroraBackgroundDemo title={'Advisory Services'} link={'Learn More'} />
+        <AuroraBackgroundDemo title={'Advisory Services'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
 
         {/* Main Content */}
         <AdvisoryServicesContent />
+        {/* <WaveComponent/ > */}
       </div>
     </>
   );

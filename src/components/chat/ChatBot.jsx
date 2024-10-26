@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { Bot } from 'lucide-react';
 
@@ -39,6 +39,20 @@ const ChatbotButton = () => {
     return isBottom ? position.bottom : position.base;
   };
 
+  // Memoize updateButtonPosition with useCallback
+  const updateButtonPosition = useCallback((width, isBottom) => {
+    const bottomPosition = getButtonPosition(width, isBottom);
+    
+    controls.start({
+      bottom: `${bottomPosition}px`,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 25
+      }
+    });
+  }, [controls]); // Include controls in dependency array
+
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
@@ -62,21 +76,7 @@ const ChatbotButton = () => {
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
-  }, [screenSize, isAtBottom]);
-
-  // Function to calculate and update button position
-  const updateButtonPosition = (width, isBottom) => {
-    const bottomPosition = getButtonPosition(width, isBottom);
-    
-    controls.start({
-      bottom: `${bottomPosition}px`,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 25
-      }
-    });
-  };
+  }, [screenSize, isAtBottom, updateButtonPosition]); // Added updateButtonPosition to dependencies
 
   // Handle scroll event
   useEffect(() => {
@@ -99,7 +99,7 @@ const ChatbotButton = () => {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isAtBottom, controls]);
+  }, [isAtBottom, updateButtonPosition]); // Added updateButtonPosition to dependencies
 
   // Get initial position based on screen width
   const getInitialPosition = () => {
@@ -283,7 +283,7 @@ const ChatbotContent = ({ isOpen }) => {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-56px)] md:h-[500px] bg-gray-50">
+    <div className="flex flex-col h-[calc(100vh-56px)] md:h-[500px] bg-primary">
       {/* Messages Area */}
       <div 
         ref={messagesContainerRef}
@@ -361,6 +361,18 @@ const ChatbotContent = ({ isOpen }) => {
 
 // FAQ Database and simulateAIResponse function
 const faqDatabase = [
+  {
+    question: "hi",
+    answer: "Hello! Welcome to SCF Strategies. How can I assist you today with your Supply Chain Finance needs?"
+  },
+  {
+    question: "hello",
+    answer: "Hi there! Welcome to SCF Strategies. How may I help you with your Supply Chain Finance requirements?"
+  },
+  {
+    question: "hey",
+    answer: "Hey! Thanks for reaching out to SCF Strategies. How can I assist you with Supply Chain Finance today?"
+  },
   {
     question: "What is Supply Chain Finance (SCF)?",
     answer: "Supply Chain Finance (SCF) is a set of financial solutions designed to improve cash flow efficiency by allowing businesses to extend payment terms while enabling suppliers to receive early payments, usually facilitated by a third-party financier."
@@ -514,20 +526,24 @@ const simulateAIResponse = (message) => {
     return "We serve a wide range of industries including manufacturing, retail, financial institutions, fintechs, and corporates. Each industry has unique needs, and we provide tailored solutions. Which industry would you like to learn more about?";
   }
   else {
-    return `I understand you're interested in Supply Chain Finance. To better assist you, could you please specify if you'd like to learn about:
-
-1. Working Capital Analytics and Benchmarking
-2. Supplier Onboarding and Relationship Management
-3. Platform Selection and Technology Solutions
-4. Program Design and Implementation
-5. Training and Sales Enablement
-6. Financial Institution Services
-7. Go-to-Market Strategy
-8. Partner Evaluation
-9. Industry-Specific Solutions
-
-Alternatively, you can contact us directly at contact@scfstrategies.com or call +1 203 470 9377 for immediate assistance.`;
+    return ( <>
+      I understand you&apos;re interested in Supply Chain Finance. To better assist you, could you please specify if you&apos;d like to learn about:<br />
+  <br />
+  • Working Capital Analytics and Benchmarking<br />
+  • Supplier Onboarding and Relationship Management<br />
+  • Platform Selection and Technology Solutions<br />
+  • Program Design and Implementation<br />
+  • Training and Sales Enablement<br />
+  • Financial Institution Services<br />
+  • Go-to-Market Strategy<br />
+  • Partner Evaluation<br />
+  • Industry-Specific Solutions<br />
+  <br />
+  Alternatively, you can contact us directly at contact@scfstrategies.com or call +1 203 470 9377 for immediate assistance.`
+    </>
+    );
   }
+  
 };
 
 

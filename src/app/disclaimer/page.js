@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo.jsx';
 import DisclaimerPage from '../../components/DisclaimerPage/DisclaimerPage.jsx';
+import WaveComponent from '@/components/ui/WaveComponent.jsx';
 
 export default function Page() {
   const schema = {
@@ -77,6 +78,7 @@ export default function Page() {
 
         {/* Main Content */}
         <DisclaimerPage />
+        {/* <WaveComponent />  */}
       </div>
     </>
   );
