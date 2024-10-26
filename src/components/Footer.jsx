@@ -168,6 +168,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="text-sm text-gray-400  py-4  order-3 md:order-1 flex items-center space-x-2">
               <Image src="/path/to/logo.svg" width={60} height={60} alt="TL Technologies Logo" className="h-5 w-5" />
+
               <span>Designed and Developed by TL Technologies</span>
             </div>
 

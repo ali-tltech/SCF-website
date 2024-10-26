@@ -40,9 +40,9 @@ const TestimonialSection = () => {
     }
   };
   return (
-    <section className="relative bg-gray-50 py-20 overflow-hidden">
+    <section className="relative bg-gray-50 py-20 overflow-hidden"  style={{ backgroundImage: "url('/images/LandingPage/')" }}>
       {/* Background SVG Patterns */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none" >
         
       </div>
 

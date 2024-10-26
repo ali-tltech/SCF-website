@@ -1,16 +1,74 @@
 import React from "react";
 import { FaIndustry, FaHospital, FaCar, FaUniversity, FaBuilding, FaPlane, FaShieldAlt, FaBitcoin } from "react-icons/fa";
 
+const FuturisticBackground = () => (
+  <div className="absolute inset-0 w-full h-full overflow-hidden opacity-10">
+    <svg className="w-full h-full" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+      {/* Grid Lines */}
+      <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#4A90E2" strokeWidth="0.5"/>
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+      
+      {/* Circular Elements */}
+      <circle cx="200" cy="200" r="100" fill="none" stroke="#4A90E2" strokeWidth="0.5" />
+      <circle cx="800" cy="800" r="150" fill="none" stroke="#4A90E2" strokeWidth="0.5" />
+      
+      {/* Tech Lines */}
+      <path d="M0 300 Q 400 350, 1000 200" stroke="#4A90E2" strokeWidth="0.5" fill="none" />
+      <path d="M0 600 Q 500 550, 1000 700" stroke="#4A90E2" strokeWidth="0.5" fill="none" />
+      
+      {/* Hexagon Pattern */}
+      {[...Array(5)].map((_, i) => (
+        <path
+          key={i}
+          d={`M${150 + i * 200},${100 + i * 100} l60,-35 l60,35 l0,70 l-60,35 l-60,-35 z`}
+          fill="none"
+          stroke="#4A90E2"
+          strokeWidth="0.5"
+        />
+      ))}
+      
+      {/* Dots */}
+      {[...Array(20)].map((_, i) => (
+        <circle
+          key={i}
+          cx={Math.random() * 1000}
+          cy={Math.random() * 1000}
+          r="2"
+          fill="#4A90E2"
+        />
+      ))}
+    </svg>
+  </div>
+);
+
 const industries = [
-  { icon: <FaIndustry />, title: "Manufacturing" },
-  { icon: <FaHospital />, title: "Healthcare" },
-  { icon: <FaCar />, title: "Automobile" },
-  { icon: <FaUniversity />, title: "Banking" },
-  { icon: <FaBuilding />, title: "Real Estate" },
-  { icon: <FaPlane />, title: "Logistics" },
-  { icon: <FaShieldAlt />, title: "Insurance" },
-  { icon: <FaBitcoin />, title: "Capital Markets" },
+  { icon: <FaIndustry className={getRandomColor()} />, title: "Manufacturing" },
+  { icon: <FaHospital className={getRandomColor()} />, title: "Healthcare" },
+  { icon: <FaCar className={getRandomColor()} />, title: "Automobile" },
+  { icon: <FaUniversity className={getRandomColor()} />, title: "Banking" },
+  { icon: <FaBuilding className={getRandomColor()} />, title: "Real Estate" },
+  { icon: <FaPlane className={getRandomColor()} />, title: "Logistics" },
+  { icon: <FaShieldAlt className={getRandomColor()} />, title: "Insurance" },
+  { icon: <FaBitcoin className={getRandomColor()} />, title: "Capital Markets" },
 ];
+
+function getRandomColor() {
+  const colors = [
+    'text-red-500', 
+    'text-blue-500', 
+    'text-green-500', 
+    'text-yellow-500', 
+    'text-purple-500', 
+    'text-orange-500', 
+    'text-pink-500', 
+    'text-teal-500',
+    'text-gold-500'
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
 
 const IndustriesSection = () => {
   const radius = 300;
@@ -24,9 +82,11 @@ const IndustriesSection = () => {
   };
 
   return (
-    <div className="bg-[#eeeeee] w-full">
+    <div className="bg-[#eeeeee] w-full relative">
+      <FuturisticBackground />
+      
       {/* Mobile Layout (display below lg breakpoint) */}
-      <section className="lg:hidden py-16 px-4">
+      <section className="lg:hidden py-16 px-4 relative">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-black mb-4">Industries We Serve</h2>
           <p className="text-black mb-8 max-w-md mx-auto">
@@ -39,7 +99,7 @@ const IndustriesSection = () => {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4 transition-transform duration-300 hover:scale-105"
+              className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg flex items-center space-x-4 transition-transform duration-300 hover:scale-105"
             >
               <div className="text-4xl text-blue-500">{industry.icon}</div>
               <h3 className="text-lg font-semibold text-gray-800">{industry.title}</h3>
@@ -51,9 +111,9 @@ const IndustriesSection = () => {
       {/* Desktop Circle Layout (display above lg breakpoint) */}
       <section className="hidden lg:block relative mx-auto max-w-[1550px] text-black h-[900px]">
         {/* Center Content */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 text-center z-10 w-full max-w-md">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10 w-full max-w-md">
           <h2 className="text-4xl font-bold text-black mb-4">Industries We Serve</h2>
-      <p className="max-w-3xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, recusandae repudiandae amet impedit iure quidem modi cumque delectus omnis natus, provident perspiciatis beatae soluta maxime harum alias accusamus, labore eveniet!</p>
+          <p className="max-w-3xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, recusandae repudiandae amet impedit iure quidem modi cumque delectus omnis natus, provident perspiciatis beatae soluta maxime harum alias accusamus, labore eveniet!</p>
         </div>
 
         {/* Industry Cards Container */}
@@ -69,7 +129,7 @@ const IndustriesSection = () => {
                   top: `${y}px`,
                 }}
               >
-                <div className="bg-white p-4 rounded-lg shadow-lg w-48 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg w-48 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
                   <div className="text-4xl text-blue-500">{industry.icon}</div>
                   <h3 className="text-lg font-semibold text-gray-800 text-center">{industry.title}</h3>
                 </div>
