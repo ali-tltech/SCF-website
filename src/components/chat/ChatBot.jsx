@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { Bot } from 'lucide-react';
 
@@ -39,6 +39,20 @@ const ChatbotButton = () => {
     return isBottom ? position.bottom : position.base;
   };
 
+  // Memoize updateButtonPosition with useCallback
+  const updateButtonPosition = useCallback((width, isBottom) => {
+    const bottomPosition = getButtonPosition(width, isBottom);
+    
+    controls.start({
+      bottom: `${bottomPosition}px`,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 25
+      }
+    });
+  }, [controls]); // Include controls in dependency array
+
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
@@ -62,21 +76,7 @@ const ChatbotButton = () => {
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
-  }, [screenSize, isAtBottom]);
-
-  // Function to calculate and update button position
-  const updateButtonPosition = (width, isBottom) => {
-    const bottomPosition = getButtonPosition(width, isBottom);
-    
-    controls.start({
-      bottom: `${bottomPosition}px`,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 25
-      }
-    });
-  };
+  }, [screenSize, isAtBottom, updateButtonPosition]); // Added updateButtonPosition to dependencies
 
   // Handle scroll event
   useEffect(() => {
@@ -99,7 +99,7 @@ const ChatbotButton = () => {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isAtBottom, controls]);
+  }, [isAtBottom, updateButtonPosition]); // Added updateButtonPosition to dependencies
 
   // Get initial position based on screen width
   const getInitialPosition = () => {
@@ -283,7 +283,7 @@ const ChatbotContent = ({ isOpen }) => {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-56px)] md:h-[500px] bg-gray-50">
+    <div className="flex flex-col h-[calc(100vh-56px)] md:h-[500px] bg-primary">
       {/* Messages Area */}
       <div 
         ref={messagesContainerRef}
@@ -527,7 +527,7 @@ const simulateAIResponse = (message) => {
   }
   else {
     return ( <>
-      I understand you're interested in Supply Chain Finance. To better assist you, could you please specify if you'd like to learn about:<br />
+      I understand you&apos;re interested in Supply Chain Finance. To better assist you, could you please specify if you&apos;d like to learn about:<br />
   <br />
   • Working Capital Analytics and Benchmarking<br />
   • Supplier Onboarding and Relationship Management<br />

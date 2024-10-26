@@ -17,90 +17,129 @@ const AdvisoryServicesContent = () => {
       title: "Strategic Go-to-Market Planning",
       icon: <Target className="w-8 h-8 text-blue-500" />,
       content: [
-        <span>Looking to enter the booming{' '}
-          <span >SCF</span> market or enhance your current offerings? We'll help you craft a winning strategy:
-        </span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Market Assessment:</span> Get a comprehensive analysis of{' '}
-          <span className="bg-blue-100 px-1 rounded">market feasibility</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">competition</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">key players</span>, and{' '}
-          <span className="bg-blue-100 px-1 rounded">target sectors</span>. We'll pinpoint your product's strengths and areas for improvement.
-        </span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Sales Plan:</span> Develop a robust{' '}
-          <span className="bg-blue-100 px-1 rounded">sales strategy</span>, including{' '}
-          <span className="bg-blue-100 px-1 rounded">market approach</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">client profiles</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">partnership opportunities</span>, and{' '}
-          <span className="bg-blue-100 px-1 rounded">key performance metrics</span>. Our plan ensures a streamlined sales process and maximizes your success.
-        </span>
+        {
+          id: 1,
+          text: <span key="intro">Looking to enter the booming{' '}
+            <span>SCF</span> market or enhance your current offerings? We&apos;ll help you craft a winning strategy:
+          </span>
+        },
+        {
+          id: 2,
+          text: <span key="market">
+            <span className="text-gray-600 font-bold text-lg">Market Assessment:</span> Get a comprehensive analysis of{' '}
+            <span className="bg-blue-100 px-1 rounded">market feasibility</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">competition</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">key players</span>, and{' '}
+            <span className="bg-blue-100 px-1 rounded">target sectors</span>. We&apos;ll pinpoint your product&apos;s strengths and areas for improvement.
+          </span>
+        },
+        {
+          id: 3,
+          text: <span key="sales">
+            <span className="text-gray-600 font-bold text-lg">Sales Plan:</span> Develop a robust{' '}
+            <span className="bg-blue-100 px-1 rounded">sales strategy</span>, including{' '}
+            <span className="bg-blue-100 px-1 rounded">market approach</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">client profiles</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">partnership opportunities</span>, and{' '}
+            <span className="bg-blue-100 px-1 rounded">key performance metrics</span>. Our plan ensures a streamlined sales process and maximizes your success.
+          </span>
+        }
       ]
     },
     {
       title: "In-Depth Solution Audit",
       icon: <Search className="w-8 h-8 text-green-500" />,
       content: [
-        <span>Is your{' '}
-          <span >SCF</span> platform performing at its best? Our solution audit provides clarity:
-        </span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Platform Review:</span> Determine if your solution is a{' '}
-          <span className="bg-blue-100 px-1 rounded">Minimum Viable Product (MVP)</span> or a{' '}
-          <span className="bg-blue-100 px-1 rounded">leading-edge offering</span>.
-        </span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Feature Analysis:</span> Identify{' '}
-          <span className="bg-blue-100 px-1 rounded">key strengths</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">differentiators</span>, and{' '}
-          <span className="bg-blue-100 px-1 rounded">limitations</span> impacting your platform's effectiveness.
-        </span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Actionable Recommendations:</span> Receive{' '}
-          <span className="bg-blue-100 px-1 rounded">detailed insights</span> and{' '}
-          <span className="bg-blue-100 px-1 rounded">strategic recommendations</span> to enhance your solution.
-        </span>
+        {
+          id: 4,
+          text: <span key="audit-intro">Is your{' '}
+            <span>SCF</span> platform performing at its best? Our solution audit provides clarity:
+          </span>
+        },
+        {
+          id: 5,
+          text: <span key="platform">
+            <span className="text-gray-600 font-bold text-lg">Platform Review:</span> Determine if your solution is a{' '}
+            <span className="bg-blue-100 px-1 rounded">Minimum Viable Product (MVP)</span> or a{' '}
+            <span className="bg-blue-100 px-1 rounded">leading-edge offering</span>.
+          </span>
+        },
+        {
+          id: 6,
+          text: <span key="analysis">
+            <span className="text-gray-600 font-bold text-lg">Feature Analysis:</span> Identify{' '}
+            <span className="bg-blue-100 px-1 rounded">key strengths</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">differentiators</span>, and{' '}
+            <span className="bg-blue-100 px-1 rounded">limitations</span> impacting your platform&apos;s effectiveness.
+          </span>
+        },
+        {
+          id: 7,
+          text: <span key="recommendations">
+            <span className="text-gray-600 font-bold text-lg">Actionable Recommendations:</span> Receive{' '}
+            <span className="bg-blue-100 px-1 rounded">detailed insights</span> and{' '}
+            <span className="bg-blue-100 px-1 rounded">strategic recommendations</span> to enhance your solution.
+          </span>
+        }
       ]
     },
     {
       title: "Expert Platform & Partner Selection",
       icon: <Users className="w-8 h-8 text-purple-500" />,
       content: [
-        <span>Choosing the right partners and technology is crucial for{' '}
-          <span>SCF</span> success. We offer:
-        </span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Evaluation Process:</span> Benefit from our{' '}
-          <span className="bg-blue-100 px-1 rounded">rigorous evaluation criteria</span> and{' '}
-          <span className="bg-blue-100 px-1 rounded">scoring methodology</span> to select the best{' '}
-          <span className="bg-blue-100 px-1 rounded">origination</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">technology</span>, and{' '}
-          <span className="bg-blue-100 px-1 rounded">funding partners</span>.
-        </span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Support Services:</span> We assist with{' '}
-          <span className="bg-blue-100 px-1 rounded">RFP preparation</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">response analysis</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">system demonstrations</span>,{' '}
-          <span className="bg-blue-100 px-1 rounded">reference checks</span>, and{' '}
-          <span className="bg-blue-100 px-1 rounded">contract negotiations</span> to help you make informed decisions.
-        </span>
+        {
+          id: 8,
+          text: <span key="partner-intro">Choosing the right partners and technology is crucial for{' '}
+            <span>SCF</span> success. We offer:
+          </span>
+        },
+        {
+          id: 9,
+          text: <span key="evaluation">
+            <span className="text-gray-600 font-bold text-lg">Evaluation Process:</span> Benefit from our{' '}
+            <span className="bg-blue-100 px-1 rounded">rigorous evaluation criteria</span> and{' '}
+            <span className="bg-blue-100 px-1 rounded">scoring methodology</span> to select the best{' '}
+            <span className="bg-blue-100 px-1 rounded">origination</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">technology</span>, and{' '}
+            <span className="bg-blue-100 px-1 rounded">funding partners</span>.
+          </span>
+        },
+        {
+          id: 10,
+          text: <span key="support">
+            <span className="text-gray-600 font-bold text-lg">Support Services:</span> We assist with{' '}
+            <span className="bg-blue-100 px-1 rounded">RFP preparation</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">response analysis</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">system demonstrations</span>,{' '}
+            <span className="bg-blue-100 px-1 rounded">reference checks</span>, and{' '}
+            <span className="bg-blue-100 px-1 rounded">contract negotiations</span> to help you make informed decisions.
+          </span>
+        }
       ]
     },
     {
       title: "Navigating Accounting Challenges",
       icon: <BookOpen className="w-8 h-8 text-red-500" />,
       content: [
-        <span>Implementing a Supply Chain Finance program can bring complex accounting issues. Our expertise helps you:</span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Accounting Best Practices:</span> Navigate the{' '}
-          <span className="bg-blue-100 px-1 rounded">intricacies of accounting treatment</span> with our expert guidance.
-        </span>,
-        <span>
-          <span className="text-gray-600 font-bold text-lg">Communication Templates:</span> Utilize our templates for{' '}
-          <span className="bg-blue-100 px-1 rounded">effective communication</span> with{' '}
-          <span className="bg-blue-100 px-1 rounded">auditors</span>, ensuring a favorable opinion on your program.
-        </span>
+        {
+          id: 11,
+          text: <span key="accounting-intro">Implementing a Supply Chain Finance program can bring complex accounting issues. Our expertise helps you:</span>
+        },
+        {
+          id: 12,
+          text: <span key="best-practices">
+            <span className="text-gray-600 font-bold text-lg">Accounting Best Practices:</span> Navigate the{' '}
+            <span className="bg-blue-100 px-1 rounded">intricacies of accounting treatment</span> with our expert guidance.
+          </span>
+        },
+        {
+          id: 13,
+          text: <span key="templates">
+            <span className="text-gray-600 font-bold text-lg">Communication Templates:</span> Utilize our templates for{' '}
+            <span className="bg-blue-100 px-1 rounded">effective communication</span> with{' '}
+            <span className="bg-blue-100 px-1 rounded">auditors</span>, ensuring a favorable opinion on your program.
+          </span>
+        }
       ]
     }
   ];
@@ -145,15 +184,15 @@ const AdvisoryServicesContent = () => {
                     className="overflow-hidden"
                   >
                     <div className="p-6 bg-gray-50 border-t border-gray-200">
-                      {item.content.map((paragraph, pIndex) => (
+                      {item.content.map((paragraph) => (
                         <motion.p
-                          key={pIndex}
+                          key={paragraph.id}
                           initial={{ y: 20, opacity: 0 }}
                           animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: pIndex * 0.1, duration: 0.3 }}
+                          transition={{ delay: 0.1, duration: 0.3 }}
                           className="text-gray-700 text-lg mb-4 last:mb-0"
                         >
-                          {paragraph}
+                          {paragraph.text}
                         </motion.p>
                       ))}
                     </div>
@@ -168,7 +207,7 @@ const AdvisoryServicesContent = () => {
       <div className="text-center bg-blue-600 text-white rounded-lg p-12">
         <h4 className="text-3xl font-bold mb-4">Ready to elevate your SCF strategy?</h4>
         <p className="text-xl mb-8">Let&apos;s connect and explore how our Advisory Services can help you achieve your goals.</p>
-        <Link href={"/contact-us"} className="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full transition-colors duration-200 text-lg">
+        <Link href="/contact-us" className="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full transition-colors duration-200 text-lg">
           Contact Us Today
         </Link>
       </div>

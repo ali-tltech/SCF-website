@@ -17,16 +17,16 @@ const ConsultingServicesContent = () => {
           title: "Go-to-Market Strategy for Supply Chain Finance",
           icon: <Globe className="w-8 h-8 text-blue-500" />,
           content: [
-            <span>Break into the booming{' '}
+            <span key="intro-1">Break into the booming{' '}
               <span>SCF</span> market with confidence:
             </span>,
-            <span>
+            <span key="strategic">
               <span className="text-gray-600 font-bold text-lg">Strategic Positioning:</span> Leverage{' '}
               <span className="bg-blue-100 px-1 rounded">data-driven insights</span>,{' '}
               <span className="bg-blue-100 px-1 rounded">industry best practices</span>, and{' '}
               <span className="bg-blue-100 px-1 rounded">market analytics</span> to position your offering effectively.
             </span>,
-            <span>
+            <span key="market">
               <span className="text-gray-600 font-bold text-lg">Market Entry Plan:</span> Define your{' '}
               <span className="bg-blue-100 px-1 rounded">target audience</span>,{' '}
               <span className="bg-blue-100 px-1 rounded">value proposition</span>,{' '}
@@ -39,16 +39,16 @@ const ConsultingServicesContent = () => {
           title: "Supply Chain Finance Solution Audit",
           icon: <Search className="w-8 h-8 text-green-500" />,
           content: [
-            <span>Ensure your{' '}
+            <span key="intro-2">Ensure your{' '}
               <span>SCF</span> platform delivers peak performance:
             </span>,
-            <span>
+            <span key="analysis">
               <span className="text-gray-600 font-bold text-lg">Comprehensive Analysis:</span> Evaluate{' '}
               <span className="bg-blue-100 px-1 rounded">platform capabilities</span>,{' '}
               <span className="bg-blue-100 px-1 rounded">operational efficiency</span>, and{' '}
               <span className="bg-blue-100 px-1 rounded">system performance</span> to identify opportunities.
             </span>,
-            <span>
+            <span key="enhancement">
               <span className="text-gray-600 font-bold text-lg">Enhancement Strategy:</span> Receive{' '}
               <span className="bg-blue-100 px-1 rounded">actionable recommendations</span> for{' '}
               <span className="bg-blue-100 px-1 rounded">performance optimization</span>,{' '}
@@ -61,16 +61,16 @@ const ConsultingServicesContent = () => {
           title: "SCF Platform & Partner Selection",
           icon: <Handshake className="w-8 h-8 text-purple-500" />,
           content: [
-            <span>Make informed decisions for your{' '}
-              <span >SCF</span> ecosystem:
+            <span key="intro-3">Make informed decisions for your{' '}
+              <span>SCF</span> ecosystem:
             </span>,
-            <span>
+            <span key="evaluation">
               <span className="text-gray-600 font-bold text-lg">Evaluation Framework:</span> Access our{' '}
               <span className="bg-blue-100 px-1 rounded">objective assessment criteria</span>,{' '}
               <span className="bg-blue-100 px-1 rounded">technology evaluation</span>, and{' '}
               <span className="bg-blue-100 px-1 rounded">partner vetting process</span>.
             </span>,
-            <span>
+            <span key="integration">
               <span className="text-gray-600 font-bold text-lg">Integration Planning:</span> Ensure{' '}
               <span className="bg-blue-100 px-1 rounded">seamless implementation</span>,{' '}
               <span className="bg-blue-100 px-1 rounded">business alignment</span>, and{' '}
@@ -82,16 +82,16 @@ const ConsultingServicesContent = () => {
           title: "SCF Accounting Treatment",
           icon: <DollarSign className="w-8 h-8 text-red-500" />,
           content: [
-            <span>Master the financial complexities of{' '}
-              <span >SCF</span> with expert guidance:
+            <span key="intro-4">Master the financial complexities of{' '}
+              <span>SCF</span> with expert guidance:
             </span>,
-            <span>
+            <span key="compliance">
               <span className="text-gray-600 font-bold text-lg">Compliance & Reporting:</span> Navigate{' '}
               <span className="bg-blue-100 px-1 rounded">regulatory requirements</span>,{' '}
               <span className="bg-blue-100 px-1 rounded">accounting standards</span>, and{' '}
               <span className="bg-blue-100 px-1 rounded">reporting practices</span>.
             </span>,
-            <span>
+            <span key="risk">
               <span className="text-gray-600 font-bold text-lg">Risk Management:</span> Implement{' '}
               <span className="bg-blue-100 px-1 rounded">financial controls</span>,{' '}
               <span className="bg-blue-100 px-1 rounded">transparency measures</span>, and{' '}

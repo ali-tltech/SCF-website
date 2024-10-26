@@ -22,13 +22,27 @@ const FAQPage = () => {
     },
     {
       question: "What services does SCF Strategies offer?",
-      answer: `Our services include:
-        - Working Capital Analytics
-        - Program Design
-        - Supplier Onboarding
-        - Sales & Operations Enablement
-        - Platform & Partner Selection
-        - Accounting Treatment Guidance`
+      answer: (<>
+      Our services include:<br />
+       <span className='ml-48'>
+      - Working Capital Analytics<br />
+       </span>
+       <span className='ml-48'>
+        - Program Design<br />
+       </span>
+       <span className='ml-48'>
+        - Supplier Onboarding<br />
+       </span>
+       <span className='ml-48'>
+        - Sales & Operations Enablement<br />
+       </span>
+       <span className='ml-48'>
+        - Platform & Partner Selection<br />
+       </span>
+       <span className='ml-48'>
+        - Accounting Treatment Guidance
+       </span>
+      </>)
     },
     {
       question: "How can SCF help my business’s working capital?",
