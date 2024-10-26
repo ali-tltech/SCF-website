@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       colors: {
       
-        primary: '#eeeeee', // Add primary color as `e0e7ff` (indigo-100)
+        primary: '#eeeeee', 
+        title:"#024950",// Add primary color as `e0e7ff` (indigo-100)
       },
       animation: {
         aurora: "aurora 60s linear infinite",

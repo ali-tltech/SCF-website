@@ -91,7 +91,8 @@ export default function ClientLayout({ children }) {
     <>
       {loading && <Loading />}
       
-      <div className={`transition-opacity duration-300 ${loading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`transition-opacity duration-300 relative ${loading ? 'opacity-0' : 'opacity-100'}`}>
+      
         <Navbar />
         <ChatbotPreview />
         <main ref={pageRef} className="transition-opacity ease-in-out">

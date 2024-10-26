@@ -138,8 +138,8 @@ const WhatWeDo = () => {
 
         {/* Experience Banner with parallax effect */}
         <div className="mt-20 relative fade-up opacity-0 translate-y-4 transition-all duration-1000">
-          <div className="absolute inset-0 bg-blue-600 opacity-5 rounded-2xl"></div>
-          <div className="relative bg-gradient-to-r from-blue-50 to-white rounded-2xl p-12 text-center overflow-hidden">
+          <div className="absolute inset-0 rounded-2xl"></div>
+          <div className="relative bg-gradient-to-r bg-cyan-500 rounded-2xl p-12 text-center overflow-hidden">
             {/* Abstract background pattern */}
             <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 100 100">
               <defs>
@@ -154,7 +154,7 @@ const WhatWeDo = () => {
               <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="2" fill="none" />
               <path d="M50 25 L50 75 M25 50 L75 50" stroke="currentColor" strokeWidth="2" />
             </svg>
-            <p className="text-xl text-gray-800">
+            <p className="text-2xl text-gray-200">
               Our team brings <span className="font-semibold">over 15 years</span> of hands-on experience with{' '}
               <span className="font-semibold">100+ SCF programs</span> implemented worldwide.
             </p>

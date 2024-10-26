@@ -3,7 +3,7 @@ import { FaCheckCircle, FaLeaf, FaBoxOpen, FaClipboardList, FaUsers, FaRocket } 
 
 const WhyChoose = () => {
   return (
-    <section className="bg-gray-50 md:p-20 p-5 rounded-lg flex flex-col md:h-[80vh] md:flex-row sm:flex-col items-center md:items-start space-y-8 md:space-y-0 md:space-x-8">
+    <section className="bg-peimary md:p-20 p-5 rounded-lg flex flex-col md:h-[80vh] md:flex-row sm:flex-col items-center md:items-start space-y-8 md:space-y-0 md:space-x-8">
       {/* Black div replacing the image */}
       <div className="w-full md:w-1/2 h-full  rounded-3xl bg-cover"  style={{ backgroundImage: "url('/images/LandingPage/whychoose.jpg')"} }></div>
 
@@ -11,7 +11,7 @@ const WhyChoose = () => {
       <div className="w-full md:w-1/2 flex flex-col h-full  justify-center">
         <div className="mb-4">
           <span className="bg-pink-200 text-pink-700 px-2 py-1 rounded-lg font-semibold">Why Us</span>
-          <h2 className="text-4xl font-bold text-black mt-2">
+          <h2 className="text-4xl font-bold text-title mt-2">
             Why Our Services are <br /> Better Than Others?
           </h2>
         </div>
