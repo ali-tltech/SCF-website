@@ -30,35 +30,34 @@ const RecentStories = () => {
   ];
 
   return (
-    <section className="py-12 bg-stone-100 leading-tight">
-      <div className="max-w-7xl flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900">Our Recent Story</h2>
-          <p className="mt-4 text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <section className="py-12 bg-primary leading-tight">
+      <div className="max-w-7xl flex flex-col items-center justify-start mx-auto px-4 ">
+      <div className="text-start w-full  ">
+  <h2 className="text-4xl font-bold text-title">Our Latest News</h2>
+  <p className="mt-4 text-gray-500">
+    Stay updated with our most recent developments, industry insights, and company announcements. <br /> Discover what's new and noteworthy in our world.
+  </p>
+</div>
+        <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
           {articles.map((article) => (
-            <div key={article.id} className="bg-white relative shadow-sm rounded-2xl border overflow-hidden">
-              <div className="relative h-72 w-full">
+            <div key={article.id} className="bg-white relative p-4 shadow-lg rounded-2xl  overflow-hidden">
+              <div className="relative h-72  w-full">
                 <Image
                   src={article.image}
                   alt={article.title}
                   layout="fill"
                   objectFit="cover"
-                  className="w-full h-full"
+                  className="w-full h-full rounded-2xl"
                 />
               </div>
               <div className="p-3 ">
               
-                <p className="text-gray-500 flex gap-2 text-xs"> 
-               <BsCalendar2Date className='text-blue-700'/> Admin / {article.date}</p>
-                <h3 className="mt-1 text-lg font-semibold text-blue-600">
+                <p className="text-gray-600 flex gap-2 text-xs"> 
+               <BsCalendar2Date className='text-black'/> Admin / {article.date}</p>
+                <h3 className="mt-1 text-lg font-semibold text-title">
                   {article.title}
                 </h3>
-                <p className="mt-1 text-gray-600">{article.description}</p>
+                <p className="mt-1 text-gray-700">{article.description}</p>
                 <button
                   href="#"
                   className="mt-1 inline-block  bg-white absolute p-3 top-3 right-3 z-10 text-indigo-500 hover:underline"

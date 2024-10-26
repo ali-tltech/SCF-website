@@ -21,7 +21,7 @@ export default function HomeContent() {
     <>
       {/* Hero Section */}
       <div className="relative md:h-screen h-[80vh] bg-cover bg-center bg-[#ede8f5] overflow-hidden" 
-     style={{ backgroundImage: "url('/images/LandingPage/background-3.jpg')" }} >
+     style={{ backgroundImage: "url('/images/LandingPage/hero.jpg')" }} >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" className="absolute">
   {/* Abstract Network Pattern (Top Right) */}
   <g opacity="0.15" fill="none" stroke="white" strokeWidth="1.5">
