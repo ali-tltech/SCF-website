@@ -59,7 +59,7 @@ const TestimonialSection = () => {
           <Quote className="absolute -top-6 -left-8 w-16 h-16 text-blue-100" />
           
           {/* Testimonial Card */}
-          <div className="relative bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="relative bg-white rounded-2xl shadow-lg p-8 md:p-12">
             <div className={`transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
               {/* Stars */}
               <div className="flex justify-center mb-6">

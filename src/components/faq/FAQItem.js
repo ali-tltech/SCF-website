@@ -38,7 +38,7 @@ const FAQItem = ({ question, answer }) => {
           >
             <div className="mt-6 flex items-start pl-9">
               <MessageCircle size={24} className="text-green-500 mr-3 flex-shrink-0 mt-1" />
-              <p className="text-gray-600">{answer}</p>
+              <p className="text-gray-600 text-lg">{answer}</p>
             </div>
           </motion.div>
         )}
