@@ -23,18 +23,18 @@ export const IntroSection = () => {
           
           {/* Text Content - Right Side */}
           <div className="w-full md:w-1/2 space-y-6">
-            <p className="text-gray-700  leading-relaxed text-lg">
+            <p className="text-gray-600  leading-relaxed text-lg">
               At SCF Strategies, we&apos;re dedicated to transforming your Supply Chain Finance (SCF) programs into powerful engines of growth. Our mission is to bridge the gap between innovative technology and practical implementation, unlocking new opportunities and maximizing efficiency for your business.
             </p>
             
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-gray-800 ">Core Values</h3>
-              <p className="  text-gray-700 leading-relaxed text-lg">
+              <p className="  text-gray-600 leading-relaxed text-lg">
                 We believe in building strong, transparent relationships with our clients. Our commitment to integrity and partnership ensures that we work collaboratively to achieve your goals and drive sustainable success.
               </p>
             </div>
             
-            <p className="text-gray-700  leading-relaxed text-lg">
+            <p className="text-gray-600  leading-relaxed text-lg">
               Our proven approach and methodology have successfully unlocked billions in working capital and free cash flow for leading companies worldwide. With over 100 SCF programs implemented globally, we&apos;ve learned from the challenges to ensure you don&apos;t have to.
             </p>
           </div>

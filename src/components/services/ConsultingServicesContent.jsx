@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, Globe, Search, Handshake, DollarSign, TrendingUp, ArrowUpCircle, Wallet, HandshakeIcon } from 'lucide-react';
+import { ChevronDown, ChevronUp, Globe, Search, Handshake, DollarSign, TrendingUp, ArrowUpCircle, Wallet, HandshakeIcon} from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
 
 const ConsultingServicesContent = () => {
     const [activeAccordion, setActiveAccordion] = useState(null);
@@ -197,6 +198,13 @@ const ConsultingServicesContent = () => {
                         fostering long-term success and competitive advantage in the supply chain finance marketplace.
                     </p>
                 </div>
+            </div>
+            <div className="text-center bg-blue-600 text-white rounded-lg  mb-8 p-12 ">
+                <h4 className="text-3xl font-bold mb-4">Explore Our Supply Chain Finance Consulting Services</h4>
+                <p className="text-xl mb-8">Take the first step toward elevating your supply chain finance strategy. Our team of experts is here to guide you through every stage of your SCF journey, from strategic planning to execution. Explore our consulting services to discover how we can help you achieve exceptional results and unlock new opportunities for your business.</p>
+                <Link href='/contact-us' className="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full transition-colors duration-200 text-lg">
+                    Get Started Today
+                </Link>
             </div>
         </div>
     );
