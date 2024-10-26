@@ -9,6 +9,7 @@ import {
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { subscribeToNewsletter } from '@/app/action';
 import XIcon from './ui/XIcon';
+import Image from 'next/image';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -166,7 +167,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="text-sm text-gray-400  py-4  order-3 md:order-1 flex items-center space-x-2">
-              <img src="/path/to/logo.svg" alt="TL Technologies Logo" className="h-5 w-5" />
+              <Image src="/path/to/logo.svg" alt="TL Technologies Logo" className="h-5 w-5" />
               <span>Designed and Developed by TL Technologies</span>
             </div>
 
