@@ -11,9 +11,9 @@ const InfoCard = () => {
           <span className="grid h-20 w-20 place-items-center rounded-full bg-yellow-500 transition-all duration-300 group-hover:bg-yellow-400">
             <FaCheck className="h-10 w-10 text-white" />
           </span>
-          <div className="space-y-6 pt-5 text-base leading-7 text-dark transition-all duration-300 group-hover:text-white/90">
+          <div className="space-y-6 pt-5 text-base leading-7 transition-all duration-300 group-hover:text-white/90">
             <h4 className="text-xl font-semibold">Independent Expertise</h4>
-            <p className='text-lg text-gray-700 '>Benefit from our unbiased, industry-leading insights that focus solely on optimizing your SCF programs.</p>
+            <p className='text-lg '>Benefit from our unbiased, industry-leading insights that focus solely on optimizing your SCF programs.</p>
           </div>
         </div>
       </div>
@@ -25,9 +25,9 @@ const InfoCard = () => {
           <span className="grid h-20 w-20 place-items-center rounded-full bg-green-500 transition-all duration-300 group-hover:bg-green-400">
             <FaTrophy className="h-10 w-10 text-white" />
           </span>
-          <div className="space-y-6 pt-5 text-base leading-7 text-dark transition-all duration-300 group-hover:text-white/90">
+          <div className="space-y-6 pt-5 text-base leading-7  transition-all duration-300 group-hover:text-white/90">
             <h4 className="text-xl  font-semibold">Proven Track Record</h4>
-            <p className='text-lg text-gray-700 '>Our successful implementation of over 100 programs highlights our ability to deliver transformative results for businesses worldwide.</p>
+            <p className='text-lg  hover:text-white '>Our successful implementation of over 100 programs highlights our ability to deliver transformative results for businesses worldwide.</p>
           </div>
         </div>
       </div>
@@ -37,11 +37,11 @@ const InfoCard = () => {
         <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-blue-500 transition-all duration-1000 group-hover:scale-[10]"></span>
         <div className="relative z-10 mx-auto max-w-md">
           <span className="grid h-20 w-20 place-items-center rounded-full bg-blue-500 transition-all duration-300 group-hover:bg-blue-400">
-            <FaLaptopCode className="h-10 w-10 text-white" />
+            <FaLaptopCode className="h-10 w-10 text-white " />
           </span>
-          <div className="space-y-6 pt-5 text-base leading-7 text-dark transition-all duration-300 group-hover:text-white/90">
+          <div className="space-y-6 pt-5 text-base leading-7  transition-all duration-300 group-hover:text-white/90">
             <h4 className="text-xl font-semibold">Advanced Technology</h4>
-            <p className='text-lg text-gray-700 '>Leverage cutting-edge analytics and benchmarking tools to drive efficiency and effectiveness in your SCF initiatives.</p>
+            <p className='text-lg  '>Leverage cutting-edge analytics and benchmarking tools to drive efficiency and effectiveness in your SCF initiatives.</p>
           </div>
         </div>
       </div>

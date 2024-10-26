@@ -4,11 +4,11 @@ import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 
 const Catalogues = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+    <div className="min-h-screen bg-primary relative overflow-hidden">
       {/* Aurora background component */}
       <AuroraBackgroundDemo
-        title="Experience the Future of Shopping"
-        description="Your exclusive preview into tomorrow's trends, today."
+        title="Resources"
+        description="Your gateway to knowledge and tools"
       />
 
       {/* Main content */}
@@ -17,7 +17,7 @@ const Catalogues = () => {
           <div className="flex items-center justify-center mb-6 relative">
             <Sparkles className="w-12 h-12 text-purple-600 mr-3 animate-pulse" />
             <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Catalogues Launching Soon!
+              Resources Coming Soon!
             </h1>
             <Sparkles className="w-12 h-12 text-blue-600 ml-3 animate-pulse" />
             
@@ -27,7 +27,7 @@ const Catalogues = () => {
           </div>
 
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            We&apos;re diligently working to bring you our new catalogues. 
+            We&apos;re diligently working to bring you our new resources. 
             Stay tuned for updates and sneak peeks!
           </p>
 
