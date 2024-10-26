@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
-import { Bot } from 'lucide-react';
+import { Bot, SendHorizonal } from 'lucide-react';
 
 const ChatbotButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +42,7 @@ const ChatbotButton = () => {
   // Memoize updateButtonPosition with useCallback
   const updateButtonPosition = useCallback((width, isBottom) => {
     const bottomPosition = getButtonPosition(width, isBottom);
-    
+
     controls.start({
       bottom: `${bottomPosition}px`,
       transition: {
@@ -58,7 +58,7 @@ const ChatbotButton = () => {
     const handleResize = () => {
       const width = window.innerWidth;
       let newSize;
-      
+
       if (width > 1024) newSize = '1440';
       else if (width > 768) newSize = '1024';
       else if (width > 425) newSize = '768';
@@ -84,10 +84,10 @@ const ChatbotButton = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      
+
       // Check if we're at the bottom (with a small threshold)
       const isBottom = scrollTop + windowHeight >= documentHeight - 10;
-      
+
       if (isBottom !== isAtBottom) {
         setIsAtBottom(isBottom);
         updateButtonPosition(window.innerWidth, isBottom);
@@ -151,7 +151,7 @@ const ChatbotButton = () => {
                   <Bot className="text-white" size={24} />
                   <h2 className="text-lg md:text-xl font-semibold text-white">Financial Assistant</h2>
                 </div>
-                <button 
+                <button
                   onClick={toggleChat}
                   className="text-white hover:bg-blue-600 rounded-full p-1"
                 >
@@ -160,7 +160,7 @@ const ChatbotButton = () => {
                   </svg>
                 </button>
               </div>
-              
+
               {/* Chatbot Content */}
               <ChatbotContent isOpen={isOpen} />
             </div>
@@ -199,8 +199,8 @@ const ChatbotContent = ({ isOpen }) => {
   // Scroll to bottom when new messages are added
   useEffect(() => {
     if (lastMessageRef.current) {
-      lastMessageRef.current.scrollIntoView({ 
-        behavior: 'smooth', 
+      lastMessageRef.current.scrollIntoView({
+        behavior: 'smooth',
         block: 'end'
       });
     }
@@ -240,8 +240,8 @@ const ChatbotContent = ({ isOpen }) => {
   ];
 
   const handleMenuClick = (option) => {
-    setMessages(prev => [...prev, { 
-      type: 'user', 
+    setMessages(prev => [...prev, {
+      type: 'user',
       content: option,
       highlight: true
     }]);
@@ -249,8 +249,8 @@ const ChatbotContent = ({ isOpen }) => {
 
     setTimeout(() => {
       const botResponse = simulateAIResponse(option);
-      setMessages(prev => [...prev, { 
-        type: 'bot', 
+      setMessages(prev => [...prev, {
+        type: 'bot',
         content: botResponse,
         highlight: true
       }]);
@@ -283,12 +283,12 @@ const ChatbotContent = ({ isOpen }) => {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-56px)] md:h-[500px] bg-primary">
+    <div className="flex flex-col  h-[calc(90dvh)] md:h-[500px] bg-primary">
       {/* Messages Area */}
-      <div 
+      <div
         ref={messagesContainerRef}
         className="flex-grow overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4"
-        style={{ 
+        style={{
           overflowY: 'auto',
           WebkitOverflowScrolling: 'touch',
         }}
@@ -299,19 +299,17 @@ const ChatbotContent = ({ isOpen }) => {
             key={index}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
+            className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-center'}`}
             ref={index === messages.length - 1 ? lastMessageRef : null}
           >
-            <div 
-              className={`max-w-[90%] p-4 rounded-lg shadow-sm ${
-                message.type === 'user' 
-                  ? 'bg-blue-500 text-white rounded-br-none'
-                  : 'bg-white text-gray-800 rounded-bl-none'
-              } ${
-                message.highlight 
+            <div
+              className={`max-w-[100%] p-4 rounded-lg shadow-sm ${message.type === 'user'
+                ? 'bg-blue-500 text-white rounded-br-none'
+                : 'bg-white text-gray-800 rounded-bl-none'
+                } ${message.highlight
                   ? 'ring-2 ring-blue-300 ring-opacity-50'
                   : ''
-              }`}
+                }`}
             >
               {renderContent(message)}
             </div>
@@ -344,14 +342,15 @@ const ChatbotContent = ({ isOpen }) => {
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSend()}
             placeholder="Type your message..."
-            className="flex-grow p-2 md:p-3 text-sm md:text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-600"
+            className="w-full p-2 md:p-3 text-base md:text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-600"
           />
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={handleSend}
-            className="bg-blue-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium text-sm md:text-base"
+            className="bg-blue-500 text-white p-3  md:px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium text-lg flex items-center  shadow-lg"
           >
-            Send
+            <span className="hidden md:block">Send</span>
+            <SendHorizonal size={28} className="block md:hidden" />
           </motion.button>
         </div>
       </div>
@@ -477,21 +476,21 @@ const faqDatabase = [
 
 const simulateAIResponse = (message) => {
   const lowercaseMessage = message.toLowerCase();
-  
+
   // First try to find an exact or close match from the FAQ database
-  const faqMatch = faqDatabase.find(faq => 
+  const faqMatch = faqDatabase.find(faq =>
     lowercaseMessage.includes(faq.question.toLowerCase()) ||
-    lowercaseMessage.split(' ').some(word => 
+    lowercaseMessage.split(' ').some(word =>
       faq.question.toLowerCase().includes(word) && word.length > 3
     )
   );
-  
+
   if (faqMatch) return faqMatch.answer;
 
   // Comprehensive keyword-based responses
   if (lowercaseMessage.includes("working capital") || lowercaseMessage.includes("analytics")) {
     return "Our Working Capital Analytics involves analyzing supplier data, payment terms, and other financial factors. We offer a unique Working Capital Benchmark Analytics Application that identifies opportunities to optimize working capital. Would you like to learn more about our analytics capabilities?";
-  } 
+  }
   else if (lowercaseMessage.includes("supplier") || lowercaseMessage.includes("onboarding")) {
     return "We offer comprehensive supplier onboarding services through telephone, email, and mail outreach. SCF improves supplier relationships by providing early payments at lower financing costs. Would you like to learn more about our supplier engagement process?";
   }
@@ -526,24 +525,24 @@ const simulateAIResponse = (message) => {
     return "We serve a wide range of industries including manufacturing, retail, financial institutions, fintechs, and corporates. Each industry has unique needs, and we provide tailored solutions. Which industry would you like to learn more about?";
   }
   else {
-    return ( <>
+    return (<>
       I understand you&apos;re interested in Supply Chain Finance. To better assist you, could you please specify if you&apos;d like to learn about:<br />
-  <br />
-  • Working Capital Analytics and Benchmarking<br />
-  • Supplier Onboarding and Relationship Management<br />
-  • Platform Selection and Technology Solutions<br />
-  • Program Design and Implementation<br />
-  • Training and Sales Enablement<br />
-  • Financial Institution Services<br />
-  • Go-to-Market Strategy<br />
-  • Partner Evaluation<br />
-  • Industry-Specific Solutions<br />
-  <br />
-  Alternatively, you can contact us directly at contact@scfstrategies.com or call +1 203 470 9377 for immediate assistance.`
+      <br />
+      • Working Capital Analytics and Benchmarking<br />
+      • Supplier Onboarding and Relationship Management<br />
+      • Platform Selection and Technology Solutions<br />
+      • Program Design and Implementation<br />
+      • Training and Sales Enablement<br />
+      • Financial Institution Services<br />
+      • Go-to-Market Strategy<br />
+      • Partner Evaluation<br />
+      • Industry-Specific Solutions<br />
+      <br />
+      Alternatively, you can contact us directly at contact@scfstrategies.com or call +1 203 470 9377 for immediate assistance.`
     </>
     );
   }
-  
+
 };
 
 
