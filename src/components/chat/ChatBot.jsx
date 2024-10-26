@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
-import { Bot, Send } from 'lucide-react';
+import { Bot, SendHorizonal } from 'lucide-react';
 
 const ChatbotButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -347,10 +347,10 @@ const ChatbotContent = ({ isOpen }) => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={handleSend}
-            className="bg-blue-500 text-white px-4  md:px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium text-lg flex items-center space-x-2 shadow-lg"
+            className="bg-blue-500 text-white p-3  md:px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium text-lg flex items-center  shadow-lg"
           >
             <span className="hidden md:block">Send</span>
-            <Send className="ml-1 block md:hidden" />
+            <SendHorizonal size={28} className="block md:hidden" />
           </motion.button>
         </div>
       </div>
