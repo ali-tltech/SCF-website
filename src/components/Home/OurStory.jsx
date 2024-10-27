@@ -95,22 +95,7 @@ const OurStory = () => {
             <p className="text-gray-700 leading-relaxed text-sm sm:text-lg">
               Founded in 2015, SCF Strategies emerged from the recognition that traditional Supply Chain Finance providers typically offer either funding or technology, but rarely both in an integrated manner. With over 15 years of experience, we&apos;ve revolutionized the industry by combining best practice processes with cutting-edge technology and robust funding capacity.
             </p>
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className=" p-4 sm:p-6 rounded-lg sm:rounded-xl bg-title shadow-md sm:shadow-lg"
-              >
-                <h4 className="text-2xl sm:text-4xl font-bold text-blue-100 mb-1 sm:mb-2">$150B+</h4>
-                <p className="text-gray-100 text-sm sm:text-base">Trading Volume</p>
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="bg-title p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg"
-              >
-                <h4 className="text-2xl sm:text-4xl font-bold text-blue-100 mb-1 sm:mb-2">100+</h4>
-                <p className="text-gray-100 text-sm sm:text-base">Global Programs</p>
-              </motion.div>
-            </div>
+            font-extrabold text-blue-100
           </div>
           <div className="w-full rounded-xl sm:rounded-2xl overflow-hidden ">
             <ResponsiveImage

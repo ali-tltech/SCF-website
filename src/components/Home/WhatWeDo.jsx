@@ -118,20 +118,20 @@ const WhatWeDo = () => {
           {offerings.map(({ Icon, title, description }, index) => (
             <div 
               key={index}
-              className={` p-8 rounded-xl shadow-lg relative hover:shadow-xl transition-all bg-white duration-300 transform hover:-translate-y-1 border border-gray-100 fade-in opacity-0 translate-y-4`}
+              className={` p-8 rounded-xl shadow-lg relative hover:shadow-xl transition-all bg-title duration-300 transform hover:-translate-y-1 border border-gray-100 fade-in opacity-0 translate-y-4`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
              
               <div className="mb-6 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-blue-100 rounded-lg opacity-20 group-hover:scale-110 transition-transform duration-300"></div>
-                <div className="relative p-3">
-                  <Icon className="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                <div className="relative p-3 w-fit">
+                  <Icon className="w-8 h-8 text-blue-100 group-hover:scale-110 transition-transform duration-300" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-white mb-4">
                 {title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-200">
                 {description}
               </p>
             </div>

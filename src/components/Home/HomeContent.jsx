@@ -1,8 +1,6 @@
 'use client';
 import React, { useEffect } from "react";
-import { FaLaptop, FaChartBar, FaCogs } from "react-icons/fa";
-import Image from "next/image";
-import StatsSection from "@/components/Home/StatsSection";
+import {motion} from 'framer-motion'
 import IndustriesSection from "@/components/Home/IdrustieSection";
 import RecentStories from "@/components/Home/StorySection";
 import FreeTrialSection from "@/components/Home/FreeTrailSection";
@@ -70,14 +68,31 @@ export default function HomeContent() {
     {/* Insert the SVG here */}
   </div>
   
-  <div className="absolute inset-0 bg-black opacity-10"></div>
+  <div className="absolute inset-0 bg-black opacity-30"></div>
   
   <div className="relative z-10 flex md:items-center max-w-7xl p-4 mx-auto md:justify-start items-end justify-end h-full">
-    <div className="text-white w-full h-fit text-start flex flex-col gap-6 items-start justify-center mt-40 md:mt-20">
-      <h1 className="md:text-5xl text-2xl font-bold mb-2">
+
+    <div className="text-white w-full h-fit text-start flex flex-col md:gap-6 gap-2 items-start justify-center mt-40 md:mt-20">
+    <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className=" p-4 sm:p-6 rounded-lg sm:rounded-xl bg-primary  shadow-md sm:shadow-lg"
+              >
+                <h4 className="text-2xl sm:text-4xl font-bold text-title mb-1 sm:mb-2">$150B+</h4>
+                <p className="text-gray-800 text-sm sm:text-base">Trading Volume</p>
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-title p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg"
+              >
+                <h4 className="text-2xl sm:text-4xl font-bold text-blue-100 mb-1 sm:mb-2">100+</h4>
+                <p className="text-gray-100 text-sm sm:text-base">Global Programs</p>
+              </motion.div>
+            </div>
+      <h1 className="md:text-5xl text-3xl text-blue-100  font-bold mb-2">
       Transforming Supply Chain Finance <br /> with Expertise and Innovation
       </h1>
-      <p className="text-lg md:text-2xl font-light mb-4">
+      <p className="text-lg md:text-2xl text-gray-200 font-semibold mb-2">
         Integrating Funding, Technology, and Best Practices for Supply Chain Finance Success
       </p>
       <CustomeButton title={"Get start"}/>

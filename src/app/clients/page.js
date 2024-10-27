@@ -84,7 +84,7 @@ const ClientsPage = () => {
     "Training, Workshops, and Research Data"
   ];
   return (
-    <div className="min-h-screen bg-gray-50 relative overflow-hidden">
+    <div className="min-h-screen bg-primary  relative overflow-hidden">
       <AuroraBackgroundDemo  title={"Clients"} link={"Home"} description={"Tailored Solutions for Exceptional Clients"}/>
       
       
@@ -102,7 +102,7 @@ const ClientsPage = () => {
             </svg>
           </div>
           
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4 relative z-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-title mb-3 md:mb-4 relative z-10">
             Supply Chain Finance Solutions
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
@@ -139,7 +139,7 @@ const ClientsPage = () => {
                       {service.description}
                     </p>
                   </div>
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-4 right-4 bg-white p-2 rounded-full">
                     {expandedSection === key ? 
                       <HiChevronUp className="w-6 h-6 text-blue-600" /> : 
                       <HiChevronDown className="w-6 h-6 text-blue-600" />
@@ -148,12 +148,12 @@ const ClientsPage = () => {
                 </div>
               
                 {expandedSection === key && (
-                  <div className="px-4 md:px-6 pb-4 md:pb-6 pt-2">
-                    <div className="grid gap-3 md:gap-4">
+                  <div className="px-4 md:px-6    pb-4 md:pb-6 pt-2">
+                    <div className="grid gap-3 md:gap-4 z-50">
                       {service.items.map((item, index) => (
-                        <div key={index} className="flex items-start md:items-center space-x-3">
+                        <div key={index} className="flex items-start md:items-center space-x-3 z-50">
                           <HiCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1 md:mt-0" />
-                          <span className="text-white text-sm md:text-base">{item}</span>
+                          <span className="text-gray-200 text-sm md:text-base">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -182,21 +182,42 @@ const ClientsPage = () => {
         </div>
 
         {/* Items Grid */}
-        <div className="grid gap-4 md:gap-6">
-          {items.map((item, index) => (
-            <div 
-              key={index}
-              className="group flex items-center space-x-4 p-3 rounded-lg hover:bg-gray-50 transition-all duration-300"
-            >
-              <div className="flex-shrink-0 p-1 rounded-full bg-green-100 group-hover:bg-green-200 transition-colors duration-300">
-                <HiCheckCircle className="w-6 h-6 text-green-600" />
-              </div>
-              <span className="text-gray-700 text-base md:text-lg font-medium group-hover:text-gray-900 transition-colors duration-300">
-                {item}
-              </span>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+  {/* Column 1 (first 3 items) */}
+  <div>
+    {items.slice(0, 2).map((item, index) => (
+      <div 
+        key={index}
+        className="group flex items-center space-x-4 p-3 rounded-lg mt-2 bg-title transition-all duration-300"
+      >
+        <div className="flex-shrink-0 p-1 rounded-full bg-green-100 group-hover:bg-green-200 transition-colors duration-300">
+          <HiCheckCircle className="w-6 h-6 text-green-600" />
         </div>
+        <span className="text-gray-100 text-sm md:text-sm font-medium group-hover:text-gray-100 transition-colors duration-300">
+          {item}
+        </span>
+      </div>
+    ))}
+  </div>
+
+  {/* Column 2 (last 2 items) */}
+  <div>
+    {items.slice(2).map((item, index) => (
+      <div 
+        key={index + 3}  // Adjust the key index to avoid duplicate keys
+        className="group flex items-center space-x-4 p-3 rounded-lg mt-2 bg-title transition-all duration-300"
+      >
+        <div className="flex-shrink-0 p-1 rounded-full bg-green-100 group-hover:bg-green-200 transition-colors duration-300">
+          <HiCheckCircle className="w-6 h-6 text-green-600" />
+        </div>
+        <span className="text-gray-100 text-sm md:text-sm font-medium group-hover:text-gray-910 transition-colors duration-300">
+          {item}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Decorative Corner Elements */}
         <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-blue-200 rounded-tr-xl" />
