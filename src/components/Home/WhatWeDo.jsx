@@ -77,10 +77,10 @@ const WhatWeDo = () => {
         </svg>
         
         {/* New hexagon pattern */}
-        <svg className="absolute right-1/4 bottom-1/4 opacity-10" width="300" height="300" viewBox="0 0 100 100">
+        {/* <svg className="absolute right-1/4 bottom-1/4 opacity-10" width="300" height="300" viewBox="0 0 100 100">
           <path d="M50 10L90 30L90 70L50 90L10 70L10 30Z" stroke="#2563eb" strokeWidth="0.5" fill="none" 
                 className="animate-pulse-slow" />
-        </svg>
+        </svg> */}
         
         {/* Original rectangles */}
         <svg className="absolute left-0 bottom-0 opacity-10" width="400" height="400" viewBox="0 0 100 100">
@@ -90,14 +90,14 @@ const WhatWeDo = () => {
         </svg>
 
         {/* New wave pattern */}
-        <svg className="absolute right-0 top-1/2 opacity-5" width="100%" height="120" preserveAspectRatio="none">
+        {/* <svg className="absolute right-0 top-1/2 opacity-5" width="100%" height="120" preserveAspectRatio="none">
           <path d="M0,40 C300,100 400,0 500,40 C600,80 700,0 800,40 L800,120 L0,120 Z" fill="#2563eb" />
-        </svg>
+        </svg> */}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header Section with animation */}
-        <div className=" mb-20 fade-up text-start opacity-0 translate-y-4 transition-all duration-1000">
+        <div className=" mb-10 fade-up text-start opacity-0 translate-y-4 transition-all duration-1000">
          
           <h2 className="text-4xl font-bold text-[#024950] mb-6">
             What We Do at SCF Strategies

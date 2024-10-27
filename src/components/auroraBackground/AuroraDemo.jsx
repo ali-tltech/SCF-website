@@ -53,24 +53,24 @@ const AuroraBackgroundDemo = ({title, description}) => {
         }}
         className="absolute  flex max-w-7xl mx-auto inset-0   flex-col gap-4 items-start justify-end p-4"
       >
+       
+        <div className="text-2xl md:text-5xl w-full font-extrabold mb-10 text-cyan-300  dark:text-white text-center">
+          {title}
+        </div>
+        <div className="flex justify-between flex-col md:flex-row items-end w-full">
         <div className="font-extralight text-center text-base md:text-3xl text-stone-300 dark:text-neutral-200 py-4">
           {description}
         </div>
-        <div className="flex justify-between w-full">
-        <div className="text-2xl md:text-5xl font-extrabold dark:text-white text-center">
-          {title}
-        </div>
-
         
         
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          <div className="flex  flex-wrap justify-center gap-4 md:gap-6">
             {socialLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 md:p-3 rounded-full bg-white/10 hover:bg-white/30 transition-all duration-300 text-white hover:scale-110"
+                className="p-2 md:p-3 rounded-full h-fit bg-white/10 hover:bg-white/30 transition-all duration-300 text-white hover:scale-110"
                 aria-label={link.label}
               >
                 <div className="transform transition-transform duration-300 hover:scale-125">

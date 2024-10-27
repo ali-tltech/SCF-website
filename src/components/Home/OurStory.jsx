@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import CustomeButton from '../ui/CustomeButton';
 
 const OurStory = () => {
   const milestones = [
@@ -168,16 +169,12 @@ const OurStory = () => {
           className="mt-8 sm:mt-12 lg:mt-16 bg-blue-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center"
         >
           <h3 className="text-xl sm:text-2xl font-bold text-title mb-3 sm:mb-4">Our Commitment to Excellence</h3>
-          <p className="text-gray-700 max-w-3xl mx-auto text-sm sm:text-base">
-            Today, SCF Strategies is recognized as an industry leader in SCF consulting. Our proven approach and methodology have successfully assessed markets and implemented programs, unlocking billions in working capital and free cash flow for leading companies worldwide.
+          <p className="text-gray-700 max-w-3xl mx-auto md:text-lg text-sm sm:text-base">
+            Today, SCF Strategies is recognized as an industry leader in SCF consulting. <br /> Our proven approach and methodology have successfully assessed markets and implemented programs, unlocking billions in working capital and free cash flow for leading companies worldwide.
           </p>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-4 sm:mt-6 px-6 sm:px-8 py-2 sm:py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 text-sm sm:text-base"
-          >
-            Learn More About Our Impact
-          </motion.button>
+         
+            <CustomeButton title={"Learn More About Our Impact"}/>
+         
         </motion.div>
       </div>
 

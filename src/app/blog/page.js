@@ -3,42 +3,48 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import Image from 'next/image';
 import { BsCalendar2Date } from 'react-icons/bs';
+import Link from 'next/link'; // Import Link from next/link
 
 const Blog = () => {
   const blogPosts = [
     {
+      id: 'roundtable-txf-ny-2018',
       title: 'Roundtable on Supply Chain Finance at TXF in New York',
       author: 'SCF Strategies',
       date: 'September 17, 2018',
-      image: '/images/LandingPage/discover.jpg',
+      image: '/images/blog/1.png',
       excerpt: 'SCF Strategies participated in the TXF Conference in New York, discussing emerging trends and the impact of trade dynamics.',
     },
     {
+      id: 'baft-scf-bootcamp-2018',
       title: 'SCF Strategies at the BAFT Supply Chain Finance Bootcamp',
       author: 'SCF Strategies',
       date: 'September 17, 2018',
-      image: '/images/LandingPage/discover.jpg',
+      image: '/images/blog/2.png',
       excerpt: 'SCF Strategies attended the BAFT Bootcamp, focusing on technological innovations and best practices in SCF programs.',
     },
     {
+      id: '4-key-success-factors-scf',
       title: '4 Key Success Factors for Effective Supply Chain Finance',
       author: 'SCF Strategies',
       date: 'October 30, 2018',
-      image: '/images/LandingPage/discover.jpg',
+      image: '/images/blog/3.png',
       excerpt: 'This post outlines four essential success factors for SCF programs, including setting clear targets and selecting the right structure.',
     },
     {
+      id: 'supplier-onboarding-guide',
       title: "Supplier Onboarding - It's Not as Tough as You Think",
       author: 'SCF Strategies',
       date: 'October 6, 2018',
-      image: '/images/LandingPage/discover.jpg',
+      image: '/images/blog/4.png',
       excerpt: 'An introduction to the importance of effective supplier onboarding in SCF, highlighting challenges and best practices.',
     },
     {
+      id: 'critical-need-scf-2018',
       title: 'Filling a Critical Need in Supply Chain Finance',
       author: 'SCF Strategies',
       date: 'September 25, 2018',
-      image: '/images/LandingPage/discover.jpg',
+      image: '/images/blog/5.png',
       excerpt: 'SCF Strategies emphasizes the need for comprehensive knowledge in SCF, showcasing a case study on supplier engagement.',
     }
   ];
@@ -56,36 +62,44 @@ const Blog = () => {
     <>
       <AuroraBackgroundDemo title={'Blogs'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
       <div className="text-stone-800 py-10 flex justify-center max-w-7xl mx-auto px-4 relative">
-      
-        <div className="grid grid-cols-1  lg:grid-cols-3  gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Blog Posts Section */}
           <div className="lg:col-span-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {blogPosts.map((post, index) => (
-  <div key={index} className="bg-white relative shadow-sm rounded-2xl border overflow-hidden">
-    <div className="relative h-72 w-full">
-      <Image src={`/images/blog/${index + 1}.png`} alt={post.title} layout="fill" objectFit="cover" className="w-full h-full" />
-    </div>
-    <div className="p-4">
-      <p className="text-gray-500 flex gap-2 text-xs">
-        <BsCalendar2Date className="text-blue-700" /> {post.author} / {post.date}
-      </p>
-      <h3 className="mt-1 text-lg font-semibold text-blue-600">{post.title}</h3>
-      <p className="mt-1 text-gray-600">{post.excerpt}</p>
-      <button className="mt-1 inline-block bg-white absolute p-3 top-3 right-3 z-10 text-indigo-500 hover:underline">
-        +
-      </button>
-    </div>
-  </div>
-))}
-
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+              {blogPosts.map((post, index) => (
+                <Link key={index} href={`/blog/${post.id}`} passHref>
+                  <div className="bg-white relative p-4 shadow-lg rounded-2xl overflow-hidden cursor-pointer">
+                    <div className="relative h-72 w-full">
+                      <Image
+                        src={post.image || `/images/blog/${index + 1}.png`}
+                        alt={post.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="w-full h-full rounded-2xl"
+                      />
+                    </div>
+                    <div className="p-3">
+                      <p className="text-gray-600 flex gap-2 text-xs">
+                        <BsCalendar2Date className="text-black" /> 
+                        {post.author} / {post.date}
+                      </p>
+                      <h3 className="mt-1 text-lg font-semibold text-title line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="mt-1 text-gray-700 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
 
           {/* Sidebar Section */}
           <div className="space-y-8">
             {/* Search */}
-            <div className="border border-[#096bd8] rounded-lg items-center  shadow-md bg-[#096bd8] flex">
+            <div className="border border-[#096bd8] rounded-lg items-center shadow-md bg-[#096bd8] flex">
               <input
                 type="text"
                 placeholder="Search..."

@@ -5,16 +5,39 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       text: "Working with SCF Strategies transformed our approach to supply chain finance. Their team brought not only deep industry knowledge but also a hands-on, practical approach to implementation. Thanks to their guidance, we optimized our SCF program and improved cash flow significantly.",
-      author: "CFO, Global Retail Corporation",
+      author: "Global Retail Corporation",
+      position: "CFO",
       rating: 5
     },
-    // ... rest of the testimonials array
+    {
+      text: "SCF Strategies went above and beyond in helping us implement a reverse factoring program that delivered real, measurable results. Their expertise in supplier onboarding and working capital analysis was instrumental in the success of our initiative.",
+      author: "Leading Manufacturing Firm",
+      position: "Head of Procurement",
+      rating: 5
+    },
+    {
+      text: "We partnered with SCF Strategies for an audit of our existing SCF platform, and the insights they provided were invaluable. They not only identified gaps but gave us clear, actionable recommendations to improve performance. Their team's professionalism and dedication were outstanding.",
+      author: "Fintech Company",
+      position: "CEO",
+      rating: 5
+    },
+    {
+      text: "SCF Strategies made a complex process feel seamless. From evaluating potential partners to managing our go-to-market strategy, they were with us every step of the way. The team's industry experience was clearly evident, and we've seen incredible improvements in both our supplier relationships and cash flow.",
+      author: "International Bank",
+      position: "Treasurer",
+      rating: 5
+    },
+    {
+      text: "SCF Strategies helped us launch our Supply Chain Finance program with precision and expertise. Their ability to align cross-functional teams and navigate the challenges of accounting treatment was a game-changer for us. They're not just consultants – they're true partners in success.",
+      author: "Global Logistics Company",
+      position: "VP of Finance",
+      rating: 5
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Memoize handleNext with useCallback
   const handleNext = useCallback(() => {
     if (!isAnimating) {
       setIsAnimating(true);
@@ -23,7 +46,6 @@ const TestimonialSection = () => {
     }
   }, [isAnimating, testimonials.length]);
 
-  // Now include handleNext in the dependency array
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
@@ -39,16 +61,16 @@ const TestimonialSection = () => {
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
-  return (
-    <section className="relative bg-primary py-20 overflow-hidden bg-cover bg-end"   style={{ backgroundImage: "url('/images/LandingPage/background-3.jpg')" }} >
-      {/* Background SVG Patterns */}
-      <div className="absolute inset-0 pointer-events-none" >
-        
-      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+  return (
+    <section className="relative bg-gray-50 py-20 overflow-hidden" style={{ backgroundImage: "url('/images/LandingPage/fintech.jpg')" }}>
+      {/* Background Overlay */}
+      <div className="absolute inset-0 backdrop-blur-sm bg-black bg-opacity-75" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Title Section */}
+        <div className="relative text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4">What our clients say</h2>
           <svg className="w-16 h-2 mx-auto" viewBox="0 0 60 8">
             <rect width="60" height="8" fill="#2563eb" rx="4" />
           </svg>
@@ -59,43 +81,42 @@ const TestimonialSection = () => {
           <Quote className="absolute -top-6 -left-8 w-16 h-16 text-blue-100" />
           
           {/* Testimonial Card */}
-          <div className="relative bg-white rounded-2xl shadow-lg p-8 md:p-12">
+          <div className="relative bg-primary rounded-2xl shadow-xl p-8 md:p-12 min-h-[300px]">
             <div className={`transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
               {/* Stars */}
-              <div className="flex justify-center mb-6">
-                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <svg key={i} className="w-6 h-6 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
+           
               
               {/* Testimonial Text */}
-              <p className="text-gray-700 text-lg md:text-xl mb-6 ">
-              &quot;{testimonials[currentIndex].text}&quot;
+              <p className="text-gray-700 text-center  md:text-lg  text-base sm:text-sm mb-6">
+                &quot;{testimonials[currentIndex].text}&quot;
               </p>
               
               {/* Author */}
-              <p className="text-blue-700 font-bold text-2xl">
-                 {testimonials[currentIndex].author}
-              </p>
+              <div className="text-center">
+                <p className="text-title font-bold ">
+                  {testimonials[currentIndex].author}
+                </p>
+                <p className="text-gray-600 text-lg ">
+                  {testimonials[currentIndex].position}
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Navigation Buttons */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0">
-            <div className="flex justify-between">
+          <div className="absolute top-1/2 -translate-y-1/2 w-full">
+            <div className="flex justify-between mx-auto  px-4">
               <button 
                 onClick={handlePrev}
-                className="transform -translate-x-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-20"
               >
-                <ChevronLeft className="w-6 h-6 text-gray-600" />
+                <ChevronLeft className="w-6 h-6 text-cyan-600" />
               </button>
               <button 
                 onClick={handleNext}
-                className="transform translate-x-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+                className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors z-20"
               >
-                <ChevronRight className="w-6 h-6 text-gray-600" />
+                <ChevronRight className="w-6 h-6 text-cyan-600" />
               </button>
             </div>
           </div>
