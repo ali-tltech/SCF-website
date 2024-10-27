@@ -96,9 +96,9 @@ const IndustriesSection = () => {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg flex items-center space-x-4 transition-transform duration-300 hover:scale-105"
+              className="bg-white backdrop-blur-sm p-6 rounded-lg shadow-lg flex items-center space-x-4 transition-transform duration-300 hover:scale-105"
             >
-              <div className="text-4xl text-blue-500">{industry.icon}</div>
+              <div className="text-4xl ">{industry.icon}</div>
               <h3 className="text-lg font-semibold text-gray-800">{industry.title}</h3>
             </div>
           ))}
@@ -125,7 +125,7 @@ const IndustriesSection = () => {
                   top: `${y}px`,
                 }}
               >
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg w-48 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
+                <div className="bg-white backdrop-blur-sm p-4 rounded-lg shadow-lg w-48 flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-110">
                   <div className="text-4xl text-blue-500">{industry.icon}</div>
                   <h3 className="text-lg font-semibold text-gray-800 text-center">{industry.title}</h3>
                 </div>

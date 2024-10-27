@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                <Image src="/images/logo.png" alt="Company Logo" width={60} height={30} className="cursor-pointer" />
+                <Image src="/images/logo.png" alt="Company Logo" width={70} height={35} className="cursor-pointer" />
               </Link>
             </div>
             <div className="hidden lg:flex lg:items-center lg:justify-end lg:flex-1">
@@ -125,7 +125,7 @@ const Navbar = () => {
           <div className="px-4 pt-5 pb-6 space-y-6">
             <div className="flex items-center justify-between">
               <div>
-                <Image src="/images/logo.png" alt="Company Logo" width={60} height={30} />
+                <Image src="/images/logo.png" alt="Company Logo" width={70} height={35} />
               </div>
               <div className="-mr-2">
                 <button

@@ -145,7 +145,7 @@ const WhatWeDo = () => {
     style={{ backgroundImage: "url('/images/boxbig2.jpg')" }}
   >
     {/* Background blur with lower z-index */}
-    <div className="absolute inset-0 rounded-2xl backdrop-blur-sm z-0 bg-black bg-opacity-10"></div>
+    <div className="absolute inset-0 rounded-2xl backdrop-blur-sm z-0"></div>
 
     {/* Abstract background pattern */}
     <svg
@@ -170,9 +170,9 @@ const WhatWeDo = () => {
     </svg>
 
     {/* Main text content with higher z-index */}
-    <p className="text-2xl text-white relative font-bold z-10">
-      Our team brings <span className="font-extrabold text-blue-100">over 15 years</span> of hands-on experience with{' '}
-      <span className="font-extrabold text-blue-100 ">100+ SCF programs</span> implemented worldwide.
+    <p className="text-2xl text-title relative font-bold z-10">
+      Our team brings <span className="font-extrabold text-cyan-600">over 15 years</span> of hands-on experience with{' '}
+      <span className="font-extrabold text-cyan-600 ">100+ SCF programs</span> implemented worldwide.
     </p>
   </div>
 </div>

@@ -154,7 +154,7 @@ const ClientsPage = () => {
                       {service.items.map((item, index) => (
                         <div key={index} className="flex items-start md:items-center space-x-3 z-50">
                           <HiCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1 md:mt-0" />
-                          <span className="text-gray-200 text-sm md:text-base">{item}</span>
+                          <span className="text-gray-300 text-sm md:text-base">{item}</span>
                         </div>
                       ))}
                     </div>

@@ -18,7 +18,7 @@ export default function HomeContent() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative md:h-screen h-[80vh] bg-cover bg-center bg-[#ede8f5] overflow-hidden" 
+      <div className="relative md:h-screen h-[60vh] bg-cover bg-center bg-[#ede8f5] overflow-hidden" 
      style={{ backgroundImage: "url('/images/LandingPage/hero.jpg')" }} >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" className="absolute">
   {/* Abstract Network Pattern (Top Right) */}

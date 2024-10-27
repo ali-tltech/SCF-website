@@ -32,10 +32,10 @@ const RecentStories = () => {
 
   return (
     <section className="py-12 bg-primary leading-tight">
-      <div className="max-w-7xl flex flex-col items-center justify-start mx-auto px-4 space-y-5">
-        <div className="text-start w-full">
+      <div className="max-w-7xl flex flex-col items-start justify-start mx-auto px-4 space-y-10">
+        <div className="text-start  w-full">
           <h2 className="text-4xl font-bold text-title">Industry Insights & Updates</h2>
-          <p className="mt-4 text-gray-500">
+          <p className="mt-4 text-gray-500 text-base md:text-lg">
             Explore our latest thought leadership, market analyses, and expert perspectives on Supply Chain Finance. <br /> 
             Stay informed about industry trends and innovative solutions.
           </p>

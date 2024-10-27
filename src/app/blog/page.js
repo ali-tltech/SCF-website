@@ -55,8 +55,29 @@ const Blog = () => {
     'How To Create A Responsive Popup Gallery',
   ];
 
-  const categories = ['Business', 'Privacy', 'Technology', 'Tips'];
-  const tags = ['Space', 'Gamma', 'Travel', 'Smart', 'Marketing'];
+  const categories = [
+    'Supply Chain Finance',
+    'Working Capital',
+    'Trade Finance',
+    'Case Studies',
+    'Industry News',
+    'Best Practices'
+  ];
+  
+  const tags = [
+    'Supplier Onboarding',
+    'Risk Management',
+    'Technology',
+    'Banking',
+    'Dynamic Discounting',
+    'Procurement',
+    'KYC/AML',
+    'Sustainability',
+    'Platform Selection',
+    'Cross-border Trade',
+    'Invoice Finance',
+    'Treasury'
+  ];
 
   return (
     <>
@@ -86,7 +107,7 @@ const Blog = () => {
                       <h3 className="mt-1 text-lg font-semibold text-title line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="mt-1 text-gray-700 line-clamp-3">
+                      <p className="mt-1 text-gray-700 text-xs line-clamp-3">
                         {post.excerpt}
                       </p>
                     </div>
