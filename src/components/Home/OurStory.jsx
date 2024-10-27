@@ -70,15 +70,16 @@ const OurStory = () => {
             <div key={index} 
                  className={`flex flex-col md:flex-row gap-6 sm:gap-8 items-center 
                             ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-              <div className="w-full md:w-1/2 relative h-[250px] sm:h-[300px] rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg">
-                <Image
-                  src={milestone.image}
-                  alt={milestone.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg sm:rounded-xl hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+             <div className="w-full md:w-1/2 relative h-[250px] sm:h-[300px] rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg">
+  <Image
+    src={milestone.image}
+    alt={milestone.title}
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    priority
+    className="rounded-lg sm:rounded-xl hover:scale-105 transition-transform duration-500 object-cover"
+  />
+</div>
               <div className="w-full md:w-1/2 space-y-3 sm:space-y-4">
                 <div className="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-blue-100 rounded-full text-blue-600 font-semibold text-sm sm:text-base">
                   {milestone.year}
