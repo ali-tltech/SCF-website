@@ -56,7 +56,7 @@ export const metadata = {
     description: 'Expert Financial Solutions and Strategic Consulting',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'SCF Strategies',
@@ -67,7 +67,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'SCF Strategies',
     description: 'Expert Financial Solutions and Strategic Consulting',
-    images: ['/twitter-image.jpg'],
+    images: ['/logo.png'],
     creator: '@scfstrategies',
   },
 };
