@@ -89,7 +89,7 @@ const OurStory = () => {
         >
           <div className="w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-2xl">
             <ResponsiveImage
-              src="/images/Landingpage/team-image.jpeg"
+              src="/images/team-image.jpeg"
               alt="SCF Strategies Headquarters"
               sizes={{
                 mobile: { width: 640, height: 480 },
