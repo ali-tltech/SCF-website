@@ -7,7 +7,7 @@ const OurStory = () => {
       year: "2015",
       title: "Foundation",
       content: "Founded with a vision to revolutionize Supply Chain Finance by integrating both funding and technology solutions.",
-      image: "/images/Blog/5.png",
+      image: "/images/blog/5.png",
       sizes: {
         mobile: { width: 640, height: 480 },
         tablet: { width: 800, height: 600 },
@@ -18,7 +18,7 @@ const OurStory = () => {
       year: "2015-2020",
       title: "$150B+ Impact",
       content: "Achieved over $150 billion in trading volume and $2 billion in outstanding results through our integrated approach.",
-      image: "/images/Blog/3.png",
+      image: "/images/blog/3.png",
       sizes: {
         mobile: { width: 640, height: 480 },
         tablet: { width: 800, height: 600 },
@@ -29,7 +29,7 @@ const OurStory = () => {
       year: "Today",
       title: "Global Leader",
       content: "Recognized as an industry leader with 100+ SCF programs implemented globally, serving corporates, financial institutions, and Fintechs.",
-      image: "/images/Blog/4.png",
+      image: "/images/blog/4.png",
       sizes: {
         mobile: { width: 640, height: 480 },
         tablet: { width: 800, height: 600 },
@@ -89,7 +89,7 @@ const OurStory = () => {
         >
           <div className="w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-2xl">
             <ResponsiveImage
-              src="/api/placeholder/1024/768"
+              src="/images/Landingpage/team-image.jpeg"
               alt="SCF Strategies Headquarters"
               sizes={{
                 mobile: { width: 640, height: 480 },
