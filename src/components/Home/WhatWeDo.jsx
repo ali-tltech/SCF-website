@@ -114,12 +114,14 @@ const WhatWeDo = () => {
 
         {/* Offerings Grid with stagger animation */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-8">
+
           {offerings.map(({ Icon, title, description }, index) => (
             <div 
               key={index}
-              className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 fade-in opacity-0 translate-y-4`}
+              className={` p-8 rounded-xl shadow-lg relative hover:shadow-xl transition-all bg-white duration-300 transform hover:-translate-y-1 border border-gray-100 fade-in opacity-0 translate-y-4`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
+             
               <div className="mb-6 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-blue-100 rounded-lg opacity-20 group-hover:scale-110 transition-transform duration-300"></div>
                 <div className="relative p-3">
@@ -138,28 +140,43 @@ const WhatWeDo = () => {
 
         {/* Experience Banner with parallax effect */}
         <div className="mt-20 relative fade-up opacity-0 translate-y-4 transition-all duration-1000">
-          <div className="absolute inset-0 rounded-2xl"></div>
-          <div className="relative bg-gradient-to-r bg-cyan-500 rounded-2xl p-12 text-center overflow-hidden">
-            {/* Abstract background pattern */}
-            <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 100 100">
-              <defs>
-                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                  <circle cx="5" cy="5" r="1" fill="#2563eb" />
-                </pattern>
-              </defs>
-              <rect width="100" height="100" fill="url(#grid)" />
-            </svg>
-            
-            <svg className="w-20 h-20 mx-auto mb-6 text-blue-600 opacity-20 animate-spin-slow" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="2" fill="none" />
-              <path d="M50 25 L50 75 M25 50 L75 50" stroke="currentColor" strokeWidth="2" />
-            </svg>
-            <p className="text-2xl text-gray-200">
-              Our team brings <span className="font-semibold">over 15 years</span> of hands-on experience with{' '}
-              <span className="font-semibold">100+ SCF programs</span> implemented worldwide.
-            </p>
-          </div>
-        </div>
+  <div
+    className="relative bg-gradient-to-r rounded-2xl p-12 text-center overflow-hidden"
+    style={{ backgroundImage: "url('/images/boxbig2.jpg')" }}
+  >
+    {/* Background blur with lower z-index */}
+    <div className="absolute inset-0 rounded-2xl backdrop-blur-sm z-0 bg-black bg-opacity-10"></div>
+
+    {/* Abstract background pattern */}
+    <svg
+      className="absolute inset-0 w-full h-full opacity-10 z-0"
+      viewBox="0 0 100 100"
+    >
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="1" fill="#2563eb" />
+        </pattern>
+      </defs>
+      <rect width="100" height="100" fill="url(#grid)" />
+    </svg>
+
+    {/* Rotating circle */}
+    <svg
+      className="w-20 h-20 mx-auto mb-6 text-blue-600 opacity-20 animate-spin-slow relative z-10"
+      viewBox="0 0 100 100"
+    >
+      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="2" fill="none" />
+      <path d="M50 25 L50 75 M25 50 L75 50" stroke="currentColor" strokeWidth="2" />
+    </svg>
+
+    {/* Main text content with higher z-index */}
+    <p className="text-2xl text-white relative font-bold z-10">
+      Our team brings <span className="font-extrabold text-blue-100">over 15 years</span> of hands-on experience with{' '}
+      <span className="font-extrabold text-blue-100 ">100+ SCF programs</span> implemented worldwide.
+    </p>
+  </div>
+</div>
+
       </div>
 
       <style jsx>{`

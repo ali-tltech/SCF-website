@@ -86,21 +86,9 @@ const OurStory = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-12 lg:mb-16"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-4 sm:mb-8 lg:mb-10"
         >
-          <div className="w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-2xl">
-            <ResponsiveImage
-              src="/images/team-image.jpeg"
-              alt="SCF Strategies Headquarters"
-              sizes={{
-                mobile: { width: 640, height: 480 },
-                tablet: { width: 800, height: 600 },
-                desktop: { width: 1024, height: 768 }
-              }}
-              priority
-              className="rounded-xl sm:rounded-2xl hover:scale-105 transition-transform duration-500"
-            />
-          </div>
+          
           
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-2xl sm:text-3xl font-semibold text-title">Pioneering Integrated Solutions</h3>
@@ -110,19 +98,32 @@ const OurStory = () => {
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg"
+                className=" p-4 sm:p-6 rounded-lg sm:rounded-xl bg-title shadow-md sm:shadow-lg"
               >
-                <h4 className="text-2xl sm:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">$150B+</h4>
-                <p className="text-gray-600 text-sm sm:text-base">Trading Volume</p>
+                <h4 className="text-2xl sm:text-4xl font-bold text-blue-100 mb-1 sm:mb-2">$150B+</h4>
+                <p className="text-gray-100 text-sm sm:text-base">Trading Volume</p>
               </motion.div>
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg"
+                className="bg-title p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg"
               >
-                <h4 className="text-2xl sm:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">100+</h4>
-                <p className="text-gray-600 text-sm sm:text-base">Global Programs</p>
+                <h4 className="text-2xl sm:text-4xl font-bold text-blue-100 mb-1 sm:mb-2">100+</h4>
+                <p className="text-gray-100 text-sm sm:text-base">Global Programs</p>
               </motion.div>
             </div>
+          </div>
+          <div className="w-full rounded-xl sm:rounded-2xl overflow-hidden ">
+            <ResponsiveImage
+              src="/images/team-image2.png"
+              alt="SCF Strategies Headquarters"
+              sizes={{
+                mobile: { width: 640, height: 480 },
+                tablet: { width: 800, height: 600 },
+                desktop: { width: 1024, height: 768 }
+              }}
+              priority
+              className="rounded-xl sm:rounded-2xl hover:scale-105 transition-transform duration-500"
+            />
           </div>
         </motion.div>
 
@@ -162,20 +163,31 @@ const OurStory = () => {
 
         {/* Bottom Section */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-8 sm:mt-12 lg:mt-16 bg-blue-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center"
-        >
-          <h3 className="text-xl sm:text-2xl font-bold text-title mb-3 sm:mb-4">Our Commitment to Excellence</h3>
-          <p className="text-gray-700 max-w-3xl mx-auto md:text-lg text-sm sm:text-base">
-            Today, SCF Strategies is recognized as an industry leader in SCF consulting. <br /> Our proven approach and methodology have successfully assessed markets and implemented programs, unlocking billions in working capital and free cash flow for leading companies worldwide.
-          </p>
-         
-            <CustomeButton title={"Learn More About Our Impact"}/>
-         
-        </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="mt-8 sm:mt-12 lg:mt-16 bg-blue-50 rounded-xl overflow-hidden relative sm:rounded-2xl p-6 sm:p-8 z-10 text-center"
+  style={{ backgroundImage: "url('images/boxbg1.jpg')" }}
+>
+  {/* Adjust z-index to be lower than the content */}
+  <div className="inset-0 absolute backdrop-blur-sm rounded-xl z-0"></div>
+
+  {/* Content with higher z-index */}
+  <h3 className="text-xl sm:text-4xl font-bold text-white mb-3 sm:mb-4 relative z-10">
+    Our Commitment to Excellence
+  </h3>
+  <p className="text-gray-100 max-w-3xl mx-auto md:text-lg text-sm sm:text-base relative z-10">
+    Today, SCF Strategies is recognized as an industry leader in SCF consulting. <br /> 
+    Our proven approach and methodology have successfully assessed markets and implemented programs, unlocking billions in working capital and free cash flow for leading companies worldwide.
+  </p>
+  
+  {/* Button with higher z-index */}
+  <div className="relative z-10">
+    <CustomeButton title={"Learn More About Our Impact"} />
+  </div>
+</motion.div>
+
       </div>
 
       {/* Loading animation styles */}
