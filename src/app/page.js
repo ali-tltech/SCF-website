@@ -48,7 +48,7 @@ export const metadata = {
     description: 'Expert Financial Solutions and Strategic Consulting',
     images: [
       {
-        url: '/image/logo.png',  // Updated path to match your image location
+        url: '/images/logo.png',  // Updated path to match your image location
         width: 1200,             // Recommended size for social sharing
         height: 630,             // Recommended size for social sharing
         alt: 'SCF Strategies Logo',
@@ -60,7 +60,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'SCF Strategies',
     description: 'Expert Financial Solutions and Strategic Consulting',
-    images: ['/image/logo.png'], // Updated path to match your image location
+    images: ['/images/logo.png'], // Updated path to match your image location
     creator: '@scfstrategies',
   },
 };
