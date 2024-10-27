@@ -9,7 +9,7 @@ const FAQItem = ({ question, answer }) => {
 
   return (
 
-    <div className="border-b border-gray-200 py-6 w-full max-w-4xl mx-auto">
+    <div className="border-b-2 border-gray-300 py-6 w-full max-w-4xl mx-auto">
       <button
         className="flex w-full items-center text-left"
 

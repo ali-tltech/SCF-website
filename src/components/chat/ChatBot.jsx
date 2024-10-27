@@ -149,7 +149,7 @@ const ChatbotButton = () => {
               <div className="bg-blue-500 p-3 md:p-4 flex justify-between items-center">
                 <div className="flex items-center space-x-2">
                   <Bot className="text-white" size={24} />
-                  <h2 className="text-lg md:text-xl font-semibold text-white">Financial Assistant</h2>
+                  <h2 className="text-lg md:text-xl font-semibold text-white">FinFlow</h2>
                 </div>
                 <button
                   onClick={toggleChat}
@@ -319,7 +319,7 @@ const ChatbotContent = ({ isOpen }) => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex justify-start"
+            className="flex justify-center"
             ref={lastMessageRef}
           >
             <div className="bg-white text-gray-800 p-4 rounded-lg rounded-bl-none shadow-sm">

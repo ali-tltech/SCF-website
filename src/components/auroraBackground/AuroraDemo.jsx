@@ -10,6 +10,7 @@ import {
   FaYoutube 
 } from "react-icons/fa";
 import XIcon from "../ui/XIcon";
+import { SiGooglemybusiness } from "react-icons/si";
 
 const AuroraBackgroundDemo = ({title, description}) => {
   const socialLinks = [
@@ -31,12 +32,12 @@ const AuroraBackgroundDemo = ({title, description}) => {
     {
       href: "https://twitter.com/SCFStrategies",
       icon: <XIcon className="w-5 h-5 md:w-6 md:h-6" />,
-      label: "Twitter"
+      label: "X"
     },
     {
-      href: "https://www.youtube.com/user/SCFStrategies",
-      icon: <FaYoutube className="w-5 h-5 md:w-6 md:h-6" />,
-      label: "YouTube"
+      href: "",
+      icon: <SiGooglemybusiness className="w-5 h-5 md:w-6 md:h-6" />,
+      label: "GoogleBussiness"
     }
   ];
 
