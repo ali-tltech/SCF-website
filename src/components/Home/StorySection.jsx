@@ -65,7 +65,7 @@ const RecentStories = () => {
             </div>
           ))}
         </div>
-        <CustomeButton title={"Explore Financial Insights"}/>
+        <CustomeButton title={"Explore Financial Insights"} link={"/blog"}/>
       </div>
     </section>
   );
