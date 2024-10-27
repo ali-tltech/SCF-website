@@ -1,128 +1,104 @@
-import React, { useEffect, useRef, useState } from 'react';
-
-// Custom hook to replace react-intersection-observer
-const useInView = (options = {}) => {
-  const [isInView, setIsInView] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsInView(entry.isIntersecting);
-    }, {
-      threshold: options.threshold || 0.1,
-      ...options
-    });
-
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [options.threshold]);
-
-  return [ref, isInView];
-};
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const OurStory = () => {
-  const [ref, inView] = useInView();
+  const milestones = [
+    {
+      year: "2015",
+      title: "Foundation",
+      content: "Founded with a vision to revolutionize Supply Chain Finance by integrating both funding and technology solutions.",
+      image: "/images/Blog/5.png"
+    },
+    {
+      year: "2015-2020",
+      title: "$150B+ Impact",
+      content: "Achieved over $150 billion in trading volume and $2 billion in outstanding results through our integrated approach.",
+      image: "/images/Blog/3.png"
+    },
+    {
+      year: "Today",
+      title: "Global Leader",
+      content: "Recognized as an industry leader with 100+ SCF programs implemented globally, serving corporates, financial institutions, and Fintechs.",
+      image: "/images/Blog/4.png"
+    }
+  ];
 
   return (
-    <section className="min-h-screen bg-gray-100 py-20 relative overflow-hidden">
-      {/* Background SVG Patterns */}
-      <div className="absolute top-0 right-0 opacity-10">
-        <svg width="400" height="400" viewBox="0 0 100 100" className="text-blue-500">
-          <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="1" fill="none" />
-          <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="1" fill="none" />
-          <circle cx="50" cy="50" r="20" stroke="currentColor" strokeWidth="1" fill="none" />
-        </svg>
-      </div>
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">Our Story</h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto"></div>
+    <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-primary to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-title mb-4 sm:mb-6">Our Journey of Innovation</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base px-4">
+            Transforming Supply Chain Finance through integrated solutions, expertise, and innovation since 2015.
+          </p>
         </div>
 
-        <div ref={ref} className="space-y-12">
-          {/* Founded Section */}
-          <div className={`transform transition-all duration-1000 ${
-            inView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <div className="flex items-center gap-8">
-              <div className="w-16 h-16 flex-shrink-0">
-                <svg className="w-full h-full text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-gray-900">Founded in 2015</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  SCF Strategies emerged from the recognition that traditional Supply Chain Finance providers typically offer either funding or technology, but rarely both in an integrated manner.
-                </p>
-              </div>
-            </div>
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-12 lg:mb-16">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-2xl">
+            <Image
+              src="/images/team-image.jpeg"
+              alt="SCF Strategies Headquarters"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-xl sm:rounded-2xl transform hover:scale-105 transition-transform duration-500"
+            />
           </div>
-
-          {/* Experience Section */}
-          <div className={`transform transition-all duration-1000 delay-300 ${
-            inView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <div className="flex items-center gap-8">
-              <div className="w-16 h-16 flex-shrink-0">
-                <svg className="w-full h-full text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
+          
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-2xl sm:text-3xl font-semibold text-title">Pioneering Integrated Solutions</h3>
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-lg">
+              Founded in 2015, SCF Strategies emerged from the recognition that traditional Supply Chain Finance providers typically offer either funding or technology, but rarely both in an integrated manner. With over 15 years of experience, we've revolutionized the industry by combining best practice processes with cutting-edge technology and robust funding capacity.
+            </p>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
+              <div className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg">
+                <h4 className="text-2xl sm:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">$150B+</h4>
+                <p className="text-gray-600 text-sm sm:text-base">Trading Volume</p>
               </div>
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-gray-900">Industry Experience</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  With over 15 years of experience in originating, implementing, and managing Supplier Finance programs that exceed $150 billion in trading volume and yield more than $2 billion in outstanding results.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Today Section */}
-          <div className={`transform transition-all duration-1000 delay-500 ${
-            inView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <div className="flex items-center gap-8">
-              <div className="w-16 h-16 flex-shrink-0">
-                <svg className="w-full h-full text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold mb-2 text-gray-900">Today</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  SCF Strategies is recognized as an industry leader in SCF consulting. With over 100 SCF programs implemented globally, we&apos;ve learned from the challenges and mistakes to ensure you don&apos;t have to.
-                </p>
+              <div className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg">
+                <h4 className="text-2xl sm:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">100+</h4>
+                <p className="text-gray-600 text-sm sm:text-base">Global Programs</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Results Section */}
-        <div className={`mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        } transition-all duration-1000 delay-700`}>
-          <div className="text-center p-6 bg-white rounded-lg">
-            <div className="text-4xl font-bold text-blue-500 mb-2">100+</div>
-            <div className="text-gray-600">SCF Programs Implemented</div>
-          </div>
-          <div className="text-center p-6 bg-white rounded-lg">
-            <div className="text-4xl font-bold text-blue-500 mb-2">$150B+</div>
-            <div className="text-gray-600">Trading Volume</div>
-          </div>
-          <div className="text-center p-6 bg-white rounded-lg">
-            <div className="text-4xl font-bold text-blue-500 mb-2">$2B+</div>
-            <div className="text-gray-600">Outstanding Results</div>
-          </div>
+        {/* Timeline Section */}
+        <div className="space-y-8 sm:space-y-12">
+          {milestones.map((milestone, index) => (
+            <div key={index} 
+                 className={`flex flex-col md:flex-row gap-6 sm:gap-8 items-center 
+                            ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+              <div className="w-full md:w-1/2 relative h-[250px] sm:h-[300px] rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg">
+                <Image
+                  src={milestone.image}
+                  alt={milestone.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg sm:rounded-xl hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="w-full md:w-1/2 space-y-3 sm:space-y-4">
+                <div className="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-blue-100 rounded-full text-blue-600 font-semibold text-sm sm:text-base">
+                  {milestone.year}
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-title">{milestone.title}</h3>
+                <p className="text-gray-700 leading-relaxed text-sm sm:text-lg">{milestone.content}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Section */}
+        <div className="mt-8 sm:mt-12 lg:mt-16 bg-blue-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-title mb-3 sm:mb-4">Our Commitment to Excellence</h3>
+          <p className="text-gray-700 max-w-3xl mx-auto text-sm sm:text-base">
+            Today, SCF Strategies is recognized as an industry leader in SCF consulting. Our proven approach and methodology have successfully assessed markets and implemented programs, unlocking billions in working capital and free cash flow for leading companies worldwide.
+          </p>
+          <button className="mt-4 sm:mt-6 px-6 sm:px-8 py-2 sm:py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 text-sm sm:text-base">
+            Learn More About Our Impact
+          </button>
         </div>
       </div>
     </section>

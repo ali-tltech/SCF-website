@@ -82,17 +82,14 @@ const IndustriesSection = () => {
   };
 
   return (
-    <div className="bg-[#eeeeee] w-full relative">
+    <div className="bg-primary w-full relative">
       <FuturisticBackground />
       
       {/* Mobile Layout (display below lg breakpoint) */}
       <section className="lg:hidden py-16 px-4 relative">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-black mb-4">Industries We Serve</h2>
-          <p className="text-black mb-8 max-w-md mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <h2 className="text-4xl font-bold text-title mb-4">Industries We Serve</h2>
+         
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -113,7 +110,6 @@ const IndustriesSection = () => {
         {/* Center Content */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10 w-full max-w-md">
           <h2 className="text-4xl font-bold text-black mb-4">Industries We Serve</h2>
-          <p className="max-w-3xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, recusandae repudiandae amet impedit iure quidem modi cumque delectus omnis natus, provident perspiciatis beatae soluta maxime harum alias accusamus, labore eveniet!</p>
         </div>
 
         {/* Industry Cards Container */}

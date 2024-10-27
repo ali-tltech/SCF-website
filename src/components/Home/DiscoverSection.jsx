@@ -19,7 +19,7 @@ const DiscoverSection = () => {
       </div>
 
     
-      <div className=" flex justify-center w-full rounded-3xl   items-center h-full" style={{backgroundImage:`url('/images/Landingpage/discover.jpg')`}}>
+      <div className=" flex justify-center w-full rounded-3xl  bg-center  items-center h-full" style={{backgroundImage:`url('/images/Landingpage/discover.jpg')`}}>
        
       
 

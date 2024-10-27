@@ -3,7 +3,7 @@ import { FaCheckCircle, FaLeaf, FaBoxOpen, FaClipboardList, FaUsers, FaRocket } 
 
 const WhyChoose = () => {
   return (
-    <section className="bg-peimary md:p-20 p-5 rounded-lg flex flex-col md:h-[80vh] md:flex-row sm:flex-col items-center md:items-start space-y-8 md:space-y-0 md:space-x-8">
+    <section className="bg-peimary  p-4 max-w-7xl mx-auto rounded-lg flex flex-col md:h-[60vh] md:flex-row sm:flex-col items-center md:items-start space-y-8 md:space-y-0 md:space-x-8">
       {/* Black div replacing the image */}
       <div className="w-full md:w-1/2 h-full  rounded-3xl bg-cover"  style={{ backgroundImage: "url('/images/LandingPage/whychoose.jpg')"} }></div>
 

@@ -46,17 +46,10 @@ export default function HomeContent() {
   </g>
 
   {/* Supply Chain Connection Lines (Middle) */}
-  <g opacity="0.20" stroke="white" strokeWidth="1.5">
-    <path d="M600 300 L700 300 L800 250 L900 350 L1000 300" strokeDasharray="5,5" />
-    <circle cx="600" cy="300" r="6" fill="white" />
-    <circle cx="700" cy="300" r="6" fill="white" />
-    <circle cx="800" cy="250" r="6" fill="white" />
-    <circle cx="900" cy="350" r="6" fill="white" />
-    <circle cx="1000" cy="300" r="6" fill="white" />
-  </g>
+
 
   {/* Abstract Shapes (Bottom Right) */}
-  <g opacity="0.58" fill="white">
+  <g opacity="0.10" fill="white">
     <path d="M1100 600 L1150 550 L1200 600 Z" />
     <path d="M1200 650 L1250 600 L1300 650 Z" />
     <path d="M1300 600 L1350 550 L1400 600 Z" />
@@ -70,12 +63,7 @@ export default function HomeContent() {
   </g>
 
   {/* Currency Symbols Pattern (Scattered) */}
-  <g opacity="0.20" fill="white" fontFamily="Arial" fontSize="24">
-    <text x="900" y="150">$</text>
-    <text x="950" y="200">€</text>
-    <text x="850" y="180">£</text>
-    <text x="920" y="120">¥</text>
-  </g>
+ 
 </svg>
   {/* Background SVG Container */}
   <div className="absolute inset-0 pointer-events-none">
@@ -87,7 +75,7 @@ export default function HomeContent() {
   <div className="relative z-10 flex md:items-center max-w-7xl p-4 mx-auto md:justify-start items-end justify-end h-full">
     <div className="text-white w-full h-fit text-start flex flex-col gap-6 items-start justify-center mt-40 md:mt-20">
       <h1 className="md:text-5xl text-2xl font-bold mb-2">
-        Unlocking Billions in Working Capital
+      Transforming Supply Chain Finance <br /> with Expertise and Innovation
       </h1>
       <p className="text-lg md:text-2xl font-light mb-4">
         Integrating Funding, Technology, and Best Practices for Supply Chain Finance Success
@@ -104,7 +92,7 @@ export default function HomeContent() {
       <IndustriesSection />
       <RecentStories />
       <WhyChoose />
-      <SolutionsSec />
+      {/* <SolutionsSec /> */}
       <OurStory />
       <TestimonialCarousel />
     </>
