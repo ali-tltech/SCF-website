@@ -54,11 +54,11 @@ const AuroraBackgroundDemo = ({title, description}) => {
         className="absolute  flex max-w-7xl mx-auto inset-0   flex-col gap-4 items-start justify-end p-4"
       >
        
-        <div className="text-2xl md:text-5xl w-full font-extrabold mb-10 text-cyan-300  dark:text-white text-center">
+        <h1 className="text-2xl md:text-5xl w-full font-extrabold mb-10 text-blue-100  dark:text-white text-center">
           {title}
-        </div>
-        <div className="flex justify-between flex-col md:flex-row items-end w-full">
-        <div className="font-extralight text-center text-base md:text-3xl text-stone-300 dark:text-neutral-200 py-4">
+        </h1>
+        <div className="flex md:justify-between flex-col md:flex-row md:items-end  w-full">
+        <div className="font-bold text-center text-base md:text-3xl text-stone-300 dark:text-neutral-200 py-4">
           {description}
         </div>
         

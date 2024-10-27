@@ -73,13 +73,13 @@ const EnablementPage = () => {
   ];
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-primary">
       <AuroraBackgroundDemo title={'Solutions & Enablement'} description={'Expert Supply Chain Finance Consulting Services'} link={'Learn More'}/>
 
       <div className="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-title mb-4">
               Empowering Your SCF Programs to Reach New Heights
             </h2>
             <p className="text-gray-600 mb-6">
@@ -110,7 +110,7 @@ const EnablementPage = () => {
         </div>
 
         <div className="bg-gray-50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-center text-title mb-8">
             Driving Real Results with Our Solutions
           </h2>
           <p className="text-center text-gray-600 mb-8">
