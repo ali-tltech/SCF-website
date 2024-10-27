@@ -85,7 +85,7 @@ const ClientsPage = () => {
   ];
   return (
     <div className="min-h-screen bg-gray-50 relative overflow-hidden">
-      <AuroraBackgroundDemo  title={"Clients"} link={"Home"} description={"Empowering businesses worldwide with innovative supply chain finance solutions"}/>
+      <AuroraBackgroundDemo  title={"Clients"} link={"Home"} description={"Tailored Solutions for Exceptional Clients"}/>
       
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative">

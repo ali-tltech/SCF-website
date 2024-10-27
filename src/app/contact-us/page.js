@@ -44,7 +44,7 @@ const ContactPage = () => {
 
       {/* Hero Section */}
 
-      <AuroraBackgroundDemo title={'Contact Us'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
+      <AuroraBackgroundDemo title={'Contact Us'} description={'We&nbsp;d Love to Hear From You!'} link={'Learn More'} />
 
       {/* Contact Form Section */}
       <div className="bg-primary py-16 px-4 sm:px-6 lg:px-8">

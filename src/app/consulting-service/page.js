@@ -65,7 +65,7 @@ const ConsultingServices = () => {
 
 
       <div className="bg-primary">
-        <AuroraBackgroundDemo title={'Consulting Services'} description={'Elevate Your Supply Chain Finance Strategy'} link={'Learn More'} />
+        <AuroraBackgroundDemo title={'Consulting Services'} description={'Where Expertise Meets Innovation in Supply Chain Finance'} link={'Learn More'} />
         <ConsultingServiceContent />
         <WaveComponent />
       </div>
