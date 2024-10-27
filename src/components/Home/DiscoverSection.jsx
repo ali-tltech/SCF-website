@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import CustomeButton from '../ui/CustomeButton';
+
 const DiscoverSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative min-h-fit grid grid-cols-1 md:grid-cols-2 gap-4 p-4 max-w-7xl mx-auto  w-fit  overflow-hidden bg-primary">
+    <div className="relative min-h-fit grid grid-cols-1 md:grid-cols-2 gap-4 p-4 max-w-7xl mx-auto w-fit overflow-hidden bg-primary">
       {/* Animated SVG Background Pattern */}
       <div className="absolute inset-0 pointer-events-none">
         <svg className="w-full h-full opacity-10" viewBox="0 0 100 100">
@@ -18,42 +19,38 @@ const DiscoverSection = () => {
         </svg>
       </div>
 
-    
-      <div className=" flex justify-center w-full rounded-3xl  bg-center  items-center h-full" style={{backgroundImage:`url('/images/Landingpage/discover.jpg')`}}>
-       
-      
-
-      
-        <div className=" transform  transition-transform duration-500 ">
-          <div className="relative group">
-            <div className="absolute inset-0  opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-        =
-          </div>
-        </div>
-
-        
-     
+      {/* Image Section */}
+      <div className="relative h-[400px] md:h-[500px] w-full rounded-3xl overflow-hidden">
+        <Image
+          src="/images/LandingPage/discover.jpg" // Make sure the path is exactly as in your public folder
+          alt="Discover Section Image"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          priority
+          className="object-cover rounded-3xl"
+        />
       </div>
 
       {/* Content Section */}
-      <div className="relative flex flex-col justify-center  items-start text-black p-6 z-10"
-         >
+      <div className="relative flex flex-col justify-center items-start text-black p-6 z-10">
         {/* Decorative SVG */}
         <svg className="absolute top-0 right-0 w-24 h-24 text-black opacity-10" viewBox="0 0 100 100">
           <path d="M10,50 Q50,10 90,50 Q50,90 10,50" fill="none" stroke="currentColor" strokeWidth="2"
                 className={`transform transition-all duration-700 ${isHovered ? 'scale-110 opacity-50' : 'scale-100 opacity-20'}`} />
         </svg>
 
-        <h2 className="text-4xl font-bold mb-4 text-title ">
+        <h2 className="text-4xl font-bold mb-4 text-title">
           Engaging New Audiences through Smart Approach
         </h2>
         
         <p className="mb-6 relative">
-  <span className="absolute -left-4 text-lg top-0 w-1 h-full bg-white opacity-50 transform origin-top transition-transform duration-500"></span>
-  Unlock working capital and optimize your supply chain with our innovative financing solutions. <br /> We bridge the gap between suppliers and buyers, enabling faster payments, stronger supplier relationships, and improved cash flow management. <br /> Our platform empowers businesses of all sizes to thrive in today&apos;s dynamic market.
-</p>
+          <span className="absolute -left-4 text-lg top-0 w-1 h-full bg-white opacity-50 transform origin-top transition-transform duration-500"></span>
+          Unlock working capital and optimize your supply chain with our innovative financing solutions. <br /> 
+          We bridge the gap between suppliers and buyers, enabling faster payments, stronger supplier relationships, and improved cash flow management. <br /> 
+          Our platform empowers businesses of all sizes to thrive in today&apos;s dynamic market.
+        </p>
 
-       <CustomeButton title={"Discover more"}/>
+        <CustomeButton title={"Discover more"}/>
       </div>
     </div>
   );

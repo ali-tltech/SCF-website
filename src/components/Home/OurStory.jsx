@@ -49,7 +49,7 @@ const OurStory = () => {
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-2xl sm:text-3xl font-semibold text-title">Pioneering Integrated Solutions</h3>
             <p className="text-gray-700 leading-relaxed text-sm sm:text-lg">
-              Founded in 2015, SCF Strategies emerged from the recognition that traditional Supply Chain Finance providers typically offer either funding or technology, but rarely both in an integrated manner. With over 15 years of experience, we've revolutionized the industry by combining best practice processes with cutting-edge technology and robust funding capacity.
+              Founded in 2015, SCF Strategies emerged from the recognition that traditional Supply Chain Finance providers typically offer either funding or technology, but rarely both in an integrated manner. With over 15 years of experience, we&apos;ve revolutionized the industry by combining best practice processes with cutting-edge technology and robust funding capacity.
             </p>
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
               <div className="bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md sm:shadow-lg">
