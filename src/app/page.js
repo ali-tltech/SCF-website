@@ -1,14 +1,12 @@
 import HomeContent from "@/components/Home/HomeContent";
 
-
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
   minimumScale: 1,
-  maximumScale: 5, // Allows more zoom flexibility
+  maximumScale: 5,
 };
 
-// Metadata configuration
 export const metadata = {
   title: {
     default: 'SCF Strategies',
@@ -40,6 +38,7 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  // Updated OpenGraph configuration for better social sharing
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -49,18 +48,19 @@ export const metadata = {
     description: 'Expert Financial Solutions and Strategic Consulting',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'SCF Strategies',
-      },
+        url: '/image/logo.png',  // Updated path to match your image location
+        width: 1200,             // Recommended size for social sharing
+        height: 630,             // Recommended size for social sharing
+        alt: 'SCF Strategies Logo',
+      }
     ],
   },
+  // Updated Twitter card configuration
   twitter: {
     card: 'summary_large_image',
     title: 'SCF Strategies',
     description: 'Expert Financial Solutions and Strategic Consulting',
-    images: ['/logo.png'],
+    images: ['/image/logo.png'], // Updated path to match your image location
     creator: '@scfstrategies',
   },
 };
