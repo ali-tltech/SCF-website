@@ -1,6 +1,7 @@
 "use client";
 import AuroraBackground from '@/components/auroraBackground/AuroraBackground';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
+import CustomeButton from '@/components/ui/CustomeButton';
 import React, { useState } from 'react';
 import { HiBuildingOffice2, HiMiniBanknotes, HiCpuChip, HiChevronDown, HiChevronUp, HiCheckCircle } from "react-icons/hi2";
 
@@ -232,9 +233,7 @@ const ClientsPage = () => {
           <p className="text-sm md:text-base text-gray-600 mb-6 md:mb-8">
             Contact us to discuss how we can assist your organization
           </p>
-          <button className="w-full sm:w-auto bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
-            Contact Us
-          </button>
+          <CustomeButton title={"Contact us"}/>
         </div>
       </div>
       
