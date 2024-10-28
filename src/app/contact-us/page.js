@@ -44,7 +44,7 @@ const ContactPage = () => {
 
       {/* Hero Section */}
 
-      <AuroraBackgroundDemo title={'Contact Us'} description={'We&nbsp;d Love to Hear From You!'} link={'Learn More'} />
+      <AuroraBackgroundDemo title={'Contact Us'} description={'We Love to Hear From You!'} link={'Learn More'} />
 
       {/* Contact Form Section */}
       <div className="bg-primary py-16 px-4 sm:px-6 lg:px-8">
@@ -102,7 +102,7 @@ const ContactPage = () => {
 
               <div className="rounded-lg shadow-lg overflow-hidden h-[500px] lg:h-auto">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086667506151!2d-122.40143128468307!3d37.78799487975695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815c24c2b9b7%3A0x37814ab64c93525c!2sSnappy%20Inc.!5e0!3m2!1sen!2sus!4v1635680350562!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3543.6590285797247!2d-81.7236660247259!3d26.31823778538528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db1b1c56f89aed%3A0x772ff27b29266953!2s28637%20San%20Lucas%20Ln%2C%20Bonita%20Springs%2C%20FL%2034135%2C%20USA!5e1!3m2!1sen!2sin!4v1730086910303!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   allowFullScreen=""
