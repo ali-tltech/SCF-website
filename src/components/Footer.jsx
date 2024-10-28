@@ -150,7 +150,7 @@ const Footer = () => {
                 rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <FaLinkedinIn className="w-6 h-6" />
               </a>
-              <a href="https://twitter.com/SCFStrategies" target="_blank"
+              <a href="https://x.com/SCFStrategies" target="_blank"
                 rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <XIcon className="w-6 h-6" />
               </a>

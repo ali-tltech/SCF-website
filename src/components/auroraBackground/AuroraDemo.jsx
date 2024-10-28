@@ -30,7 +30,7 @@ const AuroraBackgroundDemo = ({title, description}) => {
       label: "LinkedIn"
     },
     {
-      href: "https://twitter.com/SCFStrategies",
+      href: "https://x.com/SCFStrategies",
       icon: <XIcon className="w-5 h-5 md:w-6 md:h-6" />,
       label: "X"
     },
