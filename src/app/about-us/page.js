@@ -11,52 +11,109 @@ import { IntroSection } from '@/components/About/IntroSection';
 import CustomeButton from '@/components/ui/CustomeButton';
 
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
+};
+
+// Metadata
+export const metadata = {
+
+  title: {
+    default: 'About Us | SCF Strategies',
+    template: '%s | SCF Strategies',
+  },
+  description: 'SCF Strategies: Unlocking the full potential of Supply Chain Finance with expertise, advanced technology, and a proven track record. Learn more about our journey and why industry leaders trust us.',
+  keywords: [
+    'Supply Chain Finance',
+    'SCF Strategies',
+    'SCF Consulting',
+    'Supply Chain Finance Expertise',
+    'SCF Solutions',
+    'Industry Leaders',
+    'Global Clients'
+  ],
+  
+  // Icons
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple.ico',
+  },
+
+  // Robots
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  // Open Graph
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.scfstrategies.com/about-us',
+    siteName: 'SCF Strategies',
+    title: 'About Us | SCF Strategies',
+    description: 'Discover how SCF Strategies unlocks the full potential of Supply Chain Finance with expert consulting and advanced solutions. Learn about our expertise and core values.',
+    images: [
+      {
+        url: '/images/team-image.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'SCF Strategies About Us Banner',
+      }
+    ],
+  },
+
+  // Twitter
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | SCF Strategies',
+    description: 'Unlock the potential of your Supply Chain Finance programs with SCF Strategies. Learn about our expertise, core values, and why industry leaders choose us.',
+    images: ['/images/team-image.jpeg'],
+  },
+
+  // Alternate Pages
+  alternates: {
+    canonical: 'https://www.scfstrategies.com/about-us',
+  },
+
+  // Social Media Links
+  socialLinks: {
+    facebook: 'https://www.facebook.com/profile.php?id=100063586296486',
+    instagram: 'https://www.instagram.com/SCFStrategies',
+    linkedin: 'https://www.linkedin.com/company/scfstrategies',
+    youtube: 'https://www.youtube.com/user/SCFStrategies',
+    googleMyBusiness: 'https://www.google.com/business/SCFStrategies',
+  },
+
+  // Schema Markup
+  schemaMarkup: {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SCF Strategies',
+    url: 'https://www.scfstrategies.com',
+    logo: 'https://www.scfstrategies.com/images/logo.png',
+    sameAs: [
+      'https://www.facebook.com/SCFStrategies',
+      'https://www.instagram.com/SCFStrategies',
+      'https://www.linkedin.com/company/scfstrategies',
+      'https://www.youtube.com/user/SCFStrategies',
+      'https://www.google.com/business/SCFStrategies',
+    ],
+  },
+
+  // Other metadata
+  category: 'business',
+  classification: 'Financial Services',
+};
+
+
 export default function About() {
   return (
     <>
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="SCF Strategies: Unlocking the full potential of Supply Chain Finance with expertise, advanced technology, and a proven track record. Learn more about our journey and why industry leaders trust us." />
-        <meta name="keywords" content="Supply Chain Finance, SCF Strategies, SCF Consulting, Supply Chain Finance Expertise, SCF Solutions, Industry Leaders, Global Clients" />
-        <title>About Us | SCF Strategies</title>
-        <link rel="canonical" href="https://www.scfstrategies.com/about-us" />
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="About Us | SCF Strategies" />
-        <meta property="og:description" content="Discover how SCF Strategies unlocks the full potential of Supply Chain Finance with expert consulting and advanced solutions. Learn about our expertise and core values." />
-        <meta property="og:image" content="https://www.scfstrategies.com/images/team-image.jpeg" />
-        <meta property="og:url" content="https://www.scfstrategies.com/about-us" />
-        <meta property="og:type" content="website" />
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:title" content="About Us | SCF Strategies" />
-        <meta name="twitter:description" content="Unlock the potential of your Supply Chain Finance programs with SCF Strategies. Learn about our expertise, core values, and why industry leaders choose us." />
-        <meta name="twitter:image" content="https://www.scfstrategies.com/images/team-image.jpeg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        {/* Social Media Links */}
-        <meta property="social:facebook" content="https://www.facebook.com/SCFStrategies" />
-        <meta property="social:instagram" content="https://www.instagram.com/SCFStrategies" />
-        <meta property="social:linkedin" content="https://www.linkedin.com/company/scfstrategies" />
-        <meta property="social:youtube" content="https://www.youtube.com/user/SCFStrategies" />
-        <meta property="social:googlemybusiness" content="https://www.google.com/business/SCFStrategies" />
-        {/* Schema Markup for Organization */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "SCF Strategies",
-            "url": "https://www.scfstrategies.com",
-            "logo": "https://www.scfstrategies.com/images/logo.png",
-            "sameAs": [
-              "https://www.facebook.com/SCFStrategies",
-              "https://www.instagram.com/SCFStrategies",
-              "https://www.linkedin.com/company/scfstrategies",
-              "https://www.youtube.com/user/SCFStrategies",
-              "https://www.google.com/business/SCFStrategies"
-            ]
-          })}
-        </script>
-      </Head>
-
 
       <AuroraBackgroundDemo title={'About Us'} description={'Know more about our mission, values and team.'} link={'Learn More'} />
       <div className="bg-primary mx-auto py-12">
