@@ -5,13 +5,13 @@ const WhyChoose = () => {
   return (
     <section className="bg-peimary  p-4 max-w-7xl mx-auto rounded-lg flex flex-col md:h-[60vh] md:flex-row sm:flex-col items-center md:items-start space-y-8 md:space-y-0 md:space-x-8 mt-20" >
       {/* Black div replacing the image */}
-      <div className="w-full md:w-1/2 h-full  rounded-3xl bg-cover"  style={{ backgroundImage: "url('/images/LandingPage/whychoose.jpg')"} }></div>
+      <div className="w-full sm:w-full  md:w-1/2 h-full  rounded-3xl bg-cover"  style={{ backgroundImage: "url('/images/LandingPage/whychoose.jpg')"} }></div>
 
       {/* Text and icon grid section */}
       <div className="w-full md:w-1/2 flex flex-col h-full  justify-center">
         <div className="mb-4">
           <span className="bg-pink-200 text-pink-700 px-2 py-1 rounded-lg font-semibold">Why Us</span>
-          <h2 className="text-4xl font-bold text-title mt-2">
+          <h2 className="subheading mt-4">
           Why Choose <br /> Our Services Over the Rest?
           </h2>
         </div>

@@ -31,11 +31,14 @@ const ResourceCenter = () => {
 
       <div className="py-20 max-w-7xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
-          Your Hub for Supply Chain Finance Insights
+        Explore SCF Insights at SCF Strategies Resource Center
         </h2>
         <p className="text-xl md:text-xl mb-16 text-start md:text-center text-gray-600 max-w-4xl mx-auto">
-        Dive into a wealth of knowledge and expertise at SCF Strategies. <br/> Our Resource Center is designed to provide you with valuable information, cutting-edge research, and practical tools to enhance your understanding and execution of Supply Chain Finance (SCF) strategies. From comprehensive whitepapers to insightful case studies, we equip you with the resources you need to stay ahead in the dynamic world of SCF.
-        </p>
+  Discover the essentials of <strong>Supply Chain Finance</strong> with our expertly curated resources!<br />
+  From <strong>whitepapers</strong> to <strong>case studies</strong>, <strong>SCF Strategies</strong> offers everything you need to stay competitive and informed.<br />
+  Dive in and elevate your <strong>SCF strategy</strong>!
+</p>
+
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
           <ResourceCard
@@ -65,7 +68,7 @@ const ResourceCenter = () => {
         </div>
 
         <div className="mt-16 text-center relative z-10">
-          <CustomeButton title="Explore Our Resources" link="/catalogues" />
+          <CustomeButton title="Your go-to for SCF success!" link="/catalogues" />
         </div>
       </div>
       <WaveComponent />

@@ -82,7 +82,7 @@ const IndustriesSection = () => {
   };
 
   return (
-    <div className="bg-primary w-full relative mt-20">
+    <div className="bg-primary w-full relative ">
       <FuturisticBackground />
       
       {/* Mobile Layout (display below lg breakpoint) */}

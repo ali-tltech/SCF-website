@@ -158,18 +158,12 @@ const WhatWeDo = () => {
     </svg>
 
     {/* Rotating circle */}
-    <svg
-      className="w-20 h-20 mx-auto mb-6 text-blue-600 opacity-20 animate-spin-slow relative z-10"
-      viewBox="0 0 100 100"
-    >
-      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="2" fill="none" />
-      <path d="M50 25 L50 75 M25 50 L75 50" stroke="currentColor" strokeWidth="2" />
-    </svg>
+   
 
     {/* Main text content with higher z-index */}
-    <p className="text-2xl text-title relative font-bold z-10">
-      Our team brings <span className="font-extrabold text-cyan-600">over 15 years</span> of hands-on experience with{' '}
-      <span className="font-extrabold text-cyan-600 ">100+ SCF programs</span> implemented worldwide.
+    <p className="paragraph relative  font-bold z-10">
+      Our team brings <span className="font-extrabold text-cyan-700">over 15 years</span> of hands-on experience with{' '}
+      <span className="font-extrabold text-cyan-700 ">100+ SCF programs</span> implemented worldwide.
     </p>
   </div>
 </div>

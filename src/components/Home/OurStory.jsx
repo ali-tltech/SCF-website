@@ -7,7 +7,7 @@ const OurStory = () => {
     {
       year: "2015",
       title: "Foundation",
-      content: "Founded with a vision to revolutionize Supply Chain Finance by integrating both funding and technology solutions.",
+      content: "Founded with a vision to revolutionize <strong>Supply Chain Finance</strong> by integrating both <strong>funding</strong> and <strong>technology solutions</strong>.",
       image: "/images/blog/5.png",
       sizes: {
         mobile: { width: 640, height: 480 },
@@ -18,7 +18,7 @@ const OurStory = () => {
     {
       year: "2015-2020",
       title: "$150B+ Impact",
-      content: "Achieved over $150 billion in trading volume and $2 billion in outstanding results through our integrated approach.",
+      content: "Achieved over <strong>$150 billion</strong> in trading volume and <strong>$2 billion</strong> in outstanding results through our <strong>integrated approach</strong>.",
       image: "/images/blog/3.png",
       sizes: {
         mobile: { width: 640, height: 480 },
@@ -29,7 +29,7 @@ const OurStory = () => {
     {
       year: "Today",
       title: "Global Leader",
-      content: "Recognized as an industry leader with 100+ SCF programs implemented globally, serving corporates, financial institutions, and Fintechs.",
+      content: "Recognized as an <strong>industry leader</strong> with <strong>100+ SCF programs</strong> implemented globally, serving <strong>corporates</strong>, <strong>financial institutions</strong>, and <strong>Fintechs</strong>.",
       image: "/images/blog/4.png",
       sizes: {
         mobile: { width: 640, height: 480 },
@@ -91,8 +91,9 @@ const OurStory = () => {
           <div className="">
             <h3 className="subheading">Pioneering Integrated Solutions</h3>
             <p className="paragraph">
-              Founded in 2015, SCF Strategies emerged from the recognition that traditional Supply Chain Finance providers typically offer either funding or technology, but rarely both in an integrated manner. <br /> With over 15 years of experience, we&apos;ve revolutionized the industry by combining best practice processes with cutting-edge technology and robust funding capacity.
-            </p>
+  Founded in <strong>2015</strong>, SCF Strategies emerged from the recognition that traditional <strong>Supply Chain Finance</strong> providers typically offer either <strong>funding</strong> or <strong>technology</strong>, but rarely both in an integrated manner. <br /> With over <strong>15 years of experience</strong>, we&apos;ve revolutionized the industry by combining <strong>best practice processes</strong> with <strong>cutting-edge technology</strong> and <strong>robust funding capacity</strong>.
+</p>
+
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
@@ -153,8 +154,10 @@ const OurStory = () => {
                   {milestone.year}
                 </motion.div>
                 <h3 className="subheading">{milestone.title}</h3>
-                <p className="paragraph">{milestone.content}</p>
-              </div>
+                <p
+            className="paragraph"
+            dangerouslySetInnerHTML={{ __html: milestone.content }}
+          ></p>              </div>
             </motion.div>
           ))}
         </div>
@@ -173,16 +176,19 @@ const OurStory = () => {
 
   {/* Content with higher z-index */}
   <h3 className="text-xl sm:text-4xl font-bold text-white mb-3 sm:mb-4 relative z-10">
-    Our Commitment to Excellence
+  Leading the Way in SCF Consulting
   </h3>
   <p className="paragraph-white relative z-10">
-    Today, SCF Strategies is recognized as an industry leader in SCF consulting. <br /> 
-    Our proven approach and methodology have successfully assessed markets and implemented programs, <br /> unlocking billions in working capital and free cash flow for leading companies worldwide.
-  </p>
+  
+  At <span>SCF Strategies</span>, we are proud to be recognized as an industry leader in <span>Supply Chain Finance</span>. <br />
+  Our unique, results-driven approach has empowered top companies worldwide, unlocking <span>billions in working capital</span> and driving unparalleled <span>cash flow improvements</span>.
+</p>
+
+
   
   {/* Button with higher z-index */}
   <div className="relative z-10">
-    <CustomeButton title={"Learn More About Our Impact"} link={"/about-us"}/>
+    <CustomeButton title={"Discover the Difference We Make ✨"} link={"/about-us"}/>
   </div>
 </motion.div>
 
