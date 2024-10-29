@@ -38,7 +38,7 @@ const ServiceItem = ({ icon: Icon, title, description, isEven }) => (
       </div>
     </div>
     <div className="w-full md:w-2/3 md:px-8">
-      <h3 className="text-3xl font-bold text-title mb-3">{title}</h3>
+      <h3 className="subheading">{title}</h3>
       <p className=" paragraph">{description}</p>
       <button className="mt-4 text-cyan-600 font-semibold inline-flex items-center group">
         Learn More
