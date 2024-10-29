@@ -1,13 +1,12 @@
-"use client";
 import { cn } from "@/lib/utils";
 import React from "react";
 
 const AuroraBackground = ({ className, children, showRadialGradient = true, ...props }) => {
   return (
-    <main>
+    <main className="w-full">
       <div
         className={cn(
-          "relative flex flex-col md:h-[50vh] sm:h-[45vh] h-[40vh]  items-center justify-center bg-black dark:bg-zinc-900 text-slate-50 transition-bg",
+          "relative flex flex-col h-fit items-center justify-center bg-black/90 dark:bg-zinc-900 text-slate-50 transition-bg overflow-hidden",
           className
         )}
         {...props}
@@ -31,7 +30,7 @@ const AuroraBackground = ({ className, children, showRadialGradient = true, ...p
               pointer-events-none
               absolute -inset-[10px] opacity-50 will-change-transform`,
               showRadialGradient &&
-                `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`
+                `[mask-image:radial-gradient(ellipse_at_100%_0%,black_20%,var(--transparent)_70%)]`
             )}
           ></div>
         </div>

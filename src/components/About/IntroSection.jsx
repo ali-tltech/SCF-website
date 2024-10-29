@@ -3,9 +3,9 @@ import React from 'react'
 
 export const IntroSection = () => {
   return (
-<div className="mt-4 text-black py-4 px-4 md:px-8 relative overflow-hidden ">
-      <div className="max-w-6xl mx-auto relative">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-16">
+<div className="mt-4 text-black  relative overflow-hidden ">
+      <div className="max-w-7xl mx-auto relative">
+        <h2 className="subheading mb-4">
           Unlocking the Full Potential of Supply Chain Finance
         </h2>
         
@@ -23,15 +23,17 @@ export const IntroSection = () => {
           
           {/* Text Content - Right Side */}
           <div className="w-full md:w-1/2 space-y-6">
-            <p className="text-gray-600  leading-relaxed text-lg">
-              At SCF Strategies, we&apos;re dedicated to transforming your Supply Chain Finance (SCF) programs into powerful engines of growth.  Our mission is to bridge the gap between innovative technology and practical implementation, unlocking new opportunities and maximizing efficiency for your business. With our extensive experience and comprehensive solutions, we help you achieve remarkable success and stay ahead of the competition.
-            </p>
+          <p className="text-gray-600 leading-relaxed paragraph">
+  At <strong>SCF Strategies</strong>, we&apos;re dedicated to transforming your <strong>Supply Chain Finance (SCF)</strong> programs into powerful engines of growth. Our mission is to bridge the gap between <strong>innovative technology</strong> and <strong>practical implementation</strong>, unlocking new opportunities and maximizing efficiency for your business. With our extensive experience and comprehensive solutions, we help you achieve remarkable success and stay ahead of the competition.
+</p>
+
             
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-gray-800 ">Core Values</h3>
-              <p className="  text-gray-600 leading-relaxed text-lg">
-                We believe in building strong, transparent relationships with our clients. Our commitment to integrity and partnership ensures that we work collaboratively to achieve your goals and drive sustainable success.
-              </p>
+              <h3 className="subheading ">Core Values</h3>
+              <p className="text-gray-600 leading-relaxed paragraph">
+  We believe in building <strong>strong</strong>, <strong>transparent</strong> relationships with our clients. Our commitment to <strong>integrity</strong> and <strong>partnership</strong> ensures that we work collaboratively to achieve your <strong>goals</strong> and drive <strong>sustainable success</strong>.
+</p>
+
             </div>
             
             {/* <p className="text-gray-600  leading-relaxed text-lg">

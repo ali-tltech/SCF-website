@@ -39,7 +39,7 @@ const ServiceItem = ({ icon: Icon, title, description, isEven }) => (
     </div>
     <div className="w-full md:w-2/3 md:px-8">
       <h3 className="text-3xl font-bold text-title mb-3">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <p className=" paragraph">{description}</p>
       <button className="mt-4 text-cyan-600 font-semibold inline-flex items-center group">
         Learn More
         <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
@@ -53,24 +53,41 @@ const EnablementPage = () => {
     {
       icon: ProgramDesignIcon,
       title: "Program Design",
-      description: "Transform your SCF programs with meticulously crafted designs that aim for optimal results. We tailor our approach to address your specific needs, creating robust programs that enhance efficiency, scalability, and impact."
+      description: (
+        <>
+          Transform your SCF programs with meticulously crafted designs that aim for optimal results. We tailor our approach to address your specific needs, creating robust programs that enhance <strong>efficiency</strong>, <strong>scalability</strong>, and <strong>impact</strong>.
+        </>
+      )
     },
     {
       icon: SupplierIcon,
       title: "Supplier Onboarding",
-      description: "Streamline and simplify your supplier onboarding process through multiple channels. Our comprehensive management solutions ensure that new suppliers are seamlessly integrated into your SCF programs."
+      description: (
+        <>
+          Streamline and simplify your supplier onboarding process through multiple channels. Our comprehensive management solutions ensure that new suppliers are seamlessly integrated into your SCF programs.
+        </>
+      )
     },
     {
       icon: EnablementIcon,
       title: "Sales & Operations Enablement",
-      description: "Equip your teams with the tools and strategies needed to excel in a competitive landscape. Our enablement services focus on boosting team performance and operational efficiency."
+      description: (
+        <>
+          Equip your teams with the tools and strategies needed to excel in a competitive landscape. Our enablement services focus on boosting team performance and operational <strong>efficiency</strong>.
+        </>
+      )
     },
     {
       icon: AnalyticsIcon,
       title: "Working Capital Analytics",
-      description: "Leverage advanced data and analytics to optimize your working capital. Our working capital analytics services provide actionable insights and benchmark comparisons for informed decision-making."
+      description: (
+        <>
+          Leverage advanced data and <strong>analytics</strong> to optimize your working capital. Our working capital analytics services provide actionable insights and benchmark comparisons for informed decision-making.
+        </>
+      )
     }
   ];
+  
 
   return (
     <div className="bg-primary">
@@ -79,10 +96,10 @@ const EnablementPage = () => {
       <div className="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
-            <h2 className="text-3xl font-bold text-title mb-4">
+            <h2 className="subheading">
               Empowering Your SCF Programs to Reach New Heights
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="paragraph">
               At SCF Strategies, we focus on delivering innovative and practical solutions that drive real results, ensuring that your SCF programs not only meet but exceed expectations.
             </p>
         <CustomeButton title={"Learn more"}/>
@@ -110,11 +127,11 @@ const EnablementPage = () => {
         </div>
 
         <div className="bg-gray-50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-center text-title mb-8">
+          <h2 className="subheading text-center">
             Driving Real Results with Our Solutions
           </h2>
-          <p className="text-center text-gray-600 mb-8">
-            Our solutions are designed to deliver tangible results. By optimizing your SCF programs, you can improve cash flow, enhance working capital efficiency, and strengthen supplier relationships. Our data-driven strategies and expert guidance ensure that your SCF programs are equipped to achieve sustainable growth and a competitive advantage in the marketplace.
+          <p className="paragraph text-center mb-8">
+            Our solutions are designed to deliver tangible results. <br/> By optimizing your SCF programs, you can improve cash flow, enhance working capital efficiency, and strengthen supplier relationships. <br/> Our data-driven strategies and expert guidance ensure that your SCF programs are equipped to achieve sustainable growth and a competitive advantage in the marketplace.
           </p>
           <div className="flex justify-center">
             <button className="bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-700">

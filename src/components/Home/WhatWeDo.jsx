@@ -56,7 +56,7 @@ const WhatWeDo = () => {
   }, []);
 
   return (
-    <section className="relative  bg-[#eeeeee] py-20 overflow-hidden">
+    <section className="relative  bg-[#eeeeee] mt-20 overflow-hidden ">
       {/* Enhanced Background SVG Patterns */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Original circles */}
@@ -99,17 +99,14 @@ const WhatWeDo = () => {
         {/* Header Section with animation */}
         <div className=" mb-10 fade-up text-start opacity-0 translate-y-4 transition-all duration-1000">
          
-          <h2 className="text-4xl font-bold text-[#024950] mb-6">
+          <h2 className="subheading">
             What We Do at SCF Strategies
           </h2>
-          <div className="inline-block mb-6">
-            <svg className="w-full h-1 mb-2" viewBox="0 0 60 8">
-              <rect width="60" height="8" fill="#2563eb" rx="4" />
-            </svg>
-          </div>
-          <p className="max-w-3xl  text-lg text-start  text-gray-600">
-            We specialize in closing the services gap required for the success of Supply Chain Finance (SCF) programs. Our approach encompasses the entire SCF ecosystem, including origination, design, implementation, and management.
-          </p>
+         
+          <p className="max-w-4xl paragraph">
+  We specialize in closing the <strong>services gap</strong> required for the success of <strong>Supply Chain Finance (SCF)</strong> programs. Our approach encompasses the entire <strong>SCF ecosystem</strong>, including <strong>origination</strong>, <strong>design</strong>, <strong>implementation</strong>, and <strong>management</strong>.
+</p>
+
         </div>
 
         {/* Offerings Grid with stagger animation */}

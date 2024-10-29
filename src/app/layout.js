@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
+import '../styles/typography.css';
 import ClientLayout from './ClientLayout';
-
 const inter = Inter({
   subsets: ['latin', 'cyrillic', 'greek'],
   display: 'swap',

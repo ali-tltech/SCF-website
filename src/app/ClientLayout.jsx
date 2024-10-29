@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
 import CookieConsent from '@/components/CookieConsent';
 import Loading from '@/components/Loading';
+import WaveSeparator from '@/components/ui/WaveSeparator';
 
 const LOADING_DURATION = 1000;
 
@@ -18,7 +19,7 @@ export default function ClientLayout({ children }) {
   const [loading, setLoading] = useState(true);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
-
+  
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -98,6 +99,9 @@ export default function ClientLayout({ children }) {
         <main ref={pageRef} className="transition-opacity ease-in-out">
           {children}
         </main>
+        {pathname !== '/' && <WaveSeparator />}
+
+
         <Toaster position="bottom-center" duration={500} />
         <CookieConsent />
         <Footer />

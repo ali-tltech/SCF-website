@@ -84,6 +84,8 @@ const ClientsPage = () => {
     "Critical Supplier Onboarding and Accounting Treatment",
     "Training, Workshops, and Research Data"
   ];
+
+  
   return (
     <div className="min-h-screen bg-primary  relative overflow-hidden">
       <AuroraBackgroundDemo  title={"Clients"} link={"Home"} description={"Tailored Solutions for Exceptional Clients"}/>
@@ -103,10 +105,10 @@ const ClientsPage = () => {
             </svg>
           </div>
           
-          <h1 className="text-3xl md:text-4xl font-bold text-title mb-3 md:mb-4 relative z-10">
+          <h1 className="subheading">
             Supply Chain Finance Solutions
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="paragraph">
             Supporting organizations worldwide in achieving world-class results in Supply Chain Finance
           </p>
         </div>
@@ -135,8 +137,8 @@ const ClientsPage = () => {
                     {service.icon}
                   </div>
                   <div className="flex-grow text-white">
-                    <h3 className="text-2xl md:text-4xl font-semibold">{service.title}</h3>
-                    <p className="mt-1 text-sm md:text-base">
+                    <h3 className="subheading-white">{service.title}</h3>
+                    <p className="paragraph-white">
                       {service.description}
                     </p>
                   </div>
@@ -154,7 +156,7 @@ const ClientsPage = () => {
                       {service.items.map((item, index) => (
                         <div key={index} className="flex items-start md:items-center space-x-3 z-50">
                           <HiCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1 md:mt-0" />
-                          <span className="text-gray-300 text-sm md:text-base">{item}</span>
+                          <span className="paragraph-white">{item}</span>
                         </div>
                       ))}
                     </div>

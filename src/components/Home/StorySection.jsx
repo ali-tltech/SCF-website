@@ -31,14 +31,15 @@ const RecentStories = () => {
   ];
 
   return (
-    <section className="py-12 bg-primary leading-tight">
+    <section className="py-12 bg-primary leading-tight mt-20">
       <div className="max-w-7xl flex flex-col items-start justify-start mx-auto px-4 space-y-10">
         <div className="text-start  w-full">
           <h2 className="text-4xl font-bold text-title">Industry Insights & Updates</h2>
-          <p className="mt-4 text-gray-500 text-base md:text-lg">
-            Explore our latest thought leadership, market analyses, and expert perspectives on Supply Chain Finance. <br /> 
-            Stay informed about industry trends and innovative solutions.
-          </p>
+          <p className="mt-4 paragraph">
+  Explore our latest <strong>thought leadership</strong>, <strong>market analyses</strong>, and <strong>expert perspectives</strong> on Supply Chain Finance. <br />
+  Stay informed about <strong>industry trends</strong> and <strong>innovative solutions</strong>.
+</p>
+
         </div>
         <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (

@@ -104,8 +104,8 @@ const ConsultingServicesContent = () => {
     return (
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
             <div className="text-center mb-16">
-                <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Expert Supply Chain Finance Consulting Services for Optimal SCF Strategies</h2>
-                <p className="text-base md:text-lg text-gray-700 text-start md:text-center">
+                <h2 className="subheading">Expert Supply Chain Finance Consulting Services for Optimal SCF Strategies</h2>
+                <p className="paragraph">
                     Unlock the Full Potential of Your Supply Chain Finance (SCF) Programs with Expert Advisory Services.<br />
                     At SCF Strategies, our supply chain finance consulting services go beyond standard advisory.<br />
                     We provide <strong>insightful and innovative solutions</strong> that address the unique challenges of your SCF programs.<br />
@@ -114,7 +114,7 @@ const ConsultingServicesContent = () => {
             </div>
 
             <div className="rounded-lg py-8 px-2 mb-16">
-                <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Our Consulting Services</h3>
+                <h3 className="subheading">Our Consulting Services</h3>
 
                 {/* Accordion */}
                 <div className="space-y-6">
@@ -164,7 +164,7 @@ const ConsultingServicesContent = () => {
             </div>
 
             <div className="mb-16">
-                <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+                <h3 className="subheading">
                     Transformative SCF for Sustainable Success
                 </h3>
 
@@ -201,7 +201,7 @@ const ConsultingServicesContent = () => {
             </div>
             <div className="text-center bg-blue-600 text-white rounded-lg  mb-8 p-12 ">
                 <h4 className="text-3xl font-bold mb-4">Explore Our Supply Chain Finance Consulting Services</h4>
-                <p className="text-xl mb-8">Take the first step toward elevating your supply chain finance strategy. Our team of experts is here to guide you through every stage of your SCF journey, from strategic planning to execution. Explore our consulting services to discover how we can help you achieve exceptional results and unlock new opportunities for your business.</p>
+                <p className="paragraph-white ">Take the first step toward elevating your supply chain finance strategy. Our team of experts is here to guide you through every stage of your SCF journey, from strategic planning to execution. Explore our consulting services to discover how we can help you achieve exceptional results and unlock new opportunities for your business.</p>
                 <Link href='/contact-us' className="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full transition-colors duration-200 text-lg">
                     Get Started Today
                 </Link>

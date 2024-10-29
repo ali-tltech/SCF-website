@@ -11,7 +11,7 @@ const StatsSection = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-stone-950 opacity-60" />
+      <div className="absolute inset-0 bg-stone-950 opacity-60 mt-20" />
 
       {/* Content Container */}
       <div className="relative z-20 container mx-auto px-4 py-12 md:py-16 min-h-screen flex flex-col justify-center">

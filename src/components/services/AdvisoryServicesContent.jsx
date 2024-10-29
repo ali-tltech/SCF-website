@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ChevronDown, ChevronUp, Target, Search, Users, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import WaveSeparator from '../ui/WaveSeparator';
 
 const AdvisoryServicesContent = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -145,16 +146,17 @@ const AdvisoryServicesContent = () => {
   ];
 
   return (
+    
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">Transform Your Supply Chain Finance Strategy</h2>
-        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+        <h2 className="subheading">Transform Your Supply Chain Finance Strategy</h2>
+        <p className="paragraph max-w-5xl mx-auto">
           Are you ready to take your Supply Chain Finance (SCF) initiatives to the next level? Partner with our experienced team to navigate challenges and seize growth opportunities in your SCF strategy.
         </p>
       </div>
 
       <div className="rounded-lg mb-16">
-        <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why Choose Our Advisory Services?</h3>
+        <h3 className="subheading text-center">Why Choose Our Advisory Services?</h3>
 
         <div className="space-y-6">
           {accordionData.map((item, index) => (
@@ -211,6 +213,7 @@ const AdvisoryServicesContent = () => {
           Contact Us Today
         </Link>
       </div>
+     
     </div>
   );
 };

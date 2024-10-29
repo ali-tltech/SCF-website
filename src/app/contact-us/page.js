@@ -47,12 +47,12 @@ const ContactPage = () => {
       <AuroraBackgroundDemo title={'Contact Us'} description={'We Love to Hear From You!'} link={'Learn More'} />
 
       {/* Contact Form Section */}
-      <div className="bg-primary py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-primary max-w-7xl mx-auto  py-16 ">
         <div className="max-w-7xl mx-auto">
 
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 text-center">Get in Touch</h2>
-            <p className="text-xl text-center text-gray-600 mb-12">
+            <h2 className="subheading">Get in Touch</h2>
+            <p className="paragraph">
               We&apos;re here to help. Reach out anytime.
             </p>
 
@@ -96,7 +96,7 @@ const ContactPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
               <div className="bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-3xl font-bold mb-6 text-gray-800">Send Us a Message</h2>
+                <h2 className="subheading">Send Us a Message</h2>
                 <ContactForm />
               </div>
 

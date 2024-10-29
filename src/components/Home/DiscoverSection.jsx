@@ -6,7 +6,7 @@ const DiscoverSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative min-h-fit grid grid-cols-1 md:grid-cols-2 gap-4 p-4 max-w-7xl mx-auto w-fit overflow-hidden bg-primary">
+    <div className="relative min-h-fit grid grid-cols-1 md:grid-cols-2 gap-4 p-4 max-w-7xl mt-20 mx-auto w-fit overflow-hidden bg-primary">
       {/* Animated SVG Background Pattern */}
       <div className="absolute inset-0 pointer-events-none">
         <svg className="w-full h-full opacity-10" viewBox="0 0 100 100">
@@ -39,16 +39,15 @@ const DiscoverSection = () => {
                 className={`transform transition-all duration-700 ${isHovered ? 'scale-110 opacity-50' : 'scale-100 opacity-20'}`} />
         </svg>
 
-        <h2 className="text-4xl font-bold mb-4 text-title">
+        <h2 className="subheading">
           Engaging New Audiences through Smart Approach
         </h2>
         
-        <p className="mb-6 relative">
-          <span className="absolute -left-4 text-lg top-0 w-1 h-full bg-white opacity-50 transform origin-top transition-transform duration-500"></span>
-          Unlock working capital and optimize your supply chain with our innovative financing solutions. <br /> 
-          We bridge the gap between suppliers and buyers, enabling faster payments, stronger supplier relationships, and improved cash flow management. <br /> 
-          Our platform empowers businesses of all sizes to thrive in today&apos;s dynamic market.
-        </p>
+        <p className="paragraph">
+  <strong>Unlock working capital</strong> and optimize your supply chain with our innovative financing solutions.<br />
+  We <strong>bridge the gap</strong> between suppliers and buyers, enabling <strong>faster payments</strong>, <strong>stronger supplier relationships</strong>, and <strong>improved cash flow management</strong>.<br />
+  Our platform empowers businesses of all sizes to thrive in today&aops;s <strong>dynamic market</strong>.
+</p>
 
         <CustomeButton title={"Discover more"}/>
       </div>

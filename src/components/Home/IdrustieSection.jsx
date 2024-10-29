@@ -82,13 +82,13 @@ const IndustriesSection = () => {
   };
 
   return (
-    <div className="bg-primary w-full relative">
+    <div className="bg-primary w-full relative mt-20">
       <FuturisticBackground />
       
       {/* Mobile Layout (display below lg breakpoint) */}
       <section className="lg:hidden py-16 px-4 relative">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-title mb-4">Industries We Serve</h2>
+          <h2 className="subheading">Industries We Serve</h2>
          
         </div>
         
@@ -109,7 +109,7 @@ const IndustriesSection = () => {
       <section className="hidden lg:block relative mx-auto max-w-[1550px] text-black h-[900px]">
         {/* Center Content */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10 w-full max-w-md">
-          <h2 className="text-4xl font-bold text-black mb-4">Industries We Serve</h2>
+          <h2 className="subheading">Industries We Serve</h2>
         </div>
 
         {/* Industry Cards Container */}

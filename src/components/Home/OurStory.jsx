@@ -64,7 +64,7 @@ const OurStory = () => {
   };
 
   return (
-    <section className="py-8 sm:py-12 md:py-16 bg-primary">
+    <section className=" bg-primary mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div 
@@ -74,10 +74,8 @@ const OurStory = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-4 sm:mb-6 md:mb-8"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-title mb-4 sm:mb-6">Our Journey of Innovation</h2>
-          <p className="text-gray-600 max-w-4xl mx-auto text-sm sm:text-base px-4">
-            Transforming Supply Chain Finance through integrated solutions, expertise, and innovation since 2015.
-          </p>
+          <h2 className="subheading">Our Journey of Innovation</h2>
+         
         </motion.div>
 
         {/* Main Content */}
@@ -90,15 +88,15 @@ const OurStory = () => {
         >
           
           
-          <div className="space-y-4 sm:space-y-6">
-            <h3 className="text-2xl sm:text-3xl font-semibold text-title">Pioneering Integrated Solutions</h3>
-            <p className="text-gray-700 leading-relaxed text-sm sm:text-lg">
+          <div className="">
+            <h3 className="subheading">Pioneering Integrated Solutions</h3>
+            <p className="paragraph">
               Founded in 2015, SCF Strategies emerged from the recognition that traditional Supply Chain Finance providers typically offer either funding or technology, but rarely both in an integrated manner. <br /> With over 15 years of experience, we&apos;ve revolutionized the industry by combining best practice processes with cutting-edge technology and robust funding capacity.
             </p>
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className=" p-4 sm:p-6 rounded-lg sm:rounded-xl bg-title shadow-md sm:shadow-lg"
+                className=" p-4 sm:p-6 rounded-lg sm:rounded-xl bg-title shadow-md sm:shadow-lg "
               >
                 <h4 className="text-2xl sm:text-4xl font-bold text-blue-100 mb-1 sm:mb-2">$150B+</h4>
                 <p className="text-gray-100 text-sm sm:text-base">Trading Volume</p>
@@ -154,8 +152,8 @@ const OurStory = () => {
                 >
                   {milestone.year}
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold text-title">{milestone.title}</h3>
-                <p className="text-gray-700 leading-relaxed text-sm sm:text-lg">{milestone.content}</p>
+                <h3 className="subheading">{milestone.title}</h3>
+                <p className="paragraph">{milestone.content}</p>
               </div>
             </motion.div>
           ))}
@@ -177,7 +175,7 @@ const OurStory = () => {
   <h3 className="text-xl sm:text-4xl font-bold text-white mb-3 sm:mb-4 relative z-10">
     Our Commitment to Excellence
   </h3>
-  <p className="text-gray-100 max-w-3xl mx-auto md:text-lg text-sm sm:text-base relative z-10">
+  <p className="paragraph-white relative z-10">
     Today, SCF Strategies is recognized as an industry leader in SCF consulting. <br /> 
     Our proven approach and methodology have successfully assessed markets and implemented programs, <br /> unlocking billions in working capital and free cash flow for leading companies worldwide.
   </p>

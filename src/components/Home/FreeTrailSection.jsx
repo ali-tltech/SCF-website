@@ -39,7 +39,7 @@ const FreeTrialSection = () => {
 // </div>
 
 //     </div>
-<div className="flex w-full h-fit">
+<div className="flex w-full h-fit mt-20">
   {/* Left Image Section */}
   <div className="w-1/2">
     <Image

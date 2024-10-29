@@ -1,6 +1,6 @@
-"use client";
-import { motion } from "framer-motion";
+"use client"
 import React from "react";
+import {motion}  from "framer-motion"
 import AuroraBackground from "./AuroraBackground";
 import { 
   FaFacebookF, 
@@ -51,26 +51,24 @@ const AuroraBackgroundDemo = ({title, description}) => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="absolute  flex max-w-7xl mx-auto inset-0   flex-col gap-4 items-start justify-end p-4"
+        className="relative flex max-w-7xl mt-20 mx-auto w-full h-full flex-col gap-4 items-center justify-center p-4"
       >
-       
-        <h1 className="text-3xl md:text-5xl w-full font-extrabold mb-10 text-blue-100  dark:text-white text-center">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-blue-100 dark:text-white text-center" style={{marginBottom:"0px"}}>
           {title}
         </h1>
-        <div className="flex md:justify-between flex-col md:flex-row md:items-end  w-full">
-        <div className="font-bold text-center text-base md:text-3xl text-stone-300 dark:text-neutral-200 py-4">
-          {description}
-        </div>
-        
-        
-          <div className="flex  flex-wrap justify-center gap-4 md:gap-6">
+        <div className="flex md:justify-between   flex-col md:flex-row md:items-end  w-full">
+          <div className="tagline mb-0 md:text-start text-center  ">
+            {description}
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {socialLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 md:p-3 rounded-full h-fit bg-white/10 hover:bg-white/30 transition-all duration-300 text-white hover:scale-110"
+                className="p-2 md:p-3 rounded-full bg-white/10 hover:bg-white/30 transition-all duration-300 text-white hover:scale-110"
                 aria-label={link.label}
               >
                 <div className="transform transition-transform duration-300 hover:scale-125">
@@ -79,7 +77,6 @@ const AuroraBackgroundDemo = ({title, description}) => {
               </a>
             ))}
           </div>
-        
         </div>
       </motion.div>
     </AuroraBackground>
