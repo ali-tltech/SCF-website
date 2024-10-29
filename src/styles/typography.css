@@ -12,10 +12,10 @@
 }
 
 .paragraph {
-  @apply text-sm sm:text-base md:text-lg lg:text-xl text-gray-800 mb-1 sm:mb-2 md:mb-3 lg:mb-4;
+  @apply text-base sm:text-base md:text-lg lg:text-xl text-gray-800 mb-1 sm:mb-2 md:mb-3 lg:mb-4;
 }
 .paragraph-white {
-  @apply text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 mb-1 sm:mb-2 md:mb-3 lg:mb-4;
+  @apply text-base sm:text-base md:text-lg lg:text-xl text-gray-100 mb-1 sm:mb-2 md:mb-3 lg:mb-4;
 }
 
 .tagline {
