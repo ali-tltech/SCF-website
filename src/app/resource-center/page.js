@@ -13,9 +13,8 @@ const ResourceCard = ({ icon: Icon, title, description, iconColor, buttonText, l
     <h3 className="text-2xl font-bold mb-4 text-gray-800">{title}</h3>
     <p className="text-gray-600  text-lg mb-6 flex-grow">{description}</p>
     <div className="flex justify-center mt-auto">
-      <Link href={`${linkPath}`} className="text-blue-600 hover:text-blue-800 transition-colors text-lg font-semibold">
-        {buttonText}
-      </Link>
+     
+      <CustomeButton title={buttonText} link={linkPath} />
     </div>
   </div>
 );
@@ -47,7 +46,7 @@ const ResourceCenter = () => {
             description="Access our collection of detailed whitepapers and industry reports. These documents offer thorough analyses and strategic insights into the latest trends and developments in Supply Chain Finance, helping you make informed decisions and stay ahead of the curve."
             iconColor="bg-blue-500"
             buttonText="Explore"
-            linkPath='/contact-us'
+            linkPath='/catalogues'
           />
           <ResourceCard
             icon={BookOpen}
@@ -63,13 +62,11 @@ const ResourceCenter = () => {
             description="Learn from real-world examples of successful SCF implementations. Our case studies showcase how leading companies have transformed their supply chain finance strategies, offering valuable lessons and inspiration for your own initiatives."
             iconColor="bg-purple-500"
             buttonText="Explore"
-            linkPath='/contact-us'
+            linkPath='/catalogues'
           />
         </div>
 
-        <div className="mt-16 text-center relative z-10">
-          <CustomeButton title="Your go-to for SCF success!" link="/catalogues" />
-        </div>
+       
       </div>
     </div>
   );

@@ -170,7 +170,15 @@ const Footer = () => {
             <div className=" text-gray-400  py-4  text-lg order-3 md:order-1 flex items-center space-x-2">
               <Image src="https://www.tltechnologies.net/assets/logo-D0OpDRUY.svg" width={60} height={60} alt="TL Technologies Logo" className="h-10 w-10" />
 
-              <Link href={"https://connect.tltechnologies.net/"}> Developed by TL Technologies</Link>
+              <Link 
+  href="https://connect.tltechnologies.net/" 
+  className="hover:underline" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  Developed by TL Technologies
+</Link>
+
             </div>
 
             <div className="text-lg text-gray-400 order-2 md:order-2">
@@ -182,7 +190,7 @@ const Footer = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-400 hover:text-blue-400 transition-colors text-lg flex items-center"
+                  className="text-gray-400 hover:text-blue-400 hover:underline  transition-colors text-lg flex items-center"
                 >
                   <FileText className="w-4 h-4 mr-1" />
                   {link.name}

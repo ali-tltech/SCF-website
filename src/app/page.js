@@ -66,7 +66,7 @@ export const metadata = {
     images: [
       {
         url: '/images/logo.png',
-        width: 1200,
+        width: 630,
         height: 630,
         alt: 'SCF Strategies Logo',
       }
