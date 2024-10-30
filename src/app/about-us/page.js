@@ -48,7 +48,7 @@ export const metadata = {
     description: 'Learn about SCF Strategies - Our mission, values, and commitment to excellence in financial solutions and strategic consulting',
     images: [
       {
-        url: '/images/logo.png',
+        url: '/images/ourstory.png',
         width: 630,
         height: 630,
         alt: 'SCF Strategies Logo',
@@ -59,7 +59,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'About SCF Strategies',
     description: 'Learn about SCF Strategies - Our mission, values, and commitment to excellence in financial solutions and strategic consulting',
-    images: ['/images/logo.png'],
+    images: ['/images/ourstory.png'],
     creator: '@scfstrategies',
   },
 };
