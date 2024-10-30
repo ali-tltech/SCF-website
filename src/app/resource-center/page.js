@@ -71,7 +71,6 @@ const ResourceCenter = () => {
           <CustomeButton title="Your go-to for SCF success!" link="/catalogues" />
         </div>
       </div>
-      <WaveComponent />
     </div>
   );
 };

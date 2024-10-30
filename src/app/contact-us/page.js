@@ -47,7 +47,7 @@ const ContactPage = () => {
       <AuroraBackgroundDemo title={'Contact Us'} description={'We Love to Hear From You!'} link={'Learn More'} />
 
       {/* Contact Form Section */}
-      <div className="bg-primary max-w-7xl mx-auto  py-16 ">
+      <div className="bg-primary max-w-7xl mx-auto  px-4 py-16 ">
         <div className="max-w-7xl mx-auto">
 
           <div className="relative z-10">
@@ -113,7 +113,6 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        <WaveComponent />
       </div>
     </>
   );

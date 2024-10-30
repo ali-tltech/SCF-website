@@ -89,7 +89,6 @@ const PrivacyPolicyPage = () => {
 
         </div>
       </div>
-      <WaveComponent />
 
     </div>
   );

@@ -136,7 +136,7 @@ const Footer = () => {
             </form>
 
             {/* Social Links Section */}
-            <h3 className="text-white text-xl font-semibold mb-4">Connect With Us</h3>
+            {/* <h3 className="text-white text-xl font-semibold mb-4">Connect With Us</h3>
             <div className="flex  space-x-4">
               <a href="https://www.facebook.com/profile.php?id=100063586296486" target="_blank"
                 rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
@@ -158,7 +158,7 @@ const Footer = () => {
                 rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <SiGooglemybusiness className="w-6 h-6" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -195,7 +195,6 @@ const TermsAndConditionsPage = () => {
                 </div>
 
             </div>
-            <WaveComponent />
         </div>
     );
 };
