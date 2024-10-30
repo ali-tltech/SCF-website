@@ -103,7 +103,7 @@ const WhatWeDo = () => {
             What We Do at SCF Strategies
           </h2>
          
-          <p className="max-w-4xl paragraph">
+          <p className="max-w-6xl paragraph">
   We specialize in closing the <strong>services gap</strong> required for the success of <strong>Supply Chain Finance (SCF)</strong> programs. Our approach encompasses the entire <strong>SCF ecosystem</strong>, including <strong>origination</strong>, <strong>design</strong>, <strong>implementation</strong>, and <strong>management</strong>.
 </p>
 
@@ -162,8 +162,8 @@ const WhatWeDo = () => {
 
     {/* Main text content with higher z-index */}
     <p className="paragraph relative  font-bold z-10">
-      Our team brings <span className="font-extrabold text-cyan-700">over 15 years</span> of hands-on experience with{' '}
-      <span className="font-extrabold text-cyan-700 ">100+ SCF programs</span> implemented worldwide.
+      Our team brings <span className="font-extrabold bg-stone-100 text-cyan-700 rounded px-2">over 15 years</span> of hands-on experience with{' '}
+      <span className="font-extrabold text-cyan-700 bg-stone-100 rounded px-2 ">100+ SCF programs</span> implemented worldwide.
     </p>
   </div>
 </div>

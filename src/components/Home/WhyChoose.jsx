@@ -10,7 +10,7 @@ const WhyChoose = () => {
       {/* Text and icon grid section */}
       <div className="w-full md:w-1/2 flex flex-col h-full  justify-center">
         <div className="mb-4">
-          <span className="bg-pink-200 text-pink-700 px-2 py-1 rounded-lg font-semibold">Why Us</span>
+          {/* <span className="bg-pink-200 text-pink-700 px-2 py-1 rounded-lg font-semibold">Why Us</span> */}
           <h2 className="subheading mt-4">
           Why Choose <br /> Our Services Over the Rest?
           </h2>

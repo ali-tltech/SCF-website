@@ -104,7 +104,7 @@ const ConsultingServicesContent = () => {
     return (
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
             <div className="text-center mb-16">
-                <h2 className="subheading">Expert Supply Chain Finance Consulting Services for Optimal SCF Strategies</h2>
+                <h2 className="subheading">Expert Supply Chain Finance Consulting for Optimal SCF Strategies!</h2>
                 <p className="paragraph">
                     Unlock the Full Potential of Your Supply Chain Finance (SCF) Programs with Expert Advisory Services.<br />
                     At SCF Strategies, our supply chain finance consulting services go beyond standard advisory.<br />

@@ -7,10 +7,10 @@ import {
   FaInstagram, 
   FaLinkedinIn, 
   FaTwitter, 
+  FaWhatsapp, 
   FaYoutube 
 } from "react-icons/fa";
 import XIcon from "../ui/XIcon";
-import { SiGooglemybusiness } from "react-icons/si";
 
 const AuroraBackgroundDemo = ({title, description}) => {
   const socialLinks = [
@@ -36,7 +36,7 @@ const AuroraBackgroundDemo = ({title, description}) => {
     },
     {
       href: "",
-      icon: <SiGooglemybusiness className="w-5 h-5 md:w-6 md:h-6" />,
+      icon: <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6" />,
       label: "GoogleBussiness"
     }
   ];
@@ -56,11 +56,11 @@ const AuroraBackgroundDemo = ({title, description}) => {
         <h1 className="text-3xl md:text-5xl font-extrabold text-blue-100 dark:text-white text-center" style={{marginBottom:"0px"}}>
           {title}
         </h1>
-        <div className="flex md:justify-between   flex-col md:flex-row md:items-end  w-full">
-          <div className="tagline mb-0 md:text-start text-center  ">
+        <div className="flex md:justify-between   flex-col md:flex-row md:items-end italic w-full">
+          <div className="tagline mb-0 md:text-start text-center italic  ">
             {description}
           </div>
-          
+{/*           
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {socialLinks.map((link, index) => (
               <a
@@ -76,7 +76,7 @@ const AuroraBackgroundDemo = ({title, description}) => {
                 </div>
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </AuroraBackground>

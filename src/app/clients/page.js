@@ -81,7 +81,7 @@ const ClientsPage = () => {
   const items = [
     "Detailed Market Opportunity Assessment",
     "Customized SCF Program Design",
-    "Critical Supplier Onboarding and Accounting Treatment",
+    "Essential Supplier Onboarding & Accounting Solutions",
     "Training, Workshops, and Research Data"
   ];
 
@@ -156,7 +156,7 @@ const ClientsPage = () => {
                       {service.items.map((item, index) => (
                         <div key={index} className="flex items-start md:items-center space-x-3 z-50">
                           <HiCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1 md:mt-0" />
-                          <span className="paragraph-white">{item}</span>
+                          <span className="paragraph-white " >{item}</span>
                         </div>
                       ))}
                     </div>
@@ -196,7 +196,7 @@ const ClientsPage = () => {
         <div className="flex-shrink-0 p-1 rounded-full bg-green-100 group-hover:bg-green-200 transition-colors duration-300">
           <HiCheckCircle className="w-6 h-6 text-green-600" />
         </div>
-        <span className="text-gray-100 text-sm md:text-sm font-medium group-hover:text-gray-100 transition-colors duration-300">
+        <span className="text-gray-100 text-sm md:text-[16px] font-medium group-hover:text-gray-100 transition-colors duration-300">
           {item}
         </span>
       </div>
@@ -213,7 +213,7 @@ const ClientsPage = () => {
         <div className="flex-shrink-0 p-1 rounded-full bg-green-100 group-hover:bg-green-200 transition-colors duration-300">
           <HiCheckCircle className="w-6 h-6 text-green-600" />
         </div>
-        <span className="text-gray-100 text-sm md:text-sm font-medium group-hover:text-gray-910 transition-colors duration-300">
+        <span className="text-gray-100 text-sm md:text-[16px] font-medium group-hover:text-gray-910 transition-colors duration-300">
           {item}
         </span>
       </div>

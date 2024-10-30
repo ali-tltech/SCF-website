@@ -61,7 +61,7 @@ const RecentStories = () => {
                 <h3 className="mt-1 text-lg font-semibold text-title line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="mt-1 text-gray-700 line-clamp-3">{post.excerpt}</p>
+                <p className="mt-3 text-gray-700 line-clamp-3">{post.excerpt}</p>
               </div>
             </div>
           ))}

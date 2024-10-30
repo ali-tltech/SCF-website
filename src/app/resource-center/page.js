@@ -33,7 +33,7 @@ const ResourceCenter = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
         Explore SCF Insights at SCF Strategies Resource Center
         </h2>
-        <p className="text-xl md:text-xl mb-16 text-start md:text-center text-gray-600 max-w-4xl mx-auto">
+        <p className="text-xl md:text-xl mb-16 text-start md:text-center text-gray-600 max-w-6xl mx-auto">
   Discover the essentials of <strong>Supply Chain Finance</strong> with our expertly curated resources!<br />
   From <strong>whitepapers</strong> to <strong>case studies</strong>, <strong>SCF Strategies</strong> offers everything you need to stay competitive and informed.<br />
   Dive in and elevate your <strong>SCF strategy</strong>!

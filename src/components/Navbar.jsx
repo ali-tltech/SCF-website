@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                <Image src="/images/logo.png" alt="Company Logo" width={70} height={40} className="cursor-pointer" />
+                <Image src="/images/logo.png" alt="Company Logo" width={80} height={50} className="cursor-pointer" />
               </Link>
             </div>
             <div className="hidden lg:flex lg:items-center lg:justify-end lg:flex-1">

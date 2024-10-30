@@ -118,7 +118,8 @@ const EnablementPage = () => {
         </div>
 
         <div className="mb-10">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Our Services</h2>
+          <h2 className="subheading ">OUR SERVICES</h2>
+          <hr className='bg-black h-1 max-w-20'/>
           <div className="rounded-lg">
             {services.map((service, index) => (
               <ServiceItem key={index} {...service} isEven={index % 2 !== 0} />
@@ -128,11 +129,22 @@ const EnablementPage = () => {
 
         <div className="bg-gray-50 rounded-lg p-8">
           <h2 className="subheading text-center">
-            Driving Real Results with Our Solutions
+          Achieve Real Results with Our SCF Solutions
           </h2>
-          <p className="paragraph text-center mb-8">
-            Our solutions are designed to deliver tangible results. <br/> By optimizing your SCF programs, you can improve cash flow, enhance working capital efficiency, and strengthen supplier relationships. <br/> Our data-driven strategies and expert guidance ensure that your SCF programs are equipped to achieve sustainable growth and a competitive advantage in the marketplace.
-          </p>
+          <div className='grid grid-cols-2 gap-8 w-full'>
+  <p className="paragraph text-start mb-8">
+    ⭐ Boost Cash Flow for better liquidity <br />
+    ⭐ Optimize Working Capital to unlock growth <br />
+    ⭐ Strengthen Supplier Relationships with transparent financing <br />
+   
+  </p>
+  <p className="paragraph text-start mb-8">
+   
+    ⭐ Data-Driven Strategies for targeted success <br />
+    ⭐ Sustainable Growth & Competitive Edge in the marketplace <br />
+  </p>
+</div>
+
           <div className="flex justify-center">
             <button className="bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-700">
               Contact Us
