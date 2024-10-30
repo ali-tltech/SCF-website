@@ -3,12 +3,12 @@ import { Sparkles } from 'lucide-react';
 import AuroraBackgroundDemo from '@/components/auroraBackground/AuroraDemo';
 import Link from 'next/link';
 
-const Catalogues = () => {
+const PopularPosts = () => {
   return (
     <div className=" bg-primary relative overflow-hidden">
       {/* Aurora background component */}
       <AuroraBackgroundDemo
-        title="Catalogue"
+        title="Popular Posts"
         description="Your gateway to knowledge and tools"
       />
 
@@ -29,7 +29,7 @@ const Catalogues = () => {
           </div>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed px-2 sm:px-4">
-            We&apos;re diligently working to bring you our new resources. 
+            We&apos;re diligently working to bring you our new posts. 
             Stay tuned for updates and sneak peeks!
           </p>
 
@@ -57,4 +57,4 @@ const Catalogues = () => {
   );
 };
 
-export default Catalogues;
+export default PopularPosts;

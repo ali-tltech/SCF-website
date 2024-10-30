@@ -31,13 +31,13 @@ const AnalyticsIcon = () => (
 );
 
 const ServiceItem = ({ icon: Icon, title, description, isEven }) => (
-  <div className={`flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''} py-10`}>
+  <div className={`flex flex-col md:flex-row items-center gap-4 ${isEven ? 'md:flex-row-reverse' : ''} py-10`}>
     <div className={`w-full md:w-1/3 flex justify-center ${isEven ? 'md:justify-start' : 'md:justify-end'} mb-6 md:mb-0`}>
       <div className="w-20 h-20 rounded-full bg-black   flex items-center justify-center">
         <Icon className="text-black" />
       </div>
     </div>
-    <div className="w-full md:w-2/3 md:px-8">
+    <div className="w-full md:w-2/3 ">
       <h3 className="subheading">{title}</h3>
       <p className=" paragraph">{description}</p>
       <button className="mt-4 text-cyan-600 font-semibold inline-flex items-center group">
@@ -96,8 +96,9 @@ const EnablementPage = () => {
       <div className="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
-            <h2 className="subheading">
+            <h2 className="subheading w-fit">
               Empowering Your SCF Programs to Reach New Heights
+              <hr/>
             </h2>
             <p className="paragraph">
               At SCF Strategies, we focus on delivering innovative and practical solutions that drive real results, ensuring that your SCF programs not only meet but exceed expectations.
@@ -118,8 +119,8 @@ const EnablementPage = () => {
         </div>
 
         <div className="mb-10">
-          <h2 className="subheading ">OUR SERVICES</h2>
-          <hr className='bg-black h-1 max-w-20'/>
+          <h2 className="subheading  w-fit">OUR SERVICES <hr/></h2>
+          
           <div className="rounded-lg">
             {services.map((service, index) => (
               <ServiceItem key={index} {...service} isEven={index % 2 !== 0} />
@@ -127,30 +128,25 @@ const EnablementPage = () => {
           </div>
         </div>
 
-        <div className="bg-gray-50 rounded-lg p-8">
+        <div className="bg-gray-50 rounded-lg p-4">
           <h2 className="subheading text-center">
           Achieve Real Results with Our SCF Solutions
           </h2>
-          <div className='grid grid-cols-2 gap-8 w-full'>
-  <p className="paragraph text-start mb-8">
-    ⭐ Boost Cash Flow for better liquidity <br />
-    ⭐ Optimize Working Capital to unlock growth <br />
-    ⭐ Strengthen Supplier Relationships with transparent financing <br />
-   
-  </p>
-  <p className="paragraph text-start mb-8">
-   
-    ⭐ Data-Driven Strategies for targeted success <br />
-    ⭐ Sustainable Growth & Competitive Edge in the marketplace <br />
-  </p>
+          <div className="grid md:grid-cols-2 grid-cols-1  gap-3   w-full">
+  <ul className="paragraph-white text-center space-y-3  mb-8">
+    <li className="bg-title  p-2 py-3 rounded-lg">Boost Cash Flow for better liquidity</li>
+    <li className="bg-title  p-2 py-3 rounded-lg">Optimize Working Capital to unlock growth</li>
+    <li className="bg-title  p-2 py-3 rounded-lg">Strengthen Supplier Relationships with  financing</li>
+  </ul>
+  <ul className="paragraph-white text-center mb-8 space-y-3 ">
+    <li className="bg-title  p-2 py-3 rounded-lg">Data-Driven Strategies for targeted success</li>
+    <li className="bg-title  p-2 py-3 rounded-lg">Sustainable Growth Edge in the marketplace</li>
+    <CustomeButton title={"connect us"}/>
+  </ul>
 </div>
 
-          <div className="flex justify-center">
-            <button className="bg-cyan-600 text-white font-semibold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out hover:bg-cyan-700">
-              Contact Us
-              <FaArrowRight className="ml-2" />
-            </button>
-          </div>
+
+          
         </div>
       </div>
     </div>

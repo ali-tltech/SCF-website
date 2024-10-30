@@ -4,9 +4,10 @@ import React from 'react'
 export const IntroSection = () => {
   return (
 <div className="mt-4 text-black  relative overflow-hidden ">
-      <div className="max-w-7xl mx-auto relative">
-        <h2 className="subheading mb-4">
+      <div className="max-w-7xl p-4 mx-auto relative">
+        <h2 className="subheading w-fit">
           Unlocking the Full Potential of Supply Chain Finance
+          <hr className="" />
         </h2>
         
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -29,7 +30,7 @@ export const IntroSection = () => {
 
             
             <div className="space-y-4">
-              <h3 className="subheading ">Core Values</h3>
+              <h3 className="subheading w-fit">Core Values <hr className="" /></h3>
               <p className="text-gray-600 leading-relaxed paragraph">
   We believe in building <strong>strong</strong>, <strong>transparent</strong> relationships with our clients. Our commitment to <strong>integrity</strong> and <strong>partnership</strong> ensures that we work collaboratively to achieve your <strong>goals</strong> and drive <strong>sustainable success</strong>.
 </p>

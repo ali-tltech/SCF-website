@@ -61,15 +61,15 @@ const PrivacyPolicyPage = () => {
         <div className="mb-12 text-center">
           <div className="flex flex-row justify-center items-center">
             <LockKeyhole className="w-8 h-8 text-blue-600 mr-3" />
-            <h1 className="text-xl md:text-3xl font-bold text-gray-900">Privacy Policy</h1>
+            <h1 className="subheading">Privacy Policy</h1>
           </div>
 
           <h2 className="text-sm md:text-lg text-gray-500 mt-2 mb-8">
             November 1st, 2024
           </h2>
 
-          <p className="text-gray-700 text-lg">
-            At SCF Strategies, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you interact with our website, services, and communications.
+          <p className="paragraph">
+            At SCF Strategies, we are committed to protecting your privacy and ensuring the security of your personal information. <br/> This Privacy Policy outlines how we collect, use, and safeguard your data when you interact with our website, services, and communications.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ const PrivacyPolicyPage = () => {
         ))}
 
         <div className="mt-12 py-8 flex flex-col bg-white  shadow-xl rounded-xl items-center relative z-10">
-          <p className="text-gray-600 mb-4 text-center">
+          <p className="paragraph text-center">
             If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us at:
           </p>
           <CustomeButton title={'Contact Us'} link={'/contact-us'} />

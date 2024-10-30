@@ -27,3 +27,6 @@
 strong {
   @apply bg-blue-100 px-1 rounded;
 }
+hr{
+  @apply bg-black w-full h-1  my-4 bg-opacity-50;
+}

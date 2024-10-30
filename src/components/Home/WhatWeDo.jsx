@@ -99,10 +99,10 @@ const WhatWeDo = () => {
         {/* Header Section with animation */}
         <div className=" mb-10 fade-up text-start opacity-0 translate-y-4 transition-all duration-1000">
          
-          <h2 className="subheading">
+          <h2 className="subheading w-fit">
             What We Do at SCF Strategies
+        <hr className="" />
           </h2>
-         
           <p className="max-w-6xl paragraph">
   We specialize in closing the <strong>services gap</strong> required for the success of <strong>Supply Chain Finance (SCF)</strong> programs. Our approach encompasses the entire <strong>SCF ecosystem</strong>, including <strong>origination</strong>, <strong>design</strong>, <strong>implementation</strong>, and <strong>management</strong>.
 </p>

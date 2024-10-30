@@ -64,14 +64,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Quick Links Section */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4 flex items-center">
+            <h3 className="text-white text-xl font-semibold mb-4 flex items-center">
               <LinkIcon className="w-4 h-4 mr-2" />
               Quick Links
             </h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-blue-400 transition-colors">
+                  <Link href={link.href} className="hover:text-blue-400 text-lg  transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -81,11 +81,11 @@ const Footer = () => {
 
           {/* Services Section */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-white text-xl font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link href={service.href} className="hover:text-blue-400 transition-colors">
+                  <Link href={service.href} className="hover:text-blue-400 text-lg transition-colors">
                     {service.name}
                   </Link>
                 </li>
@@ -95,14 +95,14 @@ const Footer = () => {
 
           {/* Resources Section */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4 flex items-center">
+            <h3 className="text-white text-xl font-semibold mb-4 flex items-center">
               <FileText className="w-4 h-4 mr-2" />
               Resources
             </h3>
             <ul className="space-y-2">
               {resources.map((resource) => (
                 <li key={resource.name}>
-                  <Link href={resource.href} className="hover:text-blue-400 transition-colors">
+                  <Link href={resource.href} className="hover:text-blue-400 text-lg transition-colors">
                     {resource.name}
                   </Link>
                 </li>
@@ -113,7 +113,7 @@ const Footer = () => {
           {/* Connect With Us Section */}
           <div>
             {/* Newsletter Signup Section */}
-            <h3 className="text-white text-lg font-semibold mb-4">Subscribe to Our Newsletter</h3>
+            <h3 className="text-white text-xl font-semibold mb-4">Subscribe to Our Newsletter</h3>
             <form
               className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 mb-6"
               onSubmit={handleSubmit}
@@ -136,7 +136,7 @@ const Footer = () => {
             </form>
 
             {/* Social Links Section */}
-            <h3 className="text-white text-lg font-semibold mb-4">Connect With Us</h3>
+            <h3 className="text-white text-xl font-semibold mb-4">Connect With Us</h3>
             <div className="flex  space-x-4">
               <a href="https://www.facebook.com/profile.php?id=100063586296486" target="_blank"
                 rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
@@ -167,13 +167,13 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div className="text-sm text-gray-400  py-4  order-3 md:order-1 flex items-center space-x-2">
-              <Image src="https://www.tltechnologies.net/assets/logo-D0OpDRUY.svg" width={60} height={60} alt="TL Technologies Logo" className="h-5 w-5" />
+            <div className=" text-gray-400  py-4  text-lg order-3 md:order-1 flex items-center space-x-2">
+              <Image src="https://www.tltechnologies.net/assets/logo-D0OpDRUY.svg" width={60} height={60} alt="TL Technologies Logo" className="h-10 w-10" />
 
-              <span>Designed and Developed by TL Technologies</span>
+              <Link href={"https://connect.tltechnologies.net/"}> Developed by TL Technologies</Link>
             </div>
 
-            <div className="text-sm text-gray-400 order-2 md:order-2">
+            <div className="text-lg text-gray-400 order-2 md:order-2">
               © {currentYear} SCF Strategies. All rights reserved.
             </div>
 
@@ -182,7 +182,7 @@ const Footer = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-400 hover:text-blue-400 transition-colors flex items-center"
+                  className="text-gray-400 hover:text-blue-400 transition-colors text-lg flex items-center"
                 >
                   <FileText className="w-4 h-4 mr-1" />
                   {link.name}

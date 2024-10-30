@@ -154,9 +154,9 @@ const ClientsPage = () => {
                   <div className="px-4 md:px-6    pb-4 md:pb-6 pt-2">
                     <div className="grid gap-3 md:gap-4 z-50">
                       {service.items.map((item, index) => (
-                        <div key={index} className="flex items-start md:items-center space-x-3 z-50">
-                          <HiCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1 md:mt-0" />
-                          <span className="paragraph-white " >{item}</span>
+                        <div key={index} className="flex bg-white w-fit p-1 rounded-lg items-start md:items-center space-x-3 z-50">
+                          <HiCheckCircle className="w-5  h-5 text-green-500 flex-shrink-0 mt-1 md:mt-0" />
+                          <span className=" text-black" >{item}</span>
                         </div>
                       ))}
                     </div>

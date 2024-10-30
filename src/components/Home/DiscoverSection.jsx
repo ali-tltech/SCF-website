@@ -32,15 +32,16 @@ const DiscoverSection = () => {
       </div>
 
       {/* Content Section */}
-      <div className="relative flex flex-col justify-center items-start text-black p-6 z-10">
+      <div className="relative flex flex-col justify-center items-start text-black  z-10">
         {/* Decorative SVG */}
         <svg className="absolute top-0 right-0 w-24 h-24 text-black opacity-10" viewBox="0 0 100 100">
           <path d="M10,50 Q50,10 90,50 Q50,90 10,50" fill="none" stroke="currentColor" strokeWidth="2"
                 className={`transform transition-all duration-700 ${isHovered ? 'scale-110 opacity-50' : 'scale-100 opacity-20'}`} />
         </svg>
 
-        <h2 className="subheading">
+        <h2 className="subheading w-fit">
           Engaging New Audiences through Smart Approach
+          <hr className="" />
         </h2>
         
         <p className="paragraph">

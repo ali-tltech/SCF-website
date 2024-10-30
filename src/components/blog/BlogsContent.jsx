@@ -220,7 +220,7 @@ const BlogContent = () => {
                 {popularPosts.map((post, index) => (
                   <li key={index} className="mb-2 gap-2 justify-center items-center w-fit flex">
                     <Image src={'/images/LandingPage/discover.jpg'} alt="Popular Post" width={200} height={200} className="h-20 w-20 object-cover" />
-                    <a href="#" className="text-blue-500 hover:underline">{post}</a>
+                    <Link href="/popularposts" className="text-blue-500 hover:underline">{post}</Link>
                   </li>
                 ))}
               </ul>
@@ -232,7 +232,7 @@ const BlogContent = () => {
               <ul>
                 {categories.map((category, index) => (
                   <li key={index} className="mb-2 text-gray-700">
-                    <Link href="#" className="text-gray-700 hover:text-blue-500">{category}</Link>
+                    <Link href="/blog/categories" className="text-gray-700 hover:text-blue-500">{category}</Link>
                   </li>
                 ))}
               </ul>
@@ -243,7 +243,7 @@ const BlogContent = () => {
               <h4 className="text-lg font-semibold mb-4">Tags</h4>
               <div className="flex flex-wrap">
                 {tags.map((tag, index) => (
-                  <Link key={index} href="#" className="mr-2 mb-2 inline-block px-3 py-1 text-sm bg-gray-200 rounded-full hover:bg-gray-300">{tag}</Link>
+                  <Link key={index} href="/blog/categories" className="mr-2 mb-2 inline-block px-3 py-1 text-sm bg-gray-200 rounded-full hover:bg-gray-300">{tag}</Link>
                 ))}
               </div>
             </div>
