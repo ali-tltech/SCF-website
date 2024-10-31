@@ -18,12 +18,9 @@ export default function RootLayout({ children }) {
         <ClientLayout>
           {children}
         </ClientLayout>
-        {process.env.NODE_ENV === 'production' && (
-          <>
+       
             <GoogleAnalytics />
-            <Analytics />
-          </>
-        )}
+        
       </body>
     </html>
   );
