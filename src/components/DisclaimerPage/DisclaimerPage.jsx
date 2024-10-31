@@ -115,7 +115,7 @@ const DisclaimerPage = () => {
                   <Mail className="w-6 h-6 text-indigo-600" />
                 </div>
                 <h3 className="font-semibold text-gray-800">Email Us</h3>
-                <p className="text-gray-600">info@scfstrategies.com</p>
+                <p className="text-gray-600">nsimek@scfstrategies.com</p>
               </div>
             </div>
 
