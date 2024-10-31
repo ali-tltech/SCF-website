@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SiGooglemybusiness } from "react-icons/si";
+import { HiOutlineMail } from "react-icons/hi";
 import Link from 'next/link';
 import {
   FileText,
@@ -170,7 +170,7 @@ const Footer = () => {
                   href="mailto:nsimek@scfstrategies.com" 
                   className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
                 >
-                  <FaSeedling className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <HiOutlineMail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span className="text-base md:text-lg">nsimek@scfstrategies.com</span>
                 </a>
 
