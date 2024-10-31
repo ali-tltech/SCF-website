@@ -470,7 +470,7 @@ const faqDatabase = [
   },
   {
     question: "How do I get in touch with SCF Strategies?",
-    answer: "You can contact us via email at contact@scfstrategies.com or call us at +1 203 470 9377. We are here to assist with all your SCF needs."
+    answer: "You can contact us via email at nsimek@scfstrategies.com or call us at +1 203 470 9377. We are here to assist with all your SCF needs."
   }
 ];
 
@@ -538,7 +538,9 @@ const simulateAIResponse = (message) => {
       • Partner Evaluation<br />
       • Industry-Specific Solutions<br />
       <br />
-      Alternatively, you can contact us directly at contact@scfstrategies.com or call +1 203 470 9377 for immediate assistance.`
+      Alternatively, you can contact us directly at nsimek@scfstrategies.com
+
+ or call +1 203 470 9377 for immediate assistance.`
     </>
     );
   }

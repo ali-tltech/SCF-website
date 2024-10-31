@@ -6,7 +6,7 @@ import { BsCalendar2Date } from 'react-icons/bs';
 import Link from 'next/link';
 import AuroraBackgroundDemo from '../auroraBackground/AuroraDemo';
 
-// Skeleton Loading Component
+// Skeleton Loading Component (unchanged)
 const BlogCardSkeleton = () => {
   return (
     <div className="bg-slate-200 relative p-4 shadow-lg rounded-2xl overflow-hidden">
@@ -24,7 +24,7 @@ const BlogCardSkeleton = () => {
   );
 };
 
-// Blog Card Component
+// Blog Card Component (slightly modified to show tags)
 const BlogCard = ({ post }) => {
   return (
     <Link href={`/blog/${post.id}`} passHref>
@@ -39,6 +39,7 @@ const BlogCard = ({ post }) => {
           />
         </div>
         <div className=" py-2">
+          
           <p className="text-gray-600 flex gap-2 text-xs">
             <BsCalendar2Date className="text-black" />
             {post.author} / {post.date}
@@ -55,7 +56,7 @@ const BlogCard = ({ post }) => {
   );
 };
 
-// Search Component
+// SearchBar Component (unchanged)
 const SearchBar = ({ onSearch }) => {
   return (
     <div className="rounded-lg items-center shadow-md p-1 bg-black flex">
@@ -75,6 +76,8 @@ const SearchBar = ({ onSearch }) => {
 // Main Blog Content Component
 const BlogContent = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedTag, setSelectedTag] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [filteredPosts, setFilteredPosts] = useState([]);
 
@@ -84,7 +87,8 @@ const BlogContent = () => {
       title: 'Roundtable on Supply Chain Finance at TXF in New York',
       author: 'SCF Strategies',
       date: 'September 17, 2018',
-      category:"Trade Dynamics",
+      category: 'Industry Events',
+      tags: ['Trade Dynamics', 'Innovation', 'Supply Chain Engagement'],
       image: '/images/blog/1.png',
       excerpt: 'SCF Strategies participated in the TXF Conference in New York, discussing emerging trends and the impact of trade dynamics.',
     },
@@ -93,6 +97,8 @@ const BlogContent = () => {
       title: 'SCF Strategies at the BAFT Supply Chain Finance Bootcamp',
       author: 'SCF Strategies',
       date: 'September 17, 2018',
+      category: 'Best Practices',
+      tags: ['Technology', 'Best Practices', 'Innovation'],
       image: '/images/blog/2.png',
       excerpt: 'SCF Strategies attended the BAFT Bootcamp, focusing on technological innovations and best practices in SCF programs.',
     },
@@ -101,6 +107,8 @@ const BlogContent = () => {
       title: '4 Key Success Factors for Effective Supply Chain Finance',
       author: 'SCF Strategies',
       date: 'October 30, 2018',
+      category: 'Supply Chain Finance',
+      tags: ['Target Setting', 'Structure Selection', 'Best Practices'],
       image: '/images/blog/3.png',
       excerpt: 'This post outlines four essential success factors for SCF programs, including setting clear targets and selecting the right structure.',
     },
@@ -109,6 +117,8 @@ const BlogContent = () => {
       title: 'Supplier Onboarding - It&apos;s Not as Tough as You Think',
       author: 'SCF Strategies',
       date: 'October 6, 2018',
+      category: 'Best Practices',
+      tags: ['Supplier Onboarding', 'Supply Chain Engagement'],
       image: '/images/blog/4.png',
       excerpt: 'An introduction to the importance of effective supplier onboarding in SCF, highlighting challenges and best practices.',
     },
@@ -117,43 +127,57 @@ const BlogContent = () => {
       title: 'Filling a Critical Need in Supply Chain Finance',
       author: 'SCF Strategies',
       date: 'September 25, 2018',
+      category: 'Case Studies',
+      tags: ['Case Study', 'Risk Management', 'Technology'],
       image: '/images/blog/5.png',
       excerpt: 'SCF Strategies emphasizes the need for comprehensive knowledge in SCF, showcasing a case study on supplier engagement.',
     }
   ];
 
   const popularPosts = [
-    'Making Peace With The Feast Or Famine Of Freelancing',
-    'I Used The Web For A Day On A 50 MB Budget',
-    'How To Create A Responsive Popup Gallery',
+    {
+      title: 'Understanding Supply Chain Finance Fundamentals',
+      imageUrl: '/images/blog/5.png',
+      description: 'An introduction to the basics of supply chain finance and how it benefits businesses in managing cash flow effectively.',
+    },
+    {
+      title: 'Innovations in Supply Chain Finance for Small Businesses',
+      imageUrl: '/images/blog/4.png',
+      description: 'Exploring new advancements in supply chain finance that make it accessible to small and medium enterprises.',
+    },
+    {
+      title: 'How Supply Chain Finance Strengthens Business Resilience',
+      imageUrl: '/images/blog/3.png',
+      description: 'Insights into how companies can enhance resilience through strategic supply chain finance solutions.',
+    },
   ];
+  
 
   const categories = [
     'Supply Chain Finance',
-    'Working Capital',
-    'Trade Finance',
+    'Industry Events',
+    'Best Practices',
     'Case Studies',
-    'Industry News',
-    'Best Practices'
+    'Technology in SCF'
   ];
   
   const tags = [
     'Supplier Onboarding',
     'Risk Management',
     'Technology',
-    'Banking',
-    'Dynamic Discounting',
-    'Procurement',
-    'KYC/AML',
-    'Sustainability',
-    'Platform Selection',
-    'Cross-border Trade',
-    'Invoice Finance',
-    'Treasury'
+    'Trade Dynamics',
+    'Best Practices',
+    'Supply Chain Engagement',
+    'Innovation',
+    'Target Setting',
+    'Structure Selection',
+    'Case Study'
   ];
   
   const handleSearch = (value) => {
     setSearchTerm(value);
+    setSelectedCategory('');
+    setSelectedTag('');
     setIsLoading(true);
 
     // Simulate API call delay
@@ -167,7 +191,40 @@ const BlogContent = () => {
     }, 1000);
   };
 
-  const displayPosts = searchTerm ? filteredPosts : blogPosts;
+  const handleCategoryFilter = (category) => {
+    setSelectedCategory(category);
+    setSearchTerm('');
+    setSelectedTag('');
+    setIsLoading(true);
+
+    setTimeout(() => {
+      const filtered = blogPosts.filter(post => 
+        post.category === category
+      );
+      setFilteredPosts(filtered);
+      setIsLoading(false);
+    }, 500);
+  };
+
+  const handleTagFilter = (tag) => {
+    setSelectedTag(tag);
+    setSearchTerm('');
+    setSelectedCategory('');
+    setIsLoading(true);
+
+    setTimeout(() => {
+      const filtered = blogPosts.filter(post => 
+        post.tags && post.tags.includes(tag)
+      );
+      setFilteredPosts(filtered);
+      setIsLoading(false);
+    }, 500);
+  };
+
+  const displayPosts = searchTerm ? filteredPosts 
+    : selectedCategory ? filteredPosts 
+    : selectedTag ? filteredPosts 
+    : blogPosts;
 
   return (
     <>
@@ -186,6 +243,32 @@ const BlogContent = () => {
     
           {/* Blog Posts Section */}
           <div className="lg:col-span-2">
+            {/* Current Filter Display */}
+            {(searchTerm || selectedCategory || selectedTag) && (
+              <div className="mb-6 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  {searchTerm && (
+                    <span className="bg-gray-200 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                      Search: {searchTerm}
+                      <button onClick={() => setSearchTerm('')} className="text-red-500">×</button>
+                    </span>
+                  )}
+                  {selectedCategory && (
+                    <span className="bg-blue-200 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                      Category: {selectedCategory}
+                      <button onClick={() => setSelectedCategory('')} className="text-red-500">×</button>
+                    </span>
+                  )}
+                  {selectedTag && (
+                    <span className="bg-green-200 px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                      Tag: {selectedTag}
+                      <button onClick={() => setSelectedTag('')} className="text-red-500">×</button>
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
               {isLoading ? (
                 // Show skeletons while loading
@@ -200,7 +283,11 @@ const BlogContent = () => {
               ) : (
                 // Show no results message
                 <div className="col-span-2 text-center py-10">
-                  <h3 className="text-xl font-semibold text-gray-600">No posts found matching &quot;{searchTerm}&quot;</h3>
+                  <h3 className="text-xl font-semibold text-gray-600">
+                    No posts found {searchTerm ? `matching "${searchTerm}"` : 
+                    selectedCategory ? `in category "${selectedCategory}"` : 
+                    selectedTag ? `with tag "${selectedTag}"` : ''}
+                  </h3>
                 </div>
               )}
             </div>
@@ -220,8 +307,8 @@ const BlogContent = () => {
               <ul>
                 {popularPosts.map((post, index) => (
                   <li key={index} className="mb-2 gap-2 justify-center items-center w-fit flex">
-                    <Image src={'/images/LandingPage/discover.jpg'} alt="Popular Post" width={200} height={200} className="h-20 w-20 object-cover" />
-                    <Link href="/popularposts" className="text-blue-500 hover:underline">{post}</Link>
+                    <Image src={post.imageUrl} alt="Popular Post" width={200} height={200} className="h-20 w-20 object-cover" />
+                    <Link href="/popularposts" className="text-title hover:underline">{post.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -233,7 +320,12 @@ const BlogContent = () => {
               <ul>
                 {categories.map((category, index) => (
                   <li key={index} className="mb-2 text-gray-700">
-                    <Link href="/blog/categories" className="text-gray-700 hover:text-blue-500">{category}</Link>
+                    <button 
+                      onClick={() => handleCategoryFilter(category)}
+                      className={`text-gray-700 hover:text-blue-500 ${selectedCategory === category ? 'font-bold text-blue-600' : ''}`}
+                    >
+                      {category}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -244,7 +336,13 @@ const BlogContent = () => {
               <h4 className="text-lg font-semibold mb-4">Tags</h4>
               <div className="flex flex-wrap">
                 {tags.map((tag, index) => (
-                  <Link key={index} href="/blog/categories" className="mr-2 mb-2 inline-block px-3 py-1 text-sm bg-gray-200 rounded-full hover:bg-gray-300">{tag}</Link>
+                  <button 
+                    key={index} 
+                    onClick={() => handleTagFilter(tag)}
+                    className={`mr-2 mb-2 inline-block px-3 py-1 text-sm bg-gray-200 rounded-full hover:bg-gray-300 ${selectedTag === tag ? 'bg-blue-200' : ''}`}
+                  >
+                    {tag}
+                  </button>
                 ))}
               </div>
             </div>

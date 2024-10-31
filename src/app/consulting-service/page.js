@@ -2,7 +2,12 @@ import ConsultingServices from '@/components/Cunsolting/CunsultingContent'
 import React from 'react'
 
 // Define schema for the page
-
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata = {
   title: 'Consulting Services | SCF Strategies',

@@ -5,9 +5,11 @@ import {
   FileText,
   Link as LinkIcon,
   Globe,
-  ChevronUp
+  ChevronUp,
+  PhoneIcon,
+  MailIcon
 } from 'lucide-react';
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram, FaLocationArrow, FaSeedling } from 'react-icons/fa';
 import { subscribeToNewsletter } from '@/app/action';
 import XIcon from './ui/XIcon';
 import Image from 'next/image';
@@ -58,21 +60,26 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-gray-900 text-gray-300 ">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 max-w-7xl md:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Quick Links Section */}
-          <div>
+          <div className="space-y-4">
             <h3 className="text-white text-xl font-semibold mb-4 flex items-center">
               <LinkIcon className="w-4 h-4 mr-2" />
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-blue-400 text-lg  transition-colors">
-                    {link.name}
+                  <Link 
+                    href={link.href} 
+                    className="hover:text-blue-400 text-base md:text-lg transition-colors flex items-center"
+                  >
+                    <span className="hover:translate-x-1 transition-transform">
+                      {link.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -80,13 +87,18 @@ const Footer = () => {
           </div>
 
           {/* Services Section */}
-          <div>
+          <div className="space-y-4">
             <h3 className="text-white text-xl font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link href={service.href} className="hover:text-blue-400 text-lg transition-colors">
-                    {service.name}
+                  <Link 
+                    href={service.href} 
+                    className="hover:text-blue-400 text-base md:text-lg transition-colors flex items-center"
+                  >
+                    <span className="hover:translate-x-1 transition-transform">
+                      {service.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -94,16 +106,21 @@ const Footer = () => {
           </div>
 
           {/* Resources Section */}
-          <div>
+          <div className="space-y-4">
             <h3 className="text-white text-xl font-semibold mb-4 flex items-center">
               <FileText className="w-4 h-4 mr-2" />
               Resources
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {resources.map((resource) => (
                 <li key={resource.name}>
-                  <Link href={resource.href} className="hover:text-blue-400 text-lg transition-colors">
-                    {resource.name}
+                  <Link 
+                    href={resource.href} 
+                    className="hover:text-blue-400 text-base md:text-lg transition-colors flex items-center"
+                  >
+                    <span className="hover:translate-x-1 transition-transform">
+                      {resource.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -111,88 +128,104 @@ const Footer = () => {
           </div>
 
           {/* Connect With Us Section */}
-          <div>
+          <div className="space-y-6">
             {/* Newsletter Signup Section */}
-            <h3 className="text-white text-xl font-semibold mb-4">Subscribe to Our Newsletter</h3>
-            <form
-              className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 mb-6"
-              onSubmit={handleSubmit}
-            >
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-transparent border border-gray-600 rounded px-4 py-2 w-full text-gray-300 focus:outline-none focus:ring focus:ring-blue-500"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded transition-colors w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={isLoading}
+            <div className="space-y-4">
+              <h3 className="text-white text-xl font-semibold">Subscribe to Our Newsletter</h3>
+              <form 
+                className="flex flex-col space-y-3"
+                onSubmit={handleSubmit}
               >
-                {isLoading ? 'Subscribing...' : 'Subscribe'}
-              </button>
-            </form>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="bg-gray-800 border border-gray-700 rounded px-4 py-2 w-full text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <button
+                  type="submit"
+                  className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded transition-colors w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Subscribing...' : 'Subscribe'}
+                </button>
+              </form>
+            </div>
 
-            {/* Social Links Section */}
-            {/* <h3 className="text-white text-xl font-semibold mb-4">Connect With Us</h3>
-            <div className="flex  space-x-4">
-              <a href="https://www.facebook.com/profile.php?id=100063586296486" target="_blank"
-                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaFacebookF className="w-6 h-6" />
-              </a>
-              <a href="https://www.instagram.com/ericriddlescf?igsh=MXMxaTkxZmhka2Q4Zw==" target="_blank"
-                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaInstagram className="w-6 h-6" />
-              </a>
-              <a href="https://www.linkedin.com/company/scfstrategies/?viewAsMember=true" target="_blank"
-                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <FaLinkedinIn className="w-6 h-6" />
-              </a>
-              <a href="https://x.com/SCFStrategies" target="_blank"
-                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <XIcon className="w-6 h-6" />
-              </a>
-              <a href="" target="_blank"
-                rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <SiGooglemybusiness className="w-6 h-6" />
-              </a>
-            </div> */}
+            {/* Contact Information */}
+            <div className="  rounded-lg space-y-4">
+              <h3 className="text-xl font-semibold text-white">Connect With Us</h3>
+              <div className="flex flex-col space-y-4">
+                <a 
+                  href="tel:+12034709377" 
+                  className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
+                >
+                  <PhoneIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className="text-base md:text-lg">+1 (203) 470-9377</span>
+                </a>
+
+                <a 
+                  href="mailto:nsimek@scfstrategies.com" 
+                  className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
+                >
+                  <FaSeedling className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className="text-base md:text-lg">nsimek@scfstrategies.com</span>
+                </a>
+
+                <a 
+                  href="https://www.google.com/maps/place/Bonita+Springs,+FL" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
+                >
+                  <FaLocationArrow className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className="text-base md:text-lg">Bonita Springs, FL</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div className=" text-gray-400  py-4  text-lg order-3 md:order-1 flex items-center space-x-2">
-              <Image src="https://www.tltechnologies.net/assets/logo-D0OpDRUY.svg" width={60} height={60} alt="TL Technologies Logo" className="h-10 w-10" />
-
+        <div className="container mx-auto max-w-7xl p-4">
+          <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:justify-between md:items-center">
+            {/* Developer Credit */}
+            <div className="order-3 md:order-1 flex items-center space-x-2 justify-center md:justify-start">
+              <Image 
+                src="https://www.tltechnologies.net/assets/logo-D0OpDRUY.svg" 
+                width={40} 
+                height={40} 
+                alt="TL Technologies Logo" 
+                className="h-10 w-10"
+              />
               <Link 
-  href="https://connect.tltechnologies.net/" 
-  className="hover:underline" 
-  target="_blank" 
-  rel="noopener noreferrer"
->
-  Developed by TL Technologies
-</Link>
-
+                href="https://connect.tltechnologies.net/" 
+                className="text-gray-400 hover:text-blue-400 transition-colors text-base md:text-lg" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Developed by TL Technologies
+              </Link>
             </div>
 
-            <div className="text-lg text-gray-400 order-2 md:order-2">
+            {/* Copyright */}
+            <div className="order-2 text-center text-gray-400 text-base md:text-lg">
               © {currentYear} SCF Strategies. All rights reserved.
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm order-1 md:order-3">
+            {/* Legal Links */}
+            <div className="order-1 md:order-3 flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
               {legalLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-400 hover:text-blue-400 hover:underline  transition-colors text-lg flex items-center"
+                  className="text-gray-400 hover:text-blue-400 transition-colors text-base md:text-lg flex items-center group"
                 >
-                  <FileText className="w-4 h-4 mr-1" />
+                  <FileText className="w-4 h-4 mr-1 group-hover:scale-110 transition-transform" />
                   {link.name}
                 </Link>
               ))}
@@ -200,14 +233,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll to Top Button */}
-      {/* <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full shadow-lg transition-colors"
-      >
-        <ChevronUp className="w-6 h-6" />
-      </button> */}
     </footer>
   );
 };
