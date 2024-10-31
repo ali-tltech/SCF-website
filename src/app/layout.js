@@ -2,12 +2,13 @@ import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 import '../styles/typography.css';
 import ClientLayout from './ClientLayout';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 const inter = Inter({
   subsets: ['latin', 'cyrillic', 'greek'],
   display: 'swap',
 });
 
-// Separate viewport configuration
+
 
 export default function RootLayout({ children }) {
   return (
@@ -17,6 +18,12 @@ export default function RootLayout({ children }) {
         <ClientLayout>
           {children}
         </ClientLayout>
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <GoogleAnalytics />
+            <Analytics />
+          </>
+        )}
       </body>
     </html>
   );

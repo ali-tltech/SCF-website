@@ -73,7 +73,6 @@ export default function Consulting() {
               <Image
                 src="/images/LandingPage/bg-14.jpg"
                 alt="Consulting Services"
-                layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
               />
