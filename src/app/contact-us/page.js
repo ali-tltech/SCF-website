@@ -65,7 +65,7 @@ const ContactPage = () => {
                                         <Mail className="w-6 h-6 text-blue-600" />
                                     </div>
                                     <h3 className="font-semibold text-gray-800">Email Us</h3>
-                                    <p className="text-gray-600">contact@scfstrategies.com</p>
+                                    <p className="text-2xl text-title ">nsimek@scfstrategies.com</p>
                                 </div>
                             </div>
 
@@ -76,7 +76,7 @@ const ContactPage = () => {
                                         <Phone className="w-6 h-6 text-blue-600" />
                                     </div>
                                     <h3 className="font-semibold text-gray-800">Call Us</h3>
-                                    <p className="text-gray-600">+1 (203) 470-9377</p>
+                                    <p className="text-2xl text-title">+1 (203) 470-9377</p>
                                 </div>
                             </div>
 
@@ -87,7 +87,7 @@ const ContactPage = () => {
                                         <MapPin className="w-6 h-6 text-blue-600" />
                                     </div>
                                     <h3 className="font-semibold text-gray-800">Visit Us</h3>
-                                    <p className="text-gray-600">Bonita Springs, FL</p>
+                                    <p className="text-2xl text-title">Bonita Springs, FL</p>
                                 </div>
                             </div>
                         </div>

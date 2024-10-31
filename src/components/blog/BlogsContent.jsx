@@ -84,6 +84,7 @@ const BlogContent = () => {
       title: 'Roundtable on Supply Chain Finance at TXF in New York',
       author: 'SCF Strategies',
       date: 'September 17, 2018',
+      category:"Trade Dynamics",
       image: '/images/blog/1.png',
       excerpt: 'SCF Strategies participated in the TXF Conference in New York, discussing emerging trends and the impact of trade dynamics.',
     },
