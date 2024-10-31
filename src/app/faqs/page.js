@@ -1,4 +1,4 @@
-import PrivacyPolicyContent from '@/components/PraivacyPolicies/PrivacyContent'
+import FaqContent from '@/components/faq/FaqContent';
 import React from 'react'
 export const viewport = {
   width: 'device-width',
@@ -66,7 +66,7 @@ export const metadata = {
 };
 function PrivacyPage() {
   return (
-<PrivacyPolicyContent/>  )
+<FaqContent/>  )
 }
 
 export default PrivacyPage
