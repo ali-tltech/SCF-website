@@ -10,19 +10,22 @@ export const viewport = {
 
 export const metadata = {
   title: {
-    default: 'SCF Strategies || About Us',
+    default: 'SCF Strategies | About Us',
     template: '%s | SCF Strategies'
   },
-  description: 'Learn about SCF Strategies - Our mission, values, and commitment to excellence in financial solutions and strategic consulting',
-  keywords: ['SCF', 'About Us', 'Company Profile', 'Financial Consultancy', 'Strategic Solutions',"founded in 2015","18 years of experience in scf"],
-  authors: [{ name: 'SCF Strategies' }],
-  creator: 'SCF Strategies',
-  publisher: 'SCF Strategies',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  description: 'SCF Strategies: Unlocking the full potential of Supply Chain Finance with expertise, advanced technology, and a proven track record. Learn about our journey and why industry leaders trust us.',
+  keywords: [
+    'Supply Chain Finance',
+    'SCF Strategies',
+    'SCF Consulting',
+    'Supply Chain Finance Expertise',
+    'SCF Solutions',
+    'Industry Leaders',
+    'Global Clients',
+    'Supply Chain Finance',
+    'Financial Consultancy',
+    'Strategic Solutions',
+  ],
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',

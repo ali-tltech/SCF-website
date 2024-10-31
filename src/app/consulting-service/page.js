@@ -10,9 +10,24 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: 'Consulting Services | SCF Strategies',
-  description: 'Transform your business with our expert Supply Chain Finance consulting services. We offer comprehensive implementation support, program optimization, and strategic planning to maximize your SCF initiatives.',
-  keywords: 'Supply Chain Finance Consulting, SCF Implementation, Program Optimization, Strategic Planning, SCF Solutions, Financial Supply Chain Management, Working Capital Optimization',
+  title: {
+    default: 'Expert Supply Chain Finance Consulting Services | SCF Strategies',
+    template: '%s | SCF Strategies',
+  },
+  description:
+    'SCF Strategies offers expert supply chain finance consulting services to optimize SCF programs. Our services include go-to-market strategies, solution audits, platform selection, and accounting treatment for optimal supply chain finance performance.',
+  keywords: [
+    'Supply Chain Finance',
+    'SCF Consulting Services',
+    'SCF Platform',
+    'SCF Strategy',
+    'Supply Chain Finance Optimization',
+    'Working Capital',
+    'Supply Chain Finance Advisory',
+    'SCF Market',
+    'SCF Platform & Partner Selection',
+    'SCF Accounting Treatment',
+  ],
   metadataBase: new URL('https://www.scfstrategies.com'),
   alternates: {
     canonical: '/consulting-services'

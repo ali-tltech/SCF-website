@@ -9,11 +9,18 @@ export const viewport = {
 
 export const metadata = {
   title: {
-    default: 'SCF Strategies || Contact page',
+    default: 'Get in Touch | SCF Strategies',
     template: '%s | SCF Strategies'
   },
-  description: 'SCF Strategies - Expert Financial Solutions and Strategic Consulting',
-  keywords: ['SCF', 'Strategies', 'Finance', 'Consulting', 'Business Strategy'],
+  description: 'Contact SCF Strategies to transform your supply chain finance program. Our experts are ready to provide personalized solutions and support. Get in touch today!',
+  keywords: [
+    'Supply Chain Finance Contact',
+    'SCF Program Support',
+    'Transform Your SCF Program',
+    'SCF Strategies Contact',
+    'Supply Chain Finance Experts',
+    'Contact SCF Strategies',
+  ],
   authors: [{ name: 'SCF Strategies' }],
   creator: 'SCF Strategies',
   publisher: 'SCF Strategies',

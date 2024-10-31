@@ -9,11 +9,23 @@ export const viewport = {
 
 export const metadata = {
   title: {
-    default: 'SCF Strategies || solutions & enablement',
-    template: '%s | SCF Strategies'
+    default: 'Expert Supply Chain Finance Consulting Services | SCF Strategies',
+    template: '%s | SCF Strategies',
   },
-  description: 'SCF Strategies - Expert Financial Solutions and Strategic Consulting',
-  keywords: ['SCF', 'Strategies', 'Finance', 'Consulting', 'Business Strategy'],
+  description:
+    'SCF Strategies offers expert supply chain finance consulting services to optimize SCF programs. Our services include go-to-market strategies, solution audits, platform selection, and accounting treatment for optimal supply chain finance performance.',
+  keywords: [
+    'Supply Chain Finance',
+    'SCF Consulting Services',
+    'SCF Platform',
+    'SCF Strategy',
+    'Supply Chain Finance Optimization',
+    'Working Capital',
+    'Supply Chain Finance Advisory',
+    'SCF Market',
+    'SCF Platform & Partner Selection',
+    'SCF Accounting Treatment',
+  ],
   authors: [{ name: 'SCF Strategies' }],
   creator: 'SCF Strategies',
   publisher: 'SCF Strategies',

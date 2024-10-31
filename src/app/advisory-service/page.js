@@ -5,9 +5,21 @@ import React from 'react'
 // Define schema for the page
 
 export const metadata = {
-  title: 'Advisory Services | SCF Strategies',
-  description: 'Elevate your Supply Chain Finance strategy with our expert Advisory Services. We offer strategic go-to-market planning, in-depth solution audits, platform and partner selection, and guidance on accounting treatment to help you succeed.',
-  keywords: 'Supply Chain Finance Advisory Services, SCF Strategy Consulting, Go-to-Market Strategy, Solution Audit, Platform Selection, Accounting Treatment, Supply Chain Finance Optimization',
+  title: {
+    default: 'Advisory Services | SCF Strategies',
+    template: '%s | SCF Strategies',
+  },
+  description:
+    'Elevate your Supply Chain Finance strategy with our expert Advisory Services. We offer strategic go-to-market planning, in-depth solution audits, platform and partner selection, and guidance on accounting treatment to help you succeed.',
+  keywords: [
+    'Supply Chain Finance Advisory Services',
+    'SCF Strategy Consulting',
+    'Go-to-Market Strategy',
+    'Solution Audit',
+    'Platform Selection',
+    'Accounting Treatment',
+    'Supply Chain Finance Optimization',
+  ],
   metadataBase: new URL('https://www.scfstrategies.com'),
   alternates: {
     canonical: '/advisory-services'
